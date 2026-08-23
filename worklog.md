@@ -21,3 +21,22 @@ Stage Summary:
 - Metric: RMSE (50%) + Trustworthiness rubric (30%) + Innovation/practicality (20%)
 - Rules: 5 subs/day, 200 total, max team 4, no AutoML, open-source only, CC-BY SA 4.0
 - Leaderboard top: MOHAR 0.5596, Shankar 0.5893, GIrum 0.6234; benchmark 0.8999
+
+---
+Task ID: 2
+Agent: Super Z (main agent)
+Task: Test whether competition data can be downloaded from Zindi site or Google Drive
+
+Work Log:
+- Extracted file download URLs from Zindi data page (api.zindi.world/v1/competitions/.../files/...)
+- Tested direct download: HTTP 401 "not authorized" — auth_token=null fails; login required
+- Installed gdown 6.1.0 via pip --break-system-packages
+- Verified connectivity: drive.usercontent.google.com, docs.google.com, googleapis.com all reachable
+- End-to-end test: downloaded gdown's official example file (SPNet model) from Google Drive — successfully pulled 260MB before test timeout stopped it
+- Cleaned up test artifacts; confirmed 9.2GB free disk space
+
+Stage Summary:
+- Zindi direct download: NOT possible (auth wall, 401)
+- Google Drive download: CONFIRMED WORKING (260MB test download succeeded)
+- Disk space available: 9.2GB — enough for Train.csv (275MB) + Test.csv (33MB) + workspace
+- Recommended workflow: user downloads files from Zindi, uploads to Google Drive with public link, shares link for agent to download
