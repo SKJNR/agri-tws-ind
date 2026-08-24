@@ -40,3 +40,25 @@ Stage Summary:
 - Google Drive download: CONFIRMED WORKING (260MB test download succeeded)
 - Disk space available: 9.2GB — enough for Train.csv (275MB) + Test.csv (33MB) + workspace
 - Recommended workflow: user downloads files from Zindi, uploads to Google Drive with public link, shares link for agent to download
+
+---
+Task ID: 7 (session restored after env reset wiped data/scripts)
+Agent: Super Z (main agent)
+Task: LB-feedback-driven v3 calibration
+
+LB feedback from user's submissions:
+- v1 (trees ~0.77 eff, with covs): 0.8059 (rank 260)
+- v2b (Kalman 0.97/0.84, with covs, k=0 LGBM blend): 0.7962 <- BEST so far
+- v2c (pure decay 0.95/0.82, NO covs): 0.8337 (worse than v1)
+
+Decoded signals:
+- Higher persistence helps: v2b (0.97) < v1 (0.77) by 0.0097
+- Covariate observations critical: v2c (no covs) > v1 by 0.028
+- Combination: high persistence + cov-obs Kalman is the winning direction
+
+v3 plan (rebuild after env reset; uses pure-AR k=0, no LGBM dependency):
+- v3a: (0.97, 0.84) Kalman+covs, k=0 pure AR slope 0.815  -> isolates LGBM-blend effect vs v2b
+- v3b: (0.99, 0.86) Kalman+covs, k=0 pure AR slope 0.857  -> push persistence
+- v3c: (0.995, 0.87) Kalman+covs, k=0 pure AR slope 0.869 -> extreme push
+
+Files: download/submission_v3a.csv, v3b.csv, v3c.csv
