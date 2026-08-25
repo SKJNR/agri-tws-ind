@@ -1,0 +1,48 @@
+global cov->TWS regression coefficients: [0.0432 0.0687 0.0652 0.2224 0.1616 0.1473]
+
+=== F1: do test covariates carry the persistent pattern D? ===
+corr(cov-field(m), D-hat) across cells, per test month:
+  201509: corr(cov,D) = 0.7106 | corr(cov-field, actual anchor field) = 0.7145
+  201601: corr(cov,D) = 0.7434 | corr(cov-field, actual anchor field) = 0.7365
+  201602: corr(cov,D) = 0.7183
+  201603: corr(cov,D) = 0.7218
+  201606: corr(cov,D) = 0.6999 | corr(cov-field, actual anchor field) = 0.7290
+  201607: corr(cov,D) = 0.6599
+  201608: corr(cov,D) = 0.6143
+  201609: corr(cov,D) = 0.5817
+  201612: corr(cov,D) = 0.5172 | corr(cov-field, actual anchor field) = 0.5806
+  201701: corr(cov,D) = 0.5220
+  201702: corr(cov,D) = 0.5274
+  201703: corr(cov,D) = 0.5018
+  201704: corr(cov,D) = 0.5249
+  201705: corr(cov,D) = 0.5471
+  201706: corr(cov,D) = 0.6000
+  201807: corr(cov,D) = 0.5929 | corr(cov-field, actual anchor field) = 0.7274
+  201811: corr(cov,D) = 0.6190 | corr(cov-field, actual anchor field) = 0.6889
+  201812: corr(cov,D) = 0.6139
+
+var ratio: var(cov-field)/var(anchor fields) and cov-field std:
+cov-field std by month: min=0.548, max=0.621, mean=0.580
+anchor field std: 1.135; D-hat std: 0.899
+
+=== F2: two-component anchor-pair fit ===
+best fit: var(D)/var(anchor) = 0.515, phi_fast = 0.740, lambda_fast = 1.000, fit-rmse = 0.0723
+implied anchor coefficient r(h) = vD + lam*phi^h*(1-vD):
+  h=1: 0.8739
+  h=2: 0.7806
+  h=3: 0.7115
+  h=4: 0.6604
+  h=5: 0.6226
+  h=6: 0.5946
+  h=7: 0.5739
+compare v3a (phi=0.97, lam=0.84): 0.815, 0.790, 0.767, 0.744, 0.721, 0.700, 0.679
+
+=== F3: D drift (anchor global means) ===
+  201509: global mean anomaly = -0.1915
+  201601: global mean anomaly = -0.1909
+  201606: global mean anomaly = -0.3240
+  201612: global mean anomaly = -0.2044
+  201807: global mean anomaly = -0.0322
+  201811: global mean anomaly = -0.0723
+corr(D_early, D_late) across cells = 0.7186
+std(D_early) = 0.909, std(D_late) = 1.073, std(diff) = 0.759

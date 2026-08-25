@@ -62,3 +62,21 @@ v3 plan (rebuild after env reset; uses pure-AR k=0, no LGBM dependency):
 - v3c: (0.995, 0.87) Kalman+covs, k=0 pure AR slope 0.869 -> extreme push
 
 Files: download/submission_v3a.csv, v3b.csv, v3c.csv
+
+---
+Task ID: 8
+Agent: Super Z (main agent)
+Task: Cross-AI Round 3 — verify other AI's common-mode claims, establish corrected generator model
+
+Work Log:
+- Ran verify_common_mode.py: neighbor AR(1) residual corr = 0.9698 (their 0.9578 replicates; NOT an artifact — conceded). Residual PCA: PC1 9.3%, PC1-5 27.3%. Global residual-mean std 0.1025. GM-removal test vacuous (correlation is shift-invariant).
+- Ran decisive_measurements.py: target(t) = TWS_t(t+1) EXACTLY (corr 1.000000, zero diff) — kills the 0.9766 myth; honest corr(TWS_t,target)=0.803. Train ACF decays to 0.004 by k=36 (no floor in train). Spatial: neighbor corr 0.99/0.97/0.84/0.61 at 1/2/5/10 deg; anomaly-field PCA PC1-50=94.1%. Covs: per-cell R2=0.254; PC2-5 scores cov-estimable at r=0.85-0.95 but PC1 at r=0.07. D6: D-hat (mean of 6 anchor fields) = 62% of anchor variance, std 0.899; removing D-hat collapses all 15 anchor pair corrs (0.53-0.70 -> ~0.06 to -0.45).
+- Ran v1_calibration.py: cov fields at test months carry D (corr 0.50-0.74); test-era cov-anchor coupling 0.58-0.74 vs train 0.50. Two-component fit: var(D)=51.5%, phi_fast=0.74 (lambda degenerate; band 0.74-0.85). Optimal anchor coefficient profile r(h): 0.87/0.78/0.71/0.66/0.62/0.59/0.57. k=0 honest decomposition: persistence 0.5899 RMSE; +covs(t) 0.5823; +covs(t+1) 0.5618. D drifts: corr(D_early,D_late)=0.719, std(diff)=0.759.
+- Wrote download/CROSS_AI_REPLY_3.md: concessions (their numbers replicate), three myth-kills, corrected generator model (train: mu+AR1+noise; test: mu+D+AR1_fast+noise), V1 spec (two-component filter + k=0 with covs(t+1)), Kalman pseudocode, falsifiable v3 LB predictions (v3a 0.79-0.80, v3b 0.80-0.81, v3c 0.80-0.82), final division of labor.
+
+Stage Summary:
+- CORRECTED GENERATOR MODEL: test era = train-like fast process (phi_fast 0.74-0.85) + quasi-static spatial offset D(c) (std 0.90, 51% of test variance, drifts on ~2yr timescales, 77% inside train top-50 PC subspace) + noise. Train era has NO D.
+- Covariates' main test-era value = D-tracking (not fast-state tracking). Explains v2b >> v2c on LB.
+- V1 variants spec'd: V1a (empirical r(h) decay), V1b (two-component, phi_f=0.80, global D-hat), V1c (era-specific D-hat, phi_f=0.85). Expected 0.74-0.77. Leader's 0.5596 implies additional structure (PC1 tracking? exact D evolution?) — V2 workstreams.
+- Pending: v3a/b/c LB feedback from user; other AI's sign-off on V1; corrected k=0 eval from them.
+- Artifacts: download/CROSS_AI_REPLY_3.md, common_mode_verification.txt, decisive_measurements.txt, v1_calibration.txt; scripts verify_common_mode.py, decisive_measurements.py, v1_calibration.py
