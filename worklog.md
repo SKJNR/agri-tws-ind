@@ -116,3 +116,22 @@ Stage Summary:
 - V2a/b/c built: trendex D-tilde + phi spread 0.80/0.74/0.70. Predictions: v2a 0.710-0.715, v2b 0.705-0.713, v2c 0.703-0.713.
 - Leader gap analysis: they need masked ~0.51-0.57 vs our ~0.72-0.77. Remaining structural unknowns: slow-wander tracking (SPEI_12?), k=0 LGB (other AI's lane), PC1/slow-pattern cov channels.
 - Recommendation: submit v2a+v2b today (2 slots left), v2c tomorrow + relay Round 6 brief to other AI.
+
+---
+Task ID: 11
+Agent: Super Z (main agent)
+Task: Post-v2b (LB 0.7137) structural experiments + build V4
+
+Work Log:
+- v3_experiments.py: detrended field spectrum PC1-50=92.3%, PC1-100=98.8% (fast field ~rank-100). Anchor-LOO: obs-denoise K=200 = 0.7424->0.7237 (biggest gain); +init-denoise 0.7264; +backward pass 0.7200. phi insensitive 0.70-0.82.
+- v3_perpc.py + v3_perpc3.py: per-PC Kalman FAILED twice (0.76-1.16 vs 0.72 scalar). Root causes: anchor-only calibration noise; R-scaling bug (cell-space vs PC-score variance). Conclusion: covariates are ~uniform-quality (r~0.5) fast trackers; the "PC2-5 quality" was for trend-inclusive anomaly, not fast state. Per-PC dead end.
+- v3_dtilde.py: D-tilde anchor-PC projection neutral (0.7195 vs 0.7200) - anchor-mean already optimal rank reduction. First version had a centering bug (projected onto deviation PCs). E7 weight grid: (w1,w2)=(0.70,0.45) -> 0.7185.
+- v3_slow_rw.py: RW-with-drift smoothed D-tilde FAILED (0.734-0.757 vs 0.7175 static). 6 noisy anchors + big gaps: static mean hard to beat.
+- partial_month_goldmine.py: partial months' unmasked cells = ~337-cell pool, mostly MASKED at anchors (12/65 overlap vs 64 expected); no k=1 consecutive overlaps -> test lambda unpinned.
+- submission_v4.py: v4a (phi=0.74, denoise K=200, bwd, weights 0.70/0.45/0.073), v4b (no bwd - isolates bwd on real LB), v4c (phi=0.80). k=0 unchanged. CSVs verified.
+
+Stage Summary:
+- Validated config: scalar-H Kalman + PC-denoise(init+obs K=200) + backward pass + D-tilde(0.70 D-hat + 0.45 S + 0.073 trendex). Harness 0.7424->0.7185.
+- Structural dead ends catalogued: per-PC obs model, D-tilde projection, RW slow interpolation. The 0.72 harness floor = target noise (~0.456) + D-tilde error (~0.42) + fast error (~0.37).
+- V4a/b/c built. Predictions: v4a ~0.705-0.710, v4b ~0.708-0.713, v4c ~0.705-0.711.
+- Leader gap remains structural: they need masked ~0.51-0.57 vs our ~0.72-0.75. Remaining hypotheses: (a) test noise fraction lower than train, (b) k=0 model much better, (c) unknown generator structure. Tomorrow: submit v4a/v4b/v4c.
