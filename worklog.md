@@ -98,3 +98,21 @@ Stage Summary:
 - V1a/b/c BUILT: download/submission_v1{a,b,c}.csv. Predictions: v1a ~0.82-0.84 (no covs), v1b ~0.76-0.79, v1c ~0.75-0.78.
 - New finding: train predictability degrades in 2013-15 (transition to test-era regime) — windows matter for val protocol.
 - Pending: v3a/b/c + V1a/b/c LB scores from user; other AI's k=0 LGB with covs(t+1); PC1 cov-invisibility (V2).
+
+---
+Task ID: 10
+Agent: Super Z (main agent)
+Task: Process V1 LB feedback (v1b=0.7152 NEW BEST, v1c=0.7168, v3a=0.7984), resolve ACF contradiction, build V2
+
+Work Log:
+- v2_sweep.py: (S1) implied masked RMSE ~0.72-0.77 at u=0.6-0.64; leader needs masked ~0.51-0.57. (S2) anchor-LOO sweep over 4 consecutive-anchor pairs (h=4,5,6,4): best phi_f=0.70, lam insensitive, obs=train-reg W beats anchor-refit W (0.7414 vs 0.7488); cov obs worth 0.06 vs no-obs. (S3) PC1 discovery: score corr with time = 0.9588, ACF 0.91 at lag 24 -> looks like a trend, contradicts old ACF decay.
+- acf_resolution.py (brute-force calendar-correct ACF via merge): RAW-value ACF has a floor (r(36)=0.24) that per-cell-anomaly ACF missed. Resolution: train anomaly = per-cell LINEAR TREND (24.9% var, ~ PC1, near-linear/random-walk trajectory) + MEAN-REVERTING fast process (detrended lag-1 = 0.68, NEGATIVE by lag 24). The two nearly cancel in pooled anomaly ACF -> old "AR(1) lambda=0.839 phi=0.89" was an effective composite. Detrended fast phi ~ 0.81 (with lam 0.84), anchor sweep says 0.70-0.80 band.
+- Test-era D vs trend: corr(D-hat, trend-extrapolated field) = 0.525, std(trendex D)=0.887 vs std(D-hat)=0.901; 2018 anchors show trend flattening (actual global -0.03..-0.07 vs trendex -0.32..-0.33) -> D = partial trend extrapolation + wander.
+- submission_v2.py: D-tilde = w1*D-hat + w2*S + w3*trendex(t), LOO-fitted weights (0.650, 0.456, 0.073 - trendex marginal). LOO RMSE: D-hat only 0.8421, old combo 0.8201, new 0.8180. Variants v2a (phi=0.80), v2b (0.74), v2c (0.70), all with k=0 model unchanged from V1. CSVs verified (280,961 rows, IDs match, no NaN).
+
+Stage Summary:
+- GENERATOR MODEL (v3): TWS = mu_c + SLOW_c(t) + FAST_c(t) + noise. SLOW = per-cell near-linear trend (~25% var, extrapolates into test era = ~half of D's variance + wander). FAST = mean-reverting, phi 0.70-0.81, tracked by Kalman with cov observations. Test D = w1*D-hat + w2*S + w3*trendex.
+- v1b=0.7152 new best (was 0.7962). V1 architecture validated. v3a=0.7984 confirms k=0 LGB blend was ~neutral (v2b 0.7962).
+- V2a/b/c built: trendex D-tilde + phi spread 0.80/0.74/0.70. Predictions: v2a 0.710-0.715, v2b 0.705-0.713, v2c 0.703-0.713.
+- Leader gap analysis: they need masked ~0.51-0.57 vs our ~0.72-0.77. Remaining structural unknowns: slow-wander tracking (SPEI_12?), k=0 LGB (other AI's lane), PC1/slow-pattern cov channels.
+- Recommendation: submit v2a+v2b today (2 slots left), v2c tomorrow + relay Round 6 brief to other AI.
