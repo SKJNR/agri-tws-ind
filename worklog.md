@@ -80,3 +80,21 @@ Stage Summary:
 - V1 variants spec'd: V1a (empirical r(h) decay), V1b (two-component, phi_f=0.80, global D-hat), V1c (era-specific D-hat, phi_f=0.85). Expected 0.74-0.77. Leader's 0.5596 implies additional structure (PC1 tracking? exact D evolution?) — V2 workstreams.
 - Pending: v3a/b/c LB feedback from user; other AI's sign-off on V1; corrected k=0 eval from them.
 - Artifacts: download/CROSS_AI_REPLY_3.md, common_mode_verification.txt, decisive_measurements.txt, v1_calibration.txt; scripts verify_common_mode.py, decisive_measurements.py, v1_calibration.py
+
+---
+Task ID: 9
+Agent: Super Z (main agent)
+Task: Cross-AI Round 4/5 — resolve two disagreements, build V1
+
+Work Log:
+- r1_target_fix.py: airtight merge (t_abs+1, Dec->Jan included) proves target(t) = TWS_t(t+1) EXACTLY: corr=1.000000, 0/1,977,398 nonzero diffs, 187,351 Dec->Jan pairs all zero. Other AI's claim (0.9766/4.90/0.039) reproduced ONLY via sort+shift without month-gap check (7.53% of pairs skip months) -> their claim is a join artifact.
+- round4_reconciliation.py R2: (a) LOO corr(cov-field, D-hat_-m) = 0.45-0.71 (my number survives w/o circularity); (c) per-cell-demeaned covs ridge = 0.17-0.30 (EXACTLY reproduces their 0.13-0.34); (e) raw-cov direct ridge also 0.17-0.29; (d) KEY: corr(D-hat, mu_c) = -0.77 (real D structure) and corr(cov-field static S, mu_c) = -0.85 (regression shrinkage) -> my 0.5-0.74 works largely through shared -mu_c channel; (b) monthly deviation W_m tracks (F_m - D-hat) at r=0.37-0.50 (REAL fast-state tracking); (f) DECISIVE: anchor-field prediction RMSE 0.842 -> 0.733 with weights (0.54 D-hat, 0.84 cov-field), stable across all 6 anchors -> cov updates validated.
+- submission_v1.py: built V1a (empirical r(h) decay), V1b (two-component Kalman phi_f=0.80, global D-tilde = 0.676*D-hat + 0.490*S), V1c (phi_f=0.85, era-interpolated D-tilde). k=0 rows: linear anomaly-space model with covs(t+1), recency-weighted, full/reduced dual models. Kalman obs: W_m with H=0.305-0.313, R=0.114-0.120. covs(t+1) available for 62,576/94,048 unmasked rows.
+- k0_diagnostic.py: 2013-15 window genuinely harder (persistence 0.664 vs 0.507 on 2002-09) — no bug; full model beats persistence ~0.023 RMSE consistently. covs(t) coefs negative (double-count), covs(t+1) positive (new info).
+- All 3 CSVs verified: 280,961 rows, IDs match, no NaN.
+
+Stage Summary:
+- BOTH Round-4 disagreements resolved: (1) target = next month's TWS_t exactly — their noise claim was a join artifact (their numbers reproduce only via the gapped sort+shift); (2) cov->D coupling: their 0.13-0.34 = demeaned-cov view, my 0.5-0.7 = includes -mu_c channel; both reconciled; operationally cov updates worth 0.11 RMSE on anchor fields (measured).
+- V1a/b/c BUILT: download/submission_v1{a,b,c}.csv. Predictions: v1a ~0.82-0.84 (no covs), v1b ~0.76-0.79, v1c ~0.75-0.78.
+- New finding: train predictability degrades in 2013-15 (transition to test-era regime) — windows matter for val protocol.
+- Pending: v3a/b/c + V1a/b/c LB scores from user; other AI's k=0 LGB with covs(t+1); PC1 cov-invisibility (V2).
