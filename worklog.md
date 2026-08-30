@@ -182,3 +182,19 @@ Stage Summary:
 - VERDICT (conditional): No evidence of rule violation in anything verifiable. v20's 0.6317 is mathematically consistent with a legitimate k=0-row model breakthrough + unchanged masked-row model. External-data legality hinges on WHICH Copernicus products entered v19/v20: drought covariates = ALLOWED; any GRACE/TWS-derived product = PROHIBITED ("directly or indirectly include future GRACE/TWS information") — must be inventoried by the team.
 - DECISIVE FREE TEST for the team: rerun the v20 pipeline on the 2013-15 honest window (cv_lb_correlation.py protocol). CV ~0.58 (LB+0.05 gap) => real gain, transfers to private. CV ~0.69 => test-specific info, danger on private.
 - Recommendations: (1) audit v19/v20 external inputs before anything else; (2) run the CV test before spending the last daily slot; (3) final 2 selections must be private-robust (v20-family + blend candidate); (4) start trustworthiness report (30% of score) from the documented EDA trail; (5) 29/200 submissions used, deadline Sep 13.
+
+---
+Task ID: 14
+Agent: Super Z (main agent)
+Task: Build permanent documentation package (user concern: context loss, unknown data provenance, code+report preparation)
+
+Work Log:
+- Read full worklog (Tasks 1-13) and recovered complete submission history from screenshots + worklog.
+- Created /home/z/my-project/MASTER_HANDOFF.md (master copy) + download/MASTER_HANDOFF.md (snapshot): recovery protocol, complete data inventory with exact paths and provenance (competition CSVs only for v1-v4; CDS API key photo flagged), full LB score table v1->v20c, Aug-23 leaderboard top-10, generator model summary, validated V4 architecture, dead-ends list, CV protocol, legitimacy audit verdict, scripts inventory (26 scripts), 5 prioritized open items.
+- Created download/REPORT_DRAFT.md: 4 trustworthiness sections (100 words each, bias/transparency/reusability/sustainability) drafted from documented facts only, Innovation section (20%), pre-submission checklist, [V20] placeholders where the unaudited v19/v20 code must fill in.
+- Updated MASTER_HANDOFF with recovery protocol: new session reads MASTER_HANDOFF.md -> worklog.md -> TECHNICAL_HANDOFF.md.
+
+Stage Summary:
+- Single source of truth now exists at /home/z/my-project/MASTER_HANDOFF.md; any future session (or human) can rebuild full state from it + worklog.md.
+- Data provenance is now explicit: this agent used ONLY competition CSVs (data/ folder) in all analyses and submissions v1-v4; v5-v20 code is NOT in this environment and must be uploaded by the team (OPEN ITEM #1).
+- Report drafting started; 30% trustworthiness rubric sections drafted from reproducible evidence; SHAP + CodeCarbon runs pending before final.
