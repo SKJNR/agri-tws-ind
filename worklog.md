@@ -162,3 +162,23 @@ Stage Summary:
 - v1b vs v2b_trendex CV gap (0.002) matches LB gap (0.0015) → confirms trendex D-tilde is real but marginal; we should not over-invest in trendex variants.
 - Recommendation: ship v4a/b/c tomorrow (CV-validated bets). Reserve 1-2 slots for pseudo-labeling + ensemble (Kalman+LGB) on best CV model.
 - Artifacts: scripts/cv_lb_correlation.py, download/cv_lb_correlation.png, download/cv_lb_correlation.csv
+
+---
+Task ID: 13
+Agent: Super Z (main agent)
+Task: Post-v20 legitimacy/overfitting audit (user questions: overfitting risk on private LB, how top teams scored, Zindi rules compliance)
+
+Work Log:
+- Recovered context after session corruption: team timeline v2b 0.7137 -> v5b 0.7050 (Aug 26) -> v12b 0.6954 -> v18a 0.6937 -> v20a 0.6331 -> v20c 0.6317 (Aug 30, now likely top-10; Aug 23 cutoff was 0.6708, rank-4 score was 0.6319). v19/v20 code NOT in this environment (lost session).
+- Extracted competition rules verbatim: public/private split 30/70 BY ROWS, private = final ranking; top-10 PRIVATE get code+report review (72h); external Copernicus covariates ALLOWED if prediction-time available, no future GRACE/TWS info, fully documented; "future observed values must not be used to fill or infer masked TWS"; multi-account ban; cheating = DQ + 6mo ban + 2000 points.
+- legitimacy_audit_covs.py: covs(t+1)-only models are WEAK (ridge 0.996, LGBM 0.982 on 2013-15); +TWS_t gives 0.6377 (= known k=0 ceiling from competition data). Persistence 0.712.
+- anchor_cov_audit.py: LOO anchor-calibrated per-cell cov->TWS = 0.74 — cannot explain masked rows below 0.72. Per-cell test-era corr(SOIL,TWS) only 0.32.
+- real_vs_synthetic_check.py / v2.py: data = SYNTHETIC with REAL-GRACE-anchored trend maps (Greenland -0.165/yr 100% neg, Alaska -0.115/yr, trend field neighbor corr 0.976-0.993) + uniform noise, no real seasonality (Amazon=Sahara "amplitude" = climatology noise). => external GRACE/TWS products can only match the trend/D channel, NOT the full target.
+- Score math: LB 0.6317 decomposes EXACTLY as k=0 rows @ ~0.40 + masked rows @ ~0.72 (v18a level) => the v18->v20 jump is consistent with a k=0-row breakthrough (the decisive experiment assigned to the other AI in the handoff), NOT necessarily anything illegitimate.
+- Verified: masked TWS = NaN in Test.csv (no file leakage); v16_probe FAILED processing (returned no LB info, doesn't count vs daily limit) => LB-probing unlikely as jump mechanism; benchmark all-zeros = 0.8999 => public subset statistically representative (RMS 0.90 ~= global std 0.91).
+- upload/TECHNICAL_HANDOFF.md (Aug 26, V4 era) recovered; CDS API-key photo (Aug 26) shows Copernicus access set up 4 days before the jump — the ONE unverified input to v19/v20.
+
+Stage Summary:
+- VERDICT (conditional): No evidence of rule violation in anything verifiable. v20's 0.6317 is mathematically consistent with a legitimate k=0-row model breakthrough + unchanged masked-row model. External-data legality hinges on WHICH Copernicus products entered v19/v20: drought covariates = ALLOWED; any GRACE/TWS-derived product = PROHIBITED ("directly or indirectly include future GRACE/TWS information") — must be inventoried by the team.
+- DECISIVE FREE TEST for the team: rerun the v20 pipeline on the 2013-15 honest window (cv_lb_correlation.py protocol). CV ~0.58 (LB+0.05 gap) => real gain, transfers to private. CV ~0.69 => test-specific info, danger on private.
+- Recommendations: (1) audit v19/v20 external inputs before anything else; (2) run the CV test before spending the last daily slot; (3) final 2 selections must be private-robust (v20-family + blend candidate); (4) start trustworthiness report (30% of score) from the documented EDA trail; (5) 29/200 submissions used, deadline Sep 13.
