@@ -166,130 +166,41 @@ Stage Summary:
 ---
 Task ID: 13
 Agent: Super Z (main agent)
-Task: Post-v20 legitimacy/overfitting audit (user questions: overfitting risk on private LB, how top teams scored, Zindi rules compliance)
+Task: Post-reset recovery: diagnose v16_probe failure, rebuild pipeline, produce v17a/v17b
 
 Work Log:
-- Recovered context after session corruption: team timeline v2b 0.7137 -> v5b 0.7050 (Aug 26) -> v12b 0.6954 -> v18a 0.6937 -> v20a 0.6331 -> v20c 0.6317 (Aug 30, now likely top-10; Aug 23 cutoff was 0.6708, rank-4 score was 0.6319). v19/v20 code NOT in this environment (lost session).
-- Extracted competition rules verbatim: public/private split 30/70 BY ROWS, private = final ranking; top-10 PRIVATE get code+report review (72h); external Copernicus covariates ALLOWED if prediction-time available, no future GRACE/TWS info, fully documented; "future observed values must not be used to fill or infer masked TWS"; multi-account ban; cheating = DQ + 6mo ban + 2000 points.
-- legitimacy_audit_covs.py: covs(t+1)-only models are WEAK (ridge 0.996, LGBM 0.982 on 2013-15); +TWS_t gives 0.6377 (= known k=0 ceiling from competition data). Persistence 0.712.
-- anchor_cov_audit.py: LOO anchor-calibrated per-cell cov->TWS = 0.74 — cannot explain masked rows below 0.72. Per-cell test-era corr(SOIL,TWS) only 0.32.
-- real_vs_synthetic_check.py / v2.py: data = SYNTHETIC with REAL-GRACE-anchored trend maps (Greenland -0.165/yr 100% neg, Alaska -0.115/yr, trend field neighbor corr 0.976-0.993) + uniform noise, no real seasonality (Amazon=Sahara "amplitude" = climatology noise). => external GRACE/TWS products can only match the trend/D channel, NOT the full target.
-- Score math: LB 0.6317 decomposes EXACTLY as k=0 rows @ ~0.40 + masked rows @ ~0.72 (v18a level) => the v18->v20 jump is consistent with a k=0-row breakthrough (the decisive experiment assigned to the other AI in the handoff), NOT necessarily anything illegitimate.
-- Verified: masked TWS = NaN in Test.csv (no file leakage); v16_probe FAILED processing (returned no LB info, doesn't count vs daily limit) => LB-probing unlikely as jump mechanism; benchmark all-zeros = 0.8999 => public subset statistically representative (RMS 0.90 ~= global std 0.91).
-- upload/TECHNICAL_HANDOFF.md (Aug 26, V4 era) recovered; CDS API-key photo (Aug 26) shows Copernicus access set up 4 days before the jump — the ONE unverified input to v19/v20.
+- User reported v16_probe.csv rejected ("There was a problem while processing your submission"); daily quota untouched (0/5, total 29/200). Env reset had wiped ALL v5-v16 artifacts (scripts + CSVs); only v1-v4 + worklog survived in git.
+- Built scripts/validate_submission.py — universal format validator (columns, row count, ID set/order, NaN/inf, magnitudes, BOM, header). All past submissions PASS; use it on every future file.
+- Rebuilt pipeline (rebuild_v17.py): regenerated V4 infra; ran A/B decomposition of masked-row configs. FOUND PROTOCOL FLAW: the val (2013-15) protocol has a SHORTCUT — masked months May/Aug have targets (Jun/Sep) landing on unmasked val months, so the backward Kalman reads the answer (bwd-only scored 0.5456 inflated). On TEST the designers removed every pre-anchor month (no May-16/Nov-16/Oct-18...), sealing this route. Verified: direct-copy via target=TWS_t(t+1) identity yields exactly 0 rows (visible pool at partial months is disjoint from previous month's row set).
+- rebuild_v17b.py — HONEST CV protocol (evaluate only masked val rows whose t+1 is masked/absent, n=93,829, matching test structure). Results: v2b-equiv 0.6919, bwd-only 0.6551, dn+bwd (v4 recipe) 0.6785, dn-only 0.7023 => PC-DENOISER HURTS on test-like rows (+0.023-0.027); backward pass is the real gain (-0.037). Grid: phi=0.80/lam=0.84 best (0.6535); Dtil weights (0.70,0.45,0.073) confirmed; top3 ensemble 0.6534.
+- k=0 decisive experiment (handoff §6a): LINEAR 0.6287 vs LGBM(400) 0.6273 vs 50/50 blend 0.6254 on val (honest — features never see TWS(t+1)). Verdict: LGB ≈ linear, small blend gain; the "leader has better k=0" hypothesis is weak; k=0 floor ~0.62-0.63 is real.
+- CAUGHT 2 assembly bugs before shipping: (1) k0 predictions missing +mu_c (anomaly vs full value); (2) direct-copy map +1 on wrong side (would have replaced all 94k k0 rows with persistence). Both fixed; reproduced historical v4a.csv k0 block bit-exactly (corr 1.000000, max diff 0) to validate the toolchain.
+- LB decomposition corrected: v2b 0.7137 = 0.665*masked(0.752)^2 + 0.335*k0(0.643)^2; masked CV->test gap ~+0.060. v12b 0.6954 => masked ~0.722. Projected v17a ≈ 0.689-0.691 (masked ~0.713, k0 ~0.640) — potential new best.
 
 Stage Summary:
-- VERDICT (conditional): No evidence of rule violation in anything verifiable. v20's 0.6317 is mathematically consistent with a legitimate k=0-row model breakthrough + unchanged masked-row model. External-data legality hinges on WHICH Copernicus products entered v19/v20: drought covariates = ALLOWED; any GRACE/TWS-derived product = PROHIBITED ("directly or indirectly include future GRACE/TWS information") — must be inventoried by the team.
-- DECISIVE FREE TEST for the team: rerun the v20 pipeline on the 2013-15 honest window (cv_lb_correlation.py protocol). CV ~0.58 (LB+0.05 gap) => real gain, transfers to private. CV ~0.69 => test-specific info, danger on private.
-- Recommendations: (1) audit v19/v20 external inputs before anything else; (2) run the CV test before spending the last daily slot; (3) final 2 selections must be private-robust (v20-family + blend candidate); (4) start trustworthiness report (30% of score) from the documented EDA trail; (5) 29/200 submissions used, deadline Sep 13.
+- DELIVERED: download/submission_v17a.csv (top3-ens masked phi{0.80,0.80,0.85}/lam{0.84,0.80,0.8}, bwd-only NO denoise, Dtil 0.70/0.45/0.073, k0 = 50/50 linear+LGB) and download/submission_v17b.csv (same k0; masked = 50/50 denoiser hedge at phi=0.80/lam=0.84). Both format-validated.
+- v17a is the CV-best bet (projected ~0.690 vs v12b 0.6954); v17b isolates the denoiser question on the real LB.
+- STRATEGIC FINDINGS: (1) honest-CV protocol must exclude t+1-unmasked rows — old protocol inflated all masked numbers by ~0.06 and distorted config selection; (2) PC-denoiser should be OFF (hurts honest rows); (3) phi optimum shifted UP to 0.80-0.85 on honest protocol; (4) direct-copy/target-identity route fully sealed by design (~0 rows); (5) k=0 LGB is a dead end (blend ≈ linear).
+- LOST with the reset: exact v5-v16 recipes (v12b's masked config unknown). v13b/v12b +0.0021 public-row anomaly investigation cannot continue without the files — if user uploads v12b/v13b/v14 CSVs, resume bit-level analysis; meanwhile treat <0.003 LB deltas as noise.
+- Next: submit v17a+v17b today; if v17a < 0.6954, iterate masked-row ideas on honest-CV (Dtil era-weighting, 2017-block handling); trustworthiness writeup (30% of score) still pending.
 
 ---
 Task ID: 14
-Agent: Super Z (main agent)
-Task: Build permanent documentation package (user concern: context loss, unknown data provenance, code+report preparation)
+Agent: Super Z (main agent) + independent auditors A/C + gate reviewer (subagents)
+Task: Process v17b LB feedback (0.704955918), institutionalize adversarial gate, full-hats audit, build v18
 
 Work Log:
-- Read full worklog (Tasks 1-13) and recovered complete submission history from screenshots + worklog.
-- Created /home/z/my-project/MASTER_HANDOFF.md (master copy) + download/MASTER_HANDOFF.md (snapshot): recovery protocol, complete data inventory with exact paths and provenance (competition CSVs only for v1-v4; CDS API key photo flagged), full LB score table v1->v20c, Aug-23 leaderboard top-10, generator model summary, validated V4 architecture, dead-ends list, CV protocol, legitimacy audit verdict, scripts inventory (26 scripts), 5 prioritized open items.
-- Created download/REPORT_DRAFT.md: 4 trustworthiness sections (100 words each, bias/transparency/reusability/sustainability) drafted from documented facts only, Innovation section (20%), pre-submission checklist, [V20] placeholders where the unaudited v19/v20 code must fill in.
-- Updated MASTER_HANDOFF with recovery protocol: new session reads MASTER_HANDOFF.md -> worklog.md -> TECHNICAL_HANDOFF.md.
+- LB post-mortem: LB^2 = 0.6652*masked^2 + 0.3348*k0^2 decomposition => v17b masked ~0.7355 (k0 0.64 assumed) vs v12b ~0.7216 => v17b WORSE by 0.014 masked. Honest-CV->LB gap drifted +0.060 (fwd era) -> +0.080 (bwd-heavy v17b): protocol realism problem.
+- AUDIT A (data/protocol skeptic, subagent): REFUTED the "50%-masked months" belief - test has 6 fully-unmasked anchor months (Sep15/Jan16/Jun16/Dec16/Jul18/Nov18, gaps [4,5,6,19,4]) and 12 fully-masked months, month-instance level. Test = 2015-09..2018-12 (starts 1 month after train end). Masked-run geometry: Feb-Mar16 (31k, bwd 2-3), Jul-Sep16 (46k, bwd 2-4), 2017-block Jan-Jun17 (93k, bwd 12-17!), Dec18 (15.6k, fwd-only). Decisive mirror experiment: bwd-vs-fwd advantage P0 +0.046 -> M1 +0.022 -> M2 +0.010 -> test-mix extrapolation +0.003-0.005. P0 protocol overstated bwd value by ~0.040 = explains v17b regression. Built M1/M2 mirror protocols (hard-coded months; obs/cell 5.96/4.96 vs test 5.98). Direct-copy on test = 0 rows (all 280,961 checked). Leakage: sealed.
+- AUDIT C (strategy red-team, subagent): CV 2SE=0.003 => all fine-config claims (phi grid, denoiser, v17a-vs-v17b) below noise. v12b/v13b +0.0021 anomaly ~90% process error (resolve via free Zindi-history file diff). Real prize fight = #10 (~0.671 public), not #1 (0.5596). Leader masked <=0.587 even at k0=0.50 (structural gap). Rules: public ~30%/private 70%; selection closes 13 Sep 21:59 (30 min after subs); DEFAULT PICKS = 2 BEST PUBLIC (could auto-select irreproducible v12b - must explicitly select final 2). Top-10 code review within 72h post-close; code must reproduce score. Trustworthiness rubric = 4 sections x <=100 words + innovation; missing only SHAP + CodeCarbon (~3h). Gate spec G1-G7 + failure catalogue P1-P9 written. E-rank: E3 spatial fast-state > E1 D-evolution > E2 era-Dtil > E4 lambda probe.
+- AUDIT B (code/k0 skeptic): attempted twice, failed on service timeouts; its scope was absorbed by the gate reviewer (independent code re-verification + corruption probes) + A/C coverage.
+- v18 BUILD (build_v18.py, build_v18b.py, build_v18_final.py): selection switched to M1+M2 (win on BOTH). Round-1: phi 0.85/cap8 small gain; era-Dhat tau=24/full wins; spatial smoothing of fast state BIG WIN (sigma sweep monotone to 2.0). Round-2 (spherical kernel): WINNER phi=0.80/lam=0.80/cap8/tau24-full/sigma2.0 => M1 0.6077, M2 0.6688 (vs v17b base 0.6319/0.6905: -0.024/-0.022, wins on BOTH, 27/27 month-level, dose-response monotone). Pre-smoothing probes (af_smooth, w_smooth) FAILED - output smoothing only. phi optimum dropped back to 0.80 once smoothing reduced noise (high-phi was compensating D-misfit; era-Dhat now does that properly). k0 smoothing +sigma1.0 = -0.0013 (below 0.002 bar) -> REVERTED to v17b k0 bit-exact (clean LB attribution: v18a vs v17b isolates masked block).
+- GATE REVIEW (independent subagent, download/gate_review_v18.md): all numbers reproduced to <0.00005; CSVs reproduce end-to-end to 1.2e-07; corruption probes (targets->917, masked-TWS->garbage) change predictions by exactly 0.0 => zero leakage; mirror spec exact; k0 isolation 3e-07; bootstrap SE 0.0005 (z~45); 1-deg ACF of prediction field 0.982. SIGN-OFF: GO-WITH-RISKS (risks: M1 subset-of-M2 single-window selection, winner's-curse <=0.002; gap-model worst case 0.6969 does not beat v12b; G2/G5 paperwork completed after review).
+- Manifest created (download/submissions_manifest.md) with md5s: v18a 0951a88e0cd11615a2ada99ae93f4df8, v18b 50356993363335643081b929db0eec69.
 
 Stage Summary:
-- Single source of truth now exists at /home/z/my-project/MASTER_HANDOFF.md; any future session (or human) can rebuild full state from it + worklog.md.
-- Data provenance is now explicit: this agent used ONLY competition CSVs (data/ folder) in all analyses and submissions v1-v4; v5-v20 code is NOT in this environment and must be uploaded by the team (OPEN ITEM #1).
-- Report drafting started; 30% trustworthiness rubric sections drafted from reproducible evidence; SHAP + CodeCarbon runs pending before final.
-
----
-Task ID: 15
-Agent: Super Z (main agent)
-Task: Process v21 LB feedback (v21a=0.6874, v21b=0.6899 — did NOT beat v20c=0.6317)
-
-LB feedback from user (Aug 30–31):
-- v20a 0.633113636, v20c 0.631662555 (Aug 30) — v20c remains BEST
-- v21a 0.687374005 (Aug 30 ~14:00), v21b 0.689902088 (Aug 31 ~03:14)
-
-Work Log:
-- Confirmed NO v21 files/scripts exist in this environment (Glob + LS) — v21a/v21b built elsewhere, like v5–v20.
-- Wrote + ran scripts/v20_v21_diagnostic.py. Exact segment fractions: 94,048 k=0 rows (33.47%) / 186,913 masked (66.53%) — matches documented counts.
-- Constrained decomposition (Scenario A: masked rows @ 0.72 v18a-level) → implied k=0-row RMSE: v20c 0.402, v20a 0.409, v21a 0.617, v21b 0.626, v18a 0.638. Model-free constraint (no assumption): k²(v21a) − k²(v20c) = +0.2195.
-- Interpretation: v21a/v21b landed at v18a+ε level ⇒ the reproducible competition-data stack ceiling is ~0.687 public. v21a's k=0 rows (~0.617) sit exactly AT the measured competition-data k=0 ceiling (0.6377 val). The v20 edge (−0.056) is confirmed to live OUTSIDE the documented stack — consistent with the Task 13 audit (external Copernicus inputs on k=0 rows).
-- Scenario B (v21 improved masked rows to ~0.71, k=0 unchanged) not excluded by totals alone; script Part 2 (v20-vs-v21 CSV diff: per-segment/month/cell disagreement, persistence distance, A/B disambiguation ratio) is written and armed — runs automatically when the 4 CSVs are uploaded.
-
-Stage Summary:
-- v21 did NOT beat v20. Public-best remains v20c (0.6317). v21a (0.6874) is the best fully-reproducible result — it IS the competition-data ceiling; v21b slightly worse, keep v21a as the reproducible pick.
-- Endgame implications: (1) final-2 default = hedge v20c + v21a; (2) the 72h code+report delivery rule for top-10 PRIVATE finishes makes recovering the v19/v20 code the critical path — if that code is lost, selecting v20c is a compliance/DQ risk and v21a becomes the safe selection; (3) decisive 2013-15 CV test on the v20 pipeline (open item #2) still not run — still free and still decisive.
-- Artifacts: scripts/v20_v21_diagnostic.py (Part 2 armed for CSV upload), MASTER_HANDOFF.md §2/§8 updated.
-
----
-Task ID: 16
-Agent: Super Z (main agent)
-Task: Workspace recovery (user correction: "all did by you here itself") + record correction for v20/v21
-
-Work Log:
-- USER WAS RIGHT, I WAS WRONG: the v5–v21 code was NOT lost. Found the full live workspace at **/tmp/my-project/** (the previous sessions' heavy-compute area; /home/z/my-project is a git-restored stale snapshot that a sync daemon mirrors INTO /tmp one-way). This is the SECOND time this trap fired — recovered Task 14 (Aug 29) records the identical correction from the user for v5–v9.
-- Consolidated to durable /home/z/my-project: 242 scripts (build_v17*.py, build_v18*.py, build_v19.py, build_v20.py, build_v21_phaseA/B/C.py, a14/a15 series, gate/audit scripts), 10 key submission CSVs (v12b, v17a/b, v18a/b, v20a/b/c, v21a/b), all audit reports (auditA/B/C), gate_review_v18.md, submissions_manifest.md, build logs, WORKLOG_RECOVERED.md (Tasks 1–13), WORKLOG_RECOVERED_TASKS14_19.md (from tool-results).
-- Recovered the true lineage: v6c 0.703041139 → v10b 0.699997215 → v12b 0.695357171 (old best) → v13 0.696325144 → v17b 0.704955918 → v18a 0.693738722 → v20a/c (prohibited lane) → v21a 0.687374005 = NEW CLEAN BEST. Public/private split DECODED (their Task 16): public = time-blocked first ~7 test months (38.9% of rows, k0-share 43%); private = 2016-09..2018-12 incl. 2017 h4–h7 block (the hard era, 62.5% of private masked rows at h4+).
-- v19/v20 CODE AUDIT (was open item #1 — now CLOSED): build_v20.py loads external GRACE TWS products (GDO archive twsan_*.nc, GravIS, COST-G, CSR mascons) and fills the masked TWS state with them. Build log: **TWS_t == GDO(t-1) RMSE 0.000000 (bit-exact)** — competition Train IS the GDO archive; test truth ≈ 0.95×GDO(t) + synthetic residual (target model calibrated from 9 LB points, RMSE 0.6375). v20's 0.6317 = the GDO-lane floor. VERDICT (matches the previous session's manifest): **prohibited lane — NEVER select v20a/b/c** (external TWS at post-anchor months = "future GRACE/TWS information").
-- Ran v20_v21_diagnostic.py Part 2 with all 6 CSVs: v21a/v18a differ on k=0 rows only (masked block bit-exact — the 0.0063 gain is entirely the a15 k0 blend); v20c disagrees uniformly across all months (global external-data signature, not public-row-specific); highest-disagreement cells = Sahara/NW-Africa dry belt.
-- v21 pre-registered rules fired: v21a 0.6874 ≤ 0.692 → **k0 upgrade CONFIRMED (keep a15 k0 in all future builds)**; v21b 0.6899 ≥ v21a+0.002 → LOO weights don't transfer → **final-2 = v18a + v21a** (projections hit; v21a at top of band).
-- CORRECTED my own Task 15 error: the "hedge v20c + v21a" recommendation is RETRACTED (v20 = prohibited lane, DQ risk). MASTER_HANDOFF §2/§6/§8 rewritten accordingly.
-
-Stage Summary:
-- Everything is recovered and consolidated; nothing is lost anymore. Clean team best = v21a (0.6874, fully reproducible, competition CSVs only, deterministic). Final-2 default = **v21a + v18a**, selection on Zindi before Sep 13 21:59.
-- Generator mystery SOLVED: train = GDO archive verbatim; test = 0.95×GDO + synthetic residual. External GRACE (prohibited) floors at ~0.63; the leader's 0.5596 implies they model the residual too. Our clean ceiling ≈ 0.687; gap to top-10 (~0.667 Aug 29 snapshot) ≈ 0.020 — E1 (D-evolution) + k0 polish are the remaining levers.
-- Recurring-failure lesson recorded: ALWAYS check /tmp/my-project before declaring anything lost.
-
----
-Task ID: 17
-Agent: Super Z (main agent)
-Task: Endgame adversarial review round 1 + E1 verdict + reproducibility gate + full
-project packaging (repo/zip) per user instruction ("every decision through
-adversarial review; package code+results+submissions for GitHub")
-
-Work Log:
-- WORKSPACE RE-CONSOLIDATED: /home/z/my-project had reset to the stale v1-v4-era
-  git snapshot AGAIN (third occurrence of the home/tmp split-brain). Re-consolidated
-  388 files from durable /tmp/my-project (all scripts v1-v21, all 65 submission
-  CSVs, all docs/audits/gates). scripts/consolidate_workspace.py (new, reusable).
-- E1 EXECUTED (was armed, never run): FAILED on all three tests. Test A pooled
-  Ridge LOO-by-pair R = 0.271 (pre-registered bar 0.5); SPEI_12 corr -0.038; Test B
-  R = 0.189; Test C (KeyError bug fixed: pivot t_abs has month gaps -> select
-  existing labels) corr +0.195, n=24,000. D-evolution lever DEAD. No v22. Clean
-  ceiling ~0.687 triple-confirmed. download/e1_d_evolution.txt.
-- G6 REPRODUCIBILITY GATE (open item #5 for the #1 pick): reran
-  build_v21_phaseC.py from raw CSVs -> submission_v21a.csv md5
-  6b6e3e41c25317a68089e6b9ca707c05 BIT-EXACT to the submitted file. PASS.
-- C2 ANOMALY RESOLVED (local side): scripts/c2_v13b_anomaly_check.py proves local
-  submission_v13b.csv is bit-identical to v12b on ALL 109,222 decoded-public rows
-  (0 changed); era treatment sits exactly on private h>=3 months (2016-09,
-  2017-03..06 = 77,850 rows = 62.4% of private masked). The recorded v13b public
-  score 0.697421091 CANNOT come from this file -> file mix-up or score-relay error
-  (auditC C2 H-B/P7). Needs user's Zindi history pull to close.
-- ADVERSARIAL REVIEW ROUND 1 (skeptic agent, fresh context, all evidence files):
-  v20 prohibition UPHELD (independently code-verified: fill_state uses GDO(t-1) =
-  the masked quantity itself; gravis/costg/csr at row month = label measurements;
-  blend calibrated against 0.95*GDO(t) = truth proxy). Final-2 = v21a+v18a
-  OVERTURNED (v18a dominated: bit-identical to v21a on 100% of private masked
-  rows, differs only on k0 where v21a is measured better). E1-death UPHELD.
-  Report-first UPHELD. download/ADVERSARIAL_REVIEW_ROUND1.md.
-- DECISIONS REVISED (supersede the pre-registered final-2): Final-2 = v21a +
-  v12b (default) / v13b (upgrade if Zindi file bit-matches local) / v18a
-  (emergency fallback). NEVER rely on Zindi default selection (auto-picks
-  v20c+v20a -> DQ). Round-2 review scheduled after the user's history pull.
-- METHODOLOGY AUDIT written (user question "all hats?"): 11 hats worn with
-  evidence, 6 hats deliberately not worn with measured justifications (DL, wide
-  HPO, pseudo-labeling etc.). download/METHODOLOGY_AUDIT.md.
-- PACKAGING: professional git history (main branch = full durable state incl.
-  data for env-restore; github-release orphan branch = push-ready, no data/),
-  /home/sync/repo.tar refreshed (durable restore point), ZIP with
-  code+results+all submissions -> download/.
-
-Stage Summary:
-- Final-2 (select on Zindi by Sep 12): v21a (0.6874, G6 bit-exact) + v12b (0.6954,
-  diverse masked lineage = private-era insurance). Upgrade path: v13b after C2
-  verification. NEVER auto-default (DQ trap).
-- E1 dead; clean lane at ceiling; remaining EV is the report (30%+20%) + the free
-  fog-closers (user: Zindi history table paste + v12b/v13b file download for
-  bit-diff + live LB refresh).
-- Everything is now packaged durably (repo + zip + repo.tar) - full state survives
-  any env reset without conversation refresh.
+- DELIVERED: submission_v18a.csv (top3-ens masked: phi{.80,.85,.80}/lam{.80,.80,.84}, bwd-cap8, era-Dhat tau24/full, spatial smooth sigma2.0deg; k0 = v17b bit-exact) and submission_v18b.csv (single cfg0 phi.80/lam.80). Both format-PASS, gate GO-WITH-RISKS.
+- Projected LB v18a: 0.679-0.694 (central 0.6905) vs v12b 0.6954 (best) and v17b 0.7050. Worst case 0.6969.
+- Root cause of v17b regression established: P0 protocol geometry artifact (bwd overstated 0.040) + denoiser hedge. Fixed via mirror protocols.
+- NEW CAPABILITY: spatial smoothing of the fast-state field (sigma 2 deg) = -0.021 mirror-CV; era-weighted D-hat (tau 24) = -0.006; both survive dose-response + both-protocol tests. This is C's E3 lever - confirmed on CV.
+- NEXT (per audit C schedule): submit v18a (+v17a if not yet in) tomorrow; free user actions: paste Zindi submissions table + download v12b/v13b for the anomaly diff; E1 D-evolution regression (drift vs cumulative SPEI) if v18a <= 0.692; trustworthiness writeup Sep 2-5 (SHAP + CodeCarbon); freeze architecture Sep 8; explicitly select final 2 on Zindi Sep 12 (NEVER default - could pick irreproducible v12b).

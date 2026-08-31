@@ -1,2 +1,6 @@
 skills/
 node_modules/
+tool-results/
+db/
+.env
+download/*.zip
