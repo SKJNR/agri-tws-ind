@@ -1,0 +1,12 @@
+BASELINE replication: LINEAR 0.6287 (v17b 0.6287) | LGBM(400) 0.6273 (0.6273) | blend 0.6254 (0.6254)
+M1-anchor eval subset rows: 46,851 of 218,534
+BASELINE on M1-anchor subset: lin 0.5577 lgb 0.5485 blend 0.5491
+neighbor pairs: ring1=116,104 ring2=220,192 (cells=15,715)
+
+=== k0 feature experiments phase A (eval: 2013-15 unmasked rows, n=218,534) ===
+G1 nbr TWS@t (1-2deg)      LIN 0.6305 (+0.0018)  LGB 0.6283 (+0.0010)  BLEND 0.6268 (+0.0014) | M1sub lin 0.5661 lgb 0.5535 blend 0.5555
+G2 trailing 3/6-obs mean   LIN 0.5933 (-0.0354)  LGB 0.5911 (-0.0362)  BLEND 0.5895 (-0.0359) | M1sub lin 0.5033 lgb 0.4947 blend 0.4948
+G3 cov interactions        LIN 0.6286 (-0.0001)  LGB 0.6276 (+0.0003)  BLEND 0.6254 (+0.0001) | M1sub lin 0.5578 lgb 0.5483 blend 0.5491
+
+BEST config: G2 trailing 3/6-obs mean -> LINEAR 0.5933, LGB 0.5911, BLEND 0.5895
+base blend 0.6254 -> best 0.5895 = -0.0359

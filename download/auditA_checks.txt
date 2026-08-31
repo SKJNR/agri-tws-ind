@@ -1,0 +1,55 @@
+=== A4: SUBMISSION FORMAT AUDIT ===
+SampleSubmission: 280,961 rows, cols=['ID', 'Target'], unique IDs=280,961, Target all-zero=True
+submission_v17a: rows=280,961 cols_ok=True ID_set&order_bit_exact=True NaN=0 inf=0 min=-2.636 max=2.692 mean=-0.0176 std=0.6858 |Target|>5: 0
+  duplicate IDs: 0   ID dtype/whitespace anomalies: 0
+submission_v17b: rows=280,961 cols_ok=True ID_set&order_bit_exact=True NaN=0 inf=0 min=-2.577 max=2.662 mean=-0.0169 std=0.6764 |Target|>5: 0
+  duplicate IDs: 0   ID dtype/whitespace anomalies: 0
+
+=== A4b: target(t)=TWS_t(t+1) SPOT CHECK (1000 random train rows) ===
+1000 random rows: exact match=922, no (cell,t+1) row in train=78, MISMATCH=0
+
+=== A3: TEST-SIDE LEAKAGE SURFACE ===
+ALL rows with (cell,t+1) VISIBLE in test (direct answer read): 0
+ALL rows with (cell,t+1) PRESENT (any state; covs(t+1) available): 186,913
+
+k0 (unmasked) rows: 94,048; covs(t+1) available: 62,576 (66.5%)  [worklog claim: 62,576/94,048 = 66.5%]
+k0 covs(t+1) availability by month:
+  2015-09: 0/15,552
+  2016-01: 15,625/15,647
+  2016-02: 36/38
+  2016-03: 0/17
+  2016-06: 15,526/15,584
+  2016-07: 35/65
+  2016-08: 30/36
+  2016-09: 0/50
+  2016-12: 15,581/15,618
+  2017-01: 29/29
+  2017-02: 49/51
+  2017-03: 41/41
+  2017-04: 12/21
+  2017-05: 4/4
+  2017-06: 0/34
+  2018-07: 0/15,584
+  2018-11: 15,608/15,646
+  2018-12: 0/31
+
+exception rows (unmasked inside >=99%-masked months): 417 across 12 months, 337 distinct cells
+consecutive-month VISIBLE-cell overlaps (k=1 direct-copy surface for k0 rows):
+  2016-01 -> 2016-02: |vis(m)|=15,647 |vis(m+1)|=38 overlap=0
+  2016-02 -> 2016-03: |vis(m)|=38 |vis(m+1)|=17 overlap=0
+  2016-06 -> 2016-07: |vis(m)|=15,584 |vis(m+1)|=65 overlap=0
+  2016-07 -> 2016-08: |vis(m)|=65 |vis(m+1)|=36 overlap=0
+  2016-08 -> 2016-09: |vis(m)|=36 |vis(m+1)|=50 overlap=0
+  2016-12 -> 2017-01: |vis(m)|=15,618 |vis(m+1)|=29 overlap=0
+  2017-01 -> 2017-02: |vis(m)|=29 |vis(m+1)|=51 overlap=0
+  2017-02 -> 2017-03: |vis(m)|=51 |vis(m+1)|=41 overlap=0
+  2017-03 -> 2017-04: |vis(m)|=41 |vis(m+1)|=21 overlap=0
+  2017-04 -> 2017-05: |vis(m)|=21 |vis(m+1)|=4 overlap=0
+  2017-05 -> 2017-06: |vis(m)|=4 |vis(m+1)|=34 overlap=0
+  2018-11 -> 2018-12: |vis(m)|=15,646 |vis(m+1)|=31 overlap=0
+exception cells also visible at >=1 anchor month: 330/337
+
+=== A3: VAL k0 EVAL SET REALISM (P0 protocol) ===
+val unmasked (k0-eval) rows: 218,534; covs(t+1) available within val: 171,298 (78.4%) [test: 66.5%]
+val k0 rows by calendar month: {1: 46949, 6: 46736, 7: 31172, 9: 15553, 10: 15603, 11: 31248, 12: 31273}
+test k0 rows by calendar month: {1: 15676, 2: 89, 3: 58, 4: 21, 5: 4, 6: 15618, 7: 15649, 8: 36, 9: 15602, 11: 15646, 12: 15649}

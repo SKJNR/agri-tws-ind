@@ -1,0 +1,20 @@
+val anchor months (13): [24156, 24161, 24162, 24166, 24167, 24168, 24173, 24176, 24178, 24179, 24180, 24185, 24186]
+============================================================================================================
+PHASE A — v21 k=0 lane: a15 factor reproduction + v17b k0 head-to-head (this env)
+============================================================================================================
+factor Dtil LOO weights: 0.757/0.246/0.053
+factor K=100 (repro)                     | with 0.6464 (n=124,975) | without 0.5991 (n=77,956) | rowwise 0.6286 | TESTWTD 0.6310
+v4 linear F/R dual (repro)               | with 0.6688 (n=124,975) | without 0.5945 (n=77,956) | rowwise 0.6413 | TESTWTD 0.6451
+
+--- v17b k0 head-to-head (same rows, same with/without split) ---
+v17b linear (a14d repro)                 | with 0.6687 | without 0.5946 | rowwise 0.6412 | TESTWTD 0.6450
+v17b LGBM(400) (a14d repro)              | with 0.6710 | without 0.5905 | rowwise 0.6413 | TESTWTD 0.6454
+v17b k0 = 0.5 lin + 0.5 LGB  [CURRENT]   | with 0.6679 | without 0.5892 | rowwise 0.6388 | TESTWTD 0.6429
+
+--- v21 k0 candidates ---
+v21 k0 = 0.5 factor + 0.5 linear         | with 0.6353 (n=124,975) | without 0.5771 (n=77,956) | rowwise 0.6136 | TESTWTD 0.6166
+3-way 0.5F+0.25L+0.25G                   | with 0.6339 (n=124,975) | without 0.5758 (n=77,956) | rowwise 0.6122 | TESTWTD 0.6152
+3-way 0.4F+0.4L+0.2G                     | with 0.6374 (n=124,975) | without 0.5759 (n=77,956) | rowwise 0.6145 | TESTWTD 0.6176
+3-way 0.5F+0.3L+0.2G                     | with 0.6341 (n=124,975) | without 0.5759 (n=77,956) | rowwise 0.6124 | TESTWTD 0.6154
+
+elapsed 62s

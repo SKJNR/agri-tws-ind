@@ -1,0 +1,43 @@
+=== cov-check: r_k (cov score vs TWS detrended score) ===
+mode S12_meanrem S12_detrended SOIL_meanrem  SOIL_detr
+   1       0.898         0.923        0.870      0.874
+   2       0.800         0.833        0.831      0.848
+   3       0.853         0.879        0.827      0.858
+   4       0.895         0.896        0.877      0.877
+   5       0.877         0.893        0.914      0.918
+   6       0.756         0.777        0.756      0.767
+   8       0.819         0.822        0.787      0.795
+  10       0.810         0.812        0.786      0.800
+  12       0.395         0.470        0.677      0.679
+  20       0.455         0.455        0.546      0.547
+  50       0.232         0.234        0.421      0.423
+
+ eval pairs: 18 (2013-15 consecutive months)
+ target (2013-15 anomaly) std = 1.0842
+
+ T0 persistence:            RMSE = 0.6989
+ T1 k=0 (TWS_t + covs(t+1)): RMSE = 0.9215   R2 = 0.2776
+    slow-blind (cov obs of PC1-5 off): RMSE = 0.9245  -> test-era-adjusted (add 0.42 D-err): 1.0154
+ T1b k=0 (TWS_t only):      RMSE = 0.9429
+ T2 masked+covs(t+1):       RMSE = 1.0039   R2 = 0.1427
+    slow-blind: RMSE = 1.0328  -> test-era-adjusted: 1.1149
+    T2 single SPEI_12_t: RMSE = 0.9969
+    T2 single SOIL_MOISTURE_t: RMSE = 1.0243
+ T3 masked, 1-mo from covs(t): RMSE = 1.0309
+    slow-blind: RMSE = 1.0562  -> test-era-adjusted: 1.1366
+
+ T4 horizon sweep (masked rows; state from covs(t) propagated h months):
+  h     full slowblind  +Derr0.42
+  1   1.0309    1.0562     1.1366
+  2   1.1076    1.1357     1.2109
+  3   1.1915    1.2250     1.2950
+  4   1.2088    1.2444     1.3134
+  5   1.2193    1.2543     1.3228
+  6   1.2384    1.2683     1.3361
+  7   1.2009    1.2311     1.3008
+
+ innovation observability: per-mode R2 of innov on covs at same month
+  overall innovation R2 (5 covs, modes 1-136, var-weighted): 0.2859
+  per-mode innovation R2 (k=1,5,10,20,50,100): [0.153, 0.479, 0.488, 0.275, 0.181, 0.118]
+  innovation var cumsum at k=10/20/50: 0.249/0.494/0.845
+done

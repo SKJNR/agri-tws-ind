@@ -1,0 +1,30 @@
+Dtil-val LOO weights: W1=0.757 W2=0.246 W3=0.053   [cv_lb ref 0.786/0.218/0.049]
+eval pairs=18 target (TWS-mu) std=1.0564
+persistence (TWS-mu):                        RMSE=0.7002
+
+--- Dtil = pure trendex ---
+trendex / no cov                             RMSE=0.6799
+trendex / cov(t+1)                           RMSE=0.6766
+
+--- Dtil = combo (LOO weights) ---
+combo / no cov                               RMSE=0.6511 | 2013:0.458 2014:0.497 2015:0.815
+combo / cov(t+1)                             RMSE=0.6219
+
+--- VarD scale sweep (combo, cov) ---
+combo / cov / VarDx0.0                       RMSE=0.6453
+combo / cov / VarDx0.5                       RMSE=0.6247
+combo / cov / VarDx1.0                       RMSE=0.6219
+combo / cov / VarDx2.0                       RMSE=0.6247
+combo / cov / VarDx4.0                       RMSE=0.6330
+combo / cov / VarDx8.0                       RMSE=0.6443
+
+--- H scale sweep (combo, VarDx1) ---
+combo / cov / Hx0.0                          RMSE=0.6511
+combo / cov / Hx0.5                          RMSE=0.6287
+combo / cov / Hx0.75                         RMSE=0.6253
+combo / cov / Hx1.0                          RMSE=0.6219
+
+--- oracle per-mode linear (in-sample, combo) ---
+oracle per-mode a* (in-sample):              RMSE=0.6214
+oracle a* top10=[0.374 0.916 0.508 0.754 0.5   0.039 0.413 0.534 0.862 0.514]
+empirical 1-step resid std (oracle, in-sample): 0.6214

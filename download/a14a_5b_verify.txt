@@ -1,0 +1,78 @@
+=== anchor anomaly (TWS - mu) stats, full-history cells ===
+anchor 24188 (y=2015, m=9): std=1.0313 mean=-0.2018 n=14556
+anchor 24192 (y=2016, m=1): std=1.1380 mean=-0.2043 n=14548
+anchor 24197 (y=2016, m=6): std=1.0718 mean=-0.3226 n=14558
+anchor 24203 (y=2016, m=12): std=1.2467 mean=-0.2113 n=14539
+anchor 24222 (y=2018, m=7): std=1.1074 mean=-0.0412 n=14550
+anchor 24226 (y=2018, m=11): std=1.2215 mean=-0.0870 n=14555
+
+D-hat (mean of 6 anchor anomalies): std=0.9011 (team: 0.899)
+1 - resid/var (D-hat explains): 0.631 (team: 0.62)
+corr(D-hat, mu) = -0.775 (team: -0.77)
+corr(D-hat, trendex) = +0.525 (team: 0.52)
+
+=== D-hat LOO error (undetrended anchor anomaly) ===
+anchor 24188: LOO RMSE=0.8039  (target std 1.0313)
+anchor 24192: LOO RMSE=0.7505  (target std 1.1380)
+anchor 24197: LOO RMSE=0.7798  (target std 1.0718)
+anchor 24203: LOO RMSE=1.0372  (target std 1.2467)
+anchor 24222: LOO RMSE=0.8729  (target std 1.1074)
+anchor 24226: LOO RMSE=0.7796  (target std 1.2215)
+mean LOO RMSE = 0.8373 (team: 0.8421)
+
+=== anchor-pair correlations (undetrended anomaly) ===
+24188 vs 24192 (gap  4): r=+0.6697
+24188 vs 24197 (gap  9): r=+0.5148
+24188 vs 24203 (gap 15): r=+0.3805
+24188 vs 24222 (gap 34): r=+0.5310
+24188 vs 24226 (gap 38): r=+0.6105
+24192 vs 24197 (gap  5): r=+0.6975
+24192 vs 24203 (gap 11): r=+0.5077
+24192 vs 24222 (gap 30): r=+0.4835
+24192 vs 24226 (gap 34): r=+0.6381
+24197 vs 24203 (gap  6): r=+0.5313
+24197 vs 24222 (gap 25): r=+0.5025
+24197 vs 24226 (gap 29): r=+0.6129
+24203 vs 24222 (gap 19): r=+0.4385
+24203 vs 24226 (gap 23): r=+0.5133
+24222 vs 24226 (gap  4): r=+0.6935
+
+=== RAMP TEST: corr(anchor 2015-09, train anomaly field Xd[t]) ===
+corr(anchor_2015-09, Xd[2015-7] lag= 1): +0.2358
+corr(anchor_2015-09, Xd[2015-6] lag= 2): +0.4299
+corr(anchor_2015-09, Xd[2015-5] lag= 3): +0.4275
+corr(anchor_2015-09, Xd[2015-2] lag= 6): +0.3178
+corr(anchor_2015-09, Xd[2015-?] lag=12): +0.2318
+corr(anchor_2015-09, Xd[2015-?] lag=24): -0.2113
+corr(anchor_2015-09, Xd[2015-?] lag=48): -0.1518
+corr(anchor_2015-09, Xd[2015-?] lag=96): -0.1716
+
+reference: corr(Xd[-1], Xd[-1-back]) for back=1..6: ['+0.595', '+0.506', '+0.535', '+0.545', '+0.365', '+0.328']
+
+=== after removing D-hat: corr(anchor_fast, Xd[-1]) ===
+anchor 24188 (gap 1): corr(fast_j, trainend)=+0.3720 fast_std=0.6693
+anchor 24192 (gap 5): corr(fast_j, trainend)=+0.1800 fast_std=0.6248
+anchor 24197 (gap 10): corr(fast_j, trainend)=+0.0017 fast_std=0.6335
+anchor 24203 (gap 16): corr(fast_j, trainend)=-0.2070 fast_std=0.8636
+anchor 24222 (gap 35): corr(fast_j, trainend)=-0.2701 fast_std=0.7144
+anchor 24226 (gap 39): corr(fast_j, trainend)=+0.0138 fast_std=0.6431
+
+fast cross-corr after D-hat removal:
+24188 vs 24192 (gap  4): r=+0.0616
+24188 vs 24197 (gap  9): r=-0.2654
+24188 vs 24203 (gap 15): r=-0.3889
+24188 vs 24222 (gap 34): r=-0.1242
+24188 vs 24226 (gap 38): r=-0.1813
+24192 vs 24197 (gap  5): r=+0.0622
+24192 vs 24203 (gap 11): r=-0.2519
+24192 vs 24222 (gap 30): r=-0.4497
+24192 vs 24226 (gap 34): r=-0.2598
+24197 vs 24203 (gap  6): r=-0.1243
+24197 vs 24222 (gap 25): r=-0.2987
+24197 vs 24226 (gap 29): r=-0.2713
+24203 vs 24222 (gap 19): r=-0.2532
+24203 vs 24226 (gap 23): r=-0.2914
+24222 vs 24226 (gap  4): r=+0.0889
+
+train TWS std=0.9108; anchor TWS std=1.1424
+train anomaly std=0.7110; anchor anomaly std=1.1424

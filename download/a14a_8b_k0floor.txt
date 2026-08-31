@@ -1,0 +1,21 @@
+eval pairs=18, target std=1.0842
+persistence RMSE = 0.6989
+
+=== H2 (split propagation, no covs) ===
+  Ks= 0: RMSE = 0.9429
+  Ks= 3: RMSE = 0.9435
+  Ks= 5: RMSE = 0.9435
+  Ks= 8: RMSE = 0.9463
+  Ks=12: RMSE = 0.9482
+  Ks=20: RMSE = 0.9437
+
+=== H2b (split + cov(t+1) obs of fast modes k>Ks) ===
+  Ks= 3: best single (SPEI_12_t) = 0.9221;  avg5 = 0.9193
+  Ks= 5: best single (SPEI_12_t) = 0.9222;  avg5 = 0.9197
+  Ks= 8: best single (SPEI_12_t) = 0.9250;  avg5 = 0.9239
+  Ks=12: best single (SPEI_12_t) = 0.9286;  avg5 = 0.9275
+
+=== ORACLE (fit per-mode on eval window — in-sample floor) ===
+  oracle per-mode (no cov): RMSE = 0.7392
+  oracle per-mode + best cov (SPEI_06_t): RMSE = 0.8789
+done

@@ -1,0 +1,47 @@
+=== C1: duplication check (corr on merged rows) ===
+  corr(SOIL_MOISTURE_t, swvl1) = +0.0684
+  corr(SOIL_MOISTURE_t, swvl2) = +0.0845
+  corr(SOIL_MOISTURE_t, swvl3) = +0.0852
+  corr(SOIL_MOISTURE_t, swvl4) = +0.0691
+  corr(SOIL_MOISTURE_t, t2m) = -0.0052
+  corr(SPEI_01_t, tp) = +0.0247
+  corr(SPEI_03_t, tp) = +0.0267
+  corr(SPEI_06_t, tp) = +0.0286
+  corr(SPEI_12_t, tp) = +0.0234
+
+  within-cell (demeaned):
+  corr(demeaned SOIL_MOISTURE_t, swvl1) = +0.1203
+  corr(demeaned SOIL_MOISTURE_t, swvl2) = +0.1758
+  corr(demeaned SOIL_MOISTURE_t, swvl3) = +0.2235
+  corr(demeaned SOIL_MOISTURE_t, swvl4) = +0.2589
+
+=== C2: k=0 model, honest eval (fit<=2012, eval 2013-15) ===
+  baseline: TWS + covs(t) + covs(t+1)                     RMSE=0.6407 (n=280,395)
+  + swvl1(t)                                              RMSE=0.6411 (n=280,395)
+  + swvl2(t)                                              RMSE=0.6413 (n=280,395)
+  + swvl3(t)                                              RMSE=0.6411 (n=280,395)
+  + swvl4(t)                                              RMSE=0.6413 (n=280,395)
+  + sd(t)                                                 RMSE=0.6407 (n=280,395)
+  + tp(t)                                                 RMSE=0.6406 (n=280,395)
+  + e(t)                                                  RMSE=0.6411 (n=280,395)
+  + ro(t)                                                 RMSE=0.6408 (n=280,395)
+  + t2m(t)                                                RMSE=0.6402 (n=280,395)
+  top-3 single ERA5(t): ['t2m', 'tp', 'sd']
+  + top3 ERA5(t): ['t2m', 'tp', 'sd']                     RMSE=0.6402 (n=280,395)
+  + top3 ERA5(t) + (t+1)                                  RMSE=0.6405 (n=280,395)
+  + all 9 ERA5(t)                                         RMSE=0.6408 (n=280,395)
+  + all 9 ERA5(t) + (t+1)                                 RMSE=0.6421 (n=280,395)
+
+=== C3: anchor-field prediction with ERA5 (sparse-anchor protocol) ===
+sparse anchors: [24156, 24162, 24168, 24176, 24180, 24186]
+/home/z/my-project/scripts/era5_value_test.py:139: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in sparse]), axis=0)
+/home/z/my-project/scripts/era5_value_test.py:183: RuntimeWarning: Mean of empty slice
+  dloo = np.nanmean(np.array([AF[b] for b in sparse if b != a]), axis=0)
+  D-hat + S + trendex (current)                 LOO RMSE=0.7913
+  + Eswvl4                                      LOO RMSE=0.7822
+  + Esd                                         LOO RMSE=0.7903
+  + Etp                                         LOO RMSE=0.7873
+  + Ee                                          LOO RMSE=0.7876
+  + Et2m                                        LOO RMSE=0.7832
+  + all 5 static                                LOO RMSE=0.7806

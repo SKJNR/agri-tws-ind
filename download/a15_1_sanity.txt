@@ -1,0 +1,74 @@
+train 2,154,021 rows | fit 1,794,914 | val 359,107  [5s]
+core built [6s]
+
+=== A. per-year detrended-anomaly std (fit-window mu/beta) ===
+  2002: std=0.7564  months=5
+  2003: std=0.7205  months=10
+  2004: std=0.6303  months=12
+  2005: std=0.6592  months=12
+  2006: std=0.6716  months=12
+  2007: std=0.6569  months=12
+  2008: std=0.6556  months=12
+  2009: std=0.6663  months=12
+  2010: std=0.7204  months=12
+  2011: std=0.6885  months=8
+  2012: std=0.7227  months=8
+  2013: std=0.8468  months=7
+  2014: std=1.0100  months=8
+  2015: std=1.2563  months=8
+val anomaly per-cell var: total=1.1140 (std 1.0555) | in-sub(K=100)=0.7167 out-of-sub=0.3969 (std 0.6300)
+fit anomaly per-cell var: total=0.4626
+val era-mean anomaly: std=0.8046  in-sub=0.6498 out-of-sub=0.4745
+
+=== B. phi transfer (fit <=2012 vs val 2013-15 consecutive pairs) ===
+  mode: fit_phi  val_phi   Vx
+     1: +0.928  +0.662      893.1
+     2: +0.967  +0.981      794.8
+     3: +0.966  +0.743      662.3
+     4: +0.950  +0.932      416.3
+     5: +0.898  +0.999      381.2
+     6: +0.883  +0.593      319.6
+     7: +0.917  +0.571      308.8
+     8: +0.871  +0.917      259.4
+     9: +0.807  +0.856      170.4
+    10: +0.776  +0.790      154.1
+    15: +0.249  +0.922       94.1
+    20: +0.593  +0.781       66.2
+    30: +0.391  +0.950       39.8
+    50: -0.056  +0.902       18.1
+   100: -0.457  -0.434        3.3
+  var-weighted mean phi (fit): 0.689  (val): 0.757
+
+=== C. per-mode corr(z_jk, f_k): fit window (recency) vs val ===
+  SPEI_01_t        r_fit(top10)=[0.55 0.47 0.61 0.63 0.48 0.54 0.58 0.59 0.56 0.56]
+                   r_val(top10)=[ 0.32  0.27  0.38 -0.11  0.19  0.29  0.26  0.24  0.33  0.34]
+                   var-wt r: fit=+0.515 val=+0.239  (modes 1-50)
+  SPEI_03_t        r_fit(top10)=[0.67 0.66 0.75 0.8  0.71 0.69 0.78 0.77 0.74 0.73]
+                   r_val(top10)=[0.28 0.33 0.38 0.43 0.26 0.28 0.37 0.32 0.53 0.32]
+                   var-wt r: fit=+0.657 val=+0.313  (modes 1-50)
+  SPEI_06_t        r_fit(top10)=[0.72 0.74 0.82 0.87 0.78 0.79 0.86 0.85 0.81 0.83]
+                   r_val(top10)=[0.22 0.53 0.39 0.61 0.26 0.27 0.48 0.47 0.56 0.47]
+                   var-wt r: fit=+0.692 val=+0.362  (modes 1-50)
+  SPEI_12_t        r_fit(top10)=[0.78 0.86 0.93 0.88 0.87 0.78 0.83 0.86 0.62 0.59]
+                   r_val(top10)=[0.15 0.72 0.32 0.83 0.19 0.26 0.51 0.55 0.54 0.45]
+                   var-wt r: fit=+0.680 val=+0.389  (modes 1-50)
+  SOIL_MOISTURE_t  r_fit(top10)=[0.87 0.81 0.82 0.89 0.85 0.76 0.84 0.87 0.83 0.73]
+                   r_val(top10)=[-0.1   0.65  0.25  0.74  0.29  0.19  0.55  0.45  0.49  0.38]
+                   var-wt r: fit=+0.727 val=+0.318  (modes 1-50)
+
+=== D. one-step-ahead (a14a_8 protocol, 18 val consecutive pairs) ===
+eval pairs=18  target std=1.0856  [a14a_8 ref 1.0842]
+T0  persistence:                 0.7006   [ref 0.6989]
+T1n per-mode phi, NO r:          0.9963   [ref 0.9429]
+T1r per-mode phi + r(t):         0.8572
+VarD (val, pure-trend Dtil): per-cell std-equiv=0.5917; sqrt(VarD) top10=[0.  2.9 2.9 2.9 4.7 4.7 8.9 9.1 9.1 9.4]
+alpha_1mo top10=[0.928 0.967 0.966 0.951 0.904 0.89  0.934 0.902 0.87  0.857]  mid(20-30)=[0.85 0.84 0.79 0.69 0.72 0.67 0.74 0.7  0.76 0.75 0.71]  tail(90-100)=[0.86 0.89 0.89 0.87 0.88 0.76 0.76 0.78 0.74 0.74]
+T1k ModeKF(fast+d)+r:            0.6770  [with cov(t+1) update]
+T1k-no-cov:                      0.6800
+T1d direct joint regr (ridge .3): 0.8608  (no-cov: 0.8800)
+  innov-obs SPEI_01_t        var-wt r = +0.314
+  innov-obs SPEI_03_t        var-wt r = +0.183
+  innov-obs SPEI_06_t        var-wt r = +0.134
+  innov-obs SPEI_12_t        var-wt r = +0.085
+  innov-obs SOIL_MOISTURE_t  var-wt r = +0.107
+1-step R2 (T1z vs persistence): 0.6111 vs 0.5835
