@@ -1,0 +1,8 @@
+test obs/cell (unmasked rows / 15715 cells) = 5.98
+M1: obs/cell = 5.96  (auditA: M1 5.96, M2 4.96, test 5.98)
+M2: obs/cell = 4.96  (auditA: M1 5.96, M2 4.96, test 5.98)
+
+shared scored rows: 187,302
+BASE pred corr M1-vs-M2 on shared rows: 0.9760, RMSE of difference = 0.1241
+cfg0 pred corr M1-vs-M2 on shared rows: 0.9739, RMSE of difference = 0.1268
+sanity: M1-view RMSE on shared rows BASE=0.6319 cfg0=0.6077

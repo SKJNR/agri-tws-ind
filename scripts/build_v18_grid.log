@@ -1,0 +1,43 @@
+[    0.0s] loading train...
+[    4.6s] loading test...
+[    5.3s] building M1/M2 mirror protocols (fit<=2012 infra)...
+[    6.2s] infra[cv]: 14656 full cells, V(14656, 115)
+
+================ E0: baseline (v17b config) on M1/M2 ================
+BASE v17b: M1=0.6319 (mix 0.6308) | M2=0.6905 (mix 0.7042)   [auditor A: 0.6319 / 0.6905]
+
+================ E1: phi x bwd-cap grid (bwd, no-dn) ================
+  phi=0.74 cap=None: M1=0.6354 (mix 0.6363) | M2=0.6922 (mix 0.7068)
+  phi=0.74 cap=8: M1=0.6340 (mix 0.6343) | M2=0.6912 (mix 0.7055)
+  phi=0.8 cap=None: M1=0.6319 (mix 0.6308) | M2=0.6905 (mix 0.7042)
+  phi=0.8 cap=8: M1=0.6308 (mix 0.6294) | M2=0.6897 (mix 0.7032)
+  phi=0.85 cap=None: M1=0.6296 (mix 0.6259) | M2=0.6900 (mix 0.7025)
+  phi=0.85 cap=8: M1=0.6290 (mix 0.6250) | M2=0.6895 (mix 0.7019)
+  phi=0.9 cap=None: M1=0.6283 (mix 0.6207) | M2=0.6911 (mix 0.7019)
+  phi=0.9 cap=8: M1=0.6282 (mix 0.6206) | M2=0.6911 (mix 0.7019)
+
+================ E1b: lam check at best-ish phi ================
+  best E1 so far: (0.85, 8) -> M1=0.6290 M2=0.6895
+  phi=0.85 cap=8 lam=0.8: M1=0.6287 | M2=0.6886
+  phi=0.85 cap=8 lam=0.88: M1=0.6296 | M2=0.6908
+
+================ E2: era-weighted D-hat (tau sweep) ================
+  tau=6 mode=full: M1=0.6306 | M2=0.7115
+  tau=6 mode=pred: M1=0.6530 | M2=0.7515
+  tau=12 mode=full: M1=0.6249 | M2=0.6914
+  tau=12 mode=pred: M1=0.6315 | M2=0.7057
+  tau=24 mode=full: M1=0.6246 | M2=0.6867
+  tau=24 mode=pred: M1=0.6248 | M2=0.6899
+
+================ E3: spatial smoothing of fast state ================
+  sigma=0.5deg: M1=0.6246 | M2=0.6852
+  sigma=1.0deg: M1=0.6195 | M2=0.6802
+  sigma=1.5deg: M1=0.6169 | M2=0.6778
+
+================ E4: combos (tau x sigma) ================
+  tau=12/full sigma=0.5: M1=0.6203 | M2=0.6869
+  tau=12/full sigma=1.0: M1=0.6145 | M2=0.6813
+  tau=12/pred sigma=0.5: M1=0.6267 | M2=0.7010
+  tau=12/pred sigma=1.0: M1=0.6202 | M2=0.6948
+  tau=24/pred sigma=0.5: M1=0.6202 | M2=0.6853
+  tau=24/pred sigma=1.0: M1=0.6142 | M2=0.6796

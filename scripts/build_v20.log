@@ -1,0 +1,20 @@
+[   74.2s] products loaded
+[   79.2s] cells 15,715
+[   79.2s] attaching to train ...
+[   80.6s] verify TWS_t==GDO(t-1): rmse=0.000000
+[   81.9s] train subsample: 718,007
+[   81.9s] attaching to test ...
+[   83.0s] stats done
+[   83.2s] Xtr (718007, 20) Xte (280961, 20)
+[  124.2s] HONEST 2013-15 (v20-forecast): 0.5775 n=119,702
+[  224.7s] v20-forecast test pred: mean=-0.0915 std=0.7405
+[  224.9s] BLEND: 0.612*v20f + 0.451*v18a + -0.0622 -> target-model RMSE 0.6418
+[  224.9s]   (v20f alone: 0.6711; v18a alone: 0.7058)
+[  225.3s] saved v20a (blend)
+[  225.7s] saved v20b (v20-forecast only)
+
+================ PRE-REGISTERED V20 PROJECTION ================
+honest CV v20-forecast (2013-15): 0.5775
+target-model RMSE: v20a(blend)=0.6418
+target model calibrated on 9 public-LB points; expected residual +-0.01
+refs: v18a 0.6937 | top-10 cutoff 0.6708 | #5 0.6474 | #3 0.6234

@@ -1,0 +1,72 @@
+[    0.0s] loading train...
+[    4.7s] train 2,154,021 rows, 15715 cells, months 200205..201508
+[    4.7s] loading test (masking pattern + final prediction)...
+[    5.3s] calendar-month mask fractions: 1:0.50, 2:1.00, 3:1.00, 4:1.00, 5:1.00, 6:0.50, 7:0.50, 8:1.00, 9:0.50, 11:0.00, 12:0.50
+[    5.3s] === CV PHASE: fit<=2012, val=2013-2015 ===
+[    5.7s] fit 1,794,914 / val 359,107
+[    6.6s] infra[cv]: 14656 full-history cells, V(14656, 115)
+[    6.6s] masked-row CV: A/B decomposition (phi=0.74, Dtil fixed test weights)...
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[    6.7s]   v2b_equiv (no-dn, no-bwd) : masked CV RMSE = 0.6564  (n=140,555)
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[    6.9s]   denoise only              : masked CV RMSE = 0.6632  (n=140,555)
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[    7.0s]   bwd only                  : masked CV RMSE = 0.5456  (n=140,555)
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[    7.1s]   v4 full (dn+bwd)          : masked CV RMSE = 0.5984  (n=140,555)
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[    7.3s]   phi=0.7: masked CV RMSE = 0.5982  (n=140,555)
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[    7.5s]   phi=0.74: masked CV RMSE = 0.5984  (n=140,555)
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[    7.7s]   phi=0.8: masked CV RMSE = 0.6001  (n=140,555)
+[    7.7s]   phi-ensemble: masked CV RMSE = 0.5985
+[    7.7s] k=0 CV (linear vs LGB, honest: labels strictly inside fit era)...
+[    8.7s]   k=0 train rows: 1,779,287  (target months <= 2012-12)
+[    8.8s]   k=0 eval rows: 218,534
+[    9.2s]   LINEAR k=0 val RMSE = 0.6287
+[   67.1s]   LGBM   k=0 val RMSE = 0.6273  (400 rounds)
+[   67.1s]   round-count check (early stop on 2011-2012 holdout)...
+[  106.1s]   LGBM early-stopped: best_iter=187, val RMSE = 0.6331
+[  106.1s]   blend lin/lgb 1.00/0.00: 0.6287
+[  106.1s]   blend lin/lgb 0.75/0.25: 0.6264
+[  106.1s]   blend lin/lgb 0.50/0.50: 0.6254
+[  106.1s]   blend lin/lgb 0.25/0.75: 0.6257
+[  106.1s]   blend lin/lgb 0.00/1.00: 0.6273
+[  106.1s] CV SUMMARY: masked best=0.5982, k=0 linear=0.6287 lgb=0.6273 es=0.6331
+[  106.1s]   overall CV-equivalent (masked ens + best k0) = 0.6083  -> projected LB ≈ +0.060
+[  106.1s] === FINAL PHASE: refit on full train, predict test ===
+[  107.1s] infra[full]: 14558 full-history cells, V(14558, 138)
+[  107.2s] test anchors: [24188, 24192, 24197, 24203, 24222, 24226]
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[  107.3s]   phi=0.7: test masked pred mean=-0.0105 std=0.6522
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[  107.5s]   phi=0.74: test masked pred mean=-0.0118 std=0.6586
+/home/z/my-project/scripts/rebuild_v17.py:134: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+[  107.6s]   phi=0.8: test masked pred mean=-0.0145 std=0.6690
+[  107.6s] final k=0 LGB rounds: 187
+Traceback (most recent call last):
+  File "/home/z/my-project/scripts/rebuild_v17.py", line 341, in <module>
+    XevF, _, _, ok_evF = build_k0_features(test_for_pred, infra_full)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/my-project/scripts/rebuild_v17.py", line 185, in build_k0_features
+    L = df[['cc','t_abs','TWS_t','target']+COVS].copy(); L['t_next'] = L['t_abs']+1
+        ~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: "['target'] not in index"

@@ -1,0 +1,37 @@
+[    5.7s] infra[cv]: 14656 full cells
+
+============ R0: baselines (spherical kernel) ============
+  v17b base                                    M1=0.6319 (mix 0.6308) | M2=0.6905 (mix 0.7042)
+  phi .85 cap8                                 M1=0.6290 (mix 0.6250) | M2=0.6895 (mix 0.7019)
+
+============ R1: sigma extension (phi .85 cap8) ============
+  sigma=1.0                                    M1=0.6188 (mix 0.6124) | M2=0.6794 (mix 0.6900)
+  sigma=1.5                                    M1=0.6162 (mix 0.6092) | M2=0.6769 (mix 0.6871)
+  sigma=2.0                                    M1=0.6157 (mix 0.6084) | M2=0.6764 (mix 0.6865)
+  sigma=2.5                                    M1=0.6167 (mix 0.6093) | M2=0.6775 (mix 0.6875)
+  sigma=3.0                                    M1=0.6189 (mix 0.6115) | M2=0.6796 (mix 0.6896)
+
+============ R2: tau x mode x sigma (round-1 winners) ============
+  tau=24/full sigma=1.5                        M1=0.6105 (mix 0.6023) | M2=0.6729 (mix 0.6816)
+  tau=24/full sigma=2.0                        M1=0.6090 (mix 0.6005) | M2=0.6716 (mix 0.6802)
+  tau=24/pred sigma=1.5                        M1=0.6097 (mix 0.6003) | M2=0.6752 (mix 0.6825)
+  tau=24/pred sigma=2.0                        M1=0.6078 (mix 0.5983) | M2=0.6735 (mix 0.6809)
+
+============ R3: phi x lam re-sweep WITH smoothing ============
+  phi=0.8 lam=0.8 tau24/full sig2.0            M1=0.6077 (mix 0.6026) | M2=0.6688 (mix 0.6789)
+  phi=0.8 lam=0.84 tau24/full sig2.0           M1=0.6081 (mix 0.6021) | M2=0.6695 (mix 0.6791)
+  phi=0.85 lam=0.8 tau24/full sig2.0           M1=0.6080 (mix 0.6008) | M2=0.6703 (mix 0.6795)
+  phi=0.85 lam=0.84 tau24/full sig2.0          M1=0.6090 (mix 0.6005) | M2=0.6716 (mix 0.6802)
+  phi=0.9 lam=0.8 tau24/full sig2.0            M1=0.6098 (mix 0.6001) | M2=0.6740 (mix 0.6823)
+  phi=0.9 lam=0.84 tau24/full sig2.0           M1=0.6116 (mix 0.6003) | M2=0.6764 (mix 0.6841)
+
+============ R4: pre-smoothing probes ============
+  af_smooth 1.0 + out 2.0                      M1=0.6190 (mix 0.6120) | M2=0.6811 (mix 0.6914)
+  af_smooth 2.0 + out 2.0                      M1=0.6246 (mix 0.6184) | M2=0.6850 (mix 0.6951)
+  w_smooth 0.5 + out 2.0                       M1=0.6147 (mix 0.6077) | M2=0.6747 (mix 0.6846)
+  w_smooth 1.0 + out 2.0                       M1=0.6130 (mix 0.6067) | M2=0.6719 (mix 0.6817)
+  af_smooth 2.0 only                           M1=0.6357 (mix 0.6320) | M2=0.6958 (mix 0.7078)
+
+============ R5: best-so-far refinement ============
+  tau24/full sigma=2.5                         M1=0.6089 (mix 0.6005) | M2=0.6717 (mix 0.6804)
+  tau24/full sigma=3.0                         M1=0.6099 (mix 0.6016) | M2=0.6727 (mix 0.6815)

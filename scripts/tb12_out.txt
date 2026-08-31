@@ -1,0 +1,19 @@
+composite cov weights: {'SPEI_01': 0.039, 'SPEI_03': 0.079, 'SPEI_06': 0.073, 'SPEI_12': 0.155, 'SM': 0.148}
+
+band | var share | phi(lag1, fit era) | corr(W_band, X_band)
+  <2deg  |  6.9%    | 0.454              | 0.101
+  2-4    |  7.2%    | 0.536              | 0.354
+  4-9    | 15.6%    | 0.635              | 0.530
+  9-24   | 19.5%    | 0.700              | 0.639
+  >24    | 50.7%    | 0.739              | 0.598
+total W-vs-X corr: 0.510
+
+val anchors at t: [120, 122, 125, 129, 134] yms: [np.int64(201311), np.int64(201401), np.int64(201406), np.int64(201412), np.int64(201505)]
+
+val masked-row RMSE by gap h (Xres units; std of val Xres = 1.055):
+  persist-total (phi=1 all bands)       : h1=0.633 h2=0.869 h3=0.869 h4=0.641 h5=0.000 h6=0.000 h7=0.000 | cal-wtd=0.6946
+  scalar phi=0.74 all bands             : h1=0.633 h2=0.833 h3=0.921 h4=0.801 h5=0.000 h6=0.000 h7=0.000 | cal-wtd=0.7085
+  banded phi (fit)                      : h1=0.633 h2=0.842 h3=0.971 h4=0.878 h5=0.000 h6=0.000 h7=0.000 | cal-wtd=0.7296
+  banded phi + cov obs                  : h1=0.633 h2=0.831 h3=0.992 h4=0.889 h5=0.000 h6=0.000 h7=0.000 | cal-wtd=0.7322
+  banded phi(slowboost) + cov obs       : h1=0.633 h2=0.836 h3=0.906 h4=0.759 h5=0.000 h6=0.000 h7=0.000 | cal-wtd=0.7022
+  banded phi(slowboost) + cov obs, R x0.5: h1=0.633 h2=0.842 h3=0.935 h4=0.794 h5=0.000 h6=0.000 h7=0.000 | cal-wtd=0.7135

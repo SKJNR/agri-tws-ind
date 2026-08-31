@@ -1,0 +1,63 @@
+rows=280,961  masked=186,913  unmasked=94,048
+LB weights: masked 0.66526  k0 0.33474
+
+=== v18a (md5 0951a88e0cd11615a2ada99ae93f4df8) ===
+  ID bit-exact vs SampleSubmission (set+order): True
+  n=280,961  NaN=0  inf=0  min=-2.5769 max=2.5734 mean=-0.0258 std=0.6914
+  masked rows: mean=-0.0285 std=0.6815 p1/p50/p99=[-1.5994, -0.0815, 1.6461]
+  k0 rows    : mean=-0.0204 std=0.7105 p1/p50/p99=[-1.6965, -0.0843, 1.733]
+  run1 Feb16-Mar16                  : n= 31,273  std=0.7062  mean=-0.0878
+  run2 Jul16-Sep16                  : n= 46,489  std=0.6800  mean=-0.0741
+  run3 Jan17-Jun17 (2017 block)     : n= 93,543  std=0.6599  mean=+0.0041
+  run4 Dec18 (fwd-only)             : n= 15,608  std=0.7435  mean=+0.0309
+
+=== v18b (md5 50356993363335643081b929db0eec69) ===
+  ID bit-exact vs SampleSubmission (set+order): True
+  n=280,961  NaN=0  inf=0  min=-2.5769 max=2.5734 mean=-0.0245 std=0.6869
+  masked rows: mean=-0.0265 std=0.6747 p1/p50/p99=[-1.579, -0.0784, 1.6236]
+  k0 rows    : mean=-0.0204 std=0.7105 p1/p50/p99=[-1.6965, -0.0843, 1.733]
+  run1 Feb16-Mar16                  : n= 31,273  std=0.7011  mean=-0.0849
+  run2 Jul16-Sep16                  : n= 46,489  std=0.6751  mean=-0.0708
+  run3 Jan17-Jun17 (2017 block)     : n= 93,543  std=0.6520  mean=+0.0055
+  run4 Dec18 (fwd-only)             : n= 15,608  std=0.7343  mean=+0.0301
+
+=== v17b (md5 5fde3e75d20953432af377632e7f9d82) ===
+  ID bit-exact vs SampleSubmission (set+order): True
+  n=280,961  NaN=0  inf=0  min=-2.5769 max=2.6625 mean=-0.0169 std=0.6764
+  masked rows: mean=-0.0152 std=0.6586 p1/p50/p99=[-1.5448, -0.0695, 1.5518]
+  k0 rows    : mean=-0.0204 std=0.7105 p1/p50/p99=[-1.6965, -0.0843, 1.733]
+  run1 Feb16-Mar16                  : n= 31,273  std=0.7110  mean=-0.0597
+  run2 Jul16-Sep16                  : n= 46,489  std=0.6708  mean=-0.0589
+  run3 Jan17-Jun17 (2017 block)     : n= 93,543  std=0.6204  mean=+0.0164
+  run4 Dec18 (fwd-only)             : n= 15,608  std=0.7194  mean=+0.0153
+
+masked-row change vs v17b: v18a mean|d|=0.1289 max|d|=1.2853 frac|d|>0.1=0.488 corr=0.9671
+masked-row change vs v17b: v18b mean|d|=0.1232 max|d|=1.2216 corr=0.9695
+  run1 Feb16-Mar16                  : v18a-vs-v17b RMSE-of-change=0.1245
+  run2 Jul16-Sep16                  : v18a-vs-v17b RMSE-of-change=0.1188
+  run3 Jan17-Jun17 (2017 block)     : v18a-vs-v17b RMSE-of-change=0.2125
+  run4 Dec18 (fwd-only)             : v18a-vs-v17b RMSE-of-change=0.1345
+
+================ PROJECTION RECOMPUTE ================
+v17b: implied masked RMSE = sqrt((LB^2 - 0.3348*k0^2)/0.6652)
+  k0=0.625: masked=0.7419  gap vs M2 0.6905 = +0.0514
+  k0=0.640: masked=0.7355  gap vs M2 0.6905 = +0.0450
+  k0=0.650: masked=0.7311  gap vs M2 0.6905 = +0.0406
+central gap (k0=0.640): +0.0450  [build log claims +0.0450]
+
+v18a projection: masked = M2_ens 0.6694 + gap band [+0.030, +0.050] = [0.6994, 0.7194]
+LB = sqrt(0.6652*masked^2 + 0.3348*k0^2):
+  masked | k0=0.630 | k0=0.640 | k0=0.650
+  0.6994 | 0.6770 | 0.6801 | 0.6833
+  0.7094 | 0.6838 | 0.6869 | 0.6901
+  0.7194 | 0.6908 | 0.6938 | 0.6969
+  0.6980 | 0.6760 | 0.6791 | 0.6823
+  0.7080 | 0.6829 | 0.6860 | 0.6891
+  0.7190 | 0.6905 | 0.6936 | 0.6967
+reference: v12b=0.695357  v17b=0.704956
+joint best (gap+0.030,k0.63)=0.6770 | joint worst (gap+0.050,k0.65)=0.6969 -> worst DOES NOT BEAT v12b 0.6954
+pre-registered table check: masked 0.698->LB 0.6791 (log says 0.6791) | 0.708->0.6860 (0.6860) | 0.719->0.6936 (0.6936)
+
+================ PUBLIC-LB SAMPLING NOISE (random 30/70 by row) ================
+central: public rows ~56,074 masked + 28,214 k0 -> SE(masked)=0.0021 SE(k0)=0.0027 SE(LB)=0.0017
+gap+0.045: public rows ~56,074 masked + 28,214 k0 -> SE(masked)=0.0021 SE(k0)=0.0027 SE(LB)=0.0017

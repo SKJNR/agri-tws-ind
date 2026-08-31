@@ -1,0 +1,11 @@
+anchor pairs: [(12, np.float64(0.487)), (19, np.float64(0.472)), (25, np.float64(0.399)), (31, np.float64(0.424)), (7, np.float64(0.653)), (13, np.float64(0.586)), (19, np.float64(0.413)), (6, np.float64(0.667)), (12, np.float64(0.485)), (6, np.float64(0.694))]
+calibrated: phi=0.717 lam=1.214  (rho(k)=1.214*0.717^k)
+
+=== SIMULATED TEST (train 2011-2013, anchors 4-7m apart) ===
+M1_global       : RMSE=0.8382
+Traceback (most recent call last):
+  File "/home/z/my-project/scripts/persist_calib.py", line 124, in <module>
+    ys = np.concatenate([p[0] for p in parts])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: need at least one array to concatenate
+EXIT 1

@@ -1,0 +1,48 @@
+[    0.7s] GravIS + COST-G loaded
+[   75.4s] CSR mascons aggregated
+[   75.9s] GDO TWSA loaded
+[   81.0s] cells 15,715; train 2,154,021; test 280,961
+[   81.0s] attaching products to train ...
+[   81.3s] verify TWS_t==GDO(t-1): rmse=0.000000 n=2,154,021
+[   81.4s] attaching next-month covs to train ...
+[   82.7s] train features done
+[   82.8s] train subsample: 718,007
+[   82.8s] attaching products to test ...
+  test gravis_t: finite 0.831
+  test costg_t: finite 0.831
+  test csr_t: finite 0.889
+  test covs(t+1) finite: 0.665
+  state fill: 0 NaN
+[   83.8s] stats done
+[   84.0s] Xtr (718007, 16) Xte (280961, 16)
+[   84.1s] finite train rows: 0.830
+[  108.5s] HONEST 2013-15: linear=0.7101 lgb=0.5835 best_blend_w=0.0 -> 0.5835 n=72,784
+[  108.5s] final fit (full train) ...
+[  143.5s] test pred: mean=-0.0510 std=0.6819
+[  143.9s] saved v19a
+[  144.3s] saved v19b (lgb-only)
+
+feature importances (gain):
+  state              1627204
+  lat                474473
+  lon                330034
+  costg              325582
+  nxt_SPEI_01_t      78772
+  csr                72562
+  nxt_SPEI_12_t      64471
+  nxt_SOIL_MOISTURE_t 41842
+  nxt_SPEI_06_t      31723
+  gravis             26574
+  cov_SPEI_12_t      10507
+  cov_SOIL_MOISTURE_t 9740
+  nxt_SPEI_03_t      7435
+  cov_SPEI_03_t      6241
+  cov_SPEI_01_t      4917
+  cov_SPEI_06_t      4239
+
+================ PRE-REGISTERED V19 PROJECTION ================
+honest CV (2013-15 best blend): 0.5835
+  CV->LB gap +0.00: LB ~ 0.5835
+  CV->LB gap +0.02: LB ~ 0.6035
+  CV->LB gap +0.04: LB ~ 0.6235
+refs: v18a 0.6937 | top-10 cutoff 0.6708 | #3 0.6234 | #2 0.5893 | #1 0.5596

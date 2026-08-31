@@ -1,0 +1,45 @@
+[    4.8s] data loaded: train 2,154,021 rows, test 280,961 rows, k0 rows 94,048
+[    4.8s] === masked block: final test predictions (v18a top3 ensemble) ===
+[    5.7s] infra[full]: 14558 full cells
+[    7.1s]   phi=0.8 lam=0.8: fixed std=0.6747 loo std=0.6492
+[    7.3s]   phi=0.85 lam=0.8: fixed std=0.6897 loo std=0.6662
+[    7.5s]   phi=0.8 lam=0.84: fixed std=0.6806 loo std=0.6558
+[    7.6s]   masked rows with NaN D-tilde (mu_all filled): 7
+[    7.7s]   v21a-masked vs v18a.csv masked rows: max|diff|=2.321e-07  mean|diff|=1.408e-08  (n=186,913)
+[    7.7s] === k0 block: a15 factor (K=100, full-train fit) + v4 linear ===
+[    9.2s]   k0 anchor months: [24188, 24192, 24197, 24203, 24222, 24226]
+[    9.2s]   k0 Dtil LOO weights (test anchors): 0.650/0.456/0.073
+[    9.2s]   anchor 24188: rows=15,552 covs(t+1)=N pred std=0.770
+[    9.2s]   anchor 24192: rows=15,647 covs(t+1)=Y pred std=0.950
+[    9.2s]   anchor 24197: rows=15,584 covs(t+1)=Y pred std=0.809
+[    9.3s]   anchor 24203: rows=15,618 covs(t+1)=Y pred std=0.942
+[    9.3s]   anchor 24222: rows=15,584 covs(t+1)=N pred std=0.747
+[    9.3s]   anchor 24226: rows=15,646 covs(t+1)=Y pred std=0.924
+[   14.7s]   linear final: rows with covs(t+1): 62,576 / 94,048
+[   14.7s]   k0 assembled: anchor rows 93,631 (factor NaN fallback: 0), strays 417
+[   14.8s]   direct-copyable rows (within test): 0 (expected 0)
+[   14.9s] === assembling ===
+[   15.3s] saved v21a: mean=-0.0271 std=0.7142 (k0 std=0.775, masked std=0.682)
+[   15.7s] saved v21b: mean=-0.0226 std=0.6987 (k0 std=0.775, masked std=0.657)
+[   15.7s] v21b-v21a masked diff: mean=+0.0067 std=0.0337 max|d|=0.111
+
+================ PRE-REGISTERED LB PROJECTION ================
+decomposition: LB^2 = 0.6652*masked^2 + 0.3348*k0^2
+calibration: v18a LB 0.6937 (masked ~0.719 via M2-gap model; k0 ~0.640)
+k0: strict-CV 0.6429 -> LB ~0.640 (transfer ~1:1); v21 k0 strict-CV 0.6166 -> LB 0.613-0.620
+masked (v21b): M2 0.6694 -> 0.6622 (-0.0072); LB masked 0.719 -> 0.712-0.716
+  masked=0.719 k0=0.613 -> LB=0.6853
+  masked=0.719 k0=0.617 -> LB=0.6865
+  masked=0.719 k0=0.621 -> LB=0.6877
+  masked=0.716 k0=0.613 -> LB=0.6832
+  masked=0.716 k0=0.617 -> LB=0.6845
+  masked=0.716 k0=0.621 -> LB=0.6857
+  masked=0.712 k0=0.613 -> LB=0.6805
+  masked=0.712 k0=0.617 -> LB=0.6817
+  masked=0.712 k0=0.621 -> LB=0.6829
+v21a projected: 0.685-0.688   v21b projected: 0.679-0.685
+DECISION RULES (pre-registered):
+  v21a <= 0.692 : k0 upgrade confirmed -> keep a15 k0 in all future builds
+  v21b <  v21a  : LOO weights confirmed -> adopt for final selection
+  v21b >= v21a + 0.002 : LOO weights do not transfer -> final = v18a + v21a
+  both > 0.694  : projection missed -> investigate before any further submission

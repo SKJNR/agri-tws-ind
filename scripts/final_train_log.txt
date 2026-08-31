@@ -1,0 +1,22 @@
+/home/z/my-project/scripts/pipeline.py:78: RuntimeWarning: Mean of empty slice
+  self.N_tws[i] = np.nanmean(v, axis=1)
+Context (6s)
+Model A done (64s)
+  k=1: 350,000
+  k=2: 350,000
+  k=3: 350,000
+  k=4: 350,000
+  k=5: 350,000
+  k=6: 350,000
+Train B: (2100000, 18) (68s)
+B1 done (166s)
+  s1 k=1: dClim=0.471 anom=0.622 spei=0.142 nb=0.049 c=0.119
+  s1 k=2: dClim=0.415 anom=0.625 spei=0.141 nb=-0.001 c=0.118
+  s1 k=3: dClim=0.473 anom=0.698 spei=0.132 nb=-0.111 c=0.122
+  s1 k=4: dClim=0.496 anom=0.770 spei=0.125 nb=-0.222 c=0.130
+  s1 k=5: dClim=0.526 anom=0.761 spei=0.120 nb=-0.248 c=0.131
+  s1 k=6: dClim=0.544 anom=0.866 spei=0.114 nb=-0.406 c=0.134
+B2 done (261s)
+Context saved (261s)
+ALL DONE
+EXIT 0

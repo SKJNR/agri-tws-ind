@@ -1,0 +1,13 @@
+/home/z/my-project/scripts/pipeline.py:78: RuntimeWarning: Mean of empty slice
+  self.N_tws[i] = np.nanmean(v, axis=1)
+Context built (7s)
+Model A train: 1,794,914, val k=0: 187,334
+A0 persistence: 0.6934
+A1 LGBM direct: 0.6547 (45s)
+A2 LGBM delta: 0.6557
+A3 +smoothed-anom feats: 0.6953
+A4 blend A1/A2 w=0.3: 0.6552
+A4 blend A1/A2 w=0.5: 0.6549
+A4 blend A1/A2 w=0.7: 0.6548
+Done (121s). BEST: see above
+EXIT 0

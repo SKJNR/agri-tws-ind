@@ -1,0 +1,33 @@
+(G2) TRAIN-ERA component tracking, pooled corr across cells+months:
+  var shares: slow(13-mo MA)=43%, fast=46%
+  SPEI_01 : corr(dev, total)=+0.273  corr(dev_slow, SLOW)=+0.385  corr(dev_fast, FAST)=+0.260  corr(dev_raw, FAST)=+0.264
+  SPEI_03 : corr(dev, total)=+0.378  corr(dev_slow, SLOW)=+0.445  corr(dev_fast, FAST)=+0.334  corr(dev_raw, FAST)=+0.320
+  SPEI_06 : corr(dev, total)=+0.420  corr(dev_slow, SLOW)=+0.477  corr(dev_fast, FAST)=+0.324  corr(dev_raw, FAST)=+0.286
+  SPEI_12 : corr(dev, total)=+0.439  corr(dev_slow, SLOW)=+0.510  corr(dev_fast, FAST)=+0.283  corr(dev_raw, FAST)=+0.199
+  SM      : corr(dev, total)=+0.407  corr(dev_slow, SLOW)=+0.458  corr(dev_fast, FAST)=+0.314  corr(dev_raw, FAST)=+0.254
+
+  band-wise corr (pooled months) of cov-dev vs SLOW wander and vs FAST:
+  cov      b0slow  b0fast  b1slow  b1fast  b2slow  b2fast
+  SPEI_01   +0.438  +0.315     +0.442  +0.322     +0.415  +0.300   
+  SPEI_03   +0.512  +0.425     +0.518  +0.440     +0.488  +0.397   
+  SPEI_06   +0.557  +0.431     +0.564  +0.448     +0.531  +0.415   
+  SPEI_12   +0.607  +0.405     +0.615  +0.425     +0.581  +0.405   
+  SM        +0.574  +0.464     +0.596  +0.493     +0.577  +0.455   
+
+(G3) ANCHOR D-drift: does the cov static+deviation structure at anchor months explain (anchor - D-hat)?
+/home/z/my-project/scripts/tb11_slowtrack.py:93: RuntimeWarning: Mean of empty slice
+  Dhat = np.nanmean(np.stack([A_anchor[y] for y in anchor_yms]), axis=0)
+  corr(anchor anomaly - D-hat, cov deviation at anchor) per anchor month:
+  201509: SPEI_01=+0.150 SPEI_03=+0.253 SPEI_06=+0.298 SPEI_12=+0.287 SM=+0.276 
+  201601: SPEI_01=+0.257 SPEI_03=+0.354 SPEI_06=+0.428 SPEI_12=+0.399 SM=+0.355 
+  201606: SPEI_01=+0.348 SPEI_03=+0.360 SPEI_06=+0.423 SPEI_12=+0.301 SM=+0.175 
+  201612: SPEI_01=+0.345 SPEI_03=+0.405 SPEI_06=+0.421 SPEI_12=+0.389 SM=+0.412 
+  201807: SPEI_01=+0.279 SPEI_03=+0.344 SPEI_06=+0.285 SPEI_12=+0.303 SM=+0.293 
+  201811: SPEI_01=+0.211 SPEI_03=+0.306 SPEI_06=+0.272 SPEI_12=+0.263 SM=+0.284 
+  same but >24-deg band only (slow channel):
+  201509: SPEI_01=+0.057 SPEI_03=+0.321 SPEI_06=+0.482 SPEI_12=+0.404 SM=+0.327 
+  201601: SPEI_01=+0.453 SPEI_03=+0.459 SPEI_06=+0.623 SPEI_12=+0.521 SM=+0.574 
+  201606: SPEI_01=+0.355 SPEI_03=+0.357 SPEI_06=+0.676 SPEI_12=+0.369 SM=-0.020 
+  201612: SPEI_01=+0.425 SPEI_03=+0.626 SPEI_06=+0.712 SPEI_12=+0.674 SM=+0.775 
+  201807: SPEI_01=+0.509 SPEI_03=+0.507 SPEI_06=+0.421 SPEI_12=+0.421 SM=+0.535 
+  201811: SPEI_01=+0.283 SPEI_03=+0.471 SPEI_06=+0.370 SPEI_12=+0.338 SM=+0.570 
