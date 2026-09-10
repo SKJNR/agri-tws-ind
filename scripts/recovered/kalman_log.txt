@@ -1,0 +1,15 @@
+Loaded 2,154,021
+phi_c: mean=0.761 | q_c: mean=0.2687 (global q=0.2756)
+obs coefs: [0.039 0.072 0.061 0.225 0.182] r_var=0.4285
+
+=== KALMAN (k=1..6, block val 2013+) ===
+weighted RMSE: 0.9248
+  k=1: 0.7806 (n=140,605)
+  k=2: 1.0207 (n=109,227)
+  k=3: 0.9962 (n=78,051)
+  k=4: 1.0121 (n=124,873)
+  k=5: 0.9604 (n=124,824)
+  k=6: 1.0210 (n=140,427)
+(run_B trees on same val: B12 weighted 0.7846, per-k ~0.68-0.98)
+Saved.
+EXIT 0

@@ -1,0 +1,48 @@
+Loading train...
+/home/z/my-project/scripts/submission_v11.py:131: RuntimeWarning: Mean of empty slice
+  Zdev_slow = {int(m): np.nanmean(np.array([Zdev[x] for x in test_months if abs(x-m) <= HW]), axis=0)
+anchors: [24188, 24192, 24197, 24203, 24222, 24226]
+era D-tilde weights (tau=12): 0.643/0.466/0.078
+era D-tilde LOO RMSE: all=0.8034
+student beta: [-0.0774  0.1188  0.0769  0.0823  0.055  -0.03  ]
+student-corrected D-tilde LOO RMSE: all=0.7867
+k0-B: training two-comp + LGBM...
+k0-B LGBM trained.
+
+masked Kalman runs (era Dtil)...
+    kalman phi=0.74: H=0.2442 R=0.0835 var_f=0.6375
+    kalman phi=0.8: H=0.2442 R=0.0835 var_f=0.6375
+k0-B (era Dtil)...
+
+--- v11a: era-weighted Dhat (tau=12) ---
+saved v11a: mean=-0.0308 std=0.7613 nan=0
+
+masked Kalman runs (era + student Dtil)...
+    kalman phi=0.74: H=0.1804 R=0.0992 var_f=0.5943
+    kalman phi=0.8: H=0.1804 R=0.0992 var_f=0.5943
+k0-B (era + student Dtil)...
+
+--- v11b: era-weighted Dhat + cov-slow student ---
+saved v11b: mean=-0.0403 std=0.7904 nan=0
+
+=== verification ===
+Traceback (most recent call last):
+  File "/home/z/my-project/scripts/submission_v11.py", line 389, in <module>
+    base = pd.read_csv(f'{DL}/submission_v10b.csv')['Target'].values
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1026, in read_csv
+    return _read(filepath_or_buffer, kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 620, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1620, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/io/parsers/readers.py", line 1880, in _make_engine
+    self.handles = get_handle(
+                   ^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/io/common.py", line 873, in get_handle
+    handle = open(
+             ^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/z/my-project/download/submission_v10b.csv'

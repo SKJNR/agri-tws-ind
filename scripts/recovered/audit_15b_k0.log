@@ -1,0 +1,62 @@
+val anchor months (dense, n=14): [24156, 24161, 24162, 24166, 24167, 24168, 24173, 24176, 24177, 24178, 24179, 24180, 24185, 24186]
+  dense: D-tilde weights = [0.786 0.218 0.049]
+  spA: D-tilde weights = [0.494 0.492 0.141]
+  spB: D-tilde weights = [0.474 0.488 0.132]
+  spC: D-tilde weights = [0.495 0.497 0.129]
+  D-tilde[dense] deviation from dense D-hat: std=0.0876
+  D-tilde[spA] deviation from dense D-hat: std=0.2226
+  D-tilde[spB] deviation from dense D-hat: std=0.2168
+  D-tilde[spC] deviation from dense D-hat: std=0.2078
+
+v4-linear (D-free reference, ship recency): RMSE=0.6286 (n=218534)
+
+training baseline LGBM (500 rounds)...
+
+=== MISSION D: LGBM learning curve (val k0 rows) ===
+ rounds |  dense(all) |  spB(all) | spB(subset)
+     50 |      0.5793 |    0.5843 |      0.5880
+    100 |      0.5851 |    0.5895 |      0.5889
+    200 |      0.5889 |    0.5934 |      0.5904
+    300 |      0.5909 |    0.5953 |      0.5913
+    400 |      0.5922 |    0.5967 |      0.5919
+    500 |      0.5934 |    0.5977 |      0.5914
+
+=== MISSION B: k=0 models, ALL k0 rows, per anchor set ===
+ dense: two-comp=0.5867  LGBM=0.5934  blend.5=0.5827
+   spA: two-comp=0.5938  LGBM=0.6027  blend.5=0.5908
+   spB: two-comp=0.5897  LGBM=0.5977  blend.5=0.5863
+   spC: two-comp=0.5919  LGBM=0.6006  blend.5=0.5887
+ v4lin: 0.6286  (D-free, constant across sets)
+
+CV-promised gain (dense): v4lin - blend.5 = +0.0459
+honest gain (spA, all rows): +0.0378  (survival 82%)
+honest gain (spB, all rows): +0.0422  (survival 92%)
+honest gain (spC, all rows): +0.0398  (survival 87%)
+
+=== MISSION B (ii): subset at sparse-anchor months, dense vs sparse D-tilde ===
+spA: n=93628 | v4lin=0.6134 | 2comp dense=0.5849 sparse=0.5953 | LGBM dense=0.5930 sparse=0.6051 | blend dense=0.5821 sparse=0.5935
+spB: n=93674 | v4lin=0.6409 | 2comp dense=0.5848 sparse=0.5936 | LGBM dense=0.5836 sparse=0.5914 | blend dense=0.5764 sparse=0.5849
+spC: n=93723 | v4lin=0.6924 | 2comp dense=0.6589 sparse=0.6640 | LGBM dense=0.6573 sparse=0.6654 | blend dense=0.6520 sparse=0.6585
+
+=== MISSION A: k0 constants sensitivity ===
+--- two-comp phi (fixed vs free), dense + spB all rows ---
+free coef (ship, coef[0]=0.604): dense=0.5867 spB=0.5897
+fixed phi=0.68: dense=0.5952 spB=0.5970
+fixed phi=0.74: dense=0.6033 spB=0.6043
+--- recency weights (two-comp linear, dense + spB) ---
+rec1x1x1: dense=0.5865 spB=0.5896
+rec1_1.5_2 (ship): dense=0.5867 spB=0.5897
+rec1_2_3: dense=0.5868 spB=0.5898
+--- k0 blend weight (sparse honest setting, spB all rows) ---
+blend 0.00*LGBM: spB=0.5898
+blend 0.25*LGBM: spB=0.5862
+blend 0.40*LGBM: spB=0.5858
+blend 0.50*LGBM: spB=0.5863
+blend 0.60*LGBM: spB=0.5874
+blend 0.75*LGBM: spB=0.5902
+blend 1.00*LGBM: spB=0.5978
+
+--- LGBM hyperparam sweep (500 rounds, dense + spB all rows) ---
+(sweep skipped - set K0SWEEP=1 [CFG=name] to run)
+
+DONE audit_15b_k0.

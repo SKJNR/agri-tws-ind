@@ -1,0 +1,29 @@
+=== AR structure test (global coefficients, all cells pooled, val=2013+) ===
+  AR(1) global                : 0.6379
+  AR(2) global                : 0.6413
+  AR(1) + seasonal            : 0.6391
+  AR(2) + seasonal            : 0.6437
+
+innovation lag-1 corr (global phi): -0.1403  (0 => pure AR(1))
+
+=== per-year sigma_w (AR(1) innovation std, floor estimate) ===
+time
+2002    0.598
+2003    0.550
+2004    0.548
+2005    0.495
+2006    0.511
+2007    0.488
+2008    0.480
+2009    0.482
+2010    0.500
+2011    0.524
+2012    0.508
+2013    0.483
+2014    0.508
+2015    0.808
+
+k=0 floor (val years 2013-15): 0.6176
+per-cell innov std: mean=0.464 p10=0.212 p90=0.716
+east-neighbor innov corr: +0.982
+EXIT 0

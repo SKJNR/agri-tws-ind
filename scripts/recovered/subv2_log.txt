@@ -1,0 +1,10 @@
+Train 2,154,021 | Test 280,961 | cells 15715
+var=0.8336 R_h=0.5358
+Anchors: [201509, 201601, 201606, 201612, 201807, 201811]
+saved v2a: mean=0.0260 std=0.5742 (unmasked std=0.733, masked std=0.473)
+saved v2b: mean=0.0141 std=0.6117 (unmasked std=0.752, masked std=0.526)
+saved v2c: mean=-0.0276 std=0.7002 (unmasked std=0.733, masked std=0.683)
+
+masked k dist: {1: 62340, 2: 46723, 3: 31115, 4: 15617, 5: 15568, 6: 15550}
+(v1 comparison skipped: NumPy boolean array indexing assignment cannot assign 280961 input values to the 186913 output values where the mask is true)
+EXIT 0
