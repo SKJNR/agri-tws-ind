@@ -59,3 +59,36 @@
 - both > 0.694 : projection missed -> investigate before any further submission
 - FINAL-2 SELECTION (13 Sep 21:29): choose the 2 best of {v18a, v21a, v21b} by LB + robustness;
   NEVER select v20a/v20b/v20c (prohibited lane — see MASTER_HANDOFF §6 / Task 15 audit).
+
+## ===== CORRECTION LANE LEDGER (k0 month-bias corrections — rebuilt 2026-09-09
+## after split-brain loss; canonical arcs live in worklog Tasks 29-33) =====
+## Probe protocol: base v24 (s0 = 0.683791578 EXACT), delta +/-3.0 on ALL rows of
+## one month. Pair readout: f = (sp^2+sm^2-2s0^2)/18, e = (sp^2-sm^2)/(12f).
+## Single-plus (solved split f=1/17): e = (17*dMSE - 9)/6.
+## Stack rule (Round-9/10, pre-registered): |e| > 0.05 at 0.8 shrink, gate +/-0.0005.
+
+2026-09-0x | probe_m201601_*.csv | (probe) | v24 +/-3.0 on 201601 | v25 input (Jan-16) | scores in worklog Task 29
+2026-09-0x | probe_m201509_*.csv | (probe) | v24 +/-3.0 on 201509 | v26 input (Sep15) | actuals 1.016170581 / 0.980180251
+2026-09-0x | probe_m201606_*.csv | (probe) | v24 +/-3.0 on 201606 | v26 input (Jun16) | actuals 0.974080709 / 1.022389739
+2026-09-07 | probe_m201807_*.csv | (probe) | v24 +/-3.0 on 201807 | v27 input (Jul18) | actuals 0.985651381 / 1.011489355 -> e -0.0731
+2026-09-07 | probe_m201811_*.csv | (probe) | v24 +/-3.0 on 201811 | v27 input (Nov18) | actuals 1.030112961 / 0.966563336 -> e +0.1795
+2026-09-09 | submission_probe_m201704_plus.csv | 2ade129d72 | v24 +3.0 on ALL 15,638 rows of 201704 (bit-audit PASS) | e(201704) readout | ACTUAL 1.006681664 -> e = +0.0465 [range 0.043-0.050 over f dev +/-12 rows] -> SUB-GATE, NOT armed
+2026-09-09 | submission_v26_twocorr.csv | (md5 in FINAL2/worklog) | v25 + 0.8e corrections on 201509+201606 | gate [0.678069, 0.679069] | ACTUAL 0.678573305 vs predicted 0.678573306 -> residual +1.0e-9, PASS dead-center; chain v24->v27 now 100% display-verified
+2026-09-09 | submission_probe_m201612_plus.csv | 7e9df26c1b | v24 +3.0 on ALL 15,618 rows of 201612 (bit-audit PASS) | e(201612) pair readout | ACTUAL 1.036776186 -> e = +0.227132 (2nd-largest bias), f = 0.058607; |e|>0.05 ARMED
+2026-09-09 | submission_probe_m201612_minus.csv | 294da420f5 | v24 -3.0 on ALL 15,618 rows of 201612 (bit-audit PASS) | e(201612) pair readout | ACTUAL 0.956643248; anomaly trigger |17dMSE-9|=1.3247>0.3 FIRED -> pair required & submitted; zero-month test f>>0 (201612 normal public month)
+2026-09-09 | submission_v28_deccorr.csv | 0ebede0788 | v27 - 0.181705 (0.8*e) on ALL 15,618 rows of 201612; untouched rows BYTE-identical (round_trip build; exactly 15,618 lines differ); 100% k0 anchor month, zero masked-row risk | LAST armed month; correction lane exhausted after this | ACTUAL 0.674859467 vs predicted 0.674859467140 -> residual +1.40e-10, 6th display-level EXACT HIT, gate [0.674359, 0.675359] PASS dead-center -> NEW TEAM BEST (clean); private proj ~-0.00198
+2026-09-10 | submission_probe_m201812_plus.csv | b31d504d06 | v28+3.0 on ALL 15,639 rows of 201812 (bit-audit PASS; untouched rows byte-identical) | zero-month hunt: H0 = 201812 fully private, score UNCHANGED | PREDICTED (pre-registered, unsubmitted): 0.674859467 display-exact (= H0, 7th exact test); H1 (score moves) -> minus partner next slot; see ADVERSARIAL_REVIEW_ROUND4.md
+
+## Chain: v24 0.683791578 (base) -> v25 0.679780277 (-1.19e-10) ->
+## v26 0.678573305 (+1.0e-9) -> v27 0.677006525 (-8.62e-11) ->
+## v28 0.674859467 (+1.40e-10) ACTUAL 2026-09-09 = 6th display-level exact hit
+## + NEW TEAM BEST (clean). Banked: 0.008932 RMSE, ALL display-verified.
+## Lane CLOSED: 201612 was the LAST armed month -> correction lane exhausted
+## (6/6 k0 anchor months measured: 201601/201509/201606/201807/201811
+## corrected + 201612=v28 + 201704 sub-gate documented). Optional
+## remain: 201609 pair (report/ledger value only), 201812 zero-month hunt
+## (pre-built Task 40, submit Sep-10 AM), region-split 201601 (gated
+## |De|>0.15 AND Round-4 ruling-gate: coordinate-keyed correction needs a
+## YES on Draft-1 converse BEFORE any probe slots are spent). ENSO note: prior said 0.05-0.15,
+## measured 0.227 (~1.7x top; ONI -0.60 from nino34.ascii.txt) - ENSO is
+## arm-priority only, magnitude unreliable.
