@@ -1,0 +1,68 @@
+=== S1: implied decomposition from LB ===
+  if unmasked RMSE u=0.44: implied masked RMSE = 0.8193
+  if unmasked RMSE u=0.50: implied masked RMSE = 0.8018
+  if unmasked RMSE u=0.55: implied masked RMSE = 0.7852
+  if unmasked RMSE u=0.60: implied masked RMSE = 0.7666
+  if unmasked RMSE u=0.64: implied masked RMSE = 0.7502
+  leader 0.5596:
+  if u=0.45: implied masked RMSE = 0.6073
+  if u=0.50: implied masked RMSE = 0.5873
+  if u=0.55: implied masked RMSE = 0.5644
+
+=== S2: anchor-LOO sweep (consecutive anchor pairs, gap<=8) ===
+pairs (anchor_i, target_j, horizon h): [(4188, 4192, 4), (4192, 4197, 5), (4197, 4203, 6), (4222, 4226, 4)]
+(h = t_j - t_i: the simulated row sits at t_j - 1, propagates h months from anchor i)
+
+top 15 configs (mean RMSE over pairs, lower=better):
+  RMSE=0.7414  phi_f=0.70 lam_f=0.92 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.678 0.919 0.715]
+  RMSE=0.7414  phi_f=0.70 lam_f=0.88 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.678 0.919 0.715]
+  RMSE=0.7415  phi_f=0.70 lam_f=0.84 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.678 0.919 0.714]
+  RMSE=0.7416  phi_f=0.70 lam_f=0.80 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.678 0.919 0.714]
+  RMSE=0.7422  phi_f=0.75 lam_f=0.80 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.68  0.92  0.714]
+  RMSE=0.7423  phi_f=0.75 lam_f=0.84 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.68  0.92  0.714]
+  RMSE=0.7424  phi_f=0.75 lam_f=0.88 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.68  0.92  0.715]
+  RMSE=0.7427  phi_f=0.75 lam_f=0.92 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.655 0.679 0.92  0.715]
+  RMSE=0.7443  phi_f=0.80 lam_f=0.80 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.657 0.683 0.923 0.714]
+  RMSE=0.7448  phi_f=0.80 lam_f=0.84 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.657 0.683 0.924 0.715]
+  RMSE=0.7455  phi_f=0.80 lam_f=0.88 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.659 0.683 0.924 0.717]
+  RMSE=0.7463  phi_f=0.80 lam_f=0.92 obs=train  [pure-decay baseline: 0.8969]  per-pair: [0.66  0.683 0.924 0.718]
+  RMSE=0.7488  phi_f=0.70 lam_f=0.92 obs=refit  [pure-decay baseline: 0.8969]  per-pair: [0.661 0.693 0.92  0.721]
+  RMSE=0.7489  phi_f=0.70 lam_f=0.88 obs=refit  [pure-decay baseline: 0.8969]  per-pair: [0.661 0.693 0.92  0.721]
+  RMSE=0.7489  phi_f=0.70 lam_f=0.84 obs=refit  [pure-decay baseline: 0.8969]  per-pair: [0.662 0.693 0.92  0.721]
+
+BEST: phi_f=0.7, lam_f=0.92, obs=train -> RMSE 0.7414 vs decay 0.8969 (gain 0.1555)
+
+best per obs-mode:
+  none : RMSE=0.8024 (phi=0.8, lam=0.8)
+  train: RMSE=0.7414 (phi=0.7, lam=0.92)
+  refit: RMSE=0.7488 (phi=0.7, lam=0.92)
+
+=== S3: PC1 of train anomaly field ===
+variance: PC1=26.8%, PC2=9.8%, PC3=7.4%
+corr(PC1 loading, mu_c) = -0.6681
+  lat [-60,-30): mean loading -0.0002 (n=536)
+  lat [-30,0): mean loading +0.0044 (n=2162)
+  lat [0,30): mean loading +0.0001 (n=2551)
+  lat [30,60): mean loading -0.0037 (n=5461)
+  lat [60,90): mean loading -0.0068 (n=3848)
+
+PC1 score (train, 138 months): std=51.250
+PC1 score ACF 1..24: 0.98, 0.98, 0.97, 0.97, 0.96, 0.96, 0.96, 0.95, 0.95, 0.94, 0.94, 0.94, 0.93, 0.93, 0.93, 0.92, 0.92, 0.92, 0.92, 0.91, 0.92, 0.91, 0.91, 0.91
+corr(s1, time) = 0.9588 (trend check)
+PC1 score by calendar month (mean): -1.10, -1.44, -1.77, +4.07, +3.76, +8.39, -4.06, -5.07, -1.10, -6.01, +1.07, +2.28
+corr(PC1 score, monthly global mean SPEI_01_t) = -0.0438
+corr(PC1 score, monthly global mean SPEI_03_t) = -0.1282
+corr(PC1 score, monthly global mean SPEI_06_t) = -0.1708
+corr(PC1 score, monthly global mean SPEI_12_t) = -0.2828
+corr(PC1 score, monthly global mean SOIL_MOISTURE_t) = +0.0919
+
+test-era PC1 projections (anchor fields onto train PC1 loading):
+  4188: PC1 coord = +60.031  (train z-score +1.17)
+  4192: PC1 coord = +46.677  (train z-score +0.91)
+  4197: PC1 coord = +38.450  (train z-score +0.75)
+  4203: PC1 coord = +44.195  (train z-score +0.86)
+  4222: PC1 coord = +55.215  (train z-score +1.08)
+  4226: PC1 coord = +65.295  (train z-score +1.27)
+  D-hat: PC1 coord = +51.640 (train z +1.01)
+anchor-field PC1 vs train-PC1 loading corr = -0.4975
+anchor-field PC1 vs -mu_c corr = -0.7763

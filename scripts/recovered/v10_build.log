@@ -1,0 +1,33 @@
+Loading train...
+anchors: [24188, 24192, 24197, 24203, 24222, 24226]
+/home/z/my-project/scripts/submission_v10.py:134: RuntimeWarning: Mean of empty slice
+  Dhat_raw = np.nanmean(np.array([AF[a] for a in anchors]), axis=0)
+zero-anchor cells filled: 7
+/home/z/my-project/scripts/submission_v10.py:140: RuntimeWarning: Mean of empty slice
+  dloo = np.nanmean(np.array([AF[b] for b in anchors if b != a]), axis=0)
+D-tilde weights: 0.650/0.456/0.073
+k=0 A: v6 dual linear...
+k=0 A: v6 LGBM (base+spatial)...
+k=0 B: v8 two-comp + LGBM blend...
+k0-B linear coef[FAST_est]=0.5956
+k0-B LGBM trained.
+k0-B built; bad-fallback rows=0
+
+masked Kalman runs...
+
+--- ctrl: exact v6c rebuild (offline check) ---
+FIDELITY vs submitted v6c: corr=1.000000 mean|d|=0.000002 max|d|=0.107400 exact-match-rows=280730/280961
+
+--- v10a: v6c + obs-PC-dn (masked axis) ---
+saved v10a: mean=-0.0233 std=0.6479 nan=0
+--- v10b: v6c + v8 two-comp k0 blend ---
+saved v10b: mean=-0.0226 std=0.6742 nan=0
+--- v10c: both axes ---
+saved v10c: mean=-0.0268 std=0.6727 nan=0
+
+=== verification ===
+v10a: corr vs v6c=0.97564 mean|d|=0.0892 | masked-row |d|=0.1341 k0-row |d|=0.0000 | range [-2.355, 2.506]
+v10b: corr vs v6c=0.97879 mean|d|=0.0658 | masked-row |d|=0.0000 k0-row |d|=0.1965 | range [-2.536, 2.854]
+v10c: corr vs v6c=0.95523 mean|d|=0.1550 | masked-row |d|=0.1341 k0-row |d|=0.1965 | range [-2.500, 2.854]
+
+DONE.

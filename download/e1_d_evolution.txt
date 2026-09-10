@@ -1,0 +1,64 @@
+Anchors: ['2015-09', '2016-01', '2016-06', '2016-12', '2018-07', '2018-11']
+
+Global monthly covariate means around anchors:
+       SPEI_01_t  SPEI_03_t  SPEI_06_t  SPEI_12_t  SOIL_MOISTURE_t
+t_abs                                                             
+24188     -0.141     -0.185     -0.140     -0.165            0.003
+24192      0.134     -0.018     -0.107     -0.155            0.015
+24197     -0.127     -0.199     -0.108     -0.194            0.054
+24203     -0.157     -0.075     -0.077     -0.128           -0.007
+24222     -0.117     -0.184     -0.142     -0.150           -0.039
+24226     -0.054     -0.023     -0.050     -0.085            0.039
+
+===== TEST A: per-cell dD (anchor k - anchor i) vs mean covariates in (i,k] =====
+            pair   h | SPEI_01_t | SPEI_03_t | SPEI_06_t | SPEI_12_t | SOIL_MOIS
+2015-09->2016-01   4 |     0.376 |     0.439 |     0.371 |     0.192 |     0.329
+2016-01->2016-06   5 |     0.174 |     0.140 |     0.024 |    -0.148 |    -0.097
+2016-06->2016-12   6 |     0.213 |     0.156 |     0.127 |     0.024 |     0.141
+2016-12->2018-07  19 |     0.192 |     0.078 |    -0.090 |    -0.266 |    -0.238
+2018-07->2018-11   4 |     0.235 |     0.284 |     0.191 |     0.009 |     0.198
+
+--- Pooled (z-scored within pair, all 5 consecutive pairs) ---
+n cells pooled: 77,634
+  SPEI_01_t       : pooled corr(dD, cov) = +0.238
+  SPEI_03_t       : pooled corr(dD, cov) = +0.219
+  SPEI_06_t       : pooled corr(dD, cov) = +0.125
+  SPEI_12_t       : pooled corr(dD, cov) = -0.038
+  SOIL_MOISTURE_t : pooled corr(dD, cov) = +0.067
+
+--- Ridge: dD ~ all covs (consecutive pairs, LOO by pair) ---
+  Ridge(alpha=0.1) in-sample R = 0.312
+  Ridge(alpha=1.0) in-sample R = 0.312
+  Ridge LOO-by-pair R = 0.271  (var explained 7%)
+
+===== TEST B: train per-cell trend slope vs train-era mean covariates =====
+n cells: 15,715; slope std: 0.0089/month
+  corr(slope, mean SPEI_01_t) = +0.117
+  corr(slope, mean SPEI_03_t) = +0.111
+  corr(slope, mean SPEI_06_t) = +0.118
+  corr(slope, mean SPEI_12_t) = +0.144
+  corr(slope, mean SOIL_MOISTURE_t) = +0.115
+  Ridge(all covs) in-sample R = 0.189 (var explained 4%)
+
+===== TEST C: train 24-month anomaly change vs cumulative covariates =====
+train t_abs range: 24028..24187 (160 months)
+Traceback (most recent call last):
+  File "/tmp/my-project/scripts/e1_d_evolution.py", line 169, in <module>
+    a1 = piv_tws.iloc[sample_cells][range(s, e + 1)]
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/home/z/.venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6252, in _raise_if_missing
+    raise KeyError(f"{not_found} not in index")
+KeyError: '[24029, 24030, 24031, 24041, 24042] not in index'
+train t_abs range: 24028..24187 (160 months)
+n pairs: 24,000
+corr(24m anomaly change, mean SPEI_12 over window) = +0.195
+(SPEI_12 is the top physics candidate; others checked in anchor test)
+
+===== VERDICT =====
+If pooled/LOO R > 0.5 in TEST A: cumulative covariates explain D evolution
+=> build D(c,t) = era-Dhat(c,t) + g(cum covs), the breakthrough lever.

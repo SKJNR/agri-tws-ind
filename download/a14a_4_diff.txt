@@ -1,0 +1,47 @@
+=== A) phi_k ~ a + b*lambda_k(L) (variance-weighted) ===
+plain Laplacian : rho=+1.1688 D=7.60104  R2=0.9631
+random-walk B   : rho=-19.3365 D=-20.47915  R2=0.9657
+plain Lapl (unw): rho=+0.0340 D=0.17820  R2=0.0100
+plain Lapl (top-68 modes by var): rho=+1.2530 D=9.11674  R2=0.9328
+
+(mode, lambda_k, phi_k) sorted by lambda — check linearity:
+  mode   2: lam=0.033 b_rw=+0.989 phi=+0.894 svar=775.0
+  mode  10: lam=0.053 b_rw=+0.983 phi=+0.826 svar=199.5
+  mode  30: lam=0.076 b_rw=+0.968 phi=+0.549 svar=46.8
+  mode  32: lam=0.094 b_rw=+0.965 phi=+0.201 svar=41.5
+  mode  36: lam=0.105 b_rw=+0.964 phi=+0.318 svar=34.4
+  mode  52: lam=0.123 b_rw=+0.947 phi=+0.071 svar=18.4
+  mode  46: lam=0.136 b_rw=+0.955 phi=+0.264 svar=23.8
+  mode  71: lam=0.155 b_rw=+0.943 phi=+0.124 svar=9.8
+  mode  81: lam=0.171 b_rw=+0.925 phi=-0.271 svar=7.1
+  mode  85: lam=0.184 b_rw=+0.932 phi=-0.337 svar=6.3
+  mode 100: lam=0.211 b_rw=+0.921 phi=-0.320 svar=4.1
+  mode  83: lam=0.220 b_rw=+0.923 phi=-0.347 svar=6.7
+  mode 111: lam=0.242 b_rw=+0.913 phi=-0.406 svar=2.9
+  mode 113: lam=0.266 b_rw=+0.906 phi=-0.486 svar=2.8
+  mode 127: lam=0.292 b_rw=+0.890 phi=-0.453 svar=1.7
+  mode 129: lam=0.328 b_rw=+0.881 phi=-0.465 svar=1.6
+/home/z/my-project/scripts/a14a_4_diffusion.py:116: RuntimeWarning: invalid value encountered in divide
+  r_hp = ((Xhp[ip] * Xhp[ip + 1]).sum(0) / (Xhp[ip] ** 2).sum(0))
+
+=== B) basis-free lag-1 autocorr: high-pass(5deg)=+0.4475  full field=+0.6645 ===
+
+=== C) diffusion residual W (rho=1.1688, D=7.60104) ===
+W temporal corr (consecutive W's): mean=+0.3313 (n=117)
+W spatial neighbor corr: d(1,0)=0.681 d(0,1)=0.844 d(2,0)=0.397 d(5,0)=0.128 d(10,0)=0.187 
+W spectrum: PC1=6.9% PC1-10=35.5% PC1-50=79.0% (smooth kernel innovations if top-heavy)
+W per-cell std: mean=0.9119
+W per-cell kurtosis: mean=3.866
+
+=== D) holdout: fit on 2002-2012, predict 2013-2015 (horizons 1..7) ===
+train-only fit: rho=1.2154 D=8.38710
+ h n_pairs   trend0     pers  percell scalar.74  permode   diffus  diffus2
+ 1      18   1.0842   0.6989   0.6674    0.8460   0.9457   1.6030   1.6030
+ 2      13   1.1477   0.8127   0.8110    0.9530   0.9574  27.6702  27.6702
+ 3      12   1.1666   0.8594   0.9036    1.0122   1.0175 976.8308 976.8308
+ 4      15   1.1334   0.8827   0.9505    1.0220   1.0014 40328.9048 40328.9048
+ 5      17   1.1206   0.9245   0.9876    1.0428   1.0126 1897789.0108 1897789.0108
+ 6      15   1.1367   0.9071   1.0247    1.0750   1.0293 85208527.8655 85208527.8655
+ 7      11   1.1799   0.9701   1.0862    1.1358   1.0818 4423722624.3498 4423722624.3498
+
+saved a14a_cache_diff.npy

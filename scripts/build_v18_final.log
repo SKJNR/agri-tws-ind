@@ -1,0 +1,38 @@
+[    5.3s] === k0 spatial-smoothing A/B (standard val, fit<=2012) ===
+[    6.4s] infra[cv]: 14656 full cells
+[    7.6s]   k0 train: 1,779,287  eval: 218,534
+  k0 blend (v17): 0.6254  [v17b log: 0.6254]
+  k0 blend + smooth sigma=1.0: 0.6240  (-0.0013)
+  k0 blend + smooth sigma=1.5: 0.6303  (+0.0049)
+  k0 blend + smooth sigma=2.0: 0.6412  (+0.0158)
+  => k0 smoothing verdict: sigma=1.0 (-0.0013) BUT below inclusion bar -> OFF (v17b k0 kept)
+[   69.3s] === M1/M2 confirmation of final configs ===
+  cfg0 phi=0.8 lam=0.8: M1=0.6077 | M2=0.6688
+  cfg1 phi=0.85 lam=0.8: M1=0.6080 | M2=0.6703
+  cfg2 phi=0.8 lam=0.84: M1=0.6081 | M2=0.6695
+  ENSEMBLE top3:                 M1=0.6078 | M2=0.6694
+  (v17b baseline: M1=0.6319 M2=0.6905; implied LB masked 0.7355; gap M2 +0.045)
+[   70.2s] === FINAL PHASE: refit on full train, predict test ===
+[   71.1s] infra[full]: 14558 full cells
+[   71.3s]   phi=0.8 lam=0.8: masked pred std=0.6747
+[   71.4s]   phi=0.85 lam=0.8: masked pred std=0.6897
+[   71.5s]   phi=0.8 lam=0.84: masked pred std=0.6806
+[   72.6s]   final k0 rows: 94,048
+[  141.8s]   direct-copyable rows: 0 (0.00%)
+[  141.9s] assembling...
+[  142.3s] saved v18a: mean=-0.0258 std=0.6914 (k0 std=0.711, masked std=0.682)
+[  142.7s] saved v18b: mean=-0.0245 std=0.6869 (k0 std=0.711, masked std=0.675)
+
+================ PRE-REGISTERED LB PROJECTION ================
+config scores (M1/M2): cfg0 0.6077/0.6688  cfg1 0.6080/0.6703  cfg2 0.6081/0.6695  ens ~0.607/0.668
+gap model: v17b M2 0.6905 -> LB masked 0.7355 (+0.0450). v18 band [+0.030, +0.050]
+projected masked RMSE: 0.698-0.719 ; k0 assumed 0.640 (band 0.63-0.65)
+projected LB v18a: sqrt(0.6652*masked^2 + 0.3348*k0^2)
+  masked=0.698 -> LB=0.6791  (v12b=0.6954, v17b=0.7050)
+  masked=0.708 -> LB=0.6860  (v12b=0.6954, v17b=0.7050)
+  masked=0.719 -> LB=0.6936  (v12b=0.6954, v17b=0.7050)
+DECISION RULES (pre-registered):
+  LB <= 0.692 : protocol fix + spatial smoothing confirmed -> double down (E1 D-evolution next)
+  0.692 < LB <= 0.700 : modest confirm -> keep iterating, gap model recalibrated
+  LB > 0.700 : projection missed -> suspect era-weight/smoothing transfer; fall back to v17a-config family
+  LB > 0.7050 : worse than v17b -> major protocol insight needed before next submission

@@ -1,0 +1,6 @@
+GPCP: (570, 72, 144), months 197901..202606
+
+=== S1: anomaly-level signal (all train rows) ===
+k=1: corr(anom, cumGPCP)=0.0036 | corr(anom, cumSPEI)=0.2489 | scaled GPCP=-0.0002 (n=1,982,585)
+k=2: corr(anom, cumGPCP)=0.0941 | corr(anom, cumSPEI)=0.3123 | scaled GPCP=0.0901 (n=1,821,985)
+EXIT 124

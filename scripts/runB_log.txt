@@ -1,0 +1,31 @@
+/home/z/my-project/scripts/pipeline.py:78: RuntimeWarning: Mean of empty slice
+  self.N_tws[i] = np.nanmean(v, axis=1)
+Context (6s)
+  k=1: 250,000
+  k=2: 250,000
+  k=3: 250,000
+  k=4: 250,000
+  k=5: 250,000
+  k=6: 250,000
+Train B: (1500000, 18) (9s)
+Val B: (466285, 18) (10s)
+B1 trained (64s)
+  s1 k=1: dClim=0.745 anom=1.229 spei=0.149 nb=-0.585 c=0.154
+  s1 k=2: dClim=0.647 anom=1.232 spei=0.144 nb=-0.650 c=0.159
+  s1 k=3: dClim=0.629 anom=1.433 spei=0.135 nb=-0.904 c=0.156
+  s1 k=4: dClim=0.566 anom=1.427 spei=0.128 nb=-0.950 c=0.163
+  s1 k=5: dClim=0.553 anom=1.508 spei=0.122 nb=-1.082 c=0.162
+  s1 k=6: dClim=0.581 anom=1.434 spei=0.115 nb=-1.068 c=0.165
+B2 trained (123s)
+
+B1 direct: 0.7870
+B2 two-stage: 0.7866
+B1+B2 avg: 0.7846
+  B1 per-k: k=1:0.690 k=2:0.873 k=3:0.799 k=4:0.979 k=5:0.771 k=6:0.940
+  B2 per-k: k=1:0.679 k=2:0.872 k=3:0.806 k=4:0.989 k=5:0.798 k=6:0.975
+  B12 per-k: k=1:0.682 k=2:0.871 k=3:0.800 k=4:0.982 k=5:0.782 k=6:0.955
+COMBINED A+B1: 0.7627
+COMBINED A+B2: 0.7660
+COMBINED A+B12: 0.7628
+Done (124s)
+EXIT 0

@@ -1,0 +1,23 @@
+Loaded 2,154,021 rows, 15715 cells
+phi shrunk: mean=0.755 p10=0.656 p90=0.826
+shrinkage w: mean=0.923
+
+=== PER-CELL AR(1) HIERARCHICAL — VALIDATION (2013+) ===
+beta by k: {0: 0.0, 1: 0.1405, 2: 0.1397, 3: 0.1307, 4: 0.1224, 5: 0.1153, 6: 0.1065}
+persistence (raw anchor):    0.7560
+per-cell AR(1) multi-step:   0.7653
+AR(1) + spei_sum beta:       0.7545
+(refs: Model A k=0 = 0.6547 | Model B masked = 0.7846 | system = 0.744 | leader 0.5596)
+
+per-k AR(1)+spei:
+  k=0: 0.6759 (n=187,334)
+  k=1: 0.6968 (n=140,340)
+  k=2: 0.8850 (n=108,813)
+  k=3: 0.8831 (n=62,184)
+  k=4: 1.0681 (n=62,048)
+  k=5: 0.9305 (n=46,503)
+  k=6: 1.0846 (n=46,397)
+
+(modelA_val.npz exists for reference)
+Saved ar1_val.npz
+EXIT 0

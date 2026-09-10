@@ -1,0 +1,68 @@
+=== loading train ===
+train: 138 months x 15715 cells
+field missing frac: 0.0068
+grid: 140 lats (step 1.0), 358 lons (step 1.0)
+pooled train phi = 0.7466
+
+=== N1: train field ACF (pooled over t and cells) ===
+  r( 1) = 0.7457   [old formula 0.839*0.89^1 = 0.7467]
+  r( 2) = 0.6533   [old formula 0.839*0.89^2 = 0.6646]
+  r( 3) = 0.5909   [old formula 0.839*0.89^3 = 0.5915]
+  r( 4) = 0.5348   [old formula 0.839*0.89^4 = 0.5264]
+  r( 5) = 0.4821   [old formula 0.839*0.89^5 = 0.4685]
+  r( 6) = 0.4417   [old formula 0.839*0.89^6 = 0.4170]
+  r( 7) = 0.3893   [old formula 0.839*0.89^7 = 0.3711]
+  r( 8) = 0.3455   [old formula 0.839*0.89^8 = 0.3303]
+  r( 9) = 0.3131   [old formula 0.839*0.89^9 = 0.2939]
+  r(10) = 0.2831   [old formula 0.839*0.89^10 = 0.2616]
+  r(11) = 0.2607   [old formula 0.839*0.89^11 = 0.2328]
+  r(12) = 0.2262   [old formula 0.839*0.89^12 = 0.2072]
+
+AR(1) residual std = 0.5483  (their claim: 0.543)
+neighbor pairs (E/N at grid step): 20983
+C1 ARTIFACT version (residuals NOT per-cell demeaned): pooled neighbor corr = 0.9702   <- reproduces their 0.9578?
+C1 CORRECT version (per-cell demeaned):                 pooled neighbor corr = 0.9698
+C1 per-pair time-series corr (correct resid): mean = 0.9744, median = 0.9799
+
+=== N5: single-month spatial autocorr of residual map (east-neighbor) ===
+  month idx 50: spatial autocorr = 0.9745
+  month idx 100: spatial autocorr = 0.9772
+
+cells with full residual history: 14558 / 15715
+C2 PCA of CORRECT residuals: PC1=9.3%, PC2=5.9%, PC3=4.5%, PC1-5=27.3%, PC1-10=40.6%
+C2 PCA of ARTIFACT residuals (not demeaned): PC1=9.3%, PC1-5=27.3%
+PC1 score: std=19.9085, lag1 ac=-0.329, lag12 ac=0.044
+
+C3 global monthly mean of AR residuals: std=0.1025  (their claim: 0.103)
+C3 variance fraction of global mean: 3.49%  (their claim: 3.6%)
+N4 z(t)=global mean of raw anomalies: std=0.1530, lag1=0.737, lag6=0.624, lag12=0.446
+
+strict fully-unmasked anchors: [201509, 201601, 201606, 201612, 201807, 201811]
+z(anchor) = global mean of anchor anomaly field:
+  201509: -0.1915
+  201601: -0.1909
+  201606: -0.3240
+  201612: -0.2044
+  201807: -0.0322
+  201811: -0.0723
+
+=== N3: pair corr original vs after removing global mean (common mode) ===
+  201509->201601 (k= 4): r=0.6675 -> GM-removed 0.6675  (drop -0.0000)
+  201509->201606 (k= 9): r=0.5157 -> GM-removed 0.5157  (drop -0.0000)
+  201509->201612 (k=15): r=0.3754 -> GM-removed 0.3754  (drop -0.0000)
+  201509->201807 (k=34): r=0.5305 -> GM-removed 0.5305  (drop -0.0000)
+  201509->201811 (k=38): r=0.6061 -> GM-removed 0.6061  (drop -0.0000)
+  201601->201606 (k= 5): r=0.6996 -> GM-removed 0.6996  (drop -0.0000)
+  201601->201612 (k=11): r=0.4892 -> GM-removed 0.4892  (drop -0.0000)
+  201601->201807 (k=30): r=0.4819 -> GM-removed 0.4819  (drop +0.0000)
+  201601->201811 (k=34): r=0.6422 -> GM-removed 0.6422  (drop +0.0000)
+  201606->201612 (k= 6): r=0.5302 -> GM-removed 0.5302  (drop -0.0000)
+  201606->201807 (k=25): r=0.5023 -> GM-removed 0.5023  (drop -0.0000)
+  201606->201811 (k=29): r=0.6121 -> GM-removed 0.6121  (drop -0.0000)
+  201612->201807 (k=19): r=0.4294 -> GM-removed 0.4294  (drop -0.0000)
+  201612->201811 (k=23): r=0.5062 -> GM-removed 0.5062  (drop -0.0000)
+  201807->201811 (k= 4): r=0.6968 -> GM-removed 0.6968  (drop -0.0000)
+
+N2 floor fit r(k)=a+b*phi^k: floor a=0.495, b=1.282, phi=0.630, fit-rmse=0.0718
+   implied r(1..7): 1.303, 1.004, 0.816, 0.697, 0.622, 0.575, 0.545
+   pure single-exponential fit: lam=0.605, phi=0.995, fit-rmse=0.0938

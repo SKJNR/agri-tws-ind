@@ -1,0 +1,150 @@
+==============================================================================
+PHASE 1 COMPREHENSIVE DIAGNOSTIC REPORT
+==============================================================================
+
+----------------------------------------
+[1] DATA ENGINEER: integrity audit
+----------------------------------------
+Train: (2154021, 13), Test: (280961, 13)
+Train dup IDs: 0, Test dup IDs: 0
+Train nulls per col: 0 total
+Test nulls: TWS_t=186913 (masked), others=0
+Test IDs parse cleanly: True
+ID<->columns mismatches: 0
+Cells: train=15715, test=15715, test-not-in-train=0
+Drift SPEI_01_t: train mean=-0.030 std=0.957 | test mean=-0.009 std=0.977
+Drift SPEI_12_t: train mean=-0.093 std=0.931 | test mean=-0.114 std=0.976
+Drift SOIL_MOISTURE_t: train mean=0.001 std=0.787 | test mean=0.031 std=0.844
+
+----------------------------------------
+[2] STATISTICIAN: distribution & time-series structure
+----------------------------------------
+TWS_t: mean=0.1170 std=0.9130 skew=-0.088 kurt=-0.303
+target: mean=0.1125 std=0.9120
+
+Per-cell AR(1) phi: mean=0.765 std=0.165 p10=0.520 p50=0.800 p90=0.945
+Cells with phi<0.5: 8.9% | phi>0.95: 9.3%
+In-sample per-cell AR(1) RMSE (biased, upper bound): 0.5202
+ACF anom lag  1: 0.7442
+ACF anom lag  2: 0.6510
+ACF anom lag  3: 0.5887
+ACF anom lag  6: 0.4394
+ACF anom lag 12: 0.2261
+
+Delta by calendar month (mean +/- std):
+  month  1: -0.0052 +/- 0.6174
+  month  2: -0.0472 +/- 0.6567
+  month  3: -0.0108 +/- 0.5801
+  month  4: -0.0321 +/- 0.5062
+  month  5: +0.0157 +/- 0.5289
+  month  6: +0.0486 +/- 0.6528
+  month  7: +0.0279 +/- 0.6366
+  month  8: -0.0291 +/- 0.5439
+  month  9: -0.0146 +/- 0.5220
+  month 10: -0.0164 +/- 0.5324
+  month 11: +0.0096 +/- 0.5198
+  month 12: +0.0046 +/- 0.5678
+
+Variance decomposition of TWS_t:
+  total var: 0.8336
+  global-month var (shared): 0.0234 (2.8%)
+
+----------------------------------------
+[3] HYDROLOGIST: water balance & TWSA verification
+----------------------------------------
+Per-cell means: mean=0.1163 std=0.3931 | |mean|>0.5: 31.7%
+  -> if means were ~0 everywhere, TWS is a pure anomaly; here there IS a spatial mean structure (could be anomaly vs arbitrary reference period)
+
+delta(t->t+1) vs covariates AT VARIOUS LAGS (using month-t row):
+  corr(delta, SPEI_01_t at t): -0.0503
+  corr(delta, SPEI_03_t at t): -0.0649
+  corr(delta, SPEI_06_t at t): -0.0049
+  corr(delta, SPEI_12_t at t): -0.0352
+  corr(delta, SOIL_MOISTURE_t at t): -0.0581
+  corr(delta, ΔSPEI_01_t): -0.0115
+  corr(delta, ΔSOIL_MOISTURE_t): -0.0102
+
+Per-cell slope(delta ~ SPEI_01): mean=-0.0304 std=0.0621 p10=-0.1091 p90=+0.0328
+
+SIGNAL CEILING TEST (train, using future SPEI — NOT allowed in prod, ceiling only):
+  corr(delta_t->t+1, SPEI_01 at t+1): +0.2344
+  corr(delta_t->t+1, SPEI_01 at t):   -0.0549
+  corr(delta_t->t+1, SOIL_M at t+1):  +0.0872
+
+----------------------------------------
+[4] SPATIAL/GIS: neighbor structure & regionalization
+----------------------------------------
+Anomaly field corr(2005-04-01, 2005-05-01) across cells: 0.8534  <- field-level month-to-month correlation
+Same-month east-neighbor anomaly corr: mean=0.9911 (n=2959)
+
+Per-cell AR(1) phi by latitude band (cells with >30 obs):
+        mean  count
+lat                
+-42.0  0.501     31
+-38.0  0.820     50
+-36.0  0.880     58
+-34.0  0.798     90
+-32.0  0.759    129
+-30.0  0.771    147
+-28.0  0.795    158
+-26.0  0.801    162
+-24.0  0.805    175
+-22.0  0.808    181
+-20.0  0.824    172
+-18.0  0.838    171
+-16.0  0.814    172
+-14.0  0.787    157
+-12.0  0.763    145
+-10.0  0.754    144
+-8.0   0.765    178
+-6.0   0.789    177
+-4.0   0.794    181
+-2.0   0.793    181
+-0.0   0.775    170
+ 2.0   0.778    155
+ 4.0   0.770    148
+ 6.0   0.758    171
+ 8.0   0.768    184
+ 10.0  0.783    183
+ 12.0  0.799    161
+ 14.0  0.762    182
+ 16.0  0.669    194
+ 18.0  0.573    221
+ 20.0  0.570    229
+ 22.0  0.633    254
+ 24.0  0.670    265
+ 26.0  0.704    281
+ 28.0  0.726    297
+ 30.0  0.736    317
+ 32.0  0.754    309
+ 34.0  0.759    300
+ 36.0  0.806    309
+ 38.0  0.806    318
+ 40.0  0.784    340
+ 42.0  0.790    340
+ 44.0  0.774    370
+ 46.0  0.784    393
+ 48.0  0.800    419
+ 50.0  0.811    423
+ 52.0  0.793    443
+ 54.0  0.791    432
+ 56.0  0.792    403
+ 58.0  0.797    396
+ 60.0  0.791    450
+ 62.0  0.770    501
+ 64.0  0.756    541
+ 66.0  0.722    571
+ 68.0  0.672    533
+ 70.0  0.685    391
+ 72.0  0.709    271
+ 74.0  0.755    157
+ 76.0  0.817    193
+ 78.0  0.934    173
+ 80.0  0.952    190
+ 82.0  0.979    128
+
+==============================================================================
+END OF PHASE 1 REPORT
+
+Report saved.
+EXIT 0

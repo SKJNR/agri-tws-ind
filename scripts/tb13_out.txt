@@ -1,0 +1,23 @@
+val months: 23 (201301..201508)
+
+VAL-window band lag-h corr (r) [test-era-appropriate persistence]:
+  band    h=1    h=2    h=3    h=4    h=5    h=6    h=7   
+  <2deg  +0.611 +0.553 +0.524 +0.491 +0.468 +0.494 +0.494 
+  2-4    +0.679 +0.626 +0.595 +0.565 +0.537 +0.560 +0.540 
+  4-9    +0.785 +0.727 +0.694 +0.663 +0.627 +0.628 +0.597 
+  9-24   +0.824 +0.773 +0.734 +0.697 +0.659 +0.648 +0.611 
+  >24    +0.771 +0.724 +0.693 +0.621 +0.577 +0.580 +0.510 
+  scalar +0.781 +0.730 +0.697 +0.655 +0.619 +0.623 +0.585 
+
+anchors: [(201311, 120), (201401, 122), (201406, 125), (201412, 129), (201505, 134)]
+
+masked-row RMSE by gap (val window; n months per h shown):
+  method    h=1(n=5) h=2(n=4) h=3(n=3) h=4(n=1)
+  persist1  nan      nan      nan      nan      
+  scalar    nan      nan      nan      nan      
+  band      nan      nan      nan      nan      
+  persist1  cal-wtd RMSE = nan
+  scalar    cal-wtd RMSE = nan
+  band      cal-wtd RMSE = nan
+
+val Xres std: 1.0555

@@ -1,0 +1,61 @@
+=== R1: target = TWS_t(t+1)? airtight test ===
+duplicated (cell, absolute-month) rows: 0
+consecutive-month pairs found (Dec->Jan included): 2154021 of 2154021 rows
+MERGE-ON-NEXT-MONTH: corr = 0.803260, nonzero diffs = 2154013 / 2154021, max|diff| = 6.56713867
+  Dec->Jan pairs alone: 203081, max|diff| among them = 3.56212258
+[bug repro 1] FILE-ORDER shift(-1): corr = 0.7779, max|diff| = 6.79, mean|diff| = 0.426
+[bug repro 2] SORT+SHIFT, no consec check: corr = 0.9766, max|diff| = 4.90, mean|diff| = 0.039, pairs with month-gap>1: 160908 (7.53%)
+[file order] first 200k rows span 13 distinct months -> file is TIME-major
+
+=== R2: cov->D coupling reconciliation ===
+
+(a) leave-one-anchor-out: corr(cov-field(m), D-hat_{-m}) across cells
+  201509: 0.6654
+  201601: 0.7060
+  201606: 0.6546
+  201612: 0.4502
+  201807: 0.5198
+  201811: 0.5679
+
+(b) static vs monthly decomposition of cov-field
+  corr(static part S, D-hat) = 0.7731
+  201509: corr(W_m, D-hat) = 0.1531 | corr(W_m, F_m - D-hat) [fast/drift tracking] = 0.4863
+  201601: corr(W_m, D-hat) = 0.1990 | corr(W_m, F_m - D-hat) [fast/drift tracking] = 0.4621
+  201606: corr(W_m, D-hat) = 0.0950 | corr(W_m, F_m - D-hat) [fast/drift tracking] = 0.3971
+  201612: corr(W_m, D-hat) = -0.1417 | corr(W_m, F_m - D-hat) [fast/drift tracking] = 0.4771
+  201807: corr(W_m, D-hat) = -0.0157 | corr(W_m, F_m - D-hat) [fast/drift tracking] = 0.4957
+  201811: corr(W_m, D-hat) = 0.0712 | corr(W_m, F_m - D-hat) [fast/drift tracking] = 0.3665
+
+(c) per-cell-demeaned covs (train climatology removed) -> ridge -> D-hat_{-m}
+  201509: ridge corr (demeaned covs) = 0.2535
+  201601: ridge corr (demeaned covs) = 0.2973
+  201606: ridge corr (demeaned covs) = 0.2643
+  201612: ridge corr (demeaned covs) = 0.1723
+  201807: ridge corr (demeaned covs) = 0.1753
+  201811: ridge corr (demeaned covs) = 0.2622
+
+(d) artifact checks
+  corr(D-hat, mu_c) across cells = -0.7693
+  corr(static part S, mu_c) = -0.8531
+
+(e) RAW covs -> ridge -> D-hat_{-m} (same ridge, no demeaning)
+  201509: ridge corr (raw covs) = 0.2286
+  201601: ridge corr (raw covs) = 0.2894
+  201606: ridge corr (raw covs) = 0.2592
+  201612: ridge corr (raw covs) = 0.1664
+  201807: ridge corr (raw covs) = 0.1682
+  201811: ridge corr (raw covs) = 0.2461
+
+(f) decisive: predicting anchor field F_m from D-hat_{-m} vs + cov-field(m)
+  201509: RMSE(D-hat only) = 0.8053 -> RMSE(+cov-field) = 0.6973   weights (D, cov) = (0.571, 0.854)
+  201601: RMSE(D-hat only) = 0.7621 -> RMSE(+cov-field) = 0.6901   weights (D, cov) = (0.531, 0.850)
+  201606: RMSE(D-hat only) = 0.7801 -> RMSE(+cov-field) = 0.6858   weights (D, cov) = (0.542, 0.844)
+  201612: RMSE(D-hat only) = 1.0510 -> RMSE(+cov-field) = 0.9270   weights (D, cov) = (0.544, 0.843)
+  201807: RMSE(D-hat only) = 0.8728 -> RMSE(+cov-field) = 0.6850   weights (D, cov) = (0.570, 0.805)
+  201811: RMSE(D-hat only) = 0.7816 -> RMSE(+cov-field) = 0.7106   weights (D, cov) = (0.499, 0.868)
+  MEAN: base = 0.8421, combo = 0.7326, improvement = 0.1095
+  mean weights: D = 0.543, cov = 0.844
+
+(calib) var(F_m - D-hat) = fast+noise var to be tracked:
+  var(F - D-hat) = 0.4878 (std 0.6984)
+  var(fast residual after best cov linear explanation) ~ 0.3414 (rough)

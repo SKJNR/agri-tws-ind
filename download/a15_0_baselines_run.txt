@@ -1,0 +1,74 @@
+train 2,154,021 rows, 15715 cells  [5s]
+fit rows 1,794,914 | val rows 359,107
+infra done [5s]
+
+val anchor months:
+ t_abs  cal  has_next         reason
+ 24156    1      True        next-ok
+ 24161    6      True        next-ok
+ 24162    7     False no-next-by-cal
+ 24166   11      True        next-ok
+ 24167   12      True        next-ok
+ 24168    1     False    no-next-gap
+ 24173    6     False    no-next-gap
+ 24176    9     False no-next-by-cal
+ 24178   11      True        next-ok
+ 24179   12      True        next-ok
+ 24180    1      True        next-ok
+ 24185    6      True        next-ok
+ 24186    7     False no-next-by-cal
+
+======================================================================
+A. CONTINUITY CHECK — k0_diagnostic protocol (all val months, has_next rows)
+======================================================================
+persistence (slope 0.750): RMSE=0.6730  n=280,395   [ref 0.6635]
+v4 linear full:                  RMSE=0.6522  n=280,395   [ref 0.6407]
+   coefs: TWS=0.702 covs_t=[-0.003 -0.021 -0.03  -0.052 -0.092] covs_t1=[0.083 0.015 0.059 0.117 0.145]
+
+======================================================================
+B. STRICT PROTOCOL — val anchor months only, test-structure covs(t+1)
+======================================================================
+strict fit rows: 1,779,287  (has_next: 1,685,864)
+val k=0 rows: 202,931  (with covs(t+1): 124,975 = 61.6%  | test mix: 66.8%)
+
+--- baselines (strict protocol) ---
+persistence (raw)                  | with 0.7064 (n=124,975) | without 0.6494 (n=77,956) | rowwise 0.6850 | TEST-WTD 0.6880
+slope persistence (uw s=0.755)     | with 0.6816 (n=124,975) | without 0.6081 (n=77,956) | rowwise 0.6544 | TEST-WTD 0.6581
+slope persistence (w  s=0.772)     | with 0.6806 (n=124,975) | without 0.6076 (n=77,956) | rowwise 0.6535 | TEST-WTD 0.6572
+   linear-F coefs: TWS=0.697 covs_t=[-0.001 -0.014 -0.019  0.019 -0.066] covs_t1=[ 0.101 -0.001  0.062  0.031  0.117]
+   linear-R coefs: TWS=0.710 covs_t=[ 0.003 -0.039  0.097  0.041  0.018]
+v4 linear (F/R dual)               | with 0.6688 (n=124,975) | without 0.5945 (n=77,956) | rowwise 0.6413 | TEST-WTD 0.6451
+v4 linear-F everywhere (cheat chk) | with 0.6688 (n=124,975) | without 0.6273 (n=77,956) | rowwise 0.6532 | TEST-WTD 0.6553
+   pers+covs(t+1) coefs: TWS=0.688 covs_t1=[ 0.123 -0.02   0.042  0.04   0.071]
+persistence + covs(t+1) (F only)   | with 0.6701 (n=124,975) | without 0.6154 (n=77,956) | rowwise 0.6496 | TEST-WTD 0.6525
+   pers+covs(t) coefs: TWS=0.710 covs_t=[ 0.003 -0.039  0.097  0.041  0.018]
+persistence + covs(t)              | with 0.6802 (n=124,975) | without 0.5945 (n=77,956) | rowwise 0.6486 | TEST-WTD 0.6530
+
+per-anchor RMSE (v4 linear F/R dual):
+             cal  has_next          reason      n      rmse
+t_abs t_abs                                                
+24156 24156    1      True         next-ok  15644  0.455413
+24161 24161    6      True         next-ok  15576  0.444315
+24162 24162    7     False  no-next-by-cal  15580  0.598264
+24166 24166   11      True         next-ok  15615  0.465267
+24167 24167   12      True         next-ok  15636  0.514967
+24168 24168    1     False     no-next-gap  15652  0.542209
+24173 24173    6     False     no-next-gap  15579  0.506672
+24176 24176    9     False  no-next-by-cal  15553  0.541582
+24178 24178   11      True         next-ok  15633  0.416364
+24179 24179   12      True         next-ok  15637  0.679992
+24180 24180    1      True         next-ok  15653  0.912817
+24185 24185    6      True         next-ok  15581  1.106255
+24186 24186    7     False  no-next-by-cal  15592  0.751962
+
+DONE [8s]
+
+=== SUMMARY (strict protocol) ===
+model                                    with  without  rowwise  TESTWTD
+persistence (raw)                      0.7064   0.6494   0.6850   0.6880
+slope persistence (uw s=0.755)         0.6816   0.6081   0.6544   0.6581
+slope persistence (w  s=0.772)         0.6806   0.6076   0.6535   0.6572
+v4 linear (F/R dual)                   0.6688   0.5945   0.6413   0.6451
+v4 linear-F everywhere (cheat chk)     0.6688   0.6273   0.6532   0.6553
+persistence + covs(t+1) (F only)       0.6701   0.6154   0.6496   0.6525
+persistence + covs(t)                  0.6802   0.5945   0.6486   0.6530

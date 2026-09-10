@@ -1,0 +1,66 @@
+=== loading train (10 cols) ===
+train: 138 months (200205..201508), 15715 cells, 2154021 rows
+
+=== D1: what is the target? ===
+corr(TWS_t, target) same row = 0.8033   [old EDA claim: 0.9766]
+corr(TWS_t(t+1), target(t)) = 1.000000   [if ~1.0, target IS next month's TWS_t]
+  std of (TWS_t(t+1) - target) = 0.000000, max|diff| = 0.000000
+corr(TWS_t(t-1), target(t)) = nan
+
+=== D2: train field ACF, long lags ===
+  r(12) = 0.2262   [AR(1) 0.839*0.89^12 = 0.2072]
+  r(18) = 0.1431   [AR(1) 0.839*0.89^18 = 0.1030]
+  r(24) = 0.0785   [AR(1) 0.839*0.89^24 = 0.0512]
+  r(30) = 0.0423   [AR(1) 0.839*0.89^30 = 0.0254]
+  r(36) = 0.0036   [AR(1) 0.839*0.89^36 = 0.0126]
+  r(48) = -0.0821   [AR(1) 0.839*0.89^48 = 0.0031]
+
+=== D3: spatial structure ===
+within-cell anomaly var = 0.6787; spatial var of cell means = 0.1545 (ratio 0.228)
+  same-time neighbor corr at 1 deg east: 0.9910 (n_pairs=14849)
+  same-time neighbor corr at 2 deg east: 0.9661 (n_pairs=14228)
+  same-time neighbor corr at 5 deg east: 0.8387 (n_pairs=12923)
+  same-time neighbor corr at 10 deg east: 0.6120 (n_pairs=11407)
+spatial PCA of anomaly field: PC1=26.8%, PC1-5=54.6%, PC1-10=70.0%, PC1-20=81.8%, PC1-50=94.1%
+
+=== D4: same-month covariates -> TWS_t (honest: fit <2010, eval >=2010) ===
+per-cell: corr(cov-pred, TWS_t) = 0.5040, RMSE = 0.7585, R2 = 0.254
+field-level quality of cov estimate, per month (eval period):
+  field-level anomaly corr: mean=0.4987, min=0.4421, max=0.5439 (n_months=9)
+PC-score estimation quality (top 5 PCs of anomaly field, eval months):
+  PC1 score corr across months: 0.0697 (n=51 months)
+  PC2 score corr across months: 0.9475 (n=51 months)
+  PC3 score corr across months: 0.8519 (n=51 months)
+  PC4 score corr across months: 0.9012 (n=51 months)
+  PC5 score corr across months: 0.8631 (n=51 months)
+
+=== D6: test-era persistent component (anchor fields) ===
+anchors: [201509, 201601, 201606, 201612, 201807, 201811]
+var(anchor anomaly) = 1.3040; var(D-hat=mean of 6 anchors) = 0.8078; ratio = 0.619
+std(D-hat) = 0.8988  <- test-era mean shift per cell (vs train mean)
+PCA of 6 anchor fields: PC1=63.3%, PC2=12.1%, PC3=9.7%
+pair corrs after removing D-hat (fast component only):
+  201509->201601 (k= 4): r=0.6675 -> D-removed 0.0588
+  201509->201606 (k= 9): r=0.5157 -> D-removed -0.2637
+  201509->201612 (k=15): r=0.3754 -> D-removed -0.3854
+  201509->201807 (k=34): r=0.5305 -> D-removed -0.1193
+  201509->201811 (k=38): r=0.6061 -> D-removed -0.1952
+  201601->201606 (k= 5): r=0.6996 -> D-removed 0.0649
+  201601->201612 (k=11): r=0.4892 -> D-removed -0.2750
+  201601->201807 (k=30): r=0.4819 -> D-removed -0.4507
+  201601->201811 (k=34): r=0.6422 -> D-removed -0.2406
+  201606->201612 (k= 6): r=0.5302 -> D-removed -0.1192
+  201606->201807 (k=25): r=0.5023 -> D-removed -0.3009
+  201606->201811 (k=29): r=0.6121 -> D-removed -0.2798
+  201612->201807 (k=19): r=0.4294 -> D-removed -0.2586
+  201612->201811 (k=23): r=0.5062 -> D-removed -0.2941
+  201807->201811 (k= 4): r=0.6968 -> D-removed 0.0962
+fraction of D-hat variance inside train top-50 PC subspace: 0.770
+
+=== D5: what predicts the target? (honest: fit <2010, eval >=2010) ===
+  TWS_t alone (persistence)   : corr=0.7309  RMSE=0.5899
+  covs(t) alone               : corr=0.4781  RMSE=0.7755
+  TWS_t + covs(t)             : corr=0.7397  RMSE=0.5823
+  TWS_t + covs(t) + covs(t+1)!!: corr=0.7616  RMSE=0.5618
+  covs(t+1) alone!!           : corr=0.5072  RMSE=0.7626
+  (target std for reference: 0.8546)

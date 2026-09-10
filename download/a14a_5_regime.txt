@@ -1,0 +1,44 @@
+anchor months (t_abs): [24188, 24192, 24197, 24203, 24222, 24226]
+partial months: [24193, 24194, 24198, 24199, 24200, 24204, 24205, 24206, 24207, 24208, 24209, 24227] (unmasked counts: [38, 17, 65, 36, 50, 29, 51, 41, 21, 4, 34, 31])
+
+=== A) predict anchors from train-end (2015-08), full-history cells ===
+  anchor   D      n   trend0  persist  permode  slowK10  pc1pers   phi.98  anom_sd corr_pm
+   24188   1  14556   1.0255   1.2315   1.1303   1.1035   1.1337   1.2217   1.0252   0.190
+   24192   5  14548   1.1323   1.3238   1.1652   1.1649   1.1806   1.2812   1.1318   0.182
+   24197  10  14558   1.0683   1.2708   1.0884   1.0886   1.1175   1.1897   1.0660   0.172
+   24203  16  14539   1.3012   1.4598   1.3097   1.3098   1.3448   1.3634   1.3000   0.131
+   24222  35  14550   1.2271   1.3600   1.2261   1.2261   1.2833   1.2192   1.1953   0.133
+   24226  39  14555   1.3003   1.4300   1.3000   1.3000   1.3572   1.2901   1.2774   0.113
+
+=== B) anchor LOO: predict anchor j from mean of other anchors (D-hat) vs train-end ===
+  anchor      n  DhatLOO  permode  slowK10  pc1pers
+   24188  14556   1.0254   1.1303   1.1035   1.1337
+   24192  14548   1.1322   1.1652   1.1649   1.1806
+   24197  14558   1.0683   1.0884   1.0886   1.1175
+   24203  14539   1.3011   1.3097   1.3098   1.3448
+   24222  14550   1.2271   1.2261   1.2261   1.2833
+   24226  14555   1.3003   1.3000   1.3000   1.3572
+
+=== C) residual structure (permode predictor from train-end) ===
+anchor 24188 (D=1): resid std=1.1303 corr(res, mu)=+0.145 corr(res, a_true)=+0.788 corr(pm, a_true)=+0.190
+anchor 24192 (D=5): resid std=1.1649 corr(res, mu)=+0.194 corr(res, a_true)=+0.885 corr(pm, a_true)=+0.182
+anchor 24197 (D=10): resid std=1.0863 corr(res, mu)=+0.246 corr(res, a_true)=+0.908 corr(pm, a_true)=+0.172
+anchor 24203 (D=16): resid std=1.3079 corr(res, mu)=+0.236 corr(res, a_true)=+0.954 corr(pm, a_true)=+0.131
+anchor 24222 (D=35): resid std=1.1893 corr(res, mu)=+0.320 corr(res, a_true)=+0.976 corr(pm, a_true)=+0.133
+anchor 24226 (D=39): resid std=1.2731 corr(res, mu)=+0.324 corr(res, a_true)=+0.982 corr(pm, a_true)=+0.113
+
+cross-anchor residual corr (permode-from-train-end):
+[[1.     0.6765 0.5053 0.3768 0.4263 0.4806]
+ [0.6765 1.     0.7016 0.5223 0.4418 0.5707]
+ [0.5053 0.7016 1.     0.5602 0.4932 0.5808]
+ [0.3768 0.5223 0.5602 1.     0.4812 0.5328]
+ [0.4263 0.4418 0.4932 0.4812 1.     0.7235]
+ [0.4806 0.5707 0.5808 0.5328 0.7235 1.    ]]
+
+=== D) anchor->anchor prediction (per-mode from previous anchor) ===
+    from       to  gap  persist  permode
+   24188    24192    4   0.8879   1.0687
+   24192    24197    5   0.8687   1.0023
+   24197    24203    6   1.1420   1.2372
+   24203    24222   19   1.2813   1.1552
+   24222    24226    4   0.9188   1.1714

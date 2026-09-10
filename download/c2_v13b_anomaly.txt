@@ -1,0 +1,30 @@
+             n  mean_abs_d  max_abs_d  changed  changed_frac    split
+month                                                                
+2015-09  15552      0.0000     0.0000        0         0.000   PUBLIC
+2016-01  15647      0.0000     0.0000        0         0.000   PUBLIC
+2016-02  15663      0.0000     0.0000        0         0.000   PUBLIC
+2016-03  15665      0.0000     0.0000        0         0.000   PUBLIC
+2016-06  15584      0.0000     0.0000        0         0.000   PUBLIC
+2016-07  15591      0.0000     0.0000        0         0.000   PUBLIC
+2016-08  15520      0.0000     0.0000        0         0.000   PUBLIC
+2016-09  15529      0.1028     0.5504    15479         0.997  private
+2016-12  15618      0.0000     0.0000        0         0.000  private
+2017-01  15610      0.0000     0.0000        0         0.000  private
+2017-02  15642      0.0000     0.0000        0         0.000  private
+2017-03  15677      0.0894     0.4201    15636         0.997  private
+2017-04  15638      0.0814     0.3866    15617         0.999  private
+2017-05  15572      0.0738     0.3503    15568         1.000  private
+2017-06  15584      0.0673     0.3116    15550         0.998  private
+2018-07  15584      0.0000     0.0000        0         0.000  private
+2018-11  15646      0.0000     0.0000        0         0.000  private
+2018-12  15639      0.0000     0.0000        0         0.000  private
+
+PUBLIC rows: 109,222  changed: 0  rms|d|: 0.00000
+private rows: 171,739  changed: 77,850  rms|d|: 0.07446
+
+actual public MSE delta (from LB): 0.002875
+rms|d| on public (if all damage from era rows): 0.00000 -> MSE delta if perfectly correlated sign: 0.000000
+
+VERDICT: if rms|d| on PUBLIC > 0 and changed rows exist in the public window,
+the 'bit-exact public' claim was verified under the WRONG (pre-decode) split
+=> H-A confirmed: era rows leak into the true public window.

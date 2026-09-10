@@ -1,0 +1,15 @@
+Loaded 2,154,021
+phi_c mean=0.761 | q_c mean=0.2683 | Q_G=0.2756
+obs R (in-sample): 0.6877
+obs R (honest):    0.5363
+
+=== LEVEL-SPACE KALMAN (k=1..6, block val) ===
+no-obs (pure AR decay): weighted=0.8115 | k1=0.691 k2=0.885 k3=0.852 k4=0.903 k5=0.840 k6=0.915
+R x4                  : weighted=0.7983 | k1=0.687 k2=0.878 k3=0.841 k4=0.885 k5=0.807 k6=0.876
+R x2                  : weighted=0.7935 | k1=0.685 k2=0.877 k3=0.839 k4=0.878 k5=0.793 k6=0.860
+R x1                  : weighted=0.7911 | k1=0.686 k2=0.880 k3=0.839 k4=0.871 k5=0.781 k6=0.845
+honest R              : weighted=0.7913 | k1=0.687 k2=0.882 k3=0.839 k4=0.869 k5=0.778 k6=0.841
+
+k=0 per-cell AR(1) level-space: 0.6681 (n=187,334)
+(refs: run_A LGBM k=0 = 0.6547 | AR(1) global all-rows = 0.6379 | floor ~0.62)
+EXIT 0

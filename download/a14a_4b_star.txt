@@ -1,0 +1,33 @@
+=== pooled STAR regression (global coefficients) ===
+         a0 (self): +0.30823 ± 0.00606  (t=+50.9)
+      a1 (nb 1deg): +0.05953 ± 0.00810  (t=+7.3)
+    a2 (ring 2deg): +0.17511 ± 0.00600  (t=+29.2)
+  a3 (ring 3-4deg): +0.20190 ± 0.00300  (t=+67.3)
+  resid var=0.26405 (std 0.5139); var explained vs persistence-only: 0.2215
+  STAR vs pure-AR improvement in resid var: 0.2215
+
+STAR residual W spatial corr: d(1,0)=0.969 d(0,1)=0.986 d(2,0)=0.889 d(5,0)=0.578 d(10,0)=0.305
+STAR residual temporal corr (consecutive): mean=-0.0712
+STAR residual per-cell kurtosis mean=3.913
+
+=== implied operator ===
+sum of coefficients (response to spatially uniform field) = +0.74478  (phi of the zero/largest mode)
+self coefficient a0 = +0.30823 (negative => fine-scale anti-persistence)
+diffusion interpretation: rho*(1-4D)=a0, 4*rho*D=a1  => rho=0.3678, D=0.0405
+
+=== holdout: fit STAR on 2002-2012, predict 2013-2015 ===
+train-only STAR coefs: [0.2972 0.0694 0.1624 0.2193]
+ h   n   trend0     pers  percellAR     STAR
+ 1  18   1.0842   0.6989     0.6674   0.6707
+ 2  13   1.1477   0.8127     0.8110   0.8335
+ 3  12   1.1717   0.8485     0.9005   0.9390
+ 4  15   1.1171   0.8256     0.9212   0.9573
+ 5  17   1.0869   0.8429     0.9423   0.9777
+ 6  15   1.0939   0.8251     0.9743   1.0135
+ 7  11   1.1215   0.8889     1.0229   1.0653
+
+=== per-cell variance structure ===
+corr(var, |lat|)=-0.093  corr(var, lat)=-0.155
+low-var cells mean |lat|=50.1; high-var cells mean |lat|=41.9
+neighbor |diff| of per-cell std: mean=0.0400 vs overall std=0.2396 (smooth if <<)
+saved a14a_cache_star.npy

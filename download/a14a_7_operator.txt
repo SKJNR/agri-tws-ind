@@ -1,0 +1,54 @@
+=== 1) per-mode phi: consecutive-only vs all-row pairs ===
+  mode   1: phi_consec=+0.980  phi_allrows=+0.981
+  mode   2: phi_consec=+0.902  phi_allrows=+0.894
+  mode   3: phi_consec=+0.936  phi_allrows=+0.927
+  mode   4: phi_consec=+0.960  phi_allrows=+0.948
+  mode   5: phi_consec=+0.941  phi_allrows=+0.931
+  mode   6: phi_consec=+0.734  phi_allrows=+0.761
+  mode   8: phi_consec=+0.933  phi_allrows=+0.916
+  mode  10: phi_consec=+0.811  phi_allrows=+0.826
+  mode  12: phi_consec=+0.620  phi_allrows=+0.619
+  mode  16: phi_consec=+0.417  phi_allrows=+0.423
+  mode  20: phi_consec=+0.502  phi_allrows=+0.481
+  mode  26: phi_consec=+0.244  phi_allrows=+0.241
+  mode  31: phi_consec=+0.279  phi_allrows=+0.208
+  mode  40: phi_consec=+0.182  phi_allrows=+0.125
+  mode  50: phi_consec=+0.255  phi_allrows=+0.172
+  mode  70: phi_consec=-0.136  phi_allrows=-0.123
+  mode 100: phi_consec=-0.349  phi_allrows=-0.320
+  mode 121: phi_consec=-0.423  phi_allrows=-0.410
+  mode 136: phi_consec=-0.585  phi_allrows=-0.581
+  mean diff (consec - allrows) over modes 6-136: +0.0056
+  negative-phi modes (consec): 57 of 138
+
+=== 2) fast-only (PC1-5 removed) operator ===
+  phi_k ~ rho - D*lam_k  (modes 6-136, var-weighted): rho=+1.0334 D=6.55385 R2=0.9495
+  top-quartile-variance modes only: rho=+1.1419 D=8.11350 R2=0.7659
+  quadratic: phi = +1.2227 -10.5292*lam +15.6871*lam^2
+  (mode, lam, phi_fast):  [(6, 0.033, 0.734), (8, 0.057, 0.933), (10, 0.053, 0.811), (12, 0.051, 0.62), (15, 0.083, 0.399), (20, 0.069, 0.502), (26, 0.095, 0.244), (31, 0.104, 0.279), (41, 0.108, 0.29), (51, 0.117, 0.049), (71, 0.155, 0.118), (91, 0.206, -0.242), (111, 0.242, -0.466), (131, 0.295, -0.625), (136, 0.258, -0.585)]
+
+  STAR(fast): a0=+0.1633 a1=+0.0478 a2=+0.1454 a3=+0.1928  sum=+0.5493
+  resid std=0.4627; var explained vs self-AR: 0.1248
+
+=== 3) innovation field W (per-mode AR resid on consecutive pairs) ===
+  per-cell innovation variance: 0.1856 (std 0.4308)
+    W spectrum: PC1-1 = 9.3%
+    W spectrum: PC1-5 = 28.6%
+    W spectrum: PC1-10 = 42.6%
+    W spectrum: PC1-20 = 60.8%
+    W spectrum: PC1-50 = 87.0%
+    W spectrum: PC1-100 = 98.9%
+  W spatial corr:  d(1,0)=0.968 d(0,1)=0.985 d(2,0)=0.883 d(5,0)=0.545 d(10,0)=0.246
+  share of W var inside TWS top-100 PC subspace: 0.9727
+  share inside top-50: 0.8025
+  W pooled kurtosis=6.039
+  W global-mean (uniform mode) std=0.0710 (vs per-cell std 0.4308); corr(gm_t, gm_t+1)=-0.263
+
+=== 4) D-hat inside train PC subspace? ===
+  K= 10: var(Dhat) in-subspace = 0.2849
+  K= 30: var(Dhat) in-subspace = 0.5191
+  K= 50: var(Dhat) in-subspace = 0.7134
+  K=136: var(Dhat) in-subspace = 0.8885
+  corr(Dhat, mu)=-0.775; corr(Dhat-0.53*trendex, mu)=-0.478
+  std(Dhat)=0.9011; std(resid after 0.53*trendex)=0.7671
+done

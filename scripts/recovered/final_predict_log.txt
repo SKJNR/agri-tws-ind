@@ -1,0 +1,19 @@
+Test rows: 280,961
+Anchor months: [201509, 201601, 201606, 201612, 201807, 201811]
+k distribution: {0: 93631, 1: 62503, 2: 46827, 3: 31206, 4: 15638, 5: 15572, 6: 15584}
+unmasked rows total: 94,048 (of which k>0: 417)
+Lookups built
+Predictions done. mean=-0.0496 std=0.6597 nan=0
+Submission saved: /home/z/my-project/download/submission_v1.csv (280,961 rows)
+
+Prediction stats by k:
+   count    mean     std
+k                       
+0  93631 -0.0166  0.7521
+1  62503 -0.0598  0.6073
+2  46827 -0.0967  0.6141
+3  31206 -0.0597  0.6110
+4  15638 -0.0644  0.6359
+5  15572 -0.0423  0.5864
+6  15584 -0.0381  0.5706
+EXIT 0

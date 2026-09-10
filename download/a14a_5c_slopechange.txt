@@ -1,0 +1,65 @@
+Loading train...
+cells=15715, full-history=14558, T=138
+Loading test...
+
+================ E1: ANCHOR ANOMALY TABLE ================
+    anchor   t_abs  dt_mid     std     mean  nNaN  corr_to_others
+     24188   24188   -16.7   1.026   -0.192   163  [0.667 0.516 0.375 0.531 0.606]
+     24192   24192   -12.7   1.146   -0.191    68  [0.667 0.7   0.489 0.482 0.642]
+     24197   24197    -7.7   1.070   -0.324   131  [0.516 0.7   0.53  0.502 0.612]
+     24203   24203    -1.7   1.243   -0.204    97  [0.375 0.489 0.53  0.429 0.506]
+     24222   24222    17.3   1.105   -0.032   131  [0.531 0.482 0.502 0.429 0.697]
+     24226   24226    21.3   1.222   -0.072    69  [0.606 0.642 0.612 0.506 0.697]
+
+train beta_c: std=0.00885/mo mean=-0.002539
+trendex at anchors (std across cells): 0.741, 0.777, 0.821, 0.874, 1.042, 1.078
+corr(A_j, trendex_j): 0.530, 0.377, 0.336, 0.307, 0.437, 0.472
+
+================ E2: SLOPE-CHANGE FIT ================
+cells with all 6 anchors finite: 15338
+per-anchor residual var (fast+noise, median over cells): 0.3769 -> std 0.614
+Sxx (anchor time spread) = 1255.3  -> per-cell slope noise std = 0.01733/mo
+OLS slope field b: std=0.02355  (noise 0.01733)
+  implied TRUE slope std = sqrt(var(b)-noise) = 0.01594/mo
+  train slope std beta = 0.00885/mo
+
+--- b_test (6-anchor OLS) on b_train (beta_c) ---
+OLS/huber slope r = 0.3115 (raw OLS 0.3115), intercept = +0.005797, R^2 = 0.0104, huber keep-frac = 0.92
+beta est-noise attenuation factor = 0.9764  -> attenuation-corrected r = 0.3191
+SE(r) approx = 0.0213  (n=15338)
+=> test-era slope is 31.9% of train slope (r=0.319)
+
+ratio b/beta (|beta|>median, 10-90% trim): median=0.261  mean=0.186  p25/p75=-0.522/0.884
+  NOTE: raw ratio is dominated by slope noise (noise/signal ~ 6.3x)
+
+var(b_ols)=5.544e-04  noise=3.002e-04  var(b_true)~2.541e-04
+var explained by r*beta = 7.661e-06  (3.0% of true slope var)
+INDEPENDENT slope variance (b_true - r*beta part): 2.465e-04 -> std 0.01570/mo
+
+--- intercept a_c (level at t_mid) vs trend continuation ---
+a on trendex(t_mid): slope=0.527 intercept=-0.0564 R^2=0.2705
+var(a_ols)=0.8082 noise=0.0628 -> var(a_true)~0.7454 (std 0.863)
+var(a_true) explained by alpha*trendex = 0.2207; residual offset var ~ 0.5247 (std 0.724)
+  off-field anomaly-PC K=10: proj var=0.2795 (expected noise-in-subspace 0.0000)
+  off-field anomaly-PC K=20: proj var=0.3088 (expected noise-in-subspace 0.0001)
+  off-field anomaly-PC K=50: proj var=0.3953 (expected noise-in-subspace 0.0002)
+  off-field detrended-PC K=10: proj var=0.2691 (expected noise-in-subspace 0.0000)
+  off-field detrended-PC K=20: proj var=0.2961 (expected noise-in-subspace 0.0001)
+  off-field detrended-PC K=50: proj var=0.4008 (expected noise-in-subspace 0.0002)
+
+--- era drift: can trend continuation explain it? ---
+/home/z/my-project/scripts/a14c_e12_slope_change.py:211: RuntimeWarning: Mean of empty slice
+  D_early = np.nanmean(A[early_idx], axis=0); D_late = np.nanmean(A[late_idx], axis=0)
+corr(D_early, D_late) = 0.719   std(diff) = 0.759
+  raw diff: std=0.759 corr with beta = 0.132
+  diff - slope-model drift: std=0.752 corr with beta = 0.026
+
+--- residual slope field s = b - r*beta: does it have spatial structure? ---
+  slope-resid anomaly-PC K=10: proj var=7.585e-05 (noise-in-subspace 2.062e-07) ratio=367.8
+  slope-resid anomaly-PC K=20: proj var=1.215e-04 (noise-in-subspace 4.125e-07) ratio=294.6
+  slope-resid anomaly-PC K=50: proj var=2.738e-04 (noise-in-subspace 1.031e-06) ratio=265.5
+  slope-resid detrended-PC K=10: proj var=7.406e-05 (noise-in-subspace 2.062e-07) ratio=359.1
+  slope-resid detrended-PC K=20: proj var=1.216e-04 (noise-in-subspace 4.125e-07) ratio=294.7
+  slope-resid detrended-PC K=50: proj var=2.758e-04 (noise-in-subspace 1.031e-06) ratio=267.5
+
+cache saved -> data/a14c_cache.npz

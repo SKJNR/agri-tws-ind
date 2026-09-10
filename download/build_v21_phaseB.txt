@@ -1,0 +1,16 @@
+  infra[cv]: 14656 full cells [6s]
+loading ERA5 static channels ...
+  ERA5 static ready [6s]
+
+====================================================================================================
+PHASE B — ERA5 static channels in D-tilde: M1/M2 A/B (v18a top3 ensemble architecture)
+====================================================================================================
+[validate] A fixed weights (v18a exact):  expect M1=0.6078 M2=0.6694
+  A  fixed (v18a baseline)           M1=0.6078 | M2=0.6694 w=(0.700,0.450,0.073)
+  B  LOO base [Dhat,S,trendex]       M1=0.6016 | M2=0.6622 w=(0.543,0.457,0.120)
+  C  LOO base + 5 ERA5 static        M1=0.6040 | M2=0.6691 w=(0.522,0.464,0.113,-0.0069,+0.0100,-0.0010,-0.0033,+0.0513)
+  D  LOO base + 2 ERA5 (swvl4,t2m)   M1=0.6036 | M2=0.6683 w=(0.523,0.463,0.112,-0.0066,+0.0491)
+
+--- verdict (pre-registered: include ERA5 only if >0.002 win on BOTH mirrors vs A and B) ---
+  C (5ch): vs A +0.0039/+0.0003 | vs B -0.0024/-0.0069 | PASS=False
+  D (2ch): vs A +0.0043/+0.0011 | vs B -0.0020/-0.0061 | PASS=False

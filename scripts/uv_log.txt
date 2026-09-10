@@ -1,0 +1,35 @@
+/home/z/my-project/scripts/pipeline.py:78: RuntimeWarning: Mean of empty slice
+  self.N_tws[i] = np.nanmean(v, axis=1)
+Context ready: 15715 cells, 138 months
+Unified val rows: 902,633 | k dist: [187334, 140340, 108813, 77741, 124324, 124313, 139768]
+
+=== k=0 (n=187,334) ===
+persistence:     0.6934
+global AR(1):    0.6580
+per-cell AR(1):  0.6681
+LGBM-A:          0.6547
+blend A*0.3+AR1: 0.6575
+blend A*0.5+AR1: 0.6536
+blend A*0.7+AR1: 0.6521
+
+obs honest R: 0.5363
+
+=== k>=1 Kalman ===
+system (k=0 blend + kalman): 0.7330
+per-k: k=0:nan k=1:0.686 k=2:0.880 k=3:0.837 k=4:0.867 k=5:0.776 k=6:0.840
+
+=== k>=1 trees (n=466,285) ===
+per-k: k=1:0.682 k=2:0.871 k=3:0.800 k=4:0.982 k=5:0.782 k=6:0.955
+
+=== blends on common k>=1 rows (n=466,285) ===
+trees*0.0 + kalman*1.0: 0.8056
+trees*0.3 + kalman*0.7: 0.7883
+trees*0.5 + kalman*0.5: 0.7819
+trees*0.7 + kalman*0.3: 0.7798
+trees*1.0 + kalman*0.0: 0.7846
+Traceback (most recent call last):
+  File "/home/z/my-project/scripts/unified_val.py", line 224, in <module>
+    kalman=kalman_pred, tree=tree_pred, p_ar1=np.where(m0, p_ar1, np.nan),
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: operands could not be broadcast together with shapes (902633,) (187334,) () 
+EXIT 1

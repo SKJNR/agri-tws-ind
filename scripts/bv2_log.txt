@@ -1,0 +1,16 @@
+Loaded 2,154,021 rows
+phi: mean=0.756
+
+=== STATE-SPACE RECONSTRUCTION: fit pre-2013, validate 2013+ ===
+weighted RMSE (anomaly space, k=1..6): 0.8211
+anomaly std: 1.1044
+  k=1: 0.7285 (n=140,340)
+  k=2: 0.9017 (n=108,813)
+  k=3: 0.8309 (n=77,741)
+  k=4: 0.8945 (n=124,324)
+  k=5: 0.8221 (n=124,313)
+  k=6: 0.8917 (n=139,768)
+
+coef (k=3): decay=1.317 spei_w=0.061 soil_w=-0.069 s12=0.048 s06=0.120 s03=0.036 sm=0.215
+Saved.
+EXIT 0

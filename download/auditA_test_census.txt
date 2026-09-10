@@ -1,0 +1,121 @@
+=== A1.0 BASIC ===
+rows: 280,961   cols: ['ID', 'time', 'lat', 'lon', 'TWS_t', 'SPEI_01_t', 'SPEI_03_t', 'SPEI_06_t', 'SPEI_12_t', 'SOIL_MOISTURE_t', 'month_sin', 'month_cos', 'TWS_t_masked', 'masked']
+masked=True: 186,913 (66.53%)  masked=False: 94,048
+TWS_t NaN rows: 186,913 | masked==NaN agreement: True
+mask agreement matrix (masked vs TWS-NaN): {False: {False: 94048, True: 0}, True: {False: 0, True: 186913}}
+  SPEI_01_t: NaN on masked=0/186,913, NaN on unmasked=0
+  SPEI_03_t: NaN on masked=0/186,913, NaN on unmasked=0
+  SPEI_06_t: NaN on masked=0/186,913, NaN on unmasked=0
+  SPEI_12_t: NaN on masked=0/186,913, NaN on unmasked=0
+  SOIL_MOISTURE_t: NaN on masked=0/186,913, NaN on unmasked=0
+
+=== A1.1 PER-MONTH CENSUS (t_abs) ===
+distinct t_abs months in test: 18
+ t_abs     date cal    rows  masked   frac  role
+ 24188  2015-09   9   15552       0  0.000  ANCHOR(<0.01)
+ 24192  2016-01   1   15647       0  0.000  ANCHOR(<0.01)
+ 24193  2016-02   2   15663   15625  0.998  FULL-MASK(>=0.99)
+ 24194  2016-03   3   15665   15648  0.999  FULL-MASK(>=0.99)
+ 24197  2016-06   6   15584       0  0.000  ANCHOR(<0.01)
+ 24198  2016-07   7   15591   15526  0.996  FULL-MASK(>=0.99)
+ 24199  2016-08   8   15520   15484  0.998  FULL-MASK(>=0.99)
+ 24200  2016-09   9   15529   15479  0.997  FULL-MASK(>=0.99)
+ 24203  2016-12  12   15618       0  0.000  ANCHOR(<0.01)
+ 24204  2017-01   1   15610   15581  0.998  FULL-MASK(>=0.99)
+ 24205  2017-02   2   15642   15591  0.997  FULL-MASK(>=0.99)
+ 24206  2017-03   3   15677   15636  0.997  FULL-MASK(>=0.99)
+ 24207  2017-04   4   15638   15617  0.999  FULL-MASK(>=0.99)
+ 24208  2017-05   5   15572   15568  1.000  FULL-MASK(>=0.99)
+ 24209  2017-06   6   15584   15550  0.998  FULL-MASK(>=0.99)
+ 24222  2018-07   7   15584       0  0.000  ANCHOR(<0.01)
+ 24226  2018-11  11   15646       0  0.000  ANCHOR(<0.01)
+ 24227  2018-12  12   15639   15608  0.998  FULL-MASK(>=0.99)
+
+test span: t_abs 24188..24227  = 2015-09 .. 2018-12
+train last month = 2015-08 = t_abs 24187; test starts 24188 (1 month(s) after train end)
+ABSENT t_abs months inside span (22): [(24189, '2015-10'), (24190, '2015-11'), (24191, '2015-12'), (24195, '2016-04'), (24196, '2016-05'), (24201, '2016-10'), (24202, '2016-11'), (24210, '2017-07'), (24211, '2017-08'), (24212, '2017-09'), (24213, '2017-10'), (24214, '2017-11'), (24215, '2017-12'), (24216, '2018-01'), (24217, '2018-02'), (24218, '2018-03'), (24219, '2018-04'), (24220, '2018-05'), (24221, '2018-06'), (24223, '2018-08'), (24224, '2018-09'), (24225, '2018-10')]
+absent calendar months (of present months' cal): [10]
+
+=== A1.2 POOLED CALENDAR-MONTH MASK FRACTIONS ===
+cal month  1: rows=  31257  masked=  15581  frac=0.4985
+cal month  2: rows=  31305  masked=  31216  frac=0.9972
+cal month  3: rows=  31342  masked=  31284  frac=0.9981
+cal month  4: rows=  15638  masked=  15617  frac=0.9987
+cal month  5: rows=  15572  masked=  15568  frac=0.9997
+cal month  6: rows=  31168  masked=  15550  frac=0.4989
+cal month  7: rows=  31175  masked=  15526  frac=0.4980
+cal month  8: rows=  15520  masked=  15484  frac=0.9977
+cal month  9: rows=  31081  masked=  15479  frac=0.4980
+cal month 11: rows=  15646  masked=      0  frac=0.0000
+cal month 12: rows=  31257  masked=  15608  frac=0.4993
+
+ANCHOR months (frac<0.01): [(24188, '2015-09'), (24192, '2016-01'), (24197, '2016-06'), (24203, '2016-12'), (24222, '2018-07'), (24226, '2018-11')]
+anchor gaps (months): [4, 5, 6, 19, 4]
+PARTIAL months (0.01<=frac<0.99): 0
+FULL-MASK months: 12: [(24193, '2016-02'), (24194, '2016-03'), (24198, '2016-07'), (24199, '2016-08'), (24200, '2016-09'), (24204, '2017-01'), (24205, '2017-02'), (24206, '2017-03'), (24207, '2017-04'), (24208, '2017-05'), (24209, '2017-06'), (24227, '2018-12')]
+
+=== A1.3 PER-CELL STRUCTURE ===
+distinct cells in test: 15715
+rows/cell: mean=17.88 p5=18 p25=18 p50=18 p75=18 p95=18 min=1 max=18
+unmasked obs/cell: mean=5.98 p5=6 p25=6 p50=6 p75=6 p95=6 min=1 max=7
+unmasked obs/cell value counts: {1: 5, 2: 2, 3: 18, 4: 31, 5: 157, 6: 15438, 7: 64}
+anchor-month obs/cell: mean=5.96 min=0 max=6  (n anchors=6)
+
+consecutive-unmasked-obs gaps (months, within test): n=78,333
+  p25=4 p50=5 p75=6 p90=19 p95=19 max=24
+  value counts: {3: 131, 4: 31105, 5: 15683, 6: 15586, 7: 67, 8: 40, 9: 6, 10: 2, 11: 16, 12: 4, 13: 32, 14: 3, 15: 7, 16: 39, 17: 43, 18: 15, 19: 15461, 20: 1, 21: 8, 23: 83, 24: 1}
+
+=== A1.4 MASKED-ROW HORIZONS (relative to unmasked obs of same cell, TEST-only) ===
+masked rows with NO prior unmasked obs in test: 0
+horizon_back (t - last unmasked): n=186,913
+  value counts: {1: 62576, 2: 46777, 3: 31076, 4: 15560, 5: 15479, 6: 15445}
+  p50=2 p90=5 max=6
+months-until-next-unmasked (next unmasked - t): n=171,247 (no next: 15,666)
+  value counts: {3: 31013, 4: 31078, 5: 15633, 6: 91, 7: 38, 8: 4, 9: 9, 10: 9, 11: 3, 12: 1, 13: 15486, 14: 15484, 15: 15518, 16: 15498, 17: 15521, 18: 15523, 19: 83, 20: 90, 21: 82, 22: 83}
+  p50=13 p90=17 max=22
+
+-- in TARGET-month units (tm=t+1): dist from tm back to last unmasked = h_back+1; from tm fwd to next unmasked = h_fwd-1
+  fwd-from-target value counts: {2: 31013, 3: 31078, 4: 15633, 5: 91, 6: 38, 7: 4, 8: 9, 9: 9, 10: 3, 11: 1, 12: 15486, 13: 15484, 14: 15518, 15: 15498, 16: 15521, 17: 15523, 18: 83, 19: 90, 20: 82, 21: 83}
+  back-from-target value counts: {2: 62576, 3: 46777, 4: 31076, 5: 15560, 6: 15479, 7: 15445}
+
+=== A1.5 MASK-ASSIGNMENT DETERMINISM ===
+
+same-calendar-month instances (rows present, frac) — checking cell-level stability:
+  cal 1 t_abs 24192 (2016-01): rows=15647 frac=0.000 J_vs_first=1.000
+  cal 1 t_abs 24204 (2017-01): rows=15610 frac=0.998 J_vs_first=0.995
+  cal 2 t_abs 24193 (2016-02): rows=15663 frac=0.998 J_vs_first=1.000
+  cal 2 t_abs 24205 (2017-02): rows=15642 frac=0.997 J_vs_first=0.997
+  cal 3 t_abs 24194 (2016-03): rows=15665 frac=0.999 J_vs_first=1.000
+  cal 3 t_abs 24206 (2017-03): rows=15677 frac=0.997 J_vs_first=0.998
+  cal 6 t_abs 24197 (2016-06): rows=15584 frac=0.000 J_vs_first=1.000
+  cal 6 t_abs 24209 (2017-06): rows=15584 frac=0.998 J_vs_first=1.000
+  cal 7 t_abs 24198 (2016-07): rows=15591 frac=0.996 J_vs_first=1.000
+  cal 7 t_abs 24222 (2018-07): rows=15584 frac=0.000 J_vs_first=0.999
+  cal 9 t_abs 24188 (2015-09): rows=15552 frac=0.000 J_vs_first=1.000
+  cal 9 t_abs 24200 (2016-09): rows=15529 frac=0.997 J_vs_first=0.997
+  cal 12 t_abs 24203 (2016-12): rows=15618 frac=0.000 J_vs_first=1.000
+  cal 12 t_abs 24227 (2018-12): rows=15639 frac=0.998 J_vs_first=0.998
+anchor 24188 (2015-09): rows=15552 (vs ncell=15715)
+anchor 24192 (2016-01): rows=15647 (vs ncell=15715)
+anchor 24197 (2016-06): rows=15584 (vs ncell=15715)
+anchor 24203 (2016-12): rows=15618 (vs ncell=15715)
+anchor 24222 (2018-07): rows=15584 (vs ncell=15715)
+anchor 24226 (2018-11): rows=15646 (vs ncell=15715)
+
+=== A1.6 DIRECT-COPY SURFACE (masked row whose (cell,t+1) row exists & visible) ===
+masked rows with (cell,t+1) visible in test: 0
+masked rows with (cell,t+1) PRESENT in test (any mask state): 124,337
+
+consecutive-present-month cell-set overlaps (all months):
+  2016-01 -> 2016-02: |A|=15647 |B|=15663 inter=15625 J=0.996
+  2016-02 -> 2016-03: |A|=15663 |B|=15665 inter=15648 J=0.998
+  2016-06 -> 2016-07: |A|=15584 |B|=15591 inter=15526 J=0.992
+  2016-07 -> 2016-08: |A|=15591 |B|=15520 inter=15484 J=0.991
+  2016-08 -> 2016-09: |A|=15520 |B|=15529 inter=15479 J=0.994
+  2016-12 -> 2017-01: |A|=15618 |B|=15610 inter=15581 J=0.996
+  2017-01 -> 2017-02: |A|=15610 |B|=15642 inter=15591 J=0.996
+  2017-02 -> 2017-03: |A|=15642 |B|=15677 inter=15636 J=0.997
+  2017-03 -> 2017-04: |A|=15677 |B|=15638 inter=15617 J=0.995
+  2017-04 -> 2017-05: |A|=15638 |B|=15572 inter=15568 J=0.995
+  2017-05 -> 2017-06: |A|=15572 |B|=15584 inter=15550 J=0.996
+  2018-11 -> 2018-12: |A|=15646 |B|=15639 inter=15608 J=0.996

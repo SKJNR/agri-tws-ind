@@ -1,0 +1,49 @@
+T=138 months, calendar span 160, gaps>1: 10 instances
+
+=== A) brute-force calendar-lag pooled ACF (merge) ===
+  lag  1: n=  1977398, corr_raw=+0.8033, corr_anom=+0.7534
+  lag  2: n=  1817657, corr_raw=+0.7313, corr_anom=+0.6540
+  lag  3: n=  1786084, corr_raw=+0.6882, corr_anom=+0.5960
+  lag  6: n=  1878247, corr_raw=+0.5834, corr_anom=+0.4698
+  lag 12: n=  1762173, corr_raw=+0.4239, corr_anom=+0.2447
+  lag 18: n=  1645514, corr_raw=+0.3587, corr_anom=+0.1483
+  lag 24: n=  1606196, corr_raw=+0.2916, corr_anom=+0.0701
+  lag 36: n=  1528163, corr_raw=+0.2379, corr_anom=+0.0269
+  lag 48: n=  1340915, corr_raw=+0.1600, corr_anom=-0.0635
+
+=== B) PC1-reconstructed field, same brute-force ACF ===
+PC variance: PC1=26.8%, PC2=9.8%, PC3=7.4%
+PC1 score: std=51.25, corr(s1, t_index)=0.9588, corr(s1, calendar_t)=0.9573
+  PC1-field lag  1: corr=+0.9826 (n=1848866)
+  PC1-field lag 12: corr=+0.9103 (n=1645054)
+  PC1-field lag 24: corr=+0.7725 (n=1499474)
+  PC1-field lag 36: corr=+0.5730 (n=1426684)
+
+=== C) per-cell linear detrend (calendar time), then brute-force ACF ===
+var: total=0.6732, trend=0.1676 (24.9%), detrended=0.5055
+per-cell slope: std=0.00883/month, mean=-0.002709; over 160 months: std*160=1.413
+  detrended lag  1: corr=+0.6813
+  detrended lag  6: corr=+0.3118
+  detrended lag 12: corr=+0.0384
+  detrended lag 24: corr=-0.1356
+  detrended lag 36: corr=-0.1326
+
+=== D) diagnose: why did index-based anomaly ACF decay? ===
+  index-lag 12 (old method, full cells): +0.2272
+  index-lag 24 (old method, full cells): +0.0797
+  index-lag 36 (old method, full cells): +0.0074
+  calendar-lag 12 (exact pairs only, full cells): +0.2458 (113 month-pairs)
+  calendar-lag 24 (exact pairs only, full cells): +0.0701 (103 month-pairs)
+  calendar-lag 36 (exact pairs only, full cells): +0.0311 (98 month-pairs)
+
+=== E) train trend vs test-era anchor means ===
+  201509: trend-predicted field std=0.740, global mean=-0.2269
+  201601: trend-predicted field std=0.775, global mean=-0.2377
+  201606: trend-predicted field std=0.819, global mean=-0.2512
+  201612: trend-predicted field std=0.872, global mean=-0.2675
+  201807: trend-predicted field std=1.040, global mean=-0.3190
+  201811: trend-predicted field std=1.075, global mean=-0.3298
+corr(D-hat, train trend pattern beta) = +0.5247
+corr(D-hat, mu_c) = -0.7749
+corr(D-hat, trend-extrapolated mean field) = +0.5247
+std(trend-extrapolated D) = 0.887 vs std(D-hat) = 0.901

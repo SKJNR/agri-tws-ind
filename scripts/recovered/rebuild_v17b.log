@@ -1,0 +1,56 @@
+[    0.0s] loading train...
+[    4.5s] loading test...
+[    5.1s] === CV PHASE: fit<=2012, val=2013-2015 (HONEST protocol) ===
+[    5.6s] val masked rows: 140,573 | shortcut (t+1 unmasked): 171,578 | honest: 93,829
+[    6.4s] infra[cv]: 14656 full cells, V(14656, 115)
+[    6.4s] 
+--- grid A: phi x lam (bwd-only, no denoise) ---
+[    6.5s]   phi=0.74 lam=0.8: honest CV = 0.6562
+[    6.6s]   phi=0.74 lam=0.84: honest CV = 0.6551
+[    6.7s]   phi=0.74 lam=0.88: honest CV = 0.6544
+[    6.8s]   phi=0.8 lam=0.8: honest CV = 0.6536
+[    6.9s]   phi=0.8 lam=0.84: honest CV = 0.6535
+[    7.0s]   phi=0.8 lam=0.88: honest CV = 0.6538
+[    7.1s]   phi=0.85 lam=0.8: honest CV = 0.6538
+[    7.2s]   phi=0.85 lam=0.84: honest CV = 0.6548
+[    7.3s]   phi=0.85 lam=0.88: honest CV = 0.6565
+[    7.4s]   phi=0.9 lam=0.8: honest CV = 0.6570
+[    7.5s]   phi=0.9 lam=0.84: honest CV = 0.6598
+[    7.6s]   phi=0.9 lam=0.88: honest CV = 0.6635
+[    7.6s] best A: phi=0.8, lam=0.84 -> 0.6535
+[    7.6s] 
+--- grid B: Dtil weights on best A ---
+[    7.6s]   w=(0.7, 0.45, 0.073): honest CV = 0.6535
+[    7.7s]   w=(0.786, 0.218, 0.049): honest CV = 0.6559
+[    7.8s]   w=(0.65, 0.5, 0.073): honest CV = 0.6537
+[    7.9s]   w=(0.75, 0.35, 0.073): honest CV = 0.6542
+[    8.0s]   w=(0.6, 0.55, 0.073): honest CV = 0.6542
+[    8.0s] best B: (0.7, 0.45, 0.073) -> 0.6535
+[    8.0s] 
+--- top-3 config ensemble check ---
+[    8.3s]   top3 [(0.8, 0.84), (0.8, 0.8), (0.85, 0.8)] ensemble: honest CV = 0.6534 (single best 0.6535)
+[    8.3s] 
+--- denoiser hedge test (phi=0.80, lam=0.84): nd vs dn vs 50/50 ---
+[    8.5s]   no-denoise  : honest CV = 0.6535
+[    8.5s]   denoise     : honest CV = 0.6804
+[    8.5s]   50/50 blend : honest CV = 0.6552
+[    8.5s] 
+--- k=0 CV (linear vs LGB vs blend) ---
+[    9.5s]   k=0 train: 1,779,287  eval: 218,534
+[   66.4s]   LINEAR: 0.6287   LGBM(400): 0.6273   50/50 blend: 0.6254
+[   66.4s] 
+CV SUMMARY (HONEST): masked best single = 0.6535, top3 ens = 0.6534 | k=0 best = 0.6254
+[   66.4s] 
+=== FINAL PHASE: refit on full train, predict test ===
+[   67.5s] infra[full]: 14558 full cells, V(14558, 138)
+[   67.6s]   phi=0.8 lam=0.84: masked pred std=0.6726
+[   67.7s]   phi=0.8 lam=0.8: masked pred std=0.6674
+[   67.7s]   phi=0.85 lam=0.8: masked pred std=0.6792
+[   68.8s]   final k=0 rows: 94,048
+[  137.2s] checking direct-copy rows (target = TWS_t(t+1) identity)...
+[  137.4s]   direct-copyable rows: 0 (0.00%)
+[  137.5s] 
+assembling submissions...
+[  137.9s] saved v17a: mean=-0.0176 std=0.6858 (k0 std=0.711, masked std=0.673, copies=0)
+[  138.5s] saved v17b: mean=-0.0169 std=0.6764 (k0 std=0.711, masked std=0.659, copies=0)
+[  138.5s] DONE

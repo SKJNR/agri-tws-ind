@@ -1,0 +1,49 @@
+====================================================================================================
+STRICT k=0 PROTOCOL — baselines (a15_0 run): persistence 0.6880 | slope-pers 0.6572 | v4 linear 0.6451
+  (with 0.6688 / without 0.5945). Target TESTWTD < 0.60
+====================================================================================================
+persistence (anchor rows only):       rowwise 0.6877
+factor K=50 (cov+r+Dtil)               | with 0.6618 (n=124,975) | without 0.6075 (n=77,956) | rowwise 0.6415 | TESTWTD 0.6443
+factor K=100 (cov+r+Dtil)              | with 0.6464 (n=124,975) | without 0.5991 (n=77,956) | rowwise 0.6286 | TESTWTD 0.6310
+factor K=114 (cov+r+Dtil)              | with 0.6458 (n=124,975) | without 0.5990 (n=77,956) | rowwise 0.6282 | TESTWTD 0.6307
+
+factor K=100 no r                      | with 0.6623 (n=124,975) | without 0.6312 (n=77,956) | rowwise 0.6505 | TESTWTD 0.6522
+factor K=100 no cov(t+1)               | with 0.6693 (n=124,975) | without 0.5991 (n=77,956) | rowwise 0.6432 | TESTWTD 0.6468
+factor K=100 VarDx2                    | with 0.6473 (n=124,975) | without 0.5951 (n=77,956) | rowwise 0.6278 | TESTWTD 0.6305
+factor K=100 VarDx0.5                  | with 0.6507 (n=124,975) | without 0.6083 (n=77,956) | rowwise 0.6347 | TESTWTD 0.6369
+
+v4 linear F/R dual (repro)             | with 0.6688 (n=124,975) | without 0.5945 (n=77,956) | rowwise 0.6413 | TESTWTD 0.6451
+factor K=100 (final)                   | with 0.6464 (n=124,975) | without 0.5991 (n=77,956) | rowwise 0.6286 | TESTWTD 0.6310
+blend 0.25*factor + 0.75*linear        | with 0.6467 (n=124,975) | without 0.5810 (n=77,956) | rowwise 0.6223 | TESTWTD 0.6256
+blend 0.50*factor + 0.50*linear        | with 0.6353 (n=124,975) | without 0.5771 (n=77,956) | rowwise 0.6136 | TESTWTD 0.6166
+blend 0.75*factor + 0.25*linear        | with 0.6352 (n=124,975) | without 0.5833 (n=77,956) | rowwise 0.6158 | TESTWTD 0.6184
+
+per-anchor RMSE (factor K=100):
+  24156 (cal  1, next=True): rmse=0.4402  n=15,644
+  24161 (cal  6, next=True): rmse=0.5230  n=15,576
+  24162 (cal  7, next=False): rmse=0.5659  n=15,580
+  24166 (cal 11, next=True): rmse=0.4647  n=15,615
+  24167 (cal 12, next=True): rmse=0.5291  n=15,636
+  24168 (cal  1, next=False): rmse=0.5017  n=15,652
+  24173 (cal  6, next=False): rmse=0.5417  n=15,579
+  24176 (cal  9, next=False): rmse=0.4990  n=15,553
+  24178 (cal 11, next=True): rmse=0.3990  n=15,633
+  24179 (cal 12, next=True): rmse=0.6271  n=15,637
+  24180 (cal  1, next=True): rmse=0.8471  n=15,653
+  24185 (cal  6, next=True): rmse=1.0538  n=15,581
+  24186 (cal  7, next=False): rmse=0.8247  n=15,592
+
+=== SUMMARY ===
+model                                      with  without  rowwise  TESTWTD
+factor K=50 (cov+r+Dtil)                 0.6618   0.6075   0.6415   0.6443
+factor K=100 (cov+r+Dtil)                0.6464   0.5991   0.6286   0.6310
+factor K=114 (cov+r+Dtil)                0.6458   0.5990   0.6282   0.6307
+factor K=100 no r                        0.6623   0.6312   0.6505   0.6522
+factor K=100 no cov(t+1)                 0.6693   0.5991   0.6432   0.6468
+factor K=100 VarDx2                      0.6473   0.5951   0.6278   0.6305
+factor K=100 VarDx0.5                    0.6507   0.6083   0.6347   0.6369
+v4 linear F/R dual (repro)               0.6688   0.5945   0.6413   0.6451
+factor K=100 (final)                     0.6464   0.5991   0.6286   0.6310
+blend 0.25*factor + 0.75*linear          0.6467   0.5810   0.6223   0.6256
+blend 0.50*factor + 0.50*linear          0.6353   0.5771   0.6136   0.6166
+blend 0.75*factor + 0.25*linear          0.6352   0.5833   0.6158   0.6184
