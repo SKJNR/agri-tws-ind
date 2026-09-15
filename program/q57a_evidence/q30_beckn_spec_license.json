@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://github.com",
+    "name": "[Cancelled] : Core Working Group Meeting on January 14th",
+    "snippet": "The licensing policy of Github states that the latest license on the repo will override all previous licenses . So we should be good. Read more",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://beckn.io",
+    "name": "Code of sharing",
+    "snippet": "and is being shared openly and made available as per creative commons, CC-BY-NC-SA 4.0 . Leaders across various walks of life are encouraged to use this body.",
+    "host_name": "beckn.io",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://zenn.dev",
+    "name": "How to Set Up Creative Commons Licenses for GitHub",
+    "snippet": "Sep 19, 2020 — This article introduces how to manually set CC Licenses for a GitHub repository . The license for a GitHub repository can be specified in a ... Read more",
+    "host_name": "zenn.dev",
+    "rank": 2,
+    "date": "Sep 19, 2020",
+    "favicon": ""
+  }
+]

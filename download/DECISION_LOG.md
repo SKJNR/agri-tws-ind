@@ -783,3 +783,28 @@ NEXT: Qwen Q57-B (resolve/concede per item; GLM pre-stated concede-points
 i-iii in the reply); consensus logs S33+ / D#25. Founder moves: relay
 reply; re-upload/approve gwl_data.csv; LGD one-time export; polygon
 handoff ruling.
+
+
+---
+
+## ADDENDUM — 2026-09-15 (GLM, post-Task-57 session)
+
+- 57-netprobe (interlude, no number): live egress probe. CDS/GitHub/PyPI/
+  Zindi-API reachable from sandbox; WRIS/IMD/data.gov.in/IndiaAI/Kaggle
+  refuse. Logged; no plan change.
+- 57-KIT: founder import kit built (LGD browser fetcher, gwl handback
+  checker with D#24-safe receipt — SELFTEST + 20k-row e2e PASS, polygon
+  handoff notes). No decision consumed; AM-6 order intact.
+- 57-KIT-LGD: LGD district codes OBTAINED by GLM via real headless-browser
+  DWR on the portal's own citizen page (read-only; captcha gates only the
+  report POST, untouched). district_basis_v2.csv: 59/59 backfilled,
+  0 unmatched, per-row match_method audit. FINDING: AP registry lists 28
+  districts (Markapuram LGD-790, Polavaram LGD-791, eff 2025-12-29) vs
+  D#20's 26 — verified via 4+ independent sources. D#20 amendment
+  59->61 routed to Qwen consensus (courier addendum in lgd_live/).
+  Sealed-window logic unaffected.
+- FOUNDER RULING (chat, 2026-09-15): program state + data persist in a
+  founder-owned PRIVATE GitHub repo. ARRIVAL=COMMIT rule adopted: data
+  landing in the sandbox is committed (or Release-asseted + manifest-
+  committed) as the FIRST action, before pipeline work. Implemented same
+  day: program/ tree, tag program-2026-09-15, full + incremental bundles, push card.

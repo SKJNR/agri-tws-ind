@@ -1,0 +1,36 @@
+{
+  "ai4bharat/indictrans2-indic-en-1B": {
+    "license": "mit",
+    "lastModified": "2025-05-02T04:11:48.000Z",
+    "downloads": 6565
+  },
+  "ai4bharat/IndicConformer": {
+    "tag": "Q8b",
+    "error": "HTTP Error 403: rate limit exceeded"
+  },
+  "ai4bharat/indic-tts-voice-bureau": {
+    "error": "HTTP Error 401: Unauthorized"
+  },
+  "openai/whisper-large-v3": {
+    "license": "apache-2.0",
+    "lastModified": "2024-08-12T10:20:10.000Z",
+    "downloads": 4849265
+  },
+  "xarray-contrib/xskillscore": {
+    "tag": "Q1",
+    "error": "HTTP Error 403: rate limit exceeded"
+  },
+  "isciences/pyexactextract": {
+    "tag": "Q3b",
+    "error": "HTTP Error 404: Not Found"
+  },
+  "prefix-dev/pixi": {
+    "tag": "Q4",
+    "license": "BSD-3-Clause",
+    "pushed_at": "2026-09-15T08:30:26Z"
+  },
+  "ai4bharat/IndicTrans2": {
+    "tag": "Q8",
+    "error": "HTTP Error 403: rate limit exceeded"
+  }
+}

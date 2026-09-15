@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+
+<html lang="en-US" class="dyn detail-main-page dir-ltr contents fp-enabled" dir="ltr" style="overflow: visible; height: initial;">
+
+
+
+
+
+<head>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LGD - Local Government Directory, Government of India</title>
+     <link rel="icon" href="resource/homebody-resource/images/favicon/lgdTitle1.ico" type="image/x-icon" />
+     <link rel="manifest" href="resource/homebody-resource/images/favicon/manifest.json"> 
+      
+     <!--Favicon-->
+
+    
+
+     
+    <meta content="Local Government Directory, Government of India" name="description">
+    
+    <meta content="" name="keywords">
+	
+	<!DOCTYPE html >
+<html >
+<!-- content="text/html; -->
+<meta  charset=utf-8" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/resource/common-resource/bootstrap-v5.3.7/bootstrap.min.css">
+<script type="text/javascript" src="/resource/common-resource/jquery.min.js"></script>  
+<script type="text/javascript" src="/resource/common-resource/jquery.cookie.js"></script> 
+
+<link rel="stylesheet" href="/resource/dashboard-resource/dist/css/skins/_all-skins.min.css">
+
+<link rel="stylesheet" href="/resource/common-resource/upgrade/css/jquery-ui.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900"rel="stylesheet">
+<script type="text/javascript" src='/dwr/engine.js'> </script>
+<script type='text/javascript' src='/dwr/util.js'> </script>
+
+
+
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/bootstrap.bundle.min.js"></script>
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/bootstrap.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/resource/common-resource/jquery.validate.min.js"></script>   
+
+
+<script src="/resource/common-resource/jquery.blockUI.js"></script> 
+
+ 
+
+
+
+
+ <script src="/resource/common-resource/upgrade/js/jquery-ui.min.js"></script>
+ <script src="/resource/common-resource/jquery.format.js"></script> 
+
+ <script src="resource/dashboard-resource/plugins/fastclick/fastclick.min.js"></script>
+ <script src="resource/dashboard-resource/plugins/select2/select2.full.min.js"></script>
+
+<script src="/resource/common-resource/upgrade/js/jquery-migrate.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script defer src="https://egramswaraj.gov.in/pes_analytics/script.js" data-website-id="b6131538-6618-481e-bb6a-e6d4eccd1c80" data-performance="true"></script> <script defer src="https://egramswaraj.gov.in/pes_analytics/recorder.js" data-website-id="b6131538-6618-481e-bb6a-e6d4eccd1c80" data-sample-rate="0.15" data-mask-level="moderate" data-max-duration="300000"></script>
+
+<script>
+
+	dwr.engine.setErrorHandler(function(message,exception){
+		var form = document.getElementById("ajaxErrorFrom");			
+		form.submit();
+	});
+	window.onerror = noError;
+	
+	function noError() {
+		return true;
+	}
+
+	displayLoadingImage = function() {
+		  $.blockUI({ 
+				theme:true,
+				/* title: 'Loading...', */
+				message: "<div style='text-align: center'><img  src='/resource/dashboard-resource/dist/img/loader-lgd.gif'/></div>"
+		    });  
+		
+	};
+	
+	showLoadingImage = function() {
+		
+		//alert("mk");
+		// $("#dwrloaderModal").show();
+		
+		 $.blockUI({ 
+			theme:true,
+			/* title: 'Loading...', */
+			message: "<div style='text-align: center'><img  src='/resource/dashboard-resource/dist/img/loader-lgd.gif'/></div>"
+	    });  
+	};
+	
+	hideLoadingImage = function(){
+		  $.unblockUI();  
+		
+		// $("#dwrloaderModal").hide();
+		//$("#dwrloaderModal").hide();
+		
+	};
+	
+	 dwr.engine.setPreHook(showLoadingImage);
+	 dwr.engine.setPostHook(hideLoadingImage); 
+	
+	
+	 customAlert = function(message){
+			//alert(message);
+			$("#bsalertbody").text(message);
+			$('#cAlert').modal('show');	
+		};
+	
+	/* $(document).ready(function() {
+		$('#printable').dataTable({
+		});
+	}); */
+	
+	/* Added by Ripunj on 12-01-2015 for Draft alert message */
+	draftModeAlert = function(){
+		alert("Already Draft");
+	}
+	
+	/** 
+	 * The {@code isEmptyObject} used to check object / element  
+	 * is empty or undefined.
+	 */
+	var isEmptyObject = function(obj) {
+		if (jQuery.type(obj) === "undefined" || (obj == null || $.trim(obj).length == 0)) {
+			return true;
+		}
+		return false;
+	};
+	
+	var isParseJson=function(obj){
+		var temp=null;
+		try{
+			temp=$.parseJSON(obj);
+		}catch(err) {
+			temp=null;
+		}
+		return temp;
+	}
+
+	
+	</script>
+	<!-- <div id="cAlert"></div> -->
+		<div class="modal fade" id="cAlert" tabindex="-1" role="dialog" >
+						<div class="modal-dialog" >
+								<div class="modal-content">
+					  				<div class="modal-header">
+					  				<h4 class="modal-title">Alert</h4>
+					   					   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					  				</div>
+					  				<div class="modal-body" id="bsalertbody">
+					        
+					  				</div>
+					     			 
+							</div>
+						</div>
+					</div>
+<!-- Added by Sushil on 17-11-2014 -->
+
+ <link href="/resource/common-resource/bootstrap-v5.3.7/datatable/dataTables.bootstrap5.css" rel="stylesheet"> 
+ 
+ 
+ 
+ 
+
+<!-- DataTables CSS -->
+
+<!-- DataTables JS -->
+
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/datatable/dataTables.js"></script>
+
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/datatable/dataTables.bootstrap5.js"></script>
+
+
+
+
+
+
+    <!--  CSS -->
+    
+    <link href="/resource/common-resource/meeteiMayek.css" rel="stylesheet">
+    <link href="/resource/homebody-resource/css/lgd.css" rel="stylesheet">
+	<script src='/dwr/interface/lgdDwrInitialService.js'></script>
+
+
+
+
+    <script>
+        (function(d) {
+            d.className = "dyn" + d.className.substring(6, d.className.length);
+        })(document.documentElement);
+    </script>
+    <script>
+        window.isRTL = false;
+    </script>
+
+   
+   
+    <!-- <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff"> -->
+    <!--FontAwesome CSS-->
+ 	<link rel="stylesheet" href="/resource/homebody-resource/font-awesome-4.7.0/css/font-awesome.min.css">
+    
+    <!--JQuery-->
+   <!--  <script src="resource/homebody-resource/js/jquery.min.js"></script> -->
+    
+	<style>
+	.modal-open .modal {
+	    overflow-x: auto !important;
+	   
+	}
+	</style>
+</head>
+<body ng-app="app" block-ui="main" class="ng-scope block-ui block-ui-anim-fade fp-viewing-intro" aria-busy="false" style="overflow: visible; height: initial;">
+
+	<!-- Back To Top  -->
+    <div class="totop" ></div>
+   
+      
+  
+  
+
+		
+ <script type="text/javascript" src="/js/bhashiniScript.js"></script> 
+
+		<script type="text/javascript" src="/js/captcha.js"></script>
+
+   <script>var _JS_IS_LocalEnvironment =('' === 'true');</script>
+   <script>
+   $(function() {
+	   $('.font_resize').on('click', function() {
+	     $(this).text(function(i, text) {
+	       if (text === "A+"){
+	    	   $('body').removeClass("smallfont");
+	    	   $('body').toggleClass("bigfont");
+	       }else if(text === "A-"){
+	    	   $('body').removeClass("bigfont");
+	    	   $('body').toggleClass("smallfont");
+	       }else if(text === "A"){
+	    	   $('body').removeClass("bigfont smallfont");
+	       }
+	      
+	     })
+	     
+	   });
+	 });
+   </script>
+   <button class="navbar-toggler navbar-toggler-right text-white d-block d-lg-none float-right" type="button" data-toggle="collapse" 
+              data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			Menu <i class="fa fa-bars"></i></button>
+    <section class="wrapper section-header-wrapper">
+        <div class="container-fluid container-header">
+            <div class="row">
+                <div class="col-2 col-lg-1 text-center"><img class="m-1 mt-lg-0 logo" src="/resource/homebody-resource/images/logo.png" alt="emblem" title="Home" class="img-fluid header-logo"></div>
+                <div class="col-10 col-lg-6">
+                	<div class="row">
+                		<div class="col-lg-10">
+                		 <p class="mb-1" title="LGD-02">
+                		 <span class="upperlogo box-upper-config d-flex">
+                		 <a href="welcome.do">Government of India</a>&nbsp;|&nbsp;<span class="orangefont"> <a href="welcome.do"> Ministry of Panchayati Raj</a></span> </span>
+                		 <span class="logo">Local Government Directory</span>
+                		<div class="box-base-config">
+                		<span class="lowerlogo  d-flex ">Facilitating Data Standardization, Data Sharing & Interoperability Among eGov Applications</span>
+                		</div> 
+                		
+                		 
+                		
+                		 </p>
+                		  
+                		</div>
+                		
+                		
+                	</div>
+                   
+                </div>
+                
+                
+                 <div class="col-12 col-lg-5 text-left">
+              
+                 <div class="collapse navbar-collapse  d-lg-block" id="navbarResponsive">
+               
+                 
+	                  
+                 
+                 <ul class="navbar-nav navbar-expand-lg mr-auto home_button ">
+                 
+                 
+                 
+                 			
+                              
+                                
+	                                
+									
+	                                 
+	                                 	<li class="nav-item btn px-1">
+	                                 		<a href="#" onclick="javascript:location.href='welcome.do?OWASP_CSRFTOKEN=AZHS-MC7L-QZO4-4IBB-U642-NURQ-9F7L-7V5B';"
+	                                 		
+	                                 		 class="nav-link  px-1 ">
+	            										<i class="fa fa-2x fa-home" aria-hidden="true"></i>
+	                                 		</a>
+	                                 	</li>
+	                                 
+									
+								
+								
+								
+								
+
+                        </ul>
+                        </div>
+                 </div>   
+            </div>
+        </div>
+         <!-- BEGIN # MODAL LOGIN -->
+         <div class="modal" id="loginModal" style="z-index: 99999;">
+			<div class="modal-dialog modal-md">
+				<div class="modal-content" id="login-content">
+				</div>
+			</div>
+		</div>
+        
+			
+            <!-- END # MODAL LOGIN -->
+
+    </section>
+    <!-- ///////////////////////////////////////////////Header Section //////////////////////////////////////////////////////////////////////-->
+  <Script type="text/javascript">
+            var viewLoginPopup = function() {
+            	
+            	$.ajax({
+  				  type: "GET",
+  				  url: "loginLdap.htm",
+  				  success: function(data){
+  					    //alert(data);
+  					$("#login-content").html(data);
+					$("#loginModal").modal('show');	
+  	  			  }
+  				});
+            	
+				/* $('#loginPopupFrame').attr('src', "login.htm?x=nonpopup");
+				$('#login-modal').modal('show')	 */
+        	};
+        	
+        	function closeIndexModal(){
+				$('#loginModal').modal('hide');
+			}
+         </Script>
+  
+  
+  
+  
+  
+  
+          <!-- accessibility panel -->
+           <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet"> 
+           <div   class="uwaw uw-light-theme gradient-head uwaw-initial paid_widget"   id="uw-main"   >    
+           <div class="relative second-panel">       
+	          <h3>Accessibility options by UX4G</h3>       
+	          <div class="uwaw-close" onclick="closeMain()"></div>    
+           </div> 
+           <div class="uwaw-body"> 
+                <div class="h-scroll">          
+             <div class="uwaw-features">             
+               <div class="uwaw-features__item reset-feature" id="featureItem_sp">  
+	                <button id="speak" class="uwaw-features__item__i"  data-uw-reader-content="Enable the UserWay screen reader"   
+	                aria-label="Enable the UserWay screen reader"    aria-pressed="false" > 
+ 		                <span class="uwaw-features__item__icon"><span class="ux4g-icon icon-speaker"> </span> </span>                
+ 		                <span class="uwaw-features__item__name">Text To Speech</span>                
+ 		                <span  class="tick-active uwaw-features__item__enabled reset-tick" id="tickIcon_sp" style="display: none"> </span>  
+ 	                </button>             
+                 </div>             
+                 <div class="uwaw-features__item reset-feature" id="featureItem"> 
+                 <button   id="btn-s9"  class="uwaw-features__item__i"  data-uw-reader-content="Enable the UserWay screen reader"   
+                 aria-label="Enable the UserWay screen reader" aria-pressed="false">  
+                 <span class="uwaw-features__item__icon">                   
+                 	<span class="ux4g-icon icon-bigger-text"> </span>  
+                 </span>   
+ 				<span class="uwaw-features__item__name">Bigger Text</span> 
+ 				<div  class="uwaw-features__item__steps reset-steps"     id="featureSteps"  >  
+				 Steps span tags will be dynamically added here 
+ 				</div>                  
+ 				 <span  class="tick-active uwaw-features__item__enabled reset-tick"  id="tickIcon"  style="display: none" ></span>   
+ 			</button>            </div>            <div class="uwaw-features__item reset-feature" id="featureItem-st">               <button                  id="btn-small-text"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >                  <span class="uwaw-features__item__icon">                  <span class="ux4g-icon icon-small-text"> </span> </span                     ><span class="uwaw-features__item__name">Small Text</span>                  <div                     class="uwaw-features__item__steps reset-steps"                     id="featureSteps-st"                     >                     Steps span tags will be dynamically added here                  </div>                  <span                     class="tick-active uwaw-features__item__enabled reset-tick"                     id="tickIcon-st"                     style="display: none"                     >                  </span>               </button>            </div>            <div class="uwaw-features__item reset-feature" id="featureItem-lh">               <button                  id="btn-s12"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >                  <span class="uwaw-features__item__icon">                  <span class="ux4g-icon icon-line-hight"> </span>                  </span>                  <span class="uwaw-features__item__name">Line Height</span>                  <div                     class="uwaw-features__item__steps reset-steps"                     id="featureSteps-lh"                     >                     Steps span tags will be dynamically added here                  </div>                  <span                     class="tick-active uwaw-features__item__enabled reset-tick"                     id="tickIcon-lh"                     style="display: none"                     >                  </span>               </button>            </div>            <div class="uwaw-features__item reset-feature" id="featureItem-ht">               <button                  id="btn-s10"                  onclick="highlightLinks()"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >               <span class="uwaw-features__item__icon">               <span class="ux4g-icon icon-highlight-links"> </span>               </span>               <span class="uwaw-features__item__name">Highlight Links</span>               <span                  class="tick-active uwaw-features__item__enabled reset-tick"                  id="tickIcon-ht"                  style="display: none"                  >               </span>               </button>            </div>            <div class="uwaw-features__item reset-feature" id="featureItem-ts">               <button                  id="btn-s13"                  onclick="increaseAndReset()"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >                  <span class="uwaw-features__item__icon">                  <span class="ux4g-icon icon-text-spacing"> </span>                  </span>                  <span class="uwaw-features__item__name">Text Spacing</span>                  <div                     class="uwaw-features__item__steps reset-steps"                     id="featureSteps-ts"                     >                     Steps span tags will be dynamically added here                  </div>                  <span                     class="tick-active uwaw-features__item__enabled reset-tick"                     id="tickIcon-ts"                     style="display: none"                     >                  </span>               </button>            </div>            <div class="uwaw-features__item reset-feature" id="featureItem-df">               <button                  id="btn-df"                  onclick="toggleFontFeature()"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >               <span class="uwaw-features__item__icon">               <span class="ux4g-icon icon-dyslexia-font"> </span>               </span>               <span class="uwaw-features__item__name">Dyslexia Friendly</span>               <span                  class="tick-active uwaw-features__item__enabled reset-tick"                  id="tickIcon-df"                  style="display: none"                  >               </span>               </button>            </div>            <div class="uwaw-features__item reset-feature" id="featureItem-hi">               <button                  id="btn-s11"                  onclick="toggleImages()"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >               <span class="uwaw-features__item__icon">               <span class="ux4g-icon icon-hide-images"> </span>               </span>               <span class="uwaw-features__item__name">Hide Images</span>               <span                  class="tick-active uwaw-features__item__enabled reset-tick"                  id="tickIcon-hi"                  style="display: none"                  >               </span>               </button>            </div>            <div               class="uwaw-features__item reset-feature"               id="featureItem-Cursor"               >               <button                  id="btn-cursor"                  onclick="toggleCursorFeature()"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >               <span class="uwaw-features__item__icon">               <span class="ux4g-icon icon-cursor"> </span>               </span>               <span class="uwaw-features__item__name">Cursor</span>               <span                  class="tick-active uwaw-features__item__enabled reset-tick"                  id="tickIcon-cursor"                  style="display: none"                  >               </span>               </button>            </div>            <div               class="uwaw-features__item reset-feature"               id="featureItem-ht-dark"               >               <button                  id="dark-btn"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >                  <span class="uwaw-features__item__name">                     <span class="light_dark_icon">                        <input                           type="checkbox"                           class="light_mode uwaw-featugres__item__i"                           id="checkbox"                           />                        <label for="checkbox" class="checkbox-label">                           <i class="fas fa-moon-stars">                           <span class="ux4g-icon icon-moon"></span>                           </i>                           <i class="fas fa-sun">                           <span class="ux4g-icon icon-sun"></span>                           </i>                           <span class="ball"></span>                        </label>                     </span>                     <span class="uwaw-features__item__name">Light-Dark</span>                  </span>                  <span                     class="tick-active uwaw-features__item__enabled reset-tick"                     id="tickIcon-ht-dark"                     style="display: none; pointer-events: none"                     >                  </span>               </button>            </div>    <div class="uwaw-features__item reset-feature" id="featureItem-ic">               <button                  id="btn-invert"                  class="uwaw-features__item__i"                  data-uw-reader-content="Enable the UserWay screen reader"                  aria-label="Enable the UserWay screen reader"                  aria-pressed="false"                  >               <span class="uwaw-features__item__icon">               <span class="ux4g-icon icon-invert"> </span>               </span>               <span class="uwaw-features__item__name">Invert Colors</span>               <span                  class="tick-active uwaw-features__item__enabled reset-tick"                  id="tickIcon-ic"                  style="display: none"                  >               </span>               </button>            </div>         </div>      </div>      Reset Button   </div>   <div class="reset-panel">      copyright accessibility bar      <div class="copyrights-accessibility">         <button class="btn-reset-all" id="reset-all" onclick="resetAll()">         <span class="reset-icon"> </span>         <span class="reset-btn-text">Reset All Settings</span>         </button>         <a href="https://www.ux4g.gov.in" target="_blank" class="copyright-text" contenteditable="false" style="cursor: pointer;">         <span class="uwaw-features__item__name ux4g-copy ux4g-copyright">Created by</span>         <img src="https://www.ux4g.gov.in/assets/img/logo/ux4g-logo.svg" alt="logo" loading="lazy">         </a>      </div>   </div></div><button   id="uw-widget-custom-trigger"   class="uw-widget-custom-trigger"   aria-label="Accessibility Widget"   data-uw-trigger="true"   aria-haspopup="dialog"><img src="data:image/svg+xml,%0A%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_1506)'%3E%3Cpath d='M16 7C15.3078 7 14.6311 6.79473 14.0555 6.41015C13.4799 6.02556 13.0313 5.47894 12.7664 4.83939C12.5015 4.19985 12.4322 3.49612 12.5673 2.81719C12.7023 2.13825 13.0356 1.51461 13.5251 1.02513C14.0146 0.535644 14.6383 0.202301 15.3172 0.0672531C15.9961 -0.0677952 16.6999 0.00151652 17.3394 0.266423C17.9789 0.53133 18.5256 0.979934 18.9101 1.55551C19.2947 2.13108 19.5 2.80777 19.5 3.5C19.499 4.42796 19.1299 5.31762 18.4738 5.97378C17.8176 6.62994 16.928 6.99901 16 7Z' fill='white'/%3E%3Cpath d='M27 7.05L26.9719 7.0575L26.9456 7.06563C26.8831 7.08313 26.8206 7.10188 26.7581 7.12125C25.595 7.4625 19.95 9.05375 15.9731 9.05375C12.2775 9.05375 7.14313 7.67875 5.50063 7.21188C5.33716 7.14867 5.17022 7.09483 5.00063 7.05063C3.81313 6.73813 3.00063 7.94438 3.00063 9.04688C3.00063 10.1388 3.98188 10.6588 4.9725 11.0319V11.0494L10.9238 12.9081C11.5319 13.1413 11.6944 13.3794 11.7738 13.5856C12.0319 14.2475 11.8256 15.5581 11.7525 16.0156L11.39 18.8281L9.37813 29.84C9.37188 29.87 9.36625 29.9006 9.36125 29.9319L9.34688 30.0112C9.20188 31.0206 9.94313 32 11.3469 32C12.5719 32 13.1125 31.1544 13.3469 30.0037C13.5813 28.8531 15.0969 20.1556 15.9719 20.1556C16.8469 20.1556 18.6494 30.0037 18.6494 30.0037C18.8838 31.1544 19.4244 32 20.6494 32C22.0569 32 22.7981 31.0162 22.6494 30.0037C22.6363 29.9175 22.6206 29.8325 22.6019 29.75L20.5625 18.8294L20.2006 16.0169C19.9387 14.3788 20.1494 13.8375 20.2206 13.7106C20.2225 13.7076 20.2242 13.7045 20.2256 13.7013C20.2931 13.5763 20.6006 13.2963 21.3181 13.0269L26.8981 11.0763C26.9324 11.0671 26.9662 11.0563 26.9994 11.0438C27.9994 10.6688 28.9994 10.15 28.9994 9.04813C28.9994 7.94625 28.1875 6.73813 27 7.05Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_1506'%3E%3Crect width='32' height='32' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A"><span>Accessibility Options</span></button><!-- accessibility panel end -->
+			
+			
+			<script src="/resource//common-resource/UX4G/weights-v1.js"></script> 
+
+ 			<script>    document.getElementById('uw-widget-custom-trigger2').addEventListener('click', function() {    openMain();  });</script> 
+			
+ 			<link rel="stylesheet" href="/resource/common-resource/UX4G/accesibility-style-v2.1.css"> 
+			<!-- end of accessibility panel -->
+			
+			
+			
+<script>
+  const dropdownToggle = document.getElementById("navbarDropdown");
+  const dropdownMenu = dropdownToggle.nextElementSibling;
+
+  dropdownToggle.addEventListener("click", function (e) {
+    e.preventDefault();
+    dropdownMenu.classList.toggle("show");
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+      dropdownMenu.classList.remove("show");
+    }
+  });
+</script>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html >
+<html >
+<!-- content="text/html; -->
+<meta  charset=utf-8" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/resource/common-resource/bootstrap-v5.3.7/bootstrap.min.css">
+<script type="text/javascript" src="/resource/common-resource/jquery.min.js"></script>  
+<script type="text/javascript" src="/resource/common-resource/jquery.cookie.js"></script> 
+
+<link rel="stylesheet" href="/resource/dashboard-resource/dist/css/skins/_all-skins.min.css">
+
+<link rel="stylesheet" href="/resource/common-resource/upgrade/css/jquery-ui.min.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900"rel="stylesheet">
+<script type="text/javascript" src='/dwr/engine.js'> </script>
+<script type='text/javascript' src='/dwr/util.js'> </script>
+
+
+
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/bootstrap.bundle.min.js"></script>
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/bootstrap.min.js"></script>
+
+
+
+
+<script type="text/javascript" src="/resource/common-resource/jquery.validate.min.js"></script>   
+
+
+<script src="/resource/common-resource/jquery.blockUI.js"></script> 
+
+ 
+
+
+
+
+ <script src="/resource/common-resource/upgrade/js/jquery-ui.min.js"></script>
+ <script src="/resource/common-resource/jquery.format.js"></script> 
+
+ <script src="resource/dashboard-resource/plugins/fastclick/fastclick.min.js"></script>
+ <script src="resource/dashboard-resource/plugins/select2/select2.full.min.js"></script>
+
+<script src="/resource/common-resource/upgrade/js/jquery-migrate.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script defer src="https://egramswaraj.gov.in/pes_analytics/script.js" data-website-id="b6131538-6618-481e-bb6a-e6d4eccd1c80" data-performance="true"></script> <script defer src="https://egramswaraj.gov.in/pes_analytics/recorder.js" data-website-id="b6131538-6618-481e-bb6a-e6d4eccd1c80" data-sample-rate="0.15" data-mask-level="moderate" data-max-duration="300000"></script>
+
+<script>
+
+	dwr.engine.setErrorHandler(function(message,exception){
+		var form = document.getElementById("ajaxErrorFrom");			
+		form.submit();
+	});
+	window.onerror = noError;
+	
+	function noError() {
+		return true;
+	}
+
+	displayLoadingImage = function() {
+		  $.blockUI({ 
+				theme:true,
+				/* title: 'Loading...', */
+				message: "<div style='text-align: center'><img  src='/resource/dashboard-resource/dist/img/loader-lgd.gif'/></div>"
+		    });  
+		
+	};
+	
+	showLoadingImage = function() {
+		
+		//alert("mk");
+		// $("#dwrloaderModal").show();
+		
+		 $.blockUI({ 
+			theme:true,
+			/* title: 'Loading...', */
+			message: "<div style='text-align: center'><img  src='/resource/dashboard-resource/dist/img/loader-lgd.gif'/></div>"
+	    });  
+	};
+	
+	hideLoadingImage = function(){
+		  $.unblockUI();  
+		
+		// $("#dwrloaderModal").hide();
+		//$("#dwrloaderModal").hide();
+		
+	};
+	
+	 dwr.engine.setPreHook(showLoadingImage);
+	 dwr.engine.setPostHook(hideLoadingImage); 
+	
+	
+	 customAlert = function(message){
+			//alert(message);
+			$("#bsalertbody").text(message);
+			$('#cAlert').modal('show');	
+		};
+	
+	/* $(document).ready(function() {
+		$('#printable').dataTable({
+		});
+	}); */
+	
+	/* Added by Ripunj on 12-01-2015 for Draft alert message */
+	draftModeAlert = function(){
+		alert("Already Draft");
+	}
+	
+	/** 
+	 * The {@code isEmptyObject} used to check object / element  
+	 * is empty or undefined.
+	 */
+	var isEmptyObject = function(obj) {
+		if (jQuery.type(obj) === "undefined" || (obj == null || $.trim(obj).length == 0)) {
+			return true;
+		}
+		return false;
+	};
+	
+	var isParseJson=function(obj){
+		var temp=null;
+		try{
+			temp=$.parseJSON(obj);
+		}catch(err) {
+			temp=null;
+		}
+		return temp;
+	}
+
+	
+	</script>
+	<!-- <div id="cAlert"></div> -->
+		<div class="modal fade" id="cAlert" tabindex="-1" role="dialog" >
+						<div class="modal-dialog" >
+								<div class="modal-content">
+					  				<div class="modal-header">
+					  				<h4 class="modal-title">Alert</h4>
+					   					   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					  				</div>
+					  				<div class="modal-body" id="bsalertbody">
+					        
+					  				</div>
+					     			 
+							</div>
+						</div>
+					</div>
+<!-- Added by Sushil on 17-11-2014 -->
+
+ <link href="/resource/common-resource/bootstrap-v5.3.7/datatable/dataTables.bootstrap5.css" rel="stylesheet"> 
+ 
+ 
+ 
+ 
+
+<!-- DataTables CSS -->
+
+<!-- DataTables JS -->
+
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/datatable/dataTables.js"></script>
+
+
+<script src="/resource/common-resource/bootstrap-v5.3.7/datatable/dataTables.bootstrap5.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>-</title>
+
+
+<link rel="stylesheet" href="js/pdf/css/jquery.dataTables.min.css"></link>
+<link rel="stylesheet" href="js/pdf/css/buttons.dataTables.min.css"> </link>
+<script type="text/javascript" src="js/pdf/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/pdf/dataTables.buttons.min.js"></script> 
+<script type="text/javascript" src="js/pdf/buttons.flash.min.js"></script> 
+<script type="text/javascript" src="js/pdf/jszip.min.js"></script>
+<script type="text/javascript" src="js/pdf/pdfmake.min.js"></script>
+<script type="text/javascript" src="js/pdf/vfs_fonts.js"></script> 
+<script type="text/javascript" src="js/pdf/buttons.html5.min.js"></script>
+<script type="text/javascript" src="js/pdf/buttons.print.min.js"></script>
+<script type='text/javascript' src='/dwr/engine.js'></script>
+<script type='text/javascript' src='/dwr/util.js'></script>
+<script type='text/javascript' src='/dwr/interface/lgdDwrDistrictService.js'></script>
+<script type='text/javascript' src='/dwr/interface/lgdDwrCaptchaService.js'></script>
+<script type="text/javascript" language="Javascript">
+
+$(document).ready(function(){
+	$("#view_distwisedetail_table").DataTable(
+			{
+				 dom: 'Bfrtip',
+			        pageLength: 100,
+			        buttons: [
+			            'excel',
+			            {
+			                text: 'Print',
+			                action: function () {
+			                    PrintDiv(); // Call your custom print function
+			                }
+			            }
+			        ]
+			}		
+	);
+})
+
+
+function PrintDiv() {
+    var table = $('#view_distwisedetail_table').DataTable(); // Reference to DataTable instance
+
+    // Step 1: Store current table settings
+    var currentPage = table.page(); // Current page index
+    var pageLength = table.page.len(); // Page length
+
+    // Step 2: Show all records temporarily
+    table.page.len(-1).draw(false); // Show all records (-1 means all records)
+
+    // Step 3: Prepare the content to print
+    var tableContents = document.getElementById('view_distwisedetail_table').outerHTML;
+    var customHeading = '<h4 class="text-center" style="text-align: center;">LGD - Local Government Directory, Government of India.</h4>';
+    var printWindow = window.open('', '_blank');
+
+    printWindow.document.write('<html><head><title>Print</title>');
+    printWindow.document.write('<style>');
+    printWindow.document.write('@page { size: A3 landscape; margin: 1cm; }');
+    printWindow.document.write('body { font-family: Arial, sans-serif; margin: 0; padding: 0; }');
+    printWindow.document.write('table { width: 100%; border-collapse: collapse; font-size: 8px; table-layout: fixed; }');
+    printWindow.document.write('th, td { border: 1px solid black; padding: 3px; text-align: left; word-wrap: break-word; overflow: hidden; }');
+    printWindow.document.write('th { background-color: #f2f2f2; }');
+    printWindow.document.write('</style>');
+    printWindow.document.write('</head><body>');
+    printWindow.document.write(customHeading);
+    printWindow.document.write(tableContents);
+    printWindow.document.write('</body></html>');
+
+    printWindow.document.close();
+
+    setTimeout(function () {
+        printWindow.print();
+        printWindow.onafterprint = function () {
+            printWindow.close();
+        };
+
+        // Step 4: Restore the table pagination settings
+        table.page.len(pageLength).draw(false); // Restore original page length
+        table.page(currentPage).draw(false); // Restore original page
+    }, 500);
+
+    event.preventDefault();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* $(document).ready(function() {
+$("#view_distwisedetail_table").DataTable();
+});	 */
+
+
+	dwr.engine.setActiveReverseAjax(true);
+	
+	/*Function called on the captcha getreport button*/
+function getData() 
+{
+		var inSelectState	=	document.getElementById("stateList").value;
+		var inSelectDist	=	document.getElementById("districtList").value;
+		/* State not selected */
+		if(inSelectState==null ||inSelectState==""){
+			document.getElementById("errProSelect").innerHTML = "Please select State"; 
+		    document.getElementById("errProSelect").focus();
+		    return false;
+			}else{
+			document.getElementById("errProSelect").innerHTML= "";
+		}
+		if(inSelectDist==null ||inSelectDist==""||inSelectDist=="0"){
+			document.getElementById("errProSelectDist").innerHTML = "Please select District from list"; 
+		    document.getElementById("errProSelectDist").focus();
+		    return false;
+			}else{
+			document.getElementById("errProSelectDist").innerHTML= "";
+		}
+		
+		var errorCaptcha = document.getElementById('errorCaptcha');
+		errorCaptcha.innerHTML = "";
+		var sessionId = document.getElementById('sessionId').value;
+		var capchaImgVal = document.getElementById('captchaAnswer').value;
+		/* Empty Captcha Check */
+		if(capchaImgVal==null || capchaImgVal==""){
+				document.getElementById("errEmptyCaptcha").innerHTML = "Please Enter CAPTCHA in the textbox"; 
+			    document.getElementById("errEmptyCaptcha").focus();
+			    return false;
+			}else{
+				document.getElementById("errEmptyCaptcha").innerHTML= "";
+		}
+						
+		document.getElementById('form1').method = "post";
+		document.getElementById('form1').action = "districtWiseDetailReport.do?OWASP_CSRFTOKEN=AZHS-MC7L-QZO4-4IBB-U642-NURQ-9F7L-7V5B";
+		document.getElementById('form1').submit();
+		return true;
+}
+/*DWR code for the retreival of the District List in the combo box on state selection*/
+function getDistrictList(stateCode){   
+	//alert("Inside getDistrict Method");
+	lgdDwrDistrictService.getDistrictList(stateCode, {
+	callback : handleDistrictSuccess,
+	errorHandler : handleDistrictError
+	});
+}
+//data contains the returned value
+function handleDistrictSuccess(data) {
+	// Assigns data to result id	
+	var fieldId = 'districtList';
+	var valueText = 'districtCode';
+	var nameText = 'districtNameEnglish';
+	dwr.util.removeAllOptions(fieldId);
+	var st = document.getElementById(fieldId);
+	st.add(new Option('Select District', '0'));
+	dwr.util.addOptions(fieldId, data, valueText, nameText);
+}
+
+function handleDistrictError() {
+	// Show a popup message
+	test="0";
+	alert("No data found!");
+}
+/*DWR code ends*/
+function noenter(e) {
+    e = e || window.event;
+    var key = e.keyCode || e.charCode;
+    return key !== 13; 
+}
+
+/*print the Report */
+function CallPrint()
+{ 
+	document.getElementById('footer').style.display = 'block';
+	document.getElementById('footer').style.visibility = 'visible';
+	var printContent = document.getElementById("ash"); 
+	//document.getElementById('btn1').style.visibility = 'hidden';
+	var Win4Print = window.open('','','left=0,top=0,width=500,height=500,top=301,left=365,resizable=1,status=0,toolbar=0'); 
+	//alert("contect"+printContent.innerHTML);
+	Win4Print.document.write(printContent.innerHTML); 
+	Win4Print.document.close(); 
+	Win4Print.focus(); 
+	Win4Print.print(); 
+	Win4Print.close(); 
+	document.getElementById('footer').style.display = 'none';
+	document.getElementById('footer').style.visibility = 'hidden';
+}
+
+
+$(document).ready(function() {
+	document.getElementById("ddSourceState").selectedIndex = 0;
+
+});	
+
+</script>
+<style>
+.form-group {
+    margin-bottom: 1rem; 
+}
+
+</style>
+</head>
+<body>
+
+<section class="content">
+<!-- Main row -->
+ <div class="row"  id="frmcontent">
+     <!-- main col -->
+	<div class="container-fluid">
+	<section class="col-lg-12 prebox">
+     	<div class="card">
+            <div class="card-header with-border">
+              <h3 class="card-title">District wise Detail Report</h3>
+         	 <div class="float-end">&nbsp &nbsp &nbsp
+                           	<a class="hyperlink" href="citizenFeedback.do?OWASP_CSRFTOKEN=AZHS-MC7L-QZO4-4IBB-U642-NURQ-9F7L-7V5B">
+                           		<i class="fa fa-flag" aria-hidden="true"></i> Report Issue 
+                           	</a>&nbsp &nbsp
+              	
+                     
+                      </div>
+             
+          </div><!-- /.card-header -->
+                <!-- form start -->
+                
+                <form id="form1" class="form-horizontal" action="districtWiseDetailReport.do" method="post">
+				<input type="hidden" name="OWASP_CSRFTOKEN"	value="AZHS-MC7L-QZO4-4IBB-U642-NURQ-9F7L-7V5B" />
+					<div id="box">
+						<a id="boxclose"></a>
+					</div>
+					
+					<div id="cat">
+					  
+					 		 <div class="form-group row">
+									<label class="col-sm-4 control-label text-end ms-4 text-right">Select State<span class="mandatory">*</span></label>
+									 <div class="col-sm-6">
+										<select id="stateList" name="selectStateCode" onkeyup="hideMessageOnKeyPress(&#39;stateList&#39;)" class="form-control" onfocus="validateOnFocus(&#39;stateList&#39;);helpMessage(this,&#39;ddSourceState_msg&#39;);" onblur="vlidateOnblur(&#39;stateList&#39;,&#39;1&#39;,&#39;15&#39;,&#39;c&#39;);hideHelp();" onchange="getDistrictList(this.value);setStateName(this);">
+											<option value="">----------Select----------</option>
+											<option value="35">Andaman And Nicobar Islands</option><option value="28">Andhra Pradesh</option><option value="12">Arunachal Pradesh</option><option value="18">Assam</option><option value="10">Bihar</option><option value="4">Chandigarh</option><option value="22">Chhattisgarh</option><option value="7">Delhi</option><option value="30">Goa</option><option value="24">Gujarat</option><option value="6">Haryana</option><option value="2">Himachal Pradesh</option><option value="1">Jammu And Kashmir</option><option value="20">Jharkhand</option><option value="29">Karnataka</option><option value="32">Kerala</option><option value="37">Ladakh</option><option value="31">Lakshadweep</option><option value="23">Madhya Pradesh</option><option value="27">Maharashtra</option><option value="14">Manipur</option><option value="17">Meghalaya</option><option value="15">Mizoram</option><option value="13">Nagaland</option><option value="21">Odisha</option><option value="34">Puducherry</option><option value="3">Punjab</option><option value="8">Rajasthan</option><option value="11">Sikkim</option><option value="33">Tamil Nadu</option><option value="36">Telangana</option><option value="38">The Dadra And Nagar Haveli And Daman And Diu</option><option value="16">Tripura</option><option value="5">Uttarakhand</option><option value="9">Uttar Pradesh</option><option value="19">West Bengal</option>
+										</select>
+										<div id="errProSelect" class="mandatory"></div>
+								 	</div>
+								</div>
+								
+								 <div class="form-group row">
+									<label class="col-sm-4 control-label text-end ms-4 text-right">Select District<span class="mandatory">*</span></label>
+									 <div class="col-sm-6">
+										<select id="districtList" name="selectDistrictCode" onkeyup="hideMessageOnKeyPress(&#39;districtList&#39;)" class="form-control" onfocus="validateOnFocus(&#39;districtList&#39;);helpMessage(this,&#39;ddSourceDistrict_msg&#39;);" onblur="vlidateOnblur(&#39;districtList&#39;,&#39;1&#39;,&#39;15&#39;,&#39;c&#39;);hideHelp();"><br />
+										</select>
+										<div id="errProSelectDist" class="mandatory"></div>
+								 	</div>
+								</div>
+							
+							    
+
+
+
+
+
+
+
+
+<script type="text/javascript" src='/dwr/engine.js'> </script>
+<script type='text/javascript' src='/dwr/util.js'> </script>
+
+
+
+
+ 	<div class="form-group row">
+		  <label for="captchaAnswer" class="col-sm-4 control-label text-end ms-4 text-right"></label>
+		     <div class="col-sm-6">
+		         <img src="captchaImage" alt="Captcha Image"  id ="captchaImageId" border="0"/>
+		      </div>
+		</div>
+		<br>
+		<div class="form-group row">
+							<label for="captchaAnswer" class="col-sm-4 control-label text-end ms-4 text-right"></label>
+							      <div class="col-sm-6">
+							      	<a onclick="playCaptchaSound()" style="cursor: pointer;" class="audio_cap" tabindex="4">Audio Captcha <i class="fa fa-volume-up" aria-hidden="true"></i></a>
+							     </div>
+						 </div>	
+						
+	<div class="form-group row">
+		<label for="captchaAnswer" class="col-sm-4 control-label text-end ms-4 text-right">Enter CAPTCHA image code as shown above<span class="mandatory">*</span></label>
+		      <div class="col-sm-6">
+		           <input id="captchaAnswer" name="captchaAnswer" onkeypress="return enter(event)" name="captchaAnswer" type="text" value="" maxlength="6" autocomplete="off"/>
+             		 <a href="#" onclick="captchaReferesh();" ><i class="fa fa-retweet fa-2x" aria-hidden="true"></i></a>
+             		
+				<div id="errEmptyCaptcha" class="errormsg" ></div>
+				<div id="errorCaptcha" class="errormsg"></div>	
+				<div id="errormsg" style="color: red;"> <b></b> </div>
+		     </div>
+	 </div> 
+	 
+	 <script>
+	      audioCaptchaLoad();
+	      </script>
+	 
+								<div class="mandatory" style="margin-left: 300px;"> 
+								</div>
+						
+				      <div class="card-footer">
+							  <div class="d-flex justify-content-start ps-5">
+							    <div class="sumit-Button">
+							      <button type="submit" class="btn btn-success me-2" onclick="getData();" id="actionFetchDetails">
+							        <i class="fa fa-floppy-o"></i> Get Data
+							      </button>
+							
+							      <button type="button" class="btn btn-danger" 
+							        onclick="javascript:location.href='welcome.do'">
+							        <i class="fa fa-times-circle"></i> Close
+							      </button>
+							    </div>
+							  </div>
+							</div>
+		        <input type="hidden" id="sessionId" value='683D44764727E8240299090CE2F2E3FF'></input>
+	          
+					   
+           	
+</div>
+</form>
+
+</div>
+</section>
+</div>
+</div>
+</section>
+
+</body>
+</html>
+    
+            <footer class="scroll fp-auto-height footer-mainpage fp-section fp-table" id="footer-main" data-anchor="footer">             
+               <style>
+				  .socialAnchor {
+				    width: 40px;
+				    height: 40px;
+				  }
+             </style>
+                <div class="container">
+                    <div class="row title">
+
+                        <div class="col-12 mx-auto text-center">
+                            <a href="https://panchayat.gov.in/" title="Panchayat Raj( External Site that opens in a new window)" target="_blank">
+                             <img src="/resource/homebody-resource/images/panchayati-raj.png" class="img-fluid center-block" alt="panchayat Raj Logo" title="panchayat Raj Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row title">
+                        <div class="col-12 mx-auto ad_images">
+                            <ul>
+
+                                <li>
+                                    <a href="https://www.digitalindia.gov.in/" title="Digital India( External Site that opens in a new window)" target="_blank"> <img src="/resource/homebody-resource/images/digital-india-logo.png" width="115" height="39" alt="Digital India Logo" title="Digital India Logo"></a>
+                                </li>
+                                <li>
+                                    <a href="https://data.gov.in/" title="Data Portal (External Site that opens in a new window)" target="_blank"><img src="/resource/homebody-resource/images/data-gov-logo.png" width="140" height="40" alt="Data.gov.in Logo" title="Data.gov.in Logo"></a>
+                                </li>
+                                <li>
+                                    <a href="https://india.gov.in/" title="NPI (External Site that opens in a new window)" target="_blank"><img src="/resource/homebody-resource/images/india-gov-logo.png" width="61" height="40" alt="India.gov.in Logo" title="India.gov.in Logo"></a>
+                                </li>
+                                <li>
+                                    <a href="https://meity.gov.in/" title="MeitY (External Site that opens in a new window)" target="_blank"><img src="/resource/homebody-resource/images/meity.png" alt="MeitY Logo" title="MeitY Logo"></a>
+                                </li>
+                                <li>
+                                    <a href="https://pmindia.gov.in/" title="PM INDIA (External Site that opens in a new window)" target="_blank"><img src="/resource/homebody-resource/images/pm-india-logo.png" alt="PM India Logo" title="PM India Logo"></a>
+                                </li>
+                                 <li>
+                                    <a href="https://www.nic.in/" title="NIC (External Site that opens in a new window)" target="_blank"><img src="/resource/homebody-resource/images/Nic_new.png" alt="NIC Logo" title="NIC Logo"></a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row title text-center">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <p class="whitefont">
+                                Site is designed, hosted and maintained by National Informatics Centre. Contents on this website is owned, updated and managed by the Panchayats and State Panchayati Raj Department as a part of e-Panchayat MMP of Ministry of Panchayati Raj.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                       <!--  <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                            <div class="copyright">Designed and Developed by National Informatics Centre. </div>
+                        </div> -->
+
+                    </div>
+<div class="row justify-content-center">
+  <div class="col-auto">
+    <ul class="footer_links text-center extlink p-0 pt-1 mb-1 list-group list-group-horizontal justify-content-center">
+      <li class="p-0 m-0 mb-1 list-group-item">
+        <a class="socialAnchor" href="https://www.facebook.com/ministryofpanchayatiraj" target="_blank">
+          <img title="Facebook Icon" alt="Facebook Icon" src="/resource/homebody-resource/images/social-media/icon_facebook.png">
+        </a>
+      </li>
+      <li class="p-0 m-0 mb-1 list-group-item">
+        <a class="socialAnchor" href="https://twitter.com/mopr_goi" target="_blank">
+          <img title="Twitter Icon" alt="Twitter Icon" src="/resource/homebody-resource/images/social-media/icon_twitter.png">
+        </a>
+      </li>
+      <li class="p-0 m-0 mb-1 list-group-item">
+        <a class="socialAnchor" href="https://www.youtube.com/channel/UCZpNLrx-YCGg9ixfuUrQ_dw" title="Channel 1" target="_blank">
+          <img title="Youtube Channel 1 Icon" alt="Youtube Channel 1 Icon" src="/resource/homebody-resource/images/social-media/icon_youtube_red.png">
+        </a>
+      </li>
+      <li class="p-0 m-0 mb-1 list-group-item">
+        <a class="socialAnchor" href="https://www.youtube.com/channel/UCEVBqQXipAuDqZsinwto4nA/videos" title="Channel 2" target="_blank">
+          <img title="Youtube Channel 2 Icon" alt="Youtube Channel 2 Icon" src="/resource/homebody-resource/images/social-media/icon_youtube_black.png">
+        </a>
+      </li>
+      <li class="p-0 m-0 mb-1 list-group-item">
+        <a class="socialAnchor" href="https://instagram.com/ministryofpanchayatiraj?utm_medium=copy_link" title="MoPR Instagram" target="_blank">
+          <img title="Instagram Icon" alt="Instagram Icon" src="/resource/homebody-resource/images/social-media/instagram.png">
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+                </div>
+
+            </footer>
+            
+            
+            
+            
+
+    
+    
+    
+    
+    <!-- Supporting document Modal ends -->
+	
+	
+              <script type="text/javascript" defer="">
+            setTimeout(function() {
+                var a = document.createElement("script");
+                var b = document.getElementsByTagName("script")[0];
+                //a.src = document.location.protocol + "//script.crazyegg.com/pages/scripts/0039/8964.js?" + Math.floor(new Date().getTime() / 3600000);
+                a.defer = true;
+                a.type = "text/javascript";
+                b.parentNode.insertBefore(a, b)
+            }, 1);
+        </script>
+
+        <!-- counter-->
+        <script>
+            $('.count').each(function() {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 4000,
+                    easing: 'swing',
+                    step: function(now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        </script>
+
+    <!-- #####################################################################
+   For Modal Login
+   ##################################################################### -->
+        <script>
+            $(function() {
+
+                var $formLogin = $('#login-form');
+                var $formLost = $('#lost-form');
+                var $divForms = $('#div-forms');
+                var $modalAnimateTime = 300;
+                var $msgAnimateTime = 150;
+                var $msgShowTime = 2000;
+
+                
+
+                $('#login_lost_btn').click(function() {
+                    modalAnimate($formLogin, $formLost);
+                });
+                $('#lost_login_btn').click(function() {
+                    modalAnimate($formLost, $formLogin);
+                });
+
+                function modalAnimate($oldForm, $newForm) {
+                    var $oldH = $oldForm.height();
+                    var $newH = $newForm.height();
+                    $divForms.css("height", $oldH);
+                    $oldForm.fadeToggle($modalAnimateTime, function() {
+                        $divForms.animate({
+                            height: $newH
+                        }, $modalAnimateTime, function() {
+                            $newForm.fadeToggle($modalAnimateTime);
+                        });
+                    });
+                }
+
+                function msgFade($msgId, $msgText) {
+                    $msgId.fadeOut($msgAnimateTime, function() {
+                        $(this).text($msgText).fadeIn($msgAnimateTime);
+                    });
+                }
+
+                function msgChange($divTag, $iconTag, $textTag, $divClass, $iconClass, $msgText) {
+                    var $msgOld = $divTag.text();
+                    msgFade($textTag, $msgText);
+                    $divTag.addClass($divClass);
+                    $iconTag.removeClass("glyphicon-chevron-right");
+                    $iconTag.addClass($iconClass + " " + $divClass);
+                    setTimeout(function() {
+                        msgFade($textTag, $msgOld);
+                        $divTag.removeClass($divClass);
+                        $iconTag.addClass("glyphicon-chevron-right");
+                        $iconTag.removeClass($iconClass + " " + $divClass);
+                    }, $msgShowTime);
+                }
+            });
+        </script>
+		 <!--    For Top scrolling button              -->
+    <script type="text/javascript">        
+		$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('.totop').fadeIn();
+        } else {
+            $('.totop').fadeOut();
+        }
+    });
+
+    // scroll body to 0px on click
+    $('.totop').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 1600);
+        return false;
+    });
+});
+    </script>
+    </body>
