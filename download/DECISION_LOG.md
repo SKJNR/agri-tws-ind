@@ -808,3 +808,35 @@ handoff ruling.
   landing in the sandbox is committed (or Release-asseted + manifest-
   committed) as the FIRST action, before pipeline work. Implemented same
   day: program/ tree, tag program-2026-09-15, full + incremental bundles, push card.
+
+## ADDENDUM 2 — 2026-09-15 (GLM; 10th split-brain reset + PRP adoption)
+
+- 10TH SPLIT-BRAIN RESET (mid-task, between tool calls): /home tree
+  regressed to Task-40 git state (0fd747f); program/ tree, session
+  worklog, founder-facing download/ and scripts/ wiped; 57-GIT commits
+  absent from .git. RECOVERY (same session, ~15 min): fetched
+  agri_tws_ind_repo_full_2026-09-15.bundle from /tmp canonical ->
+  main restored bit-exact to 8446eef; tag program-2026-09-15 restored
+  (d80fa9c -> 5f12889, matches bundle); github-release intact; working
+  tree clean vs 8446eef. Session worklog restored from /tmp sync (207
+  lines, includes 57-REPO-EXPLAIN). DECISION_LOG unified at 810 lines
+  both copies. NET LOSS: zero commits, zero program content. One gap
+  found + fixed: program/data/README (persistence policy) had been
+  left UNTRACKED pre-reset — recreated from DECISION_LOG text and now
+  committed. Session-only scratch scripts (probe one-liners) lost;
+  all reproducibles were already tracked in program/scripts/ (7 files).
+  Lesson logged: the persistence architecture worked exactly as
+  designed; the founder push remains the only missing piece.
+- FOUNDER RULING (chat, 2026-09-15): professional productionization
+  discipline for finalized models -> PRODUCTION_READINESS_PROTOCOL.md
+  adopted (program/): model classes A/B/C; staging ladder L0-L4 with
+  PRD-numbered gates; hat/role matrix (process + domain) where EVERY
+  role has a mandatory adversarial twin — no unopposed agent output is
+  gate evidence; subagent mapping (code-triggered, invocation pattern:
+  charter -> deliverable -> adversarial pass by a different agent ->
+  verdict -> worklog); chess-moves strategy section; Claude loop +
+  cross-AI courier triggers. AM-6 order untouched — protocol
+  pre-registers the production path, does not trigger it. Adversarial
+  Round 1 on the protocol itself executed per its own rule (see
+  program/PRP_ADVERSARIAL_ROUND1.md). No decision number consumed
+  (PRD gates numbered separately from D#/G#/T#/PR-n/AM-n).
