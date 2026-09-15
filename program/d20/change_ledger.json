@@ -1,0 +1,194 @@
+{
+  "ledger": "district_change_ledger",
+  "program": "AGRI-TWS-IND",
+  "decision": "D#20 (Task 56 consensus; Task 57 GLM build)",
+  "built": "2026-09-15",
+  "constant_target_basis": "2026-vintage 59 districts (AP 26 + TG 33); wells assigned by point-in-polygon on current polygons",
+  "verified_sources_2026-09-15": {
+    "tg_2016": [
+      "en.wikipedia.org/wiki/List_of_districts_of_Telangana",
+      "thehindu.com 2016-10-11 'Telangana gets 21 new districts'",
+      "ndtv.com 2016-10-11 'Telangana Map Redrawn Adding 21 New Districts'"
+    ],
+    "tg_2019": [
+      "timesofindia 2019-02-17 'TRS govt creates 2 new districts'",
+      "thenewsminute.com 2019-02-17 'Narayanpet and Mulugu'",
+      "indiatomorrow.net 2019-02-17"
+    ],
+    "ap_2022": [
+      "thehindu.com 2022-04-03 'A.P. to have 26 districts from today (Apr 4)'",
+      "apegazette.cgg.gov.in notifications 472-497 dated 03-04-2022"
+    ]
+  },
+  "events": [
+    {
+      "event_id": "TG-2016-10-11",
+      "state": "Telangana",
+      "effective": "2016-10-11",
+      "type": "REORGANISATION",
+      "before": 10,
+      "after": 31,
+      "in_window": "TRAIN (pre-2022 open window)",
+      "districts_added": 21,
+      "districts_continued": 9,
+      "note": "Warangal split into Rural + Urban (continuing names); all 10 old names otherwise continued with changed boundaries",
+      "confidence": "VERIFIED (3 independent sources)"
+    },
+    {
+      "event_id": "TG-2019-02-17",
+      "state": "Telangana",
+      "effective": "2019-02-17",
+      "type": "REORGANISATION",
+      "before": 31,
+      "after": 33,
+      "in_window": "TRAIN",
+      "districts_added": [
+        "Mulugu (from Warangal Rural)",
+        "Narayanpet (from Mahabubnagar)"
+      ],
+      "confidence": "VERIFIED (3 independent sources)"
+    },
+    {
+      "event_id": "AP-2022-04-04",
+      "state": "Andhra Pradesh",
+      "effective": "2022-04-04",
+      "type": "REORGANISATION",
+      "before": 13,
+      "after": 26,
+      "in_window": "VAL (2022 is inside val window per D#20 ruling: split is 2020-22 open / 2023-25 sealed; AP reorg lands in the final open year)",
+      "districts_added": 13,
+      "districts_continued": 13,
+      "gazette": "AP Gazette notifications 472-497, PART I EXTRAORDINARY, 03-04-2022",
+      "confidence": "VERIFIED (The Hindu + gazette reference)"
+    },
+    {
+      "event_id": "TG-RENAME-UNVERIFIED",
+      "state": "Telangana",
+      "type": "RENAME_EVENTS",
+      "detail": [
+        "Warangal (Urban) -> Hanumakonda (date unverified, ~2018-2021)",
+        "Warangal (Rural) -> Warangal (date unverified, ~2018-2021; after Mulugu carve-out 2019-02-17)"
+      ],
+      "confidence": "UNVERIFIED \u2014 standing query; does not affect 2026-basis assignment (current names are the target basis), affects vintage-label reconstruction only"
+    }
+  ],
+  "parentage_map": {
+    "TG-2016-10-11": {
+      "Adilabad": [
+        "Kumuram Bheem Asifabad",
+        "Mancherial",
+        "Nirmal"
+      ],
+      "Nizamabad": [
+        "Kamareddy"
+      ],
+      "Karimnagar": [
+        "Jagtial",
+        "Peddapalli",
+        "Rajanna Sircilla"
+      ],
+      "Medak": [
+        "Sangareddy",
+        "Siddipet"
+      ],
+      "Hyderabad": [],
+      "Rangareddy": [
+        "Vikarabad",
+        "Medchal-Malkajgiri"
+      ],
+      "Mahabubnagar": [
+        "Wanaparthy",
+        "Nagarkurnool",
+        "Jogulamba Gadwal"
+      ],
+      "Nalgonda": [
+        "Suryapet",
+        "Yadadri Bhuvanagiri"
+      ],
+      "Warangal": [
+        "Jangaon",
+        "Jayashankar Bhupalpally",
+        "Mahabubabad"
+      ],
+      "Khammam": [
+        "Bhadradri Kothagudem"
+      ]
+    },
+    "TG-2019-02-17": {
+      "Warangal (Rural)": [
+        "Mulugu"
+      ],
+      "Mahabubnagar": [
+        "Narayanpet"
+      ]
+    },
+    "AP-2022-04-04": {
+      "Srikakulam": [],
+      "Vizianagaram": [
+        "Parvathipuram Manyam"
+      ],
+      "Visakhapatnam": [
+        "Alluri Sitharama Raju",
+        "Anakapalli"
+      ],
+      "East Godavari": [
+        "Kakinada",
+        "Dr. B.R. Ambedkar Konaseema"
+      ],
+      "West Godavari": [
+        "Eluru"
+      ],
+      "Krishna": [
+        "NTR"
+      ],
+      "Guntur": [
+        "Bapatla",
+        "Palnadu"
+      ],
+      "Prakasam": [],
+      "Nellore": [],
+      "Kurnool": [
+        "Nandyal"
+      ],
+      "Ananthapuramu": [
+        "Sri Sathya Sai"
+      ],
+      "Chittoor": [
+        "Tirupati"
+      ],
+      "YSR Kadapa": [
+        "Annamayya"
+      ]
+    },
+    "confidence": "PROVISIONAL \u2014 dominant-parent synthesis from public record; exact mandal-level composition pending GO/gazette read at polygon-binding",
+    "unverified_shares": [
+      "Alluri Sitharama Raju: Visakhapatnam dominant, Vizianagaram share unverified",
+      "Parvathipuram Manyam: Vizianagaram dominant, Srikakulam share unverified",
+      "Eluru: West Godavari dominant, Krishna share unverified",
+      "Medchal-Malkajgiri: Rangareddy dominant, Hyderabad share unverified",
+      "Siddipet: Medak dominant, Rangareddy/Nizamabad shares unverified"
+    ]
+  },
+  "tests": [
+    {
+      "test_id": "T-D20-1",
+      "trigger": "on polygon binding",
+      "rule": "each old-district polygon must be approx-union of its children's polygons (area overlap >= 98%); failures -> GO-level investigation, not silent fix"
+    },
+    {
+      "test_id": "T-D20-2",
+      "trigger": "on well assignment",
+      "rule": "every well assigned to exactly one 2026-basis district or explicitly unassigned-with-reason (outside AP+TG boundary layer / degenerate coords / polygon gap); no defaults"
+    },
+    {
+      "test_id": "T-D20-3",
+      "trigger": "on vintage reconstruction",
+      "rule": "a well's 2015 label under 10-district TG basis must map to a district whose 2026 polygon contains the well (label lineage check for TRAIN-era sensitivity note)"
+    }
+  ],
+  "blocked_on": [
+    "gwl_data.csv not present in sandbox -> well-level PIP (T-D20-2) and D#21 split cannot run; founder re-upload or approve AIKosh download (Task-55 condition: provenance re-check vs India-WRIS raw on arrival)",
+    "LGD district codes: portal captcha-gated (districtWiseDetailReport.do), DWR plain calls rejected -> founder one-time manual export of LGD district list for AP (state code 28) + TG (36), or accept PENDING markers until polygon binding",
+    "District polygons LGD/Bhuvan-grade not in sandbox; GADM banned (D#20); OSM = community-grade fallback only with logged amendment"
+  ]
+}

@@ -1,0 +1,8 @@
+# D#20/D#21-prep manifest — Task 57 GLM — 2026-09-15
+# sha256  filename
+
+d3b751f87dba135b4770c7eaaeed5989ce7f999854d2ca136236d31ef3f41940  district_basis.csv
+4fd910b7206ad9b4a167f77d7a33c52015829564e88ff1d5c2990f6bc92084e4  change_ledger.json
+39cbd3ce3daa551746a1fb61d81ec02009e358f83135a3109f98d60744766217  d20_assign_wells.py
+97f7140754c9323137cf5eb3c210c3e0ead5a17a33829fa5d394a17e75b56e29  d21_physical_split.py
+508bbc9ed2b92902ae56cd1f83356d37a21565c81e8fefacfeb8ad5183b9ff0d  D20_SENSITIVITY_NOTE.md
