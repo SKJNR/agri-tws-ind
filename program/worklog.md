@@ -147,3 +147,19 @@ Task ID: 57-RECOVERY-10 + 57-PRP (2026-09-15, GLM)
   Artifacts: PRODUCTION_READINESS_PROTOCOL.md, PRP_ADVERSARIAL_
   ROUND1.md, PRP_LADDER_REGISTRY.csv. AM-6 untouched; PRD-n gate
   namespace created. Next task ID: 58.
+
+---
+Task ID: 57-GWL-SIZE + 57-GWL-SRC2 (interludes, 2026-09-15, GLM)
+- 57-GWL-SIZE: founder has NOT downloaded gwl_data.csv (Task-57
+  assumption corrected on record). Verified from archived SoulVision
+  repo snapshot: gwl_data.csv ~760MB lives ONLY on AIKosh (blocks
+  sandbox); not on GitHub. Founder one-time download + attach = the
+  necessary acquisition path; professional lifecycle pre-built
+  (receipt -> ARRIVAL=COMMIT -> D#21 split -> parquet -> release
+  asset). Weights deferred per D#22.
+- 57-GWL-SRC2: seven-way source hunt, all dead from sandbox (repo
+  excludes data by design; single branch; zero releases; no LFS; no
+  HF mirror; AIKosh CDN serves HTML-for-JS to overseas IPs — Angular
+  app cannot boot here, console evidence archived; wayback
+  unreachable). Evidence: sv_reference/SRC2_SOURCE_HUNT.md.
+- Both interludes: no decisions consumed; AM-6 intact. Next ID: 58.
