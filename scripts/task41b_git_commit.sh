@@ -58,7 +58,7 @@ git log --oneline | head -9
 echo "== [7/7] durable artifacts: bundle + /home/sync refresh =="
 git bundle create download/git_repo_2026-09-10.bundle --all HEAD 2>/dev/null || git bundle create download/git_repo_2026-09-10.bundle --all
 git bundle verify download/git_repo_2026-09-10.bundle | head -3
-tar czf /home/sync/repo.tar -C /home \
+tar czf /home/sync/repo.tar -C /home/z \
   --exclude='my-project/data' --exclude='my-project/skills' \
   --exclude='my-project/tool-results' --exclude='my-project/db' \
   --exclude='my-project/node_modules' my-project

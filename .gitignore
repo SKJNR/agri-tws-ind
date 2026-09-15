@@ -7,3 +7,6 @@ download/*.zip
 data/
 *.nc
 *.npz
+
+download/*.bundle
+download/*.gz

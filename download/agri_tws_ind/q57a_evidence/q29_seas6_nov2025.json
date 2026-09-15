@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://www.ecmwf.int",
+    "name": "ECMWF's new long-range forecasting system SEAS5",
+    "snippet": "ECMWF's seasonal forecasting system, SEAS5, became operational . produce real-time seasonal forecasts . November forecasts for December–January–February.",
+    "host_name": "www.ecmwf.int",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://events.ecmwf.int",
+    "name": "ECMWF research plans and operational upgrades",
+    "snippet": "Sep 15, 2025 — Deliver global numerical weather predictions. Operational cycle from November 2024. SEAS6 cycle. SEAS6 seasonal forecast system. Implementation ... 26 pages",
+    "host_name": "events.ecmwf.int",
+    "rank": 1,
+    "date": "Sep 15, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.researchgate.net",
+    "name": "(PDF) SEAS5: the new ECMWF seasonal forecast system",
+    "snippet": "In this paper we describe SEAS5, ECMWF's fifth generation seasonal forecast system, which became operational in November 2017. Compared to its predecessor, ... Read more",
+    "host_name": "www.researchgate.net",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://climate.copernicus.eu",
+    "name": "Seasonal forecasts",
+    "snippet": "The seasonal forecasts include data as well as graphical products cover a time period of six months and are updated every month.",
+    "host_name": "climate.copernicus.eu",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://iri.columbia.edu",
+    "name": "Seasonal Climate Forecasts",
+    "snippet": "August 2026 Climate Forecast Discussion for the period September- November 2026 through December-February2026-2027. Note: The CCSR/IRI seasonal forecasts of ... Read more",
+    "host_name": "iri.columbia.edu",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://nhess.copernicus.org",
+    "name": "Article - NHESS",
+    "snippet": "by HN Nana · 2026 · Cited by 1 — Assessing the ability of the ECMWF seasonal prediction model to forecast extreme September– November rainfall events over Equatorial Africa. Read more",
+    "host_name": "nhess.copernicus.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]
