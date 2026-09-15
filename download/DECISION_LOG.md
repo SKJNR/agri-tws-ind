@@ -829,14 +829,25 @@ handoff ruling.
   designed; the founder push remains the only missing piece.
 - FOUNDER RULING (chat, 2026-09-15): professional productionization
   discipline for finalized models -> PRODUCTION_READINESS_PROTOCOL.md
-  adopted (program/): model classes A/B/C; staging ladder L0-L4 with
-  PRD-numbered gates; hat/role matrix (process + domain) where EVERY
-  role has a mandatory adversarial twin — no unopposed agent output is
-  gate evidence; subagent mapping (code-triggered, invocation pattern:
-  charter -> deliverable -> adversarial pass by a different agent ->
-  verdict -> worklog); chess-moves strategy section; Claude loop +
-  cross-AI courier triggers. AM-6 order untouched — protocol
-  pre-registers the production path, does not trigger it. Adversarial
-  Round 1 on the protocol itself executed per its own rule (see
-  program/PRP_ADVERSARIAL_ROUND1.md). No decision number consumed
-  (PRD gates numbered separately from D#/G#/T#/PR-n/AM-n).
+  v1.1 adopted (program/): model classes A/B/C; staging ladder L0-L4
+  (L1 split into L1a frozen-input / L1b live-input determinism) with
+  PRD-numbered gates; hat/role matrix (process + domain incl.
+  farm-economics + Telugu/localization owners) where EVERY role has a
+  mandatory adversarial twin, enforced via per-gate signatory matrix —
+  no unopposed agent output is gate evidence; subagent mapping
+  (code-triggered, invocation pattern: charter -> deliverable ->
+  adversarial pass by a different agent -> verdict -> worklog);
+  chess-moves strategy incl. threat 5 advisory-harm; Claude loop +
+  cross-AI courier triggers; trigger adjudication (founder statement
+  logged + twin-countersign, no agent self-declaration); machine-
+  checkable PRP_LADDER_REGISTRY.csv. AM-6 order untouched — protocol
+  pre-registers the production path, does not trigger it. ADVERSARIAL
+  ROUND 1 executed as Task 57-PRP-A1 (fresh-context agent): verdict
+  ADOPT-WITH-AMENDMENTS, 3 BLOCK + 8 AMEND + 1 NIT, all 12 accepted
+  and incorporated in v1.1 (record + dispositions:
+  program/PRP_ADVERSARIAL_ROUND1.md). CORRECTION LOGGED: the first
+  version of this addendum prematurely stated the round as already
+  executed before it ran — caught by the round itself as Block 1;
+  standing rule adopted: a gate record may never reference an
+  uncommitted artifact. No decision number consumed (PRD gates
+  numbered separately from D#/G#/T#/PR-n/AM-n).
