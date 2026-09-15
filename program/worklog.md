@@ -130,3 +130,20 @@ Stage Summary:
   consensus lane via courier addendum. Founder asks reduced to: attach
   gwl_data.csv (Move 2, when ready) + polygons (Move 3, later, optional
   help). Kit docs stand; fetcher now redundant fallback.
+
+---
+Task ID: 57-RECOVERY-10 + 57-PRP (2026-09-15, GLM)
+- 10th split-brain reset: /home regressed to 0fd747f; recovered
+  bit-exact from /tmp canonical + full bundle (main 8446eef, tag
+  program-2026-09-15, zero net loss). gitignore 'data/' depth bug
+  root-caused + fixed (root-anchored); program/data/README now
+  tracked. Commit 98100ee.
+- PRP v1.1 adopted per founder ruling (productionization discipline:
+  roles + adversarial twins, subagent map, chess strategy, Claude
+  loop). Adversarial Round 1 (Task 57-PRP-A1, fresh context): ADOPT
+  WITH AMENDMENTS, 12/12 accepted (3 BLOCK: evidence-integrity-at-
+  birth correction, ingestion runbooks + non-sandbox deployment
+  precondition, advisory-harm axis; 8 AMEND; 1 NIT). Commits 29808c6.
+  Artifacts: PRODUCTION_READINESS_PROTOCOL.md, PRP_ADVERSARIAL_
+  ROUND1.md, PRP_LADDER_REGISTRY.csv. AM-6 untouched; PRD-n gate
+  namespace created. Next task ID: 58.

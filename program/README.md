@@ -14,6 +14,13 @@ split, district basis, adversarial Qwen<->GLM consensus loop.
 - data/           data persistence policy (ARRIVAL=COMMIT; see its README)
 - worklog.md      shared multi-agent worklog (Tasks 41+)
 - Q57A_VERDICTS_GLM_REPLY.md   adversarial round Q57-A
+- PRODUCTION_READINESS_PROTOCOL.md  PRP v1.1 — finalized models ->
+                  production (classes A/B/C, ladder L0-L4, adversarial
+                  twins per role, subagent map, chess strategy)
+- PRP_ADVERSARIAL_ROUND1.md      Round-1 review + dispositions (all 12
+                  accepted; incl. correction of the log's own premature
+                  claim)
+- PRP_LADDER_REGISTRY.csv        machine-checkable model x level state
 
 Canonical decision log: ../download/DECISION_LOG.md (competition era +
 program phase). Master handoff: ../MASTER_HANDOFF.md.
@@ -24,8 +31,10 @@ program phase). Master handoff: ../MASTER_HANDOFF.md.
 3. read worklog.md tail -> last Task ID; resume there (never renumber)
 4. data/: re-download Release assets per committed manifests if needed
 
-## State at tag program-2026-09-15
+## State at tag program-2026-09-15 + post-tag commits
 D#20 built (59-basis; amendment 59->61 pending Qwen consensus after AP
 26->28 reorg discovery); D#21 pre-staged (mocktest PASS); Q57-A round
 delivered; LGD codes backfilled 59/59; import kit shipped; gwl_data.csv
-handback + polygons await founder moves.
+handback + polygons await founder moves. Post-tag: 10th split-brain
+reset recovered bit-exact (98100ee); PRP v1.1 adopted per founder
+ruling with adversarial Round 1 incorporated (29808c6).
