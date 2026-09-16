@@ -851,3 +851,50 @@ handoff ruling.
   standing rule adopted: a gate record may never reference an
   uncommitted artifact. No decision number consumed (PRD gates
   numbered separately from D#/G#/T#/PR-n/AM-n).
+
+## ADDENDUM 3 — 2026-09-16 (GLM; 12th reset recovered + gwl_data ARRIVAL + D#21 executed)
+
+12th split-brain reset at session open (/home reverted to container
+scaffold). Recovered zero-loss from /tmp canonical + full bundle
+(HEAD e9539f9); stale Sep-10 seed parked at /tmp/stale-seed-sep10.
+Mirror repair: /tmp mirror never carried program/ — now it does
+(raw/ excluded as regenerable from the zip).
+
+ARRIVAL (Task-55 critical-path blocker CLEARED): founder uploaded
+the AIKosh download to public HF datasets under han-jisso; sandbox
+downloaded ground_water_level_all.zip (265,308,904 B), sha256 == HF
+LFS oid 1e9d0cf6... (bit-perfect). Founder-supplied API key never
+authenticated (401; datasets public — no credential used or
+stored). ARRIVAL=COMMIT per program/data/README.md: >95MB class =
+Release-asset route, manifest committed in-tree BEFORE pipeline
+work (commit c83f313). Zip custody: release_staging/ + /tmp
+mirror; Release upload deferred until after founder push.
+
+CENSUS (gwl_handback_check.py, sandbox side): gwl_data.csv
+762,708,010 B, sha256 c1a2e1b3...; 3,278,227 rows; date col
+'date'; 0 unparsable; 10,411 wells; 476 district labels (all-India
+file — AP+TG reconciliation belongs to D#20 well assignment;
+warning logged by design); range 1976-05-01..2025-12-09;
+open-period value stats sealed-safe (D#24).
+
+D#21 EXECUTED (d21_physical_split.py): open 992,053 rows
+(<=2022-12-31) sha256 c73ae81f...; sealed 2,286,174 rows
+(>=2023-01-01) sha256 71f492b2...; reconciliation PASS; sealed dir
+locked (dr-x------) with unseal procedure + ACCESS_LOG stub;
+tracked contract copies under program/data/manifests/
+sealed_contract/. Parquet of OPEN rows only:
+parquet/gwl_open.parquet (30 MB zstd, 992,053 rows, duckdb 1.5.5).
+AM-6 freeze order untouched; no model runs; D1.1 unblocked on open
+rows only.
+
+SoulVision NDVI model asset (ndvi_forecasting_model_dataset.zip,
+647,774,722 B, LFS sha256 be16545e...): available on founder HF —
+NOT downloaded; D#22 weights ban in force (three-arm pre-reg not
+triggered). Recorded in program/data/manifests/
+ndvi_model_availability.json.
+
+Founder advisories (no new tasks): (1) flip both HF datasets to
+PRIVATE — AIKosh participant licensing (visibility rule,
+program/data/README.md); (2) pasted API key never authenticated —
+delete it in HF settings if it exists; (3) push card unchanged
+(full bundle + incr 2026-09-16 refreshed).

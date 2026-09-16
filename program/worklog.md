@@ -163,3 +163,25 @@ Task ID: 57-GWL-SIZE + 57-GWL-SRC2 (interludes, 2026-09-15, GLM)
   app cannot boot here, console evidence archived; wayback
   unreachable). Evidence: sv_reference/SRC2_SOURCE_HUNT.md.
 - Both interludes: no decisions consumed; AM-6 intact. Next ID: 58.
+---
+Task ID: 58-RESET12+GWL-ARRIVAL
+Agent: Super Z (main agent)
+Task: (a) 12th split-brain reset recovery; (b) gwl_data arrival via founder's Hugging Face route + pre-staged arrival pipeline
+
+Work Log:
+- 12th reset detected: /home/z/my-project reverted to container scaffold (Initial commit 187e5fe + stale Sep-10 seed). /tmp canonical mirror + full bundle (242M, Sep-15 17:26) survived.
+- Recovery: cloned agri_tws_ind_repo_full_2026-09-15.bundle -> HEAD e9539f9; checkout main; rsync --ignore-existing from mirror recovered 47 untracked files (bundles, founder zip, drafts). program/ restored fully from git (mirror carries no program/). DECISION_LOG md5 MATCH vs mirror; master worklog = git canonical (0fd747f-era freeze intact); stale Sep-10 seed parked at /tmp/stale-seed-sep10. Zero net loss.
+- Founder message: HF account han-jisso + API key + "you might see those two datasets". Token INVALID (whoami-v2 401) - but both datasets PUBLIC, so no credential needed/used/stored:
+  * han-jisso/ground-water-level-all -> ground_water_level_all.zip (265,308,904 B)
+  * han-jisso/ndvi-forecasting-model -> ndvi_forecasting_model_dataset.zip (647,774,722 B)
+- Downloaded gwl zip: sha256 1e9d0cf6...9f4d3 == HF LFS oid (BIT-PERFECT). Inner: single gwl_data.csv, 762,708,010 B, entry mtime 2026-07-24 14:09 (AIKosh-era timestamp preserved). Extracted csv sha256 c1a2e1b3...a9c4d6f.
+- ARRIVAL=COMMIT executed (commit c83f313): >95MB class -> Release-asset route; manifests/gwl_arrival_manifest.json + ndvi_model_availability.json committed BEFORE any pipeline work; .gitignore guards release_staging/ raw/ split/ parquet/.
+- NDVI model zip NOT downloaded - D#22 weights ban (three-arm pre-reg not yet triggered). Availability + sha256 recorded for the moment it unblocks.
+
+Stage Summary:
+- The Task-55-era critical-path blocker (gwl_data.csv absent from sandbox) is CLEARED; census + D#21 split + parquet run next under the same task ID.
+- Custody: zip in program/data/release_staging/ (+ /tmp mirror at round end); Release upload deferred until founder push.
+- Advisory to founder: flip both HF datasets to PRIVATE (AIKosh participant licensing); pasted API key never authenticated - nothing to revoke, but delete it in HF settings if it exists.
+- 58 cont. — CENSUS PASS: gwl_handback_check.py on raw/gwl_data.csv — 3,278,227 rows, 25 cols, 0 unparsable dates, 10,411 wells, 476 all-India district labels (AP+TG reconciliation deferred to D#20 well assignment), 1976-05-01..2025-12-09, csv sha256 c1a2e1b3... Receipt archived to manifests/gwl_data_csv.receipt.json.
+- 58 cont. — D#21 EXECUTED: d21_physical_split.py -> open 992,053 (<=2022, sha256 c73ae81f...) / sealed 2,286,174 (>=2023, sha256 71f492b2...) / reconciliation PASS; sealed dir locked dr-x------; contract copies in manifests/sealed_contract/. PARQUET: open rows only -> parquet/gwl_open.parquet (30 MB zstd, 992,053 rows verified via duckdb 1.5.5). AM-6 untouched; no model runs.
+- 58 cont. — Persistence: DECISION_LOG Addendum 3; this commit; /tmp mirror updated (program/ now mirrored incl. custody blobs, raw/ excluded as regenerable); incr bundle 2026-09-16; founder zip program_2026-09-16.zip rebuilt. Full-bundle refresh SKIPPED this round (disk headroom; full@e9539f9 + incr@today = complete recovery set).

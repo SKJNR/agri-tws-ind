@@ -1,0 +1,14 @@
+{
+  "decision": "D#21 physical split (Task 56; executed Task 57 GLM)",
+  "source": "gwl_data.csv",
+  "source_sha256": "c1a2e1b3dcb6c0573b9bf69885ecc4701aab1ba8d78c136cbbbcb61b7a9c4d6f",
+  "date_column": "date",
+  "cut": "2023-01-01",
+  "rows_source": 3278227,
+  "rows_open": 992053,
+  "rows_sealed": 2286174,
+  "rows_excluded_unparsable": 0,
+  "open_sha256": "c73ae81f94c2d6081fd7cf15b80510ae96ee3e62768284fd71cb98fe33e7eb98",
+  "sealed_sha256": "71f492b26e671b0e629ab4a38910f033e130cbeb70d3121d251adde3c8b172ee",
+  "reconciliation": "PASS"
+}
