@@ -1,0 +1,60 @@
+state,lgd_state_code,district_name_lgd,district_name_local,formed_or_renamed,dominant_parent_at_formation,basis_note,lgd_district_code,lgd_name_live,lgd_effective_date,match_method
+AP,28,Srikakulam,Srikakulam,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),519,Srikakulam,2022-04-03,EXACT
+AP,28,Vizianagaram,Vizianagaram,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),521,Vizianagaram,2022-04-03,EXACT
+AP,28,Visakhapatnam,Visakhapatnam,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),520,Visakhapatnam,2022-04-03,EXACT
+AP,28,East Godavari,East Godavari,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),505,East Godavari,2022-04-05,EXACT
+AP,28,West Godavari,West Godavari,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),523,West Godavari,2022-04-05,EXACT
+AP,28,Krishna,Krishna,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),510,Krishna,2022-04-04,EXACT
+AP,28,Guntur,Guntur,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),506,Guntur,2022-04-03,EXACT
+AP,28,Prakasam,Prakasam,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),517,Prakasam,2026-01-19,EXACT
+AP,28,Nellore,Nellore,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),515,Sri Potti Sriramulu Nellore,2008-05-28,RESOLVED_NAME_VARIANT
+AP,28,Kurnool,Kurnool,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),511,Kurnool,2022-04-03,EXACT
+AP,28,Ananthapuramu,Ananthapuramu,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),502,Ananthapuramu,2013-04-17,EXACT
+AP,28,Chittoor,Chittoor,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),503,Chittoor,2022-04-03,EXACT
+AP,28,YSR Kadapa,YSR Kadapa,PRE-2022-BASIS,,CONTINUES_2022 (boundaries changed),504,Y.S.R. Kadapa,2025-05-25,NOSPACE
+AP,28,Parvathipuram Manyam,Parvathipuram Manyam,2022-04-04,Vizianagaram,NEW_2022,743,Parvathipuram Manyam,2022-04-03,EXACT
+AP,28,Alluri Sitharama Raju,Alluri Sitharama Raju,2022-04-04,Visakhapatnam,NEW_2022,745,Alluri Sitharama Raju,2026-01-19,EXACT
+AP,28,Anakapalli,Anakapalli,2022-04-04,Visakhapatnam,NEW_2022,744,Anakapalli,2022-04-03,EXACT
+AP,28,Kakinada,Kakinada,2022-04-04,East Godavari,NEW_2022,746,Kakinada,2022-04-03,EXACT
+AP,28,Dr. B.R. Ambedkar Konaseema,Dr B R Ambedkar Konaseema,2022-04-04,East Godavari,NEW_2022,747,Dr. B.R. Ambedkar Konaseema,2022-08-01,EXACT
+AP,28,Eluru,Eluru,2022-04-04,West Godavari,NEW_2022,748,Eluru,2022-04-03,EXACT
+AP,28,NTR,NTR,2022-04-04,Krishna,NEW_2022,749,Ntr,2022-04-03,EXACT
+AP,28,Bapatla,Bapatla,2022-04-04,Guntur,NEW_2022,750,Bapatla,2022-04-03,EXACT
+AP,28,Palnadu,Palnadu,2022-04-04,Guntur,NEW_2022,751,Palnadu,2022-04-03,EXACT
+AP,28,Nandyal,Nandyal,2022-04-04,Kurnool,NEW_2022,755,Nandyal,2022-04-03,EXACT
+AP,28,Sri Sathya Sai,Sri Sathya Sai,2022-04-04,Ananthapuramu,NEW_2022,754,Sri Sathya Sai,2022-04-03,EXACT
+AP,28,Annamayya,Annamayya,2022-04-04,YSR Kadapa,NEW_2022,753,Annamayya,2025-12-29,EXACT
+AP,28,Tirupati,Tirupati,2022-04-04,Chittoor,NEW_2022,752,Tirupati,2022-04-03,EXACT
+TS,36,Adilabad,Adilabad,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),501,Adilabad,2016-11-16,EXACT
+TS,36,Nizamabad,Nizamabad,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),516,Nizamabad,2016-10-11,EXACT
+TS,36,Karimnagar,Karimnagar,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),508,Karimnagar,2016-10-11,EXACT
+TS,36,Medak,Medak,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),513,Medak,2016-10-11,EXACT
+TS,36,Hyderabad,Hyderabad,PRE-2016-BASIS,,CONTINUES_2016 (minor boundary changes),507,Hyderabad,2014-06-16,EXACT
+TS,36,Rangareddy,Rangareddy,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),518,Ranga Reddy,2016-11-16,NOSPACE
+TS,36,Mahabubnagar,Mahabubnagar,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),512,Mahabubnagar,2019-02-19,EXACT
+TS,36,Nalgonda,Nalgonda,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),514,Nalgonda,2016-11-16,EXACT
+TS,36,Warangal,Warangal,RENAME~2018-21 UNVERIFIED,Warangal (Rural),RENAME_EVENT: ex-Warangal-Rural; GO check pending,522,Warangal,2021-08-11,EXACT
+TS,36,Khammam,Khammam,PRE-2016-BASIS,,CONTINUES_2016 (boundaries changed),509,Khammam,2016-10-11,EXACT
+TS,36,Hanumakonda,Hanumakonda,RENAME~2018-21 UNVERIFIED,Warangal (Urban),RENAME_EVENT: ex-Warangal-Urban; GO check pending,686,Hanumakonda,2021-08-11,EXACT
+TS,36,Kumuram Bheem Asifabad,Kumuram Bheem Asifabad,2016-10-11,Adilabad,NEW,699,Kumuram Bheem Asifabad,2017-01-23,EXACT
+TS,36,Mancherial,Mancherial,2016-10-11,Adilabad,NEW,684,Mancherial,2016-10-10,EXACT
+TS,36,Nirmal,Nirmal,2016-10-11,Adilabad,NEW,680,Nirmal,2016-10-10,EXACT
+TS,36,Kamareddy,Kamareddy,2016-10-11,Nizamabad,NEW,685,Kamareddy,2016-10-10,EXACT
+TS,36,Jagtial,Jagtial,2016-10-11,Karimnagar,NEW,681,Jagitial,2016-10-10,RESOLVED_NAME_VARIANT
+TS,36,Peddapalli,Peddapalli,2016-10-11,Karimnagar,NEW,682,Peddapalli,2016-10-10,EXACT
+TS,36,Rajanna Sircilla,Rajanna Sircilla,2016-10-11,Karimnagar,NEW,683,Rajanna Sircilla,2017-01-23,EXACT
+TS,36,Sangareddy,Sangareddy,2016-10-11,Medak,NEW,691,Sangareddy,2016-10-10,EXACT
+TS,36,Siddipet,Siddipet,2016-10-11,Medak,NEW,692,Siddipet,2016-10-10,EXACT
+TS,36,Vikarabad,Vikarabad,2016-10-11,Rangareddy,NEW,698,Vikarabad,2016-10-10,EXACT
+TS,36,Medchal-Malkajgiri,Medchal Malikajgiri,2016-10-11,Rangareddy,NEW,700,Medchal Malkajgiri,2016-10-10,NORM
+TS,36,Wanaparthy,Wanaparthy,2016-10-11,Mahabubnagar,NEW,693,Wanaparthy,2016-10-10,EXACT
+TS,36,Nagarkurnool,Nagarkurnool,2016-10-11,Mahabubnagar,NEW,694,Nagarkurnool,2016-10-10,EXACT
+TS,36,Jogulamba Gadwal,Jogulamba Gadwal,2016-10-11,Mahabubnagar,NEW,695,Jogulamba Gadwal,2017-01-23,EXACT
+TS,36,Suryapet,Suryapet,2016-10-11,Nalgonda,NEW,696,Suryapet,2016-10-10,EXACT
+TS,36,Yadadri Bhuvanagiri,Yadadri Bhuvanagiri,2016-10-11,Nalgonda,NEW,697,Yadadri Bhuvanagiri,2017-07-23,EXACT
+TS,36,Jangaon,Jangaon,2016-10-11,Warangal,NEW,689,Jangoan,2016-10-10,ANAGRAM
+TS,36,Jayashankar Bhupalpally,Jayashankar Bhupalpally,2016-10-11,Warangal,NEW,687,Jayashankar Bhupalapally,2019-02-19,RESOLVED_NAME_VARIANT
+TS,36,Mahabubabad,Mahabubabad,2016-10-11,Warangal,NEW,688,Mahabubabad,2016-10-10,EXACT
+TS,36,Bhadradri Kothagudem,Bhadradri Kothagudem,2016-10-11,Khammam,NEW,690,Bhadradri Kothagudem,2017-01-23,EXACT
+TS,36,Mulugu,Mulugu,2019-02-17,Warangal,NEW,720,Mulugu,2019-02-16,EXACT
+TS,36,Narayanpet,Narayanpet,2019-02-17,Mahabubnagar,NEW,721,Narayanpet,2019-02-16,EXACT

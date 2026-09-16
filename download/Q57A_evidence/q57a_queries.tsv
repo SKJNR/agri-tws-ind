@@ -1,0 +1,28 @@
+q01_xskillscore_license	xskillscore python package license github xarray-contrib
+q02_mapie_license	MAPIE conformal prediction python scikit-learn-contrib license
+q03_nonconformist_pypi	nonconformist python package PyPI conformal prediction
+q04_puncc_conformal	puncc conformal prediction library deel-ai license
+q05_pyexactextract	pyexactextract PyPI zonal statistics license
+q06_exactextract_core	exactextract C++ ISC license isciences
+q07_pixi_license	pixi prefix.dev package manager license BSD
+q08_dvc_license	DVC data version control license Apache iterative
+q09_seas6_operational	ECMWF SEAS6 seasonal forecast system 6 operational CDS
+q10_seas5_cds_licence	SEAS5 seasonal forecast CDS licence CC-BY-4.0 attribution ECMWF
+q11_iitm_erf	IITM extended range forecast four weeks rainfall India MoES
+q12_beckn_license	Beckn protocol specification license ONDC open source
+q13_indictrans2_license	AI4Bharat IndicTrans2 license CC-BY-NC-4.0
+q14_bhashini_ulca	Bhashini ULCA API commercial pricing terms
+q15_pmfby_cce	PMFBY crop cutting experiment district yield data download
+q16_naquim	CGWB NAQUIM aquifer management plan district report
+q17_livestock_census_20	20th Livestock Census 2019 district wise data download DAHD
+q18_livestock_census_21	21st Livestock Census 2024 India release results
+q19_ndri_thi	NDRI temperature humidity index THI dairy cattle heat stress bands
+q20_igfri_varieties	IGFRI Jhansi fodder varieties release
+q21_imd_district_warnings	IMD district wise warnings mausam.imd.gov.in
+q22_sachet_cap	SACHET NDMA CAP common alerting protocol India API
+q23_sentinel1_sm	Sentinel-1 SAR soil moisture retrieval Copernicus license
+q24_tg_districts_2016	Telangana 21 new districts October 11 2016 list 31
+q25_tg_districts_2019	Telangana Mulugu Narayanpet districts February 17 2019
+q26_ap_districts_2022	Andhra Pradesh 26 districts April 4 2022 reorganisation
+q27_lgd_district_list	LGD Local Government Directory district list download codes
+q28_data_gov_in_godl	Government Open Data License India GODL attribution

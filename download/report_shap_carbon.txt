@@ -1,0 +1,28 @@
+=== [1] load train (v24 k0-B code path, verbatim) ===
+train rows=2154021 cells=15715  (5.2s)
+=== [2] k0-B Lk/Rk merge ===
+linear coef[FAST_est]=0.5956  k0 rows=2154021 (F=1977398)  (7.4s)
+=== [3] XLB build (COMPLIANT: no raw lat/lon) + LGBM train ===
+bst(500 trees) + bst_r(400 trees) trained  (135.5s)
+=== [4] SHAP TreeExplainer on bst (20k stratified sample of the full-k0 set) ===
+
+rank | feature | mean|SHAP| | LGB gain-importance (normalized)
+ 1  fast_resid(t)        0.3341   0.748
+ 2  SPEI_01(t+1)         0.0735   0.056
+ 3  SPEI_12(t+1)         0.0651   0.035
+ 4  SOIL_MOIST(t+1)      0.0529   0.027
+ 5  SPEI_06(t+1)         0.0404   0.035
+ 6  SOIL_MOIST(t)        0.0248   0.005
+ 7  mu_c                 0.0213   0.020
+ 8  trend(t+1)           0.0168   0.018
+ 9  beta_c               0.0168   0.013
+10  cos(month)           0.0160   0.013
+11  SPEI_12(t)           0.0155   0.003
+12  sin(month)           0.0155   0.010
+13  SPEI_03(t+1)         0.0126   0.006
+14  SPEI_03(t)           0.0088   0.004
+15  SPEI_06(t)           0.0059   0.003
+16  SPEI_01(t)           0.0041   0.004
+17  has_covs(t+1)        0.0000   0.000
+
+=== [5] CodeCarbon: 0.00074 kg CO2e | wall 234.3s (3.9 min) | cpu_kWh 0.00041

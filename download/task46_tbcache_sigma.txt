@@ -1,0 +1,48 @@
+==============================================================================
+TASK 46: horizon-adaptive smoothing — honest harness test (pre-registered)
+==============================================================================
+
+[PART 1] test masked-row horizon distribution (from Test (2).csv)
+  k0 anchor months (test): [24188, 24192, 24197, 24203, 24222, 24226]
+  masked rows total: 186,913
+    h= 2: 62,340 rows  ( 33.4%)
+    h= 3: 46,723 rows  ( 25.0%)
+    h= 4: 31,115 rows  ( 16.6%)
+    h= 5: 15,617 rows  (  8.4%)
+    h= 6: 15,568 rows  (  8.3%)
+    h= 7: 15,550 rows  (  8.3%)
+  -> h>=3: 66.6%   h>=4: 41.7% (other-AI claim: 62.5% h>=4)
+  rows with a backward anchor within 8 months: 77,762 (41.6%)
+
+[PART 2] harness: phi=0.82 lam=0.8 H=0.320 R=0.081 var_f=0.463 (val Xres std=1.055)
+  grid 140x358, cell=1.00 deg; production sigma=2.0deg = 2.00 cells
+
+--- sigma sweep (flat) ---
+  flat sigma=0.0deg                 : h2=0.771 h3=0.844 h4=0.560 h5=0.427 | cal-wtd=0.7295
+  flat sigma=1.0deg                 : h2=0.773 h3=0.845 h4=0.575 h5=0.465 | cal-wtd=0.7355
+  flat sigma=1.5deg                 : h2=0.778 h3=0.851 h4=0.589 h5=0.492 | cal-wtd=0.7437
+  flat sigma=2.0deg (prod)          : h2=0.787 h3=0.860 h4=0.608 h5=0.522 | cal-wtd=0.7557
+  flat sigma=2.5deg                 : h2=0.799 h3=0.872 h4=0.630 h5=0.556 | cal-wtd=0.7706
+  flat sigma=3.0deg                 : h2=0.812 h3=0.886 h4=0.653 h5=0.591 | cal-wtd=0.7872
+  flat sigma=4.0deg                 : h2=0.840 h3=0.916 h4=0.700 h5=0.657 | cal-wtd=0.8219
+  flat sigma=5.0deg                 : h2=0.867 h3=0.945 h4=0.744 h5=0.716 | cal-wtd=0.8550
+
+--- sigma sweep (horizon-adaptive, pre-registered 3-piece rule) ---
+  adaptive sigma h<=3:2.0 h4-5:2.0 h>=6:4.0: h2=0.787 h3=0.860 h4=0.608 h5=0.522 | cal-wtd=0.7557
+  adaptive sigma h<=3:2.0 h4-5:3.0 h>=6:4.0: h2=0.787 h3=0.860 h4=0.653 h5=0.591 | cal-wtd=0.7682
+  adaptive sigma h<=3:2.0 h4-5:3.0 h>=6:5.0: h2=0.787 h3=0.860 h4=0.653 h5=0.591 | cal-wtd=0.7682
+  adaptive sigma h<=3:2.0 h4-5:4.0 h>=6:6.0: h2=0.787 h3=0.860 h4=0.700 h5=0.657 | cal-wtd=0.7818
+  adaptive sigma h<=3:1.5 h4-5:3.0 h>=6:6.0: h2=0.778 h3=0.851 h4=0.653 h5=0.591 | cal-wtd=0.7614
+  adaptive sigma h<=3:2.0 h4-5:3.0 h>=6:6.0: h2=0.787 h3=0.860 h4=0.653 h5=0.591 | cal-wtd=0.7682
+  adaptive sigma h<=3:2.5 h4-5:3.5 h>=6:5.0: h2=0.799 h3=0.872 h4=0.677 h5=0.625 | cal-wtd=0.7838
+  adaptive sigma h<=3:2.0 h4-5:2.0 h>=6:3.0: h2=0.787 h3=0.860 h4=0.608 h5=0.522 | cal-wtd=0.7557
+  adaptive sigma h<=3:2.0 h4-5:4.0 h>=6:4.0: h2=0.787 h3=0.860 h4=0.700 h5=0.657 | cal-wtd=0.7818
+  adaptive sigma h<=3:3.0 h4-5:4.0 h>=6:6.0: h2=0.812 h3=0.886 h4=0.700 h5=0.657 | cal-wtd=0.8005
+  adaptive sigma h<=3:1.0 h4-5:3.0 h>=6:5.0: h2=0.773 h3=0.845 h4=0.653 h5=0.591 | cal-wtd=0.7572
+  adaptive sigma h<=3:2.0 h4-5:5.0 h>=6:8.0: h2=0.787 h3=0.860 h4=0.744 h5=0.716 | cal-wtd=0.7949
+
+==============================================================================
+VERDICT: baseline flat-2.0 cal-wtd = 0.7557
+         best = flat 0.0 cal-wtd = 0.7295  (gain +0.0262)
+GATE A (>= 0.005 gain): PASS -> build v30 probe
+==============================================================================

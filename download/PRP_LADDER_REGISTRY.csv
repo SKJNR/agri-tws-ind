@@ -1,0 +1,22 @@
+model,model_class,level,status,prd_gate,evidence_artifact,evidence_hash_or_ref,signoffs,notes
+v21a,A,L0,DONE,,download/submissions_manifest.md,md5 6b6e3e41c25317a68089e6b9ca707c05,competition-era ledger,pinned code tag + input manifest + license provenance
+v21a,A,L1a,DONE,,download/gate_review_v18.md + README rebuild section,md5 6b6e3e41c25317a68089e6b9ca707c05 (re-verified 2026-08-31),,frozen-input bit-exact rebuild under then-current env standard; pixi.lock re-verify QUEUED (env not yet built)
+v21a,A,L1b,NOT_STARTED,,,,live-input determinism + as-of contract; verified with mock-clock CI at L2 build
+v21a,A,L2,NOT_STARTED,,,,hardened inference package; ingestion runbooks; disclaimer spec; Zindi participant-terms license gate
+v21a,A,L3,NOT_STARTED,,,,shadow phase (= D#22 Path B) then farmer-facing pilot; non-sandbox deployment target precondition
+v21a,A,L4,NOT_STARTED,,,,product SLA: advisory by the 5th >=95% months
+v12b,A,L0,DONE,,download/submissions_manifest.md,md5 in manifest,competition-era ledger,
+v12b,A,L1a,PARTIAL,,scripts/submission_v12.py,builder exists; bit-exact re-verification PENDING,,relabel per Round-1 obj. 5 (md5-of-artifact is L0 evidence)
+v12b,A,L1b,NOT_STARTED,,,,
+v12b,A,L2,NOT_STARTED,,,,
+v12b,A,L3,NOT_STARTED,,,,
+v12b,A,L4,NOT_STARTED,,,,
+v28,A,L0,DONE,,download/submissions_manifest.md,md5 in manifest,competition-era ledger,
+v28,A,L1a,PARTIAL,,scripts/task38_m201612_pair_v28.py,builder exists; bit-exact re-verification PENDING,,relabel per Round-1 obj. 5
+v28,A,L1b,NOT_STARTED,,,,
+v28,A,L2,NOT_STARTED,,,,
+v28,A,L3,NOT_STARTED,,,,
+v28,A,L4,NOT_STARTED,,,,
+chronos-bolt,B,L0,PENDING,,D#23 rung registration,weights download deferred per D#22 pre-reg,,variant + config + weights hash to be pinned at download
+soulvision,B,L0,CANDIDATE,,INDIAAI_PRIMITIVE_VERIFICATION_GLM_REPLY.md,,Class B gates + AM-1/AM-2 contamination geometry; transitive deps (Open-Meteo L13 + GEE) unresolved
+program-models,C,L0,NOT_TRAINED,,program phase pre-D1.1,,,training card + data snapshot + seeds required before any production use

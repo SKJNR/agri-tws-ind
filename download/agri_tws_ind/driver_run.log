@@ -1,0 +1,344 @@
+driver: budget 370s, 59 districts, 7 chunks each, window 2014-01-01..2026-09-10
+  + Anantapur: COMPLETE (4636 rows)
+    ! Kurnool|AP 2021-12-30..2023-12-29 ReadTimeout (HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out)
+    ! Kurnool|AP 2023-12-30..2025-12-28 ReadTimeout (HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out)
+    ! Kurnool|AP 2023-12-30..2025-12-28 ReadTimeout (HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out)
+  + Kurnool: COMPLETE (4636 rows)
+    ! Guntur|AP 2021-12-30..2023-12-29 ReadTimeout (HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out)
+    ! Guntur|AP 2023-12-30..2025-12-28 ReadTimeout (HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out)
+  + Guntur: COMPLETE (4636 rows)
+budget exhausted mid-district — stopping cleanly
+  ~ Krishna: 5/7 chunks present — deferred to next run
+budget exhausted — stopping cleanly (resumable)
+SUMMARY: 3 newly completed, 3/59 total, 0 failed chunks this run
+driver: budget 400s, workers 6, 387 chunks todo, 56 districts pending
+    ! Chittoor|AP 2014-01-01..2015-12-31 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Chittoor|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Chittoor|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Chittoor|AP 2014-01-01..2015-12-31 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Nizamabad|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Nizamabad|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Chittoor|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Nizamabad|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Nizamabad|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Karimnagar|TS 2014-01-01..2015-12-31 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Karimnagar|TS 2016-01-01..2017-12-30 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Karimnagar|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Karimnagar|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Warangal|TS 2014-01-01..2015-12-31 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Warangal|TS 2017-12-31..2019-12-30 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Warangal|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Warangal|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Karimnagar|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Khammam|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Khammam|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mahabubnagar|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mahabubnagar|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mahabubnagar|TS 2025-12-29..2026-09-10 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mahabubnagar|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Mahabubnagar|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Khammam|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Khammam|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Alluri Sitharama Raju|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Alluri Sitharama Raju|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Alluri Sitharama Raju|AP 2025-12-29..2026-09-10 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Khammam|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Anakapalli|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Khammam|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Annamayya|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Bapatla|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Bapatla|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Bapatla|AP 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Annamayya|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Dr B R Ambedkar Konaseema|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Dr B R Ambedkar Konaseema|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! East Godavari|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! East Godavari|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+  + Krishna: COMPLETE (4636 rows)
+  + Chittoor: COMPLETE (4636 rows)
+  + Nizamabad: COMPLETE (4636 rows)
+  + Karimnagar: COMPLETE (4636 rows)
+  + Warangal: COMPLETE (4636 rows)
+  ~ Khammam: 6/7 chunks present — deferred
+  + Mahabubnagar: COMPLETE (4636 rows)
+  + Alluri Sitharama Raju: COMPLETE (4636 rows)
+  + Anakapalli: COMPLETE (4636 rows)
+  + Annamayya: COMPLETE (4636 rows)
+  + Bapatla: COMPLETE (4636 rows)
+  + Dr B R Ambedkar Konaseema: COMPLETE (4636 rows)
+  ~ East Godavari: 5/7 chunks present — deferred
+  + Eluru: COMPLETE (4636 rows)
+  ~ Kakinada: 4/7 chunks present — deferred
+  ~ Nandyal: 0/7 chunks present — deferred
+  ~ NTR: 0/7 chunks present — deferred
+  ~ Palnadu: 0/7 chunks present — deferred
+  ~ Parvathipuram Manyam: 0/7 chunks present — deferred
+  ~ Prakasam: 0/7 chunks present — deferred
+  ~ Sri Potti Sriramulu Nellore: 0/7 chunks present — deferred
+  ~ Srikakulam: 0/7 chunks present — deferred
+  ~ Sri Sathya Sai: 0/7 chunks present — deferred
+  ~ Tirupati: 0/7 chunks present — deferred
+  ~ Visakhapatnam: 0/7 chunks present — deferred
+  ~ Vizianagaram: 0/7 chunks present — deferred
+  ~ West Godavari: 0/7 chunks present — deferred
+  ~ YSR Kadapa: 0/7 chunks present — deferred
+  ~ Adilabad: 0/7 chunks present — deferred
+  ~ Bhadradri Kothagudem: 0/7 chunks present — deferred
+  ~ Hanumakonda: 0/7 chunks present — deferred
+  ~ Hyderabad: 0/7 chunks present — deferred
+  ~ Jagtial: 0/7 chunks present — deferred
+  ~ Jangaon: 0/7 chunks present — deferred
+  ~ Jayashankar Bhupalpally: 0/7 chunks present — deferred
+  ~ Jogulamba Gadwal: 0/7 chunks present — deferred
+  ~ Kamareddy: 0/7 chunks present — deferred
+  ~ Kumuram Bheem Asifabad: 0/7 chunks present — deferred
+  ~ Mahabubabad: 0/7 chunks present — deferred
+  ~ Mancherial: 0/7 chunks present — deferred
+  ~ Medak: 0/7 chunks present — deferred
+  ~ Medchal Malikajgiri: 0/7 chunks present — deferred
+  ~ Mulugu: 0/7 chunks present — deferred
+  ~ Nagarkurnool: 0/7 chunks present — deferred
+  ~ Nalgonda: 0/7 chunks present — deferred
+  ~ Narayanpet: 0/7 chunks present — deferred
+  ~ Nirmal: 0/7 chunks present — deferred
+  ~ Peddapalli: 0/7 chunks present — deferred
+  ~ Rajanna Sircilla: 0/7 chunks present — deferred
+  ~ Rangareddy: 0/7 chunks present — deferred
+  ~ Sangareddy: 0/7 chunks present — deferred
+  ~ Siddipet: 0/7 chunks present — deferred
+  ~ Suryapet: 0/7 chunks present — deferred
+  ~ Vikarabad: 0/7 chunks present — deferred
+  ~ Wanaparthy: 0/7 chunks present — deferred
+  ~ Yadadri Bhuvanagiri: 0/7 chunks present — deferred
+SUMMARY: {'ok': 94, 'cached': 0, 'failed': 3, 'skipped': 290} | stitched 12, 15/59 districts total, 417s elapsed
+driver: budget 420s, workers 10, 293 chunks todo, 44 districts pending
+    ! Nandyal|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Palnadu|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Palnadu|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Palnadu|AP 2025-12-29..2026-09-10 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Parvathipuram Manyam|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Parvathipuram Manyam|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Parvathipuram Manyam|AP 2025-12-29..2026-09-10 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Parvathipuram Manyam|AP 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Parvathipuram Manyam|AP 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Parvathipuram Manyam|AP 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Parvathipuram Manyam|AP 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Tirupati|AP 2017-12-31..2019-12-30 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Tirupati|AP 2019-12-31..2021-12-29 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Tirupati|AP 2019-12-31..2021-12-29 API: Too many concurrent requests
+    ! Parvathipuram Manyam|AP 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Tirupati|AP 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Tirupati|AP 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Sri Potti Sriramulu Nellore|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Tirupati|AP 2019-12-31..2021-12-29 API: Too many concurrent requests
+    ! West Godavari|AP 2019-12-31..2021-12-29 API: Too many concurrent requests
+    ! Tirupati|AP 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Tirupati|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! YSR Kadapa|AP 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Tirupati|AP 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! YSR Kadapa|AP 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! YSR Kadapa|AP 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Vizianagaram|AP 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Bhadradri Kothagudem|TS 2016-01-01..2017-12-30 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Bhadradri Kothagudem|TS 2017-12-31..2019-12-30 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Hanumakonda|TS 2014-01-01..2015-12-31 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Adilabad|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Adilabad|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Adilabad|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Adilabad|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Adilabad|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Bhadradri Kothagudem|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Jagtial|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Jagtial|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Adilabad|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Jagtial|TS 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Jangaon|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Jangaon|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Jagtial|TS 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Jangaon|TS 2025-12-29..2026-09-10 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Jangaon|TS 2014-01-01..2015-12-31 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Jagtial|TS 2025-12-29..2026-09-10 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Jangaon|TS 2025-12-29..2026-09-10 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Jayashankar Bhupalpally|TS 2017-12-31..2019-12-30 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Hanumakonda|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Hanumakonda|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Jangaon|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Jogulamba Gadwal|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Jagtial|TS 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Jogulamba Gadwal|TS 2016-01-01..2017-12-30 API: Too many concurrent requests
+    ! Jogulamba Gadwal|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Jogulamba Gadwal|TS 2016-01-01..2017-12-30 API: Too many concurrent requests
+    ! Jangaon|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Jangaon|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Jogulamba Gadwal|TS 2016-01-01..2017-12-30 API: Too many concurrent requests
+    ! Jayashankar Bhupalpally|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Jayashankar Bhupalpally|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Jayashankar Bhupalpally|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Jogulamba Gadwal|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Jogulamba Gadwal|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mancherial|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Mancherial|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Mancherial|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Medchal Malikajgiri|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Medchal Malikajgiri|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Kumuram Bheem Asifabad|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Kumuram Bheem Asifabad|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Medchal Malikajgiri|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Mahabubabad|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mancherial|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mancherial|TS 2025-12-29..2026-09-10 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mancherial|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Mancherial|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mancherial|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Mulugu|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Mulugu|TS 2019-12-31..2021-12-29 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Mulugu|TS 2017-12-31..2019-12-30 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Mulugu|TS 2021-12-30..2023-12-29 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Mulugu|TS 2019-12-31..2021-12-29 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Mulugu|TS 2021-12-30..2023-12-29 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Mulugu|TS 2023-12-30..2025-12-28 API: Minutely API request limit exceeded. Please try again in one minute.
+    ! Kumuram Bheem Asifabad|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mahabubabad|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Mulugu|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Mancherial|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Nagarkurnool|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Kumuram Bheem Asifabad|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Nagarkurnool|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Mahabubabad|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Nagarkurnool|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Mulugu|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Kumuram Bheem Asifabad|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Narayanpet|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Narayanpet|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Mahabubabad|TS 2023-12-30..2025-12-28 API: Too many concurrent requests
+    ! Nirmal|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Nirmal|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Nagarkurnool|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Nirmal|TS 2019-12-31..2021-12-29 API: Too many concurrent requests
+    ! Narayanpet|TS 2021-12-30..2023-12-29 API: Too many concurrent requests
+    ! Nirmal|TS 2019-12-31..2021-12-29 API: Too many concurrent requests
+    ! Nirmal|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Nalgonda|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Nalgonda|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Narayanpet|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Peddapalli|TS 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Peddapalli|TS 2025-12-29..2026-09-10 API: Too many concurrent requests
+    ! Nirmal|TS 2014-01-01..2015-12-31 API: Too many concurrent requests
+    ! Rajanna Sircilla|TS 2016-01-01..2017-12-30 API: Too many concurrent requests
+    ! Rajanna Sircilla|TS 2016-01-01..2017-12-30 API: Too many concurrent requests
+    ! Rangareddy|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Rangareddy|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Peddapalli|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Rangareddy|TS 2017-12-31..2019-12-30 API: Too many concurrent requests
+    ! Siddipet|TS 2016-01-01..2017-12-30 API: Too many concurrent requests
+    ! Rajanna Sircilla|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Rangareddy|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Rangareddy|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+  + Khammam: COMPLETE (4636 rows)
+  + East Godavari: COMPLETE (4636 rows)
+  + Kakinada: COMPLETE (4636 rows)
+  + Nandyal: COMPLETE (4636 rows)
+  + NTR: COMPLETE (4636 rows)
+  + Palnadu: COMPLETE (4636 rows)
+  ~ Parvathipuram Manyam: 6/7 chunks present — deferred
+  + Prakasam: COMPLETE (4636 rows)
+  + Sri Potti Sriramulu Nellore: COMPLETE (4636 rows)
+  + Srikakulam: COMPLETE (4636 rows)
+  + Sri Sathya Sai: COMPLETE (4636 rows)
+  + Tirupati: COMPLETE (4636 rows)
+  + Visakhapatnam: COMPLETE (4636 rows)
+  + Vizianagaram: COMPLETE (4636 rows)
+  + West Godavari: COMPLETE (4636 rows)
+  + YSR Kadapa: COMPLETE (4636 rows)
+  ~ Adilabad: 6/7 chunks present — deferred
+  + Bhadradri Kothagudem: COMPLETE (4636 rows)
+  + Hanumakonda: COMPLETE (4636 rows)
+  + Hyderabad: COMPLETE (4636 rows)
+  ~ Jagtial: 6/7 chunks present — deferred
+  ~ Jangaon: 6/7 chunks present — deferred
+  + Jayashankar Bhupalpally: COMPLETE (4636 rows)
+  + Jogulamba Gadwal: COMPLETE (4636 rows)
+  + Kamareddy: COMPLETE (4636 rows)
+  ~ Kumuram Bheem Asifabad: 6/7 chunks present — deferred
+  ~ Mahabubabad: 6/7 chunks present — deferred
+  ~ Mancherial: 6/7 chunks present — deferred
+  + Medak: COMPLETE (4636 rows)
+  + Medchal Malikajgiri: COMPLETE (4636 rows)
+  + Mulugu: COMPLETE (4636 rows)
+  ~ Nagarkurnool: 6/7 chunks present — deferred
+  + Nalgonda: COMPLETE (4636 rows)
+  + Narayanpet: COMPLETE (4636 rows)
+  ~ Nirmal: 6/7 chunks present — deferred
+  + Peddapalli: COMPLETE (4636 rows)
+  ~ Rajanna Sircilla: 6/7 chunks present — deferred
+  ~ Rangareddy: 4/7 chunks present — deferred
+  + Sangareddy: COMPLETE (4636 rows)
+  ~ Siddipet: 1/7 chunks present — deferred
+  ~ Suryapet: 0/7 chunks present — deferred
+  ~ Vikarabad: 0/7 chunks present — deferred
+  ~ Wanaparthy: 0/7 chunks present — deferred
+  ~ Yadadri Bhuvanagiri: 0/7 chunks present — deferred
+SUMMARY: {'ok': 246, 'cached': 0, 'failed': 14, 'skipped': 33} | stitched 28, 43/59 districts total, 447s elapsed
+driver: budget 420s, workers 10, 47 chunks todo, 16 districts pending
+    ! Suryapet|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Suryapet|TS 2023-12-30..2025-12-28 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2014-01-01..2015-12-31 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Suryapet|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2019-12-31..2021-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Suryapet|TS 2023-12-30..2025-12-28 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2014-01-01..2015-12-31 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2019-12-31..2021-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Suryapet|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Suryapet|TS 2023-12-30..2025-12-28 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2014-01-01..2015-12-31 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2019-12-31..2021-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Suryapet|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Suryapet|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2014-01-01..2015-12-31 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2014-01-01..2015-12-31 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2016-01-01..2017-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Suryapet|TS 2023-12-30..2025-12-28 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2014-01-01..2015-12-31 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Vikarabad|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Vikarabad|TS 2019-12-31..2021-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2019-12-31..2021-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2021-12-30..2023-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2016-01-01..2017-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2017-12-31..2019-12-30 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2019-12-31..2021-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Yadadri Bhuvanagiri|TS 2021-12-30..2023-12-29 API: Hourly API request limit exceeded. Please try again in the next hour.
+    ! Wanaparthy|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Wanaparthy|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Wanaparthy|TS 2025-12-29..2026-09-10 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Wanaparthy|TS 2021-12-30..2023-12-29 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Wanaparthy|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Wanaparthy|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+  + Parvathipuram Manyam: COMPLETE (4636 rows)
+  + Adilabad: COMPLETE (4636 rows)
+  + Jagtial: COMPLETE (4636 rows)
+  + Jangaon: COMPLETE (4636 rows)
+  + Kumuram Bheem Asifabad: COMPLETE (4636 rows)
+  + Mahabubabad: COMPLETE (4636 rows)
+  + Mancherial: COMPLETE (4636 rows)
+  + Nagarkurnool: COMPLETE (4636 rows)
+  + Nirmal: COMPLETE (4636 rows)
+  + Rajanna Sircilla: COMPLETE (4636 rows)
+  + Rangareddy: COMPLETE (4636 rows)
+  + Siddipet: COMPLETE (4636 rows)
+  ~ Suryapet: 5/7 chunks present — deferred
+  ~ Vikarabad: 4/7 chunks present — deferred
+  + Wanaparthy: COMPLETE (4636 rows)
+  + Yadadri Bhuvanagiri: COMPLETE (4636 rows)
+SUMMARY: {'ok': 42, 'cached': 0, 'failed': 5, 'skipped': 0} | stitched 14, 57/59 districts total, 177s elapsed
+driver: budget 300s, workers 4, 5 chunks todo, 2 districts pending
+    ! Suryapet|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+    ! Suryapet|TS 2023-12-30..2025-12-28 HTTPSConnectionPool(host='archive-api.open-meteo.com', port=443): Read timed out. (read ti
+  + Suryapet: COMPLETE (4636 rows)
+  + Vikarabad: COMPLETE (4636 rows)
+SUMMARY: {'ok': 5, 'cached': 0, 'failed': 0, 'skipped': 0} | stitched 2, 59/59 districts total, 75s elapsed
+ALL DISTRICTS COMPLETE — now run: cd /home/z/my-project/download/agri_tws_ind && python fetch_data.py

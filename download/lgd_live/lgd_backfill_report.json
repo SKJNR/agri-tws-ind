@@ -1,0 +1,438 @@
+{
+  "rows": [
+    {
+      "state": "AP",
+      "district_name_lgd": "Srikakulam",
+      "lgd_district_code": "519",
+      "lgd_name_live": "Srikakulam",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Vizianagaram",
+      "lgd_district_code": "521",
+      "lgd_name_live": "Vizianagaram",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Visakhapatnam",
+      "lgd_district_code": "520",
+      "lgd_name_live": "Visakhapatnam",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "East Godavari",
+      "lgd_district_code": "505",
+      "lgd_name_live": "East Godavari",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "West Godavari",
+      "lgd_district_code": "523",
+      "lgd_name_live": "West Godavari",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Krishna",
+      "lgd_district_code": "510",
+      "lgd_name_live": "Krishna",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Guntur",
+      "lgd_district_code": "506",
+      "lgd_name_live": "Guntur",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Prakasam",
+      "lgd_district_code": "517",
+      "lgd_name_live": "Prakasam",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Nellore",
+      "lgd_district_code": "515",
+      "lgd_name_live": "Sri Potti Sriramulu Nellore",
+      "match_method": "RESOLVED_NAME_VARIANT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Kurnool",
+      "lgd_district_code": "511",
+      "lgd_name_live": "Kurnool",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Ananthapuramu",
+      "lgd_district_code": "502",
+      "lgd_name_live": "Ananthapuramu",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Chittoor",
+      "lgd_district_code": "503",
+      "lgd_name_live": "Chittoor",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "YSR Kadapa",
+      "lgd_district_code": "504",
+      "lgd_name_live": "Y.S.R. Kadapa",
+      "match_method": "NOSPACE"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Parvathipuram Manyam",
+      "lgd_district_code": "743",
+      "lgd_name_live": "Parvathipuram Manyam",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Alluri Sitharama Raju",
+      "lgd_district_code": "745",
+      "lgd_name_live": "Alluri Sitharama Raju",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Anakapalli",
+      "lgd_district_code": "744",
+      "lgd_name_live": "Anakapalli",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Kakinada",
+      "lgd_district_code": "746",
+      "lgd_name_live": "Kakinada",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Dr. B.R. Ambedkar Konaseema",
+      "lgd_district_code": "747",
+      "lgd_name_live": "Dr. B.R. Ambedkar Konaseema",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Eluru",
+      "lgd_district_code": "748",
+      "lgd_name_live": "Eluru",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "NTR",
+      "lgd_district_code": "749",
+      "lgd_name_live": "Ntr",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Bapatla",
+      "lgd_district_code": "750",
+      "lgd_name_live": "Bapatla",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Palnadu",
+      "lgd_district_code": "751",
+      "lgd_name_live": "Palnadu",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Nandyal",
+      "lgd_district_code": "755",
+      "lgd_name_live": "Nandyal",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Sri Sathya Sai",
+      "lgd_district_code": "754",
+      "lgd_name_live": "Sri Sathya Sai",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Annamayya",
+      "lgd_district_code": "753",
+      "lgd_name_live": "Annamayya",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "AP",
+      "district_name_lgd": "Tirupati",
+      "lgd_district_code": "752",
+      "lgd_name_live": "Tirupati",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Adilabad",
+      "lgd_district_code": "501",
+      "lgd_name_live": "Adilabad",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Nizamabad",
+      "lgd_district_code": "516",
+      "lgd_name_live": "Nizamabad",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Karimnagar",
+      "lgd_district_code": "508",
+      "lgd_name_live": "Karimnagar",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Medak",
+      "lgd_district_code": "513",
+      "lgd_name_live": "Medak",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Hyderabad",
+      "lgd_district_code": "507",
+      "lgd_name_live": "Hyderabad",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Rangareddy",
+      "lgd_district_code": "518",
+      "lgd_name_live": "Ranga Reddy",
+      "match_method": "NOSPACE"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Mahabubnagar",
+      "lgd_district_code": "512",
+      "lgd_name_live": "Mahabubnagar",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Nalgonda",
+      "lgd_district_code": "514",
+      "lgd_name_live": "Nalgonda",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Warangal",
+      "lgd_district_code": "522",
+      "lgd_name_live": "Warangal",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Khammam",
+      "lgd_district_code": "509",
+      "lgd_name_live": "Khammam",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Hanumakonda",
+      "lgd_district_code": "686",
+      "lgd_name_live": "Hanumakonda",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Kumuram Bheem Asifabad",
+      "lgd_district_code": "699",
+      "lgd_name_live": "Kumuram Bheem Asifabad",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Mancherial",
+      "lgd_district_code": "684",
+      "lgd_name_live": "Mancherial",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Nirmal",
+      "lgd_district_code": "680",
+      "lgd_name_live": "Nirmal",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Kamareddy",
+      "lgd_district_code": "685",
+      "lgd_name_live": "Kamareddy",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Jagtial",
+      "lgd_district_code": "681",
+      "lgd_name_live": "Jagitial",
+      "match_method": "RESOLVED_NAME_VARIANT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Peddapalli",
+      "lgd_district_code": "682",
+      "lgd_name_live": "Peddapalli",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Rajanna Sircilla",
+      "lgd_district_code": "683",
+      "lgd_name_live": "Rajanna Sircilla",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Sangareddy",
+      "lgd_district_code": "691",
+      "lgd_name_live": "Sangareddy",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Siddipet",
+      "lgd_district_code": "692",
+      "lgd_name_live": "Siddipet",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Vikarabad",
+      "lgd_district_code": "698",
+      "lgd_name_live": "Vikarabad",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Medchal-Malkajgiri",
+      "lgd_district_code": "700",
+      "lgd_name_live": "Medchal Malkajgiri",
+      "match_method": "NORM"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Wanaparthy",
+      "lgd_district_code": "693",
+      "lgd_name_live": "Wanaparthy",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Nagarkurnool",
+      "lgd_district_code": "694",
+      "lgd_name_live": "Nagarkurnool",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Jogulamba Gadwal",
+      "lgd_district_code": "695",
+      "lgd_name_live": "Jogulamba Gadwal",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Suryapet",
+      "lgd_district_code": "696",
+      "lgd_name_live": "Suryapet",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Yadadri Bhuvanagiri",
+      "lgd_district_code": "697",
+      "lgd_name_live": "Yadadri Bhuvanagiri",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Jangaon",
+      "lgd_district_code": "689",
+      "lgd_name_live": "Jangoan",
+      "match_method": "ANAGRAM"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Jayashankar Bhupalpally",
+      "lgd_district_code": "687",
+      "lgd_name_live": "Jayashankar Bhupalapally",
+      "match_method": "RESOLVED_NAME_VARIANT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Mahabubabad",
+      "lgd_district_code": "688",
+      "lgd_name_live": "Mahabubabad",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Bhadradri Kothagudem",
+      "lgd_district_code": "690",
+      "lgd_name_live": "Bhadradri Kothagudem",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Mulugu",
+      "lgd_district_code": "720",
+      "lgd_name_live": "Mulugu",
+      "match_method": "EXACT"
+    },
+    {
+      "state": "TS",
+      "district_name_lgd": "Narayanpet",
+      "lgd_district_code": "721",
+      "lgd_name_live": "Narayanpet",
+      "match_method": "EXACT"
+    }
+  ],
+  "summary": {
+    "basis_rows": 59,
+    "matched_exact": 52,
+    "matched_normalized": 7,
+    "fuzzy_check_needed": 0,
+    "no_match": 0,
+    "lgd_rows_not_consumed": [
+      {
+        "state": "AP",
+        "code": 790,
+        "name": "Markapuram",
+        "effective": "2025-12-29"
+      },
+      {
+        "state": "AP",
+        "code": 791,
+        "name": "Polavaram",
+        "effective": "2025-12-29"
+      }
+    ]
+  }
+}

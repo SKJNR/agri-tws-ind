@@ -1,0 +1,129 @@
+======================================================================
+Day-1 foundation download — 59 districts, 2014-01-01 .. 2026-09-10
+Resumable: safe to re-run after any interruption. Ctrl+C aborts safely.
+======================================================================
+[ 1/59] Anantapur (AP)
+  = Anantapur: cached (4636 rows) — skip
+[ 2/59] Kurnool (AP)
+  = Kurnool: cached (4636 rows) — skip
+[ 3/59] Guntur (AP)
+  = Guntur: cached (4636 rows) — skip
+[ 4/59] Krishna (AP)
+  = Krishna: cached (4636 rows) — skip
+[ 5/59] Chittoor (AP)
+  = Chittoor: cached (4636 rows) — skip
+[ 6/59] Nizamabad (TS)
+  = Nizamabad: cached (4636 rows) — skip
+[ 7/59] Karimnagar (TS)
+  = Karimnagar: cached (4636 rows) — skip
+[ 8/59] Warangal (TS)
+  = Warangal: cached (4636 rows) — skip
+[ 9/59] Khammam (TS)
+  = Khammam: cached (4636 rows) — skip
+[10/59] Mahabubnagar (TS)
+  = Mahabubnagar: cached (4636 rows) — skip
+[11/59] Alluri Sitharama Raju (AP)
+  = Alluri Sitharama Raju: cached (4636 rows) — skip
+[12/59] Anakapalli (AP)
+  = Anakapalli: cached (4636 rows) — skip
+[13/59] Annamayya (AP)
+  = Annamayya: cached (4636 rows) — skip
+[14/59] Bapatla (AP)
+  = Bapatla: cached (4636 rows) — skip
+[15/59] Dr B R Ambedkar Konaseema (AP)
+  = Dr B R Ambedkar Konaseema: cached (4636 rows) — skip
+[16/59] East Godavari (AP)
+  = East Godavari: cached (4636 rows) — skip
+[17/59] Eluru (AP)
+  = Eluru: cached (4636 rows) — skip
+[18/59] Kakinada (AP)
+  = Kakinada: cached (4636 rows) — skip
+[19/59] Nandyal (AP)
+  = Nandyal: cached (4636 rows) — skip
+[20/59] NTR (AP)
+  = NTR: cached (4636 rows) — skip
+[21/59] Palnadu (AP)
+  = Palnadu: cached (4636 rows) — skip
+[22/59] Parvathipuram Manyam (AP)
+  = Parvathipuram Manyam: cached (4636 rows) — skip
+[23/59] Prakasam (AP)
+  = Prakasam: cached (4636 rows) — skip
+[24/59] Sri Potti Sriramulu Nellore (AP)
+  = Sri Potti Sriramulu Nellore: cached (4636 rows) — skip
+[25/59] Srikakulam (AP)
+  = Srikakulam: cached (4636 rows) — skip
+[26/59] Sri Sathya Sai (AP)
+  = Sri Sathya Sai: cached (4636 rows) — skip
+[27/59] Tirupati (AP)
+  = Tirupati: cached (4636 rows) — skip
+[28/59] Visakhapatnam (AP)
+  = Visakhapatnam: cached (4636 rows) — skip
+[29/59] Vizianagaram (AP)
+  = Vizianagaram: cached (4636 rows) — skip
+[30/59] West Godavari (AP)
+  = West Godavari: cached (4636 rows) — skip
+[31/59] YSR Kadapa (AP)
+  = YSR Kadapa: cached (4636 rows) — skip
+[32/59] Adilabad (TS)
+  = Adilabad: cached (4636 rows) — skip
+[33/59] Bhadradri Kothagudem (TS)
+  = Bhadradri Kothagudem: cached (4636 rows) — skip
+[34/59] Hanumakonda (TS)
+  = Hanumakonda: cached (4636 rows) — skip
+[35/59] Hyderabad (TS)
+  = Hyderabad: cached (4636 rows) — skip
+[36/59] Jagtial (TS)
+  = Jagtial: cached (4636 rows) — skip
+[37/59] Jangaon (TS)
+  = Jangaon: cached (4636 rows) — skip
+[38/59] Jayashankar Bhupalpally (TS)
+  = Jayashankar Bhupalpally: cached (4636 rows) — skip
+[39/59] Jogulamba Gadwal (TS)
+  = Jogulamba Gadwal: cached (4636 rows) — skip
+[40/59] Kamareddy (TS)
+  = Kamareddy: cached (4636 rows) — skip
+[41/59] Kumuram Bheem Asifabad (TS)
+  = Kumuram Bheem Asifabad: cached (4636 rows) — skip
+[42/59] Mahabubabad (TS)
+  = Mahabubabad: cached (4636 rows) — skip
+[43/59] Mancherial (TS)
+  = Mancherial: cached (4636 rows) — skip
+[44/59] Medak (TS)
+  = Medak: cached (4636 rows) — skip
+[45/59] Medchal Malikajgiri (TS)
+  = Medchal Malikajgiri: cached (4636 rows) — skip
+[46/59] Mulugu (TS)
+  = Mulugu: cached (4636 rows) — skip
+[47/59] Nagarkurnool (TS)
+  = Nagarkurnool: cached (4636 rows) — skip
+[48/59] Nalgonda (TS)
+  = Nalgonda: cached (4636 rows) — skip
+[49/59] Narayanpet (TS)
+  = Narayanpet: cached (4636 rows) — skip
+[50/59] Nirmal (TS)
+  = Nirmal: cached (4636 rows) — skip
+[51/59] Peddapalli (TS)
+  = Peddapalli: cached (4636 rows) — skip
+[52/59] Rajanna Sircilla (TS)
+  = Rajanna Sircilla: cached (4636 rows) — skip
+[53/59] Rangareddy (TS)
+  = Rangareddy: cached (4636 rows) — skip
+[54/59] Sangareddy (TS)
+  = Sangareddy: cached (4636 rows) — skip
+[55/59] Siddipet (TS)
+  = Siddipet: cached (4636 rows) — skip
+[56/59] Suryapet (TS)
+  = Suryapet: cached (4636 rows) — skip
+[57/59] Vikarabad (TS)
+  = Vikarabad: cached (4636 rows) — skip
+[58/59] Wanaparthy (TS)
+  = Wanaparthy: cached (4636 rows) — skip
+[59/59] Yadadri Bhuvanagiri (TS)
+  = Yadadri Bhuvanagiri: cached (4636 rows) — skip
+
+Saved ap_ts_weather_openmeteo_full59.csv (273524 rows, 59 districts)
+Saved ap_ts_weather_raw_10yrs.csv (36520 rows, 10 districts, thru 2023-12-31)
+Saved weather_download_manifest.md (QA audit)
+
+QA: 59/59 districts clean; 0 with gaps/NaNs (see manifest).
+Done in 2.0 min. Reply to Qwen: 'Script ran successfully, CSV is saved.'
