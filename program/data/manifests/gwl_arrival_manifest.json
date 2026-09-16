@@ -1,0 +1,37 @@
+{
+  "program": "AGRI-TWS-IND",
+  "task": "58-GWL-ARRIVAL",
+  "manifest_version": 1,
+  "artifact": "ground_water_level_all.zip (wraps gwl_data.csv)",
+  "policy": "program/data/README.md ARRIVAL=COMMIT (binding): >95MB class = GitHub Release-asset route; manifest committed in-tree as FIRST action after arrival, BEFORE any pipeline work. Blob itself stays out of git.",
+  "file": {
+    "name": "ground_water_level_all.zip",
+    "bytes": 265308904,
+    "sha256": "1e9d0cf6a1cb53725ba4bc3e9d458e9da8a3907dfb69e89549a214c59e39f4d3",
+    "inner_file": {
+      "name": "gwl_data.csv",
+      "uncompressed_bytes": 762708010,
+      "zip_entry_mtime": "2026-07-24 14:09"
+    },
+    "local_custody_path": "program/data/release_staging/ground_water_level_all.zip"
+  },
+  "provenance": {
+    "original_source": "IndiaAI AIKosh dataset page -> ground_water_level_all_v1.zip (SoulVision groundwater-level bundle). AIKosh portal returns 403 to sandbox IPs; founder holds the legitimate download.",
+    "transfer_route": "Founder uploaded the zip to public Hugging Face dataset han-jisso/ground-water-level-all (dataset created 2026-09-16T00:49:02Z).",
+    "download_url": "https://huggingface.co/datasets/han-jisso/ground-water-level-all/resolve/main/ground_water_level_all.zip",
+    "hf_lfs_oid_sha256": "1e9d0cf6a1cb53725ba4bc3e9d458e9da8a3907dfb69e89549a214c59e39f4d3",
+    "integrity_verdict": "downloaded sha256 == hf lfs oid sha256 == 1e9d0cf6... : BIT-PERFECT transfer",
+    "downloaded_at_utc": "2026-09-16 ~10:17",
+    "credential_note": "Founder-supplied HF API token failed authentication (whoami-v2: invalid). Both datasets are public, so no credential was needed, used, or stored."
+  },
+  "release_asset": {
+    "status": "PENDING",
+    "note": "Upload as a GitHub Release asset on the private repo after the founder push (FOUNDER_PUSH_CARD.md). Until then: local custody in release_staging/ + /tmp canonical mirror."
+  },
+  "pipeline_next": [
+    "gwl_handback_check.py sandbox-side census -> receipt (manifests/gwl_data_csv.receipt.json)",
+    "d21_physical_split.py --source raw/gwl_data.csv --out split/ (open <=2022-12-31 / sealed >=2023-01-01)",
+    "parquet of OPEN rows only (panel workhorse format)",
+    "Task-55 India-WRIS provenance spot-check remains BLOCKED (no WRIS raw in sandbox)"
+  ]
+}

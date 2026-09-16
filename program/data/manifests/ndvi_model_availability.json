@@ -1,0 +1,17 @@
+{
+  "program": "AGRI-TWS-IND",
+  "task": "58-GWL-ARRIVAL (side-record)",
+  "artifact_class": "SoulVision NDVI forecasting model asset (founder also uploaded this; contents NOT inspected)",
+  "status": "AVAILABLE-NOT-DOWNLOADED",
+  "reason": "D#22 ban in force: no SoulVision weights/model downloads until the three-arm pre-registration (log-before-run) is executed. Decided: record availability only.",
+  "source": {
+    "hf_dataset": "han-jisso/ndvi-forecasting-model",
+    "file": "ndvi_forecasting_model_dataset.zip",
+    "bytes": 647774722,
+    "sha256_lfs_oid": "be16545e56747199478bf53c97385d0ce419925ff7cfbeb415a2d06ee2a708ca",
+    "url": "https://huggingface.co/datasets/han-jisso/ndvi-forecasting-model/resolve/main/ndvi_forecasting_model_dataset.zip",
+    "dataset_created": "2026-09-16T00:49:11Z"
+  },
+  "unblock_condition": "D#22 three-arm pre-registration executed; then download, verify sha256 against the LFS oid above, seal under D#21-style custody.",
+  "visibility_flag": "Both founder HF datasets are currently PUBLIC. SoulVision-era assets carry IndiaAI/AIKosh participant licensing (program/data/README.md visibility section) - founder advised to flip both datasets to private."
+}

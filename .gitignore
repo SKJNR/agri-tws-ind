@@ -10,3 +10,10 @@ download/*.zip
 
 download/*.bundle
 download/*.gz
+
+# program/data custody layout (Task 58, ARRIVAL=COMMIT): blobs stay out of
+# git (>95MB class = Release-asset route); only manifests/ is tracked.
+program/data/release_staging/
+program/data/raw/
+program/data/split/
+program/data/parquet/
