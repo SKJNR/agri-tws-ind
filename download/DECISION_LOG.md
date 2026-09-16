@@ -898,3 +898,49 @@ PRIVATE — AIKosh participant licensing (visibility rule,
 program/data/README.md); (2) pasted API key never authenticated —
 delete it in HF settings if it exists; (3) push card unchanged
 (full bundle + incr 2026-09-16 refreshed).
+
+## ADDENDUM 4 — 2026-09-16 (GLM; duckdb panel on open rows + provisional D#20 assignment)
+
+Registered critical-path slot after D#21 (crosswalk + split -> duckdb
+panel) EXECUTED as Task 59. Input: parquet/gwl_open.parquet (open
+rows only, D#24-safe). Filter state IN (AP, TG): 365,742 rows,
+3,223 wells.
+
+D#20 EXECUTION AMENDMENT (logged, not silent): LGD/Bhuvan-grade
+polygons remain absent from sandbox, so point-in-polygon (T-D20-2)
+CANNOT run. Empirical structure verified first: district labels are
+CONSTANT per well (0/3,223 multi-label), back-applied across all
+readings; label vintage = TG ~2019-era / AP pre-2022-13 spellings.
+Assignment therefore uses an EXPLICIT per-label map (47 observed
+labels, enumerated; fail-loud on unknowns — caught PEDDAPALLY
+Y-variant + case-variant alias bugs on first run). Parent-label
+wells (undivided old districts) are assigned to the CONTINUING
+2026-basis district and flagged PARENT_CONTINUE with the child set.
+TARGET BASIS UNCHANGED (2026-vintage 59). Polygon binding re-runs
+assignment; until then ambiguity is flagged per well, never hidden.
+
+D#20 SENSITIVITY CHECK (pre-registered "runs when data lands"):
+label-frame vs 2026-basis-frame max |district-month mean diff| =
+0.0 across 8,067 overlapping keys — zero BY CONSTRUCTION (1:1
+continuing-name mapping; the anticipated vintage frame does not
+exist in the file). Genuine uncertainty = PARENT_CONTINUE share:
+2,471/3,223 wells (56.8% of open AP+TG rows); 14 basis districts
+(13 AP-2022 children + Yadadri Bhuvanagiri) hold zero wells until
+polygons arrive. Mismatch log only; basis NOT reopened.
+
+NEW DATA-QUALITY QUESTION (routed to existing Task-55 provenance
+condition; no new decision): gwl_value in AP+TG open rows has
+114,062/365,742 negatives (31%), range -1147.7..+971.3 m — unit or
+datum ambiguity (mbgl vs masl vs QC failures) must be resolved via
+the India-WRIS raw spot-check BEFORE D1.1 conclusions rest on the
+values. Report-only; nothing dropped or imputed (AM-3).
+
+Deliverables: program/data/parquet/panel_open_readings.parquet
+(365,742 rows, district_2026 + flags), panel_open_district_month
+.parquet (8,067 district-month rows, 45 districts), manifests/
+panel_build_report.json (full mapping table applied, sensitivity,
+month-of-year census per district = D1.1 feed, value histogram),
+program/scripts/build_panel_d20.py (--selftest PASS). SoulVision
+pre-joined covariates carried REFERENCE-ONLY (corrected plan
+item 4: our hash-frozen Open-Meteo foundation stands). AM-6
+untouched; no model runs; D#22 weights ban intact.
