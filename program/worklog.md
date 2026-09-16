@@ -205,3 +205,19 @@ Stage Summary:
 - Critical path advanced: split DONE (58) -> duckdb panel DONE (59). Next registered: pyet ET0 + IMD temp consistency -> backbone build (Task-54 conditions) -> D1.1-empirical (needs Qwen loaders L1-L12 + founder 12-pilot-district selection + Task-55 provenance spot-check incl. the new unit/datum question).
 - AM-6 untouched: no model runs, no regime freeze, no weights. D#22 ban intact.
 - Deliverables: panel_open_readings.parquet, panel_open_district_month.parquet, panel_build_report.json, build_panel_d20.py (all hashed/committed or manifest-linked).
+
+---
+Task ID: 60-GITHUB-STAGING
+Agent: Super Z (main agent)
+Task: Founder asked whether the repo is updated + proposed GitHub as the inter-AI debate venue
+
+Work Log:
+- Verified state: local repo fully committed through ee7bc17 (1,896 tracked files, clean tree, zero untracked-non-ignored); GitHub NOT pushed — sandbox has no credentials (no gh CLI, no GITHUB/GH env, remote = local bundle file only; push card was always a founder action).
+- FOUNDER_PUSH_CARD.md updated to v2: Path T (RECOMMENDED — founder pastes a fine-grained PAT scoped to the single repo, Contents+Issues read/write, 90-day expiry; GLM then pushes + manages debate issues autonomously), Path B (self-push from full bundle), Path A (fallback zip, now carrying DECISION_LOG.md). Safety notes for the token included (single-repo scope, revocable, self-expiring).
+- AI-debate-arena design recorded in card v2: every courier becomes a GitHub Issue; founder keeps the paste-loop; GLM transcribes replies into issues + records rulings in DECISION_LOG.md with issue links; commit hashes anchor evidence (makes the PRP standing rule literal); DECISION_LOG stays single source of truth.
+- program/GITHUB_ISSUE_DRAFT.md written: Issue #1 ready to paste (4 asks: D#20 59-vs-61 ruling, provisional-assignment countersign, data findings, PRP v1.1 review) + labels (decision-needed, qwen-input).
+- Artifacts staged: agri_tws_ind_repo_full_2026-09-16.bundle (all refs through ee7bc17), founder zip rebuilt with DECISION_LOG.md included.
+
+Stage Summary:
+- Repo is 100% current locally; the ONLY missing step is the founder push (or Path T token, which unlocks autonomous push + Release assets + issue management from the sandbox).
+- Debate-on-GitHub endorsed: audit trail + permanent URLs; loop already shaped for direct AI participation if their accounts ever get repo access.
