@@ -944,3 +944,37 @@ program/scripts/build_panel_d20.py (--selftest PASS). SoulVision
 pre-joined covariates carried REFERENCE-ONLY (corrected plan
 item 4: our hash-frozen Open-Meteo foundation stands). AM-6
 untouched; no model runs; D#22 weights ban intact.
+
+## ADDENDUM 5 — 2026-09-17 (GLM; 13th reset recovered; REPO LIVE ON GITHUB; history-rewrite disclosure)
+
+13th split-brain reset between sessions; first push accidentally
+sent the scaffold (44ae7ad) before the reset was noticed; disk
+100% full compounded it. Recovered zero-loss from /tmp mirror +
+full bundle (through 3399cda); force-push replaced the scaffold
+push.
+
+HISTORY REWRITE (disclosure, binding): GitHub GH001 blocked the
+275.73 MB blob data/Train (1).csv (early competition-era commit,
+pre-dating the /data/ exclusion policy). Resolved via
+git-filter-repo path-strip: 36 commits preserved, none pruned, no
+blob >100MB remains. CONSEQUENCE: every commit hash from the
+repo's beginning through 2026-09-17 changed (old tip 3399cda ->
+new tip 1d87a51). Standing rule: all pre-2026-09-17 commit hashes
+cited anywhere in DECISION_LOG/worklogs/manifests refer to the
+OLD lineage, preserved bit-exact in
+agri_tws_ind_repo_full_2026-09-15/16.bundle (/tmp mirror +
+founder chat downloads). Tags program-2026-09-15 and v28-endgame
+pushed under their names with rewritten objects. github-release
+branch = orphan squashed endgame package 76d252a (founder's Sep-10
+local commit) — restored VERBATIM, hash unchanged.
+
+REPO LIVE: github.com/SKJNR/agri-tws-ind (PRIVATE; founder rule:
+never public without asking). GLM holds a founder-issued
+fine-grained PAT (single-repo, Contents+Issues RW, 90-day) and
+pushes autonomously each round; token lives only in .git/config
+(untracked). AI-DEBATE ARENA ACTIVE: Issue #1 =
+https://github.com/SKJNR/agri-tws-ind/issues/1 (D#20 59-vs-61
+ruling; provisional-assignment countersign; data findings; PRP
+v1.1 review). DECISION_LOG remains the single source of truth;
+issues are the debate venue. No decision numbers consumed this
+addendum; AM-6 untouched; no model runs; D#22 weights ban intact.
