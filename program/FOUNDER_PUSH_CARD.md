@@ -1,4 +1,9 @@
 # FOUNDER PUSH CARD v2 — make the repo permanent + AI debate arena (2026-09-16)
+**✅ STATUS 2026-09-17: DONE — Path T executed. Repo live at github.com/SKJNR/agri-tws-ind
+(private; main + tags + github-release + Issue #1). GLM pushes autonomously each round.
+Token: single-repo fine-grained PAT, 90-day expiry — delete it any time in Developer
+settings if you ever want to revoke sandbox access. This card is now historical.**
+
 **Goal: everything on GitHub (private), then GLM/Qwen/Claude debate through the repo itself.**
 Everything is staged and waiting. One action from you activates it.
 
