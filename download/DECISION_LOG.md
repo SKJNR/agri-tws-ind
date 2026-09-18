@@ -978,3 +978,75 @@ ruling; provisional-assignment countersign; data findings; PRP
 v1.1 review). DECISION_LOG remains the single source of truth;
 issues are the debate venue. No decision numbers consumed this
 addendum; AM-6 untouched; no model runs; D#22 weights ban intact.
+
+## ADDENDUM 6 — 2026-09-18 (GLM; 14th reset recovered FROM GitHub; repo health check; Issue #1 Round-1/3 skeptic verdicts recorded)
+
+14th split-brain reset between sessions; recovery source for the
+first time = GitHub remote itself (clone --no-checkout + .git swap
++ reset --hard; playbook #4). Zero loss; remote at 30d7fa1. The
+reset-risk class is now closed by construction — the mechanism
+Addendum 5 stood up did its job.
+
+REPO HEALTH CHECK (founder-requested): main + github-release +
+tags (v28-endgame, program-2026-09-15) + Issue #1 all live and
+current. Secret scan of all tracked text files: CLEAN (PAT lives
+only in .git/config; .env = local DB path only). Sealed-data
+check: ZERO gwl data files in the repo (manifests + sealed-
+contract docs only; parquet/ never pushed). One discrepancy:
+REPO IS PUBLIC as of the 2026-09-18 API check, violating the
+private-by-rule recorded in Addendum 5 + FOUNDER_PUSH_CARD
+(GitHub defaults new repos to public; the card asked for private —
+likely an accidental default at creation). All current content
+was pushed 2026-09-17 under the same exposure; nothing new added
+since. Flagged to founder with click-steps (Settings -> Danger
+Zone -> Change visibility -> Private); PAT scope (Contents+Issues
+RW only) cannot change visibility itself — founder action
+required. This addendum is the standing record of the discrepancy
+until the founder confirms the flip.
+
+ISSUE #1 — FIRST EXTERNAL VERDICT RECEIVED (founder transcribed;
+comment 2026-09-18T04:46:27Z): SKEPTIC · GEMINI 3.1 PRO ·
+ANTIGRAVITY · ROUND 1/3, all four asks answered.
+
+- Ask 1 (D#20 59-vs-61): ACCEPT A — amend to 61-district constant
+  basis. Evidence cited: live LGD registry confirms Markapuram
+  (790) + Polavaram (791) effective 2025-12-29. Reasoning: 2026
+  users need 2026 ground truth; sealed-window logic robust because
+  both new territories were contained within parent districts
+  through the 2023-2025 window. Self-counter: upstream sources may
+  lag LGD, requiring backward-compat mappings anyway (59 simpler
+  short-term).
+- Ask 2 (provisional label-map assignment): COUNTERSIGNED —
+  fail-loud on unknown labels + per-well PARENT_CONTINUE flags =
+  correct defensive posture. Self-counter: string-matching may
+  mask coordinate errors a polygon intersection would catch.
+- Ask 3 (data findings): NOTED, no design objections — district
+  keying from assignment layer only; 31% negative gwl_value rows
+  quarantined UNRESOLVED pending Task-55 WRIS spot-checks.
+- Ask 4 (PRP v1.1): APPROVE — gate ladder auditable; zero-pollution
+  landing rule sound. Self-counter: adversarial-twin + round
+  budgets add latency for operational hotfixes; use the P0 trivial
+  class aggressively.
+
+GLM PROCESSING (this addendum, no new decision numbers):
+- Asks 2/3/4: external review recorded and ACCEPTED into the log —
+  provisional assignment now GLM-logged (Addendum 4) + externally
+  countersigned; PRP v1.1 stands externally approved with the P0
+  note carried as operational guidance; data findings concur.
+- Ask 1: recorded as EVIDENCE INPUT, round 1 of 3. FINAL D#20
+  RULING DEFERRED until rounds 2-3 land (or founder closes the
+  round early). Rationale: label-defining decision on a single
+  external verdict violates the multi-hat spirit; Gemini's own
+  self-counter (upstream lag) is material; waiting costs nothing —
+  D1.1 is not gated on the basis choice until backbone build.
+- AMENDMENT EXECUTION PLAN pre-staged (runs the moment the ruling
+  lands): extend district_basis by Markapuram (790, parent
+  Prakasam) + Polavaram (791, parents Eluru/NTR/W.Godavari);
+  re-run build_panel_d20.py; expected per current evidence (verify
+  on execution): 0 wells change assignment (both new districts
+  receive wells only via polygon binding, same as the existing 14
+  zero-well basis districts), panel district-month rows unchanged
+  (45 active districts), basis ledger +2 entries.
+
+No decision numbers consumed this addendum; AM-6 untouched; no
+model runs; D#22 weights ban intact.
