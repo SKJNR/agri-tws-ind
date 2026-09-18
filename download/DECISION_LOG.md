@@ -1050,3 +1050,58 @@ GLM PROCESSING (this addendum, no new decision numbers):
 
 No decision numbers consumed this addendum; AM-6 untouched; no
 model runs; D#22 weights ban intact.
+
+## ADDENDUM 7 — 2026-09-18 (GLM; Issue #1 Round-2/3 Qwen verdict recorded; R1+R2 reconciliation; D#20 ruling pre-staged)
+
+ISSUE #1 ROUND 2 RECEIVED (founder transcribed; comment
+2026-09-18T21:23:33Z): QWEN (SKEPTIC HAT) — attack on the
+61-district amendment's EXECUTION RISK. Verdict: ACCEPT 61 as the
+LOGICAL TARGET BASIS, MANDATE the 59-district provisional map as
+the immediate PHYSICAL EXECUTION BASIS. Decoupling rule proposed:
+PIP pipeline runs on 59-basis now; on acquisition of 61-district
+polygons (hashed + ingested), the pipeline auto-reruns and
+promotes the execution basis to 61. Log the decoupling in D#20.
+
+R1+R2 RECONCILIATION (no contradiction found): both rounds
+concord on the logical target (61, 2026-vintage). Qwen's
+decoupling ANSWERS Gemini's R1 self-counter (upstream sources lag
+LGD): execution never blocks on laggy upstreams; promotion is
+event-driven on polygon acquisition. R2 refines R1 into an
+executable rule rather than opposing it. Qwen's own framing
+("might be stuck behind portal CAPTCHAs or delayed government
+releases") matches the logged reality that polygons are absent
+from the sandbox and are a founder-side gate.
+
+GLM NOTE — AS-BUILT ALREADY SATISFIES THE R2 MANDATE: the
+Addendum-4 provisional assignment IS a 59-district physical
+execution basis with fail-loud labels and per-well ambiguity
+flags. Qwen's "unblocking physical step" is the current state of
+the repo. Zero rework required; the mandate is met by
+construction, not by change.
+
+D#20 RULING PRE-STAGED (executes the moment R3 lands without
+contradiction, OR founder closes the round early; replaces the
+Addendum-6 amendment plan as the operative version):
+- TARGET BASIS (logical, 2026-vintage): 61 districts = 59 basis
+  + Markapuram (LGD 790, parent Prakasam) + Polavaram (LGD 791,
+  parents Eluru/NTR/W.Godavari).
+- EXECUTION BASIS (physical, as-built): 59 districts, provisional
+  label map per Addendum 4, unchanged until polygons.
+- PROMOTION RULE: 61-grade polygons acquired + hashed + ingested
+  -> PIP re-runs (T-D20-2) -> execution basis promotes to 61 ->
+  basis ledger +2 entries; expected 0 well reassignments (both
+  new districts receive wells only via polygon binding — same
+  class as the existing 14 zero-well basis districts); district-
+  month panel active-district count unchanged (45) until wells
+  land in the two new districts. All expectations verified on
+  execution, not assumed.
+- EFFECT BEFORE POLYGONS: none — no artifact rebuilds, no panel
+  changes; D1.1 not gated (backbone work proceeds on 59-execution).
+
+STATUS: 2 of 3 skeptic rounds in. Deferral maintained per
+Addendum 6. Founder may close early ("close the round") — the
+ruling then executes mechanically from this pre-staging.
+Housekeeping: unpushed platform auto-commit (bare gitlink to the
+stale seed repo, no content) dropped before push; my-project/
+added to .gitignore. No decision numbers consumed this addendum;
+AM-6 untouched; no model runs; D#22 weights ban intact.
