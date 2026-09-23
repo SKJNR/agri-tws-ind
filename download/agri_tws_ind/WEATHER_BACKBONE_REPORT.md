@@ -1,6 +1,6 @@
 # Weather Backbone Report — pyet ET0 + IMD 1-deg consistency
 
-Built 2026-09-23T01:58:15.573666+00:00 | OM rows 273,524 | districts 59 | IMD 2014-2024
+Built 2026-09-23T10:31:29.364179+00:00 | OM rows 273,524 | districts 59 | IMD 2014-2024
 
 ## Headline checks (open window <=2022, D#21)
 

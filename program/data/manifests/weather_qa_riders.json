@@ -1,0 +1,4651 @@
+{
+ "built_at_utc": "2026-09-23T10:35:47.826939+00:00",
+ "implements": "DECISION_LOG Addendum 9 riders WB-R1/R2/R3 (pre-stated before this run)",
+ "inputs_sha256": {
+  "om_csv": "d6c6d42db7b9e6b5085f01874224b6f3090ee7760e6e26dd8aaac773e43d9f6b",
+  "panel": "b9f927172de61ad967ce007d0201e10d9a1fa821c33e99aa37388977d385ac08",
+  "imd": "6213359bffdad62120d78133d2deddab1b9e8d90bc345e330fd3c5a1070703f3"
+ },
+ "rules": {
+  "seasons": {
+   "DJF": [
+    12,
+    1,
+    2
+   ],
+   "MAM": [
+    3,
+    4,
+    5
+   ],
+   "JJAS": [
+    6,
+    7,
+    8,
+    9
+   ],
+   "ON": [
+    10,
+    11
+   ]
+  },
+  "regimes": {
+   "R1418": [
+    2014,
+    2018
+   ],
+   "R1922": [
+    2019,
+    2022
+   ]
+  },
+  "trip_temp_c": 1.0,
+  "trip_tmax_tag_c": 2.0,
+  "trip_mad_pct": 15.0,
+  "named_terrain": [
+   "Alluri Sitharama Raju",
+   "Parvathipuram Manyam",
+   "Mulugu",
+   "Bhadradri Kothagudem"
+  ]
+ },
+ "wb_r1": {
+  "aggregate_table": [
+   {
+    "season": "DJF",
+    "regime": "R1418",
+    "variable": "tmax",
+    "n": 26609,
+    "bias": -1.355874263272129,
+    "rmse": 1.903917173383739,
+    "trip": true
+   },
+   {
+    "season": "DJF",
+    "regime": "R1418",
+    "variable": "tmin",
+    "n": 26609,
+    "bias": 1.0807728493575193,
+    "rmse": 1.83408172990344,
+    "trip": true
+   },
+   {
+    "season": "DJF",
+    "regime": "R1922",
+    "variable": "tmax",
+    "n": 21299,
+    "bias": -0.9384207298321435,
+    "rmse": 1.7194555426554867,
+    "trip": false
+   },
+   {
+    "season": "DJF",
+    "regime": "R1922",
+    "variable": "tmin",
+    "n": 21299,
+    "bias": 0.5308391267511507,
+    "rmse": 1.4508602968636206,
+    "trip": false
+   },
+   {
+    "season": "MAM",
+    "regime": "R1418",
+    "variable": "tmax",
+    "n": 27140,
+    "bias": -1.4196416801447014,
+    "rmse": 2.202078753483548,
+    "trip": true
+   },
+   {
+    "season": "MAM",
+    "regime": "R1418",
+    "variable": "tmin",
+    "n": 27140,
+    "bias": 0.7294242439045129,
+    "rmse": 1.574815041046826,
+    "trip": false
+   },
+   {
+    "season": "MAM",
+    "regime": "R1922",
+    "variable": "tmax",
+    "n": 21712,
+    "bias": -0.9080221506630399,
+    "rmse": 2.0556860600504043,
+    "trip": false
+   },
+   {
+    "season": "MAM",
+    "regime": "R1922",
+    "variable": "tmin",
+    "n": 21712,
+    "bias": 0.48605798580405807,
+    "rmse": 1.4480224174179028,
+    "trip": false
+   },
+   {
+    "season": "JJAS",
+    "regime": "R1418",
+    "variable": "tmax",
+    "n": 35990,
+    "bias": -1.7361940543960948,
+    "rmse": 2.379493250590244,
+    "trip": true
+   },
+   {
+    "season": "JJAS",
+    "regime": "R1418",
+    "variable": "tmin",
+    "n": 35990,
+    "bias": 0.7308420560730268,
+    "rmse": 1.3490487378397666,
+    "trip": false
+   },
+   {
+    "season": "JJAS",
+    "regime": "R1922",
+    "variable": "tmax",
+    "n": 28792,
+    "bias": -0.9297183717413391,
+    "rmse": 1.8804734384932944,
+    "trip": false
+   },
+   {
+    "season": "JJAS",
+    "regime": "R1922",
+    "variable": "tmin",
+    "n": 28792,
+    "bias": 0.5937966876839491,
+    "rmse": 1.2493764954047422,
+    "trip": false
+   },
+   {
+    "season": "ON",
+    "regime": "R1418",
+    "variable": "tmax",
+    "n": 17995,
+    "bias": -1.707504038936597,
+    "rmse": 2.2480747964900027,
+    "trip": true
+   },
+   {
+    "season": "ON",
+    "regime": "R1418",
+    "variable": "tmin",
+    "n": 17995,
+    "bias": 0.7781927591139953,
+    "rmse": 1.6104302777949457,
+    "trip": false
+   },
+   {
+    "season": "ON",
+    "regime": "R1922",
+    "variable": "tmax",
+    "n": 14396,
+    "bias": -1.1045104916872797,
+    "rmse": 1.7266064179983915,
+    "trip": true
+   },
+   {
+    "season": "ON",
+    "regime": "R1922",
+    "variable": "tmin",
+    "n": 14396,
+    "bias": 0.404254783475091,
+    "rmse": 1.303068680281333,
+    "trip": false
+   }
+  ],
+  "n_aggregate_trips": 6,
+  "n_district_season_trips": 252,
+  "district_season_trips": [
+   {
+    "district": "Adilabad",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.6502021822436101,
+    "trip": true
+   },
+   {
+    "district": "Adilabad",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 2.1205376373723226,
+    "trip": true
+   },
+   {
+    "district": "Adilabad",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.6701298441863868,
+    "trip": true
+   },
+   {
+    "district": "Adilabad",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.830389934807008,
+    "trip": true
+   },
+   {
+    "district": "Adilabad",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.5263174105645962,
+    "trip": true
+   },
+   {
+    "district": "Adilabad",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.2131934890330165,
+    "trip": true
+   },
+   {
+    "district": "Adilabad",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.8901740659564352,
+    "trip": true
+   },
+   {
+    "district": "Adilabad",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.6032905408376337,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -4.322373625562696,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": -3.0646601143728924,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -4.328246001920839,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": -3.45374433176529,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -5.291536957231809,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": -2.904265628182389,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -5.790852193363377,
+    "trip": true
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": -3.6197634900202513,
+    "trip": true
+   },
+   {
+    "district": "Anakapalli",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.4032530300859092,
+    "trip": true
+   },
+   {
+    "district": "Anakapalli",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.6524295487256213,
+    "trip": true
+   },
+   {
+    "district": "Anakapalli",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.2244330345390055,
+    "trip": true
+   },
+   {
+    "district": "Anantapur",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.8223537856134873,
+    "trip": true
+   },
+   {
+    "district": "Anantapur",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 2.2995679726347253,
+    "trip": true
+   },
+   {
+    "district": "Anantapur",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.2292120546156808,
+    "trip": true
+   },
+   {
+    "district": "Anantapur",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.3640498489630026,
+    "trip": true
+   },
+   {
+    "district": "Annamayya",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.1308061153430657,
+    "trip": true
+   },
+   {
+    "district": "Annamayya",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.1686529969039945,
+    "trip": true
+   },
+   {
+    "district": "Bapatla",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.539515886635616,
+    "trip": true
+   },
+   {
+    "district": "Bapatla",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.5336172426380403,
+    "trip": true
+   },
+   {
+    "district": "Bapatla",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.1942603779299825,
+    "trip": true
+   },
+   {
+    "district": "Bapatla",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.203013377372033,
+    "trip": true
+   },
+   {
+    "district": "Bapatla",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.527908796300002,
+    "trip": true
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.2326103233484829,
+    "trip": true
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.0115733513198046,
+    "trip": true
+   },
+   {
+    "district": "Chittoor",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.40319211565215,
+    "trip": true
+   },
+   {
+    "district": "Chittoor",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": -1.5857028780312372,
+    "trip": true
+   },
+   {
+    "district": "Chittoor",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": -1.3488935604187602,
+    "trip": true
+   },
+   {
+    "district": "Chittoor",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.2378375340029188,
+    "trip": true
+   },
+   {
+    "district": "Chittoor",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.6679484626200247,
+    "trip": true
+   },
+   {
+    "district": "Chittoor",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": -1.1903848290226282,
+    "trip": true
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.7577416175691951,
+    "trip": true
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.1471722010908456,
+    "trip": true
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.3744941895710676,
+    "trip": true
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.2380218620508745,
+    "trip": true
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.8966988624336505,
+    "trip": true
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.0237910348860944,
+    "trip": true
+   },
+   {
+    "district": "East Godavari",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.2177122081346634,
+    "trip": true
+   },
+   {
+    "district": "East Godavari",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.3697407567870203,
+    "trip": true
+   },
+   {
+    "district": "Eluru",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.4523205870053373,
+    "trip": true
+   },
+   {
+    "district": "Guntur",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.2111116176528791,
+    "trip": true
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.0068722029624904,
+    "trip": true
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.9798905667475455,
+    "trip": true
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.6652431845882119,
+    "trip": true
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.9728193884121696,
+    "trip": true
+   },
+   {
+    "district": "Hyderabad",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.9897641966495607,
+    "trip": true
+   },
+   {
+    "district": "Hyderabad",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.5654000282287597,
+    "trip": true
+   },
+   {
+    "district": "Hyderabad",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.51433957869455,
+    "trip": true
+   },
+   {
+    "district": "Hyderabad",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.1703898542782865,
+    "trip": true
+   },
+   {
+    "district": "Jagtial",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.3244343527432145,
+    "trip": true
+   },
+   {
+    "district": "Jagtial",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.8153234160005163,
+    "trip": true
+   },
+   {
+    "district": "Jagtial",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.1254784597866778,
+    "trip": true
+   },
+   {
+    "district": "Jagtial",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.8526072981276949,
+    "trip": true
+   },
+   {
+    "district": "Jagtial",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.8444876703842525,
+    "trip": true
+   },
+   {
+    "district": "Jagtial",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.186675121397703,
+    "trip": true
+   },
+   {
+    "district": "Jagtial",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.5371324497493892,
+    "trip": true
+   },
+   {
+    "district": "Jangaon",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.5248524985289924,
+    "trip": true
+   },
+   {
+    "district": "Jangaon",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.8201079580518935,
+    "trip": true
+   },
+   {
+    "district": "Jangaon",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.339286900435206,
+    "trip": true
+   },
+   {
+    "district": "Jangaon",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.460433231763718,
+    "trip": true
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.6412285821191197,
+    "trip": true
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.5309351170120609,
+    "trip": true
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.4451754616909342,
+    "trip": true
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.2239868664350666,
+    "trip": true
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.7619877220961846,
+    "trip": true
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.5579034399871088,
+    "trip": true
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.0472831270950955,
+    "trip": true
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.3590292067258518,
+    "trip": true
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.4403940492640428,
+    "trip": true
+   },
+   {
+    "district": "Kakinada",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.3516255886096675,
+    "trip": true
+   },
+   {
+    "district": "Kakinada",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.2027439923122012,
+    "trip": true
+   },
+   {
+    "district": "Kakinada",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.730596337031797,
+    "trip": true
+   },
+   {
+    "district": "Kakinada",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.3427302890353734,
+    "trip": true
+   },
+   {
+    "district": "Kakinada",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.0167556915561142,
+    "trip": true
+   },
+   {
+    "district": "Kamareddy",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.5464786877185834,
+    "trip": true
+   },
+   {
+    "district": "Kamareddy",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.2783776031926346,
+    "trip": true
+   },
+   {
+    "district": "Kamareddy",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -3.0925074452939243,
+    "trip": true
+   },
+   {
+    "district": "Kamareddy",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.400786783048147,
+    "trip": true
+   },
+   {
+    "district": "Kamareddy",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.4218299483558083,
+    "trip": true
+   },
+   {
+    "district": "Karimnagar",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.7956589252490716,
+    "trip": true
+   },
+   {
+    "district": "Karimnagar",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.3293810064569482,
+    "trip": true
+   },
+   {
+    "district": "Karimnagar",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.9384237796212163,
+    "trip": true
+   },
+   {
+    "district": "Karimnagar",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.3624867402790677,
+    "trip": true
+   },
+   {
+    "district": "Karimnagar",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.2551943895378181,
+    "trip": true
+   },
+   {
+    "district": "Karimnagar",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.8417514578675096,
+    "trip": true
+   },
+   {
+    "district": "Karimnagar",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.290384521206437,
+    "trip": true
+   },
+   {
+    "district": "Khammam",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.0187682511376552,
+    "trip": true
+   },
+   {
+    "district": "Krishna",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.128680309788994,
+    "trip": true
+   },
+   {
+    "district": "Krishna",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.1431699054488718,
+    "trip": true
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.7309087626452517,
+    "trip": true
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.2277040191318676,
+    "trip": true
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.078394205213169,
+    "trip": true
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.0417870637931892,
+    "trip": true
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.164050123774072,
+    "trip": true
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.3201100979997813,
+    "trip": true
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.2205250891179986,
+    "trip": true
+   },
+   {
+    "district": "Kurnool",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.2343231545119986,
+    "trip": true
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.4105667842432783,
+    "trip": true
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.1933013897224012,
+    "trip": true
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.8402770401774975,
+    "trip": true
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.2724380844060623,
+    "trip": true
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.2429468929659038,
+    "trip": true
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.721016984855013,
+    "trip": true
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.362458361750064,
+    "trip": true
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.594641961339176,
+    "trip": true
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.8148354876019699,
+    "trip": true
+   },
+   {
+    "district": "Mancherial",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.1947968562835543,
+    "trip": true
+   },
+   {
+    "district": "Mancherial",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.070390858673697,
+    "trip": true
+   },
+   {
+    "district": "Mancherial",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.3158892654566374,
+    "trip": true
+   },
+   {
+    "district": "Mancherial",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.6575623312500223,
+    "trip": true
+   },
+   {
+    "district": "Mancherial",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.2914774173813006,
+    "trip": true
+   },
+   {
+    "district": "Medak",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.043030411856515,
+    "trip": true
+   },
+   {
+    "district": "Medak",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.0243135637837677,
+    "trip": true
+   },
+   {
+    "district": "Medak",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.7799470588204938,
+    "trip": true
+   },
+   {
+    "district": "Medak",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.0812057265818447,
+    "trip": true
+   },
+   {
+    "district": "Medak",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.9338518062793062,
+    "trip": true
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.58680853162493,
+    "trip": true
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -3.1849652456200643,
+    "trip": true
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -3.0025909448147687,
+    "trip": true
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.725034663021456,
+    "trip": true
+   },
+   {
+    "district": "Mulugu",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.4987408973900556,
+    "trip": true
+   },
+   {
+    "district": "Mulugu",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.3757418802970849,
+    "trip": true
+   },
+   {
+    "district": "Mulugu",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.3005488678840122,
+    "trip": true
+   },
+   {
+    "district": "Mulugu",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.0207597597049234,
+    "trip": true
+   },
+   {
+    "district": "Mulugu",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.0613274857428991,
+    "trip": true
+   },
+   {
+    "district": "NTR",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.9203925137962798,
+    "trip": true
+   },
+   {
+    "district": "NTR",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.9107473189279245,
+    "trip": true
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.532910616174707,
+    "trip": true
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.085195745016642,
+    "trip": true
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.5286289475654646,
+    "trip": true
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.9155076240581241,
+    "trip": true
+   },
+   {
+    "district": "Nalgonda",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.029655454194017,
+    "trip": true
+   },
+   {
+    "district": "Nalgonda",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.0655920301164898,
+    "trip": true
+   },
+   {
+    "district": "Nalgonda",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.1528374266509271,
+    "trip": true
+   },
+   {
+    "district": "Nalgonda",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.210706455807434,
+    "trip": true
+   },
+   {
+    "district": "Nandyal",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.4939770707232922,
+    "trip": true
+   },
+   {
+    "district": "Narayanpet",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.753775605544668,
+    "trip": true
+   },
+   {
+    "district": "Narayanpet",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.0241798403227858,
+    "trip": true
+   },
+   {
+    "district": "Narayanpet",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.302313434213832,
+    "trip": true
+   },
+   {
+    "district": "Narayanpet",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.3828022527781556,
+    "trip": true
+   },
+   {
+    "district": "Narayanpet",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.6853272908806585,
+    "trip": true
+   },
+   {
+    "district": "Nirmal",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.9429361723913938,
+    "trip": true
+   },
+   {
+    "district": "Nirmal",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 2.8364243368797113,
+    "trip": true
+   },
+   {
+    "district": "Nirmal",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.9337771871815557,
+    "trip": true
+   },
+   {
+    "district": "Nirmal",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.3346169879471046,
+    "trip": true
+   },
+   {
+    "district": "Nirmal",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.2814175927139586,
+    "trip": true
+   },
+   {
+    "district": "Nirmal",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.2619409147724645,
+    "trip": true
+   },
+   {
+    "district": "Nirmal",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 2.057753200218326,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.1744343527432146,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 2.1536239086113538,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.262434981525808,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.6970517425721394,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.3611692967093492,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.0486771057212287,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.3633600030006172,
+    "trip": true
+   },
+   {
+    "district": "Nizamabad",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.445147021698387,
+    "trip": true
+   },
+   {
+    "district": "Palnadu",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.0357017815873053,
+    "trip": true
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": 1.22242112934883,
+    "trip": true
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.0687006128245387,
+    "trip": true
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": 2.1269174902911345,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.488023457268776,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.436893321727884,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.2533996250318442,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.6035704248769274,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.2097544998419092,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.3522799997381827,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.486378051674431,
+    "trip": true
+   },
+   {
+    "district": "Peddapalli",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.265065759822102,
+    "trip": true
+   },
+   {
+    "district": "Prakasam",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.6738754925469461,
+    "trip": true
+   },
+   {
+    "district": "Prakasam",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.2412259382902135,
+    "trip": true
+   },
+   {
+    "district": "Prakasam",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.2014971387408033,
+    "trip": true
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.3611338601323772,
+    "trip": true
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.0861362238822898,
+    "trip": true
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.3929905370813636,
+    "trip": true
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.0469309696252795,
+    "trip": true
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.5333765592731414,
+    "trip": true
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.4398627352410545,
+    "trip": true
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.002524070878715,
+    "trip": true
+   },
+   {
+    "district": "Rangareddy",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.2306508961569502,
+    "trip": true
+   },
+   {
+    "district": "Rangareddy",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.90187345818045,
+    "trip": true
+   },
+   {
+    "district": "Rangareddy",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.781188394723694,
+    "trip": true
+   },
+   {
+    "district": "Rangareddy",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.406819726773733,
+    "trip": true
+   },
+   {
+    "district": "Sangareddy",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.6349612409845362,
+    "trip": true
+   },
+   {
+    "district": "Sangareddy",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.216607757697359,
+    "trip": true
+   },
+   {
+    "district": "Sangareddy",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.5181647153065723,
+    "trip": true
+   },
+   {
+    "district": "Sangareddy",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.0346885792327494,
+    "trip": true
+   },
+   {
+    "district": "Siddipet",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.4703703133343473,
+    "trip": true
+   },
+   {
+    "district": "Siddipet",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.206456420926625,
+    "trip": true
+   },
+   {
+    "district": "Siddipet",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.8636427109944074,
+    "trip": true
+   },
+   {
+    "district": "Siddipet",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.065996254814996,
+    "trip": true
+   },
+   {
+    "district": "Siddipet",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.5741068153867737,
+    "trip": true
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.789229310792068,
+    "trip": true
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.1227587096357114,
+    "trip": true
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.1175625907050237,
+    "trip": true
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.2096690565494481,
+    "trip": true
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": 1.0772253437318662,
+    "trip": true
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.8329013059680588,
+    "trip": true
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.3083559526120376,
+    "trip": true
+   },
+   {
+    "district": "Srikakulam",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 2.2371735192284796,
+    "trip": true
+   },
+   {
+    "district": "Srikakulam",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.3785172923175613,
+    "trip": true
+   },
+   {
+    "district": "Srikakulam",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.7067177800164706,
+    "trip": true
+   },
+   {
+    "district": "Srikakulam",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 2.215771054266146,
+    "trip": true
+   },
+   {
+    "district": "Srikakulam",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 2.3221323576129853,
+    "trip": true
+   },
+   {
+    "district": "Suryapet",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.5431782370130418,
+    "trip": true
+   },
+   {
+    "district": "Suryapet",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.1052528855881252,
+    "trip": true
+   },
+   {
+    "district": "Suryapet",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.1889331859317633,
+    "trip": true
+   },
+   {
+    "district": "Suryapet",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.0622547253884904,
+    "trip": true
+   },
+   {
+    "district": "Suryapet",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.3201183211390874,
+    "trip": true
+   },
+   {
+    "district": "Tirupati",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.2467881747654506,
+    "trip": true
+   },
+   {
+    "district": "Tirupati",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.18798489249252,
+    "trip": true
+   },
+   {
+    "district": "Vikarabad",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -2.201295743669782,
+    "trip": true
+   },
+   {
+    "district": "Vikarabad",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.974730748254896,
+    "trip": true
+   },
+   {
+    "district": "Vikarabad",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -3.1285325774729578,
+    "trip": true
+   },
+   {
+    "district": "Vikarabad",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -2.6925796307284107,
+    "trip": true
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.7865914636057585,
+    "trip": true
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.1434103767653019,
+    "trip": true
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.0848355316309537,
+    "trip": true
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.4926842472375197,
+    "trip": true
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.0586555640771307,
+    "trip": true
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.7462867462352758,
+    "trip": true
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.9118040611004008,
+    "trip": true
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.2596163307411081,
+    "trip": true
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.5745142236650531,
+    "trip": true
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.6654839058825661,
+    "trip": true
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.0368515028742145,
+    "trip": true
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.1542558155623563,
+    "trip": true
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.8364034744852409,
+    "trip": true
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -2.235823847383315,
+    "trip": true
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.411318188721148,
+    "trip": true
+   },
+   {
+    "district": "Warangal",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.991601267001899,
+    "trip": true
+   },
+   {
+    "district": "Warangal",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.9609292140905408,
+    "trip": true
+   },
+   {
+    "district": "Warangal",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.6789043867740039,
+    "trip": true
+   },
+   {
+    "district": "Warangal",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.9566080951516964,
+    "trip": true
+   },
+   {
+    "district": "West Godavari",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -1.2760642378802463,
+    "trip": true
+   },
+   {
+    "district": "West Godavari",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.602867035092769,
+    "trip": true
+   },
+   {
+    "district": "West Godavari",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.1834019589728129,
+    "trip": true
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "DJF",
+    "variable": "tmin",
+    "n": 812,
+    "bias": 1.0587367987985095,
+    "trip": true
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": 1.6703556867037415,
+    "trip": true
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "MAM",
+    "variable": "tmin",
+    "n": 828,
+    "bias": 1.5786135549130647,
+    "trip": true
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "JJAS",
+    "variable": "tmin",
+    "n": 1098,
+    "bias": 1.4443269851212075,
+    "trip": true
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "ON",
+    "variable": "tmin",
+    "n": 549,
+    "bias": 1.0906320478095384,
+    "trip": true
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "DJF",
+    "variable": "tmax",
+    "n": 812,
+    "bias": -1.9908725710337973,
+    "trip": true
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "MAM",
+    "variable": "tmax",
+    "n": 828,
+    "bias": -2.2920908494847985,
+    "trip": true
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "JJAS",
+    "variable": "tmax",
+    "n": 1098,
+    "bias": -1.711334114213676,
+    "trip": true
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "ON",
+    "variable": "tmax",
+    "n": 549,
+    "bias": -1.9725756466280133,
+    "trip": true
+   }
+  ],
+  "offsets": [
+   {
+    "district": "Adilabad",
+    "season": "DJF",
+    "tmax_offset": -1.6502021822436101,
+    "tmin_offset": 2.1205376373723226
+   },
+   {
+    "district": "Adilabad",
+    "season": "JJAS",
+    "tmax_offset": -1.5263174105645962,
+    "tmin_offset": 1.2131934890330165
+   },
+   {
+    "district": "Adilabad",
+    "season": "MAM",
+    "tmax_offset": -1.6701298441863868,
+    "tmin_offset": 1.830389934807008
+   },
+   {
+    "district": "Adilabad",
+    "season": "ON",
+    "tmax_offset": -1.8901740659564352,
+    "tmin_offset": 1.6032905408376337
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "DJF",
+    "tmax_offset": -4.322373625562696,
+    "tmin_offset": -3.0646601143728924
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "JJAS",
+    "tmax_offset": -5.291536957231809,
+    "tmin_offset": -2.904265628182389
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "MAM",
+    "tmax_offset": -4.328246001920839,
+    "tmin_offset": -3.45374433176529
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "season": "ON",
+    "tmax_offset": -5.790852193363377,
+    "tmin_offset": -3.6197634900202513
+   },
+   {
+    "district": "Anakapalli",
+    "season": "DJF",
+    "tmax_offset": -0.8692966357827774,
+    "tmin_offset": 0.8565735769976536
+   },
+   {
+    "district": "Anakapalli",
+    "season": "JJAS",
+    "tmax_offset": -0.522236864684058,
+    "tmin_offset": 1.6524295487256213
+   },
+   {
+    "district": "Anakapalli",
+    "season": "MAM",
+    "tmax_offset": -1.4032530300859092,
+    "tmin_offset": 0.9831063067855464
+   },
+   {
+    "district": "Anakapalli",
+    "season": "ON",
+    "tmax_offset": -0.8804920349399031,
+    "tmin_offset": 1.2244330345390055
+   },
+   {
+    "district": "Anantapur",
+    "season": "DJF",
+    "tmax_offset": 0.2768563885994146,
+    "tmin_offset": 1.8223537856134873
+   },
+   {
+    "district": "Anantapur",
+    "season": "JJAS",
+    "tmax_offset": 0.38151209228460037,
+    "tmin_offset": 1.2292120546156808
+   },
+   {
+    "district": "Anantapur",
+    "season": "MAM",
+    "tmax_offset": 0.8795200297222046,
+    "tmin_offset": 2.2995679726347253
+   },
+   {
+    "district": "Anantapur",
+    "season": "ON",
+    "tmax_offset": 0.2069174747432298,
+    "tmin_offset": 1.3640498489630026
+   },
+   {
+    "district": "Annamayya",
+    "season": "DJF",
+    "tmax_offset": -1.1308061153430657,
+    "tmin_offset": -0.4076425115463181
+   },
+   {
+    "district": "Annamayya",
+    "season": "JJAS",
+    "tmax_offset": -0.7066295401428999,
+    "tmin_offset": 0.16900822373687238
+   },
+   {
+    "district": "Annamayya",
+    "season": "MAM",
+    "tmax_offset": -0.3371322360015721,
+    "tmin_offset": -0.20520287020770828
+   },
+   {
+    "district": "Annamayya",
+    "season": "ON",
+    "tmax_offset": -1.1686529969039945,
+    "tmin_offset": -0.3487122144855436
+   },
+   {
+    "district": "Bapatla",
+    "season": "DJF",
+    "tmax_offset": -1.539515886635616,
+    "tmin_offset": 0.7781697097083031
+   },
+   {
+    "district": "Bapatla",
+    "season": "JJAS",
+    "tmax_offset": -1.203013377372033,
+    "tmin_offset": 0.58962772730704
+   },
+   {
+    "district": "Bapatla",
+    "season": "MAM",
+    "tmax_offset": -2.5336172426380403,
+    "tmin_offset": 1.1942603779299825
+   },
+   {
+    "district": "Bapatla",
+    "season": "ON",
+    "tmax_offset": -1.527908796300002,
+    "tmin_offset": 0.2315906455173736
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "season": "DJF",
+    "tmax_offset": 0.38311017088114924,
+    "tmin_offset": 0.8024191008412779
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "season": "JJAS",
+    "tmax_offset": -0.7608185505823577,
+    "tmin_offset": 1.0115733513198046
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "season": "MAM",
+    "tmax_offset": 0.8544930066463453,
+    "tmin_offset": 1.2326103233484829
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "season": "ON",
+    "tmax_offset": -0.6300054303501038,
+    "tmin_offset": 0.5599874826511182
+   },
+   {
+    "district": "Chittoor",
+    "season": "DJF",
+    "tmax_offset": -1.40319211565215,
+    "tmin_offset": -1.5857028780312372
+   },
+   {
+    "district": "Chittoor",
+    "season": "JJAS",
+    "tmax_offset": -1.2378375340029188,
+    "tmin_offset": -0.47642941535713457
+   },
+   {
+    "district": "Chittoor",
+    "season": "MAM",
+    "tmax_offset": -0.9171350686446481,
+    "tmin_offset": -1.3488935604187602
+   },
+   {
+    "district": "Chittoor",
+    "season": "ON",
+    "tmax_offset": -1.6679484626200247,
+    "tmin_offset": -1.1903848290226282
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "DJF",
+    "tmax_offset": -1.7577416175691951,
+    "tmin_offset": 1.1471722010908456
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "JJAS",
+    "tmax_offset": -2.2380218620508745,
+    "tmin_offset": 0.8213988868699481
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "MAM",
+    "tmax_offset": -2.3744941895710676,
+    "tmin_offset": 0.7166214731004503
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "season": "ON",
+    "tmax_offset": -1.8966988624336505,
+    "tmin_offset": 1.0237910348860944
+   },
+   {
+    "district": "East Godavari",
+    "season": "DJF",
+    "tmax_offset": -0.45072191313569776,
+    "tmin_offset": 0.6661377183322248
+   },
+   {
+    "district": "East Godavari",
+    "season": "JJAS",
+    "tmax_offset": -2.2177122081346634,
+    "tmin_offset": 0.5049143695657587
+   },
+   {
+    "district": "East Godavari",
+    "season": "MAM",
+    "tmax_offset": -0.014711580875415164,
+    "tmin_offset": 0.7753171252743634
+   },
+   {
+    "district": "East Godavari",
+    "season": "ON",
+    "tmax_offset": -1.3697407567870203,
+    "tmin_offset": 0.4984722735017592
+   },
+   {
+    "district": "Eluru",
+    "season": "DJF",
+    "tmax_offset": 0.49792340706134663,
+    "tmin_offset": 0.3194628414849342
+   },
+   {
+    "district": "Eluru",
+    "season": "JJAS",
+    "tmax_offset": -1.4523205870053373,
+    "tmin_offset": 0.4736757539009136
+   },
+   {
+    "district": "Eluru",
+    "season": "MAM",
+    "tmax_offset": 0.8565444577719281,
+    "tmin_offset": 0.5898098788975515
+   },
+   {
+    "district": "Eluru",
+    "season": "ON",
+    "tmax_offset": -0.7628190810128855,
+    "tmin_offset": 0.04856334818299783
+   },
+   {
+    "district": "Guntur",
+    "season": "DJF",
+    "tmax_offset": -0.0807261236782731,
+    "tmin_offset": 0.5349584734498574
+   },
+   {
+    "district": "Guntur",
+    "season": "JJAS",
+    "tmax_offset": -0.8122868671660429,
+    "tmin_offset": 0.5214988288115066
+   },
+   {
+    "district": "Guntur",
+    "season": "MAM",
+    "tmax_offset": 0.347203286949563,
+    "tmin_offset": 0.787965168238838
+   },
+   {
+    "district": "Guntur",
+    "season": "ON",
+    "tmax_offset": -1.2111116176528791,
+    "tmin_offset": 0.10509924410905126
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "DJF",
+    "tmax_offset": -2.0068722029624904,
+    "tmin_offset": 0.5223654291312683
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "JJAS",
+    "tmax_offset": -1.6652431845882119,
+    "tmin_offset": 0.700408595767829
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "MAM",
+    "tmax_offset": -1.9798905667475455,
+    "tmin_offset": 0.49564893003823096
+   },
+   {
+    "district": "Hanumakonda",
+    "season": "ON",
+    "tmax_offset": -1.9728193884121696,
+    "tmin_offset": 0.29734965082943327
+   },
+   {
+    "district": "Hyderabad",
+    "season": "DJF",
+    "tmax_offset": -1.9897641966495607,
+    "tmin_offset": 0.06394687168703876
+   },
+   {
+    "district": "Hyderabad",
+    "season": "JJAS",
+    "tmax_offset": -2.51433957869455,
+    "tmin_offset": -0.142387160837976
+   },
+   {
+    "district": "Hyderabad",
+    "season": "MAM",
+    "tmax_offset": -2.5654000282287597,
+    "tmin_offset": -0.5618629916278637
+   },
+   {
+    "district": "Hyderabad",
+    "season": "ON",
+    "tmax_offset": -2.1703898542782865,
+    "tmin_offset": -0.02007692785210948
+   },
+   {
+    "district": "Jagtial",
+    "season": "DJF",
+    "tmax_offset": -1.3244343527432145,
+    "tmin_offset": 1.8153234160005163
+   },
+   {
+    "district": "Jagtial",
+    "season": "JJAS",
+    "tmax_offset": -0.8118978941592578,
+    "tmin_offset": 1.8444876703842525
+   },
+   {
+    "district": "Jagtial",
+    "season": "MAM",
+    "tmax_offset": -1.1254784597866778,
+    "tmin_offset": 1.8526072981276949
+   },
+   {
+    "district": "Jagtial",
+    "season": "ON",
+    "tmax_offset": -1.186675121397703,
+    "tmin_offset": 1.5371324497493892
+   },
+   {
+    "district": "Jangaon",
+    "season": "DJF",
+    "tmax_offset": -2.5248524985289924,
+    "tmin_offset": 0.031478729623879126
+   },
+   {
+    "district": "Jangaon",
+    "season": "JJAS",
+    "tmax_offset": -2.339286900435206,
+    "tmin_offset": -0.06197756088062282
+   },
+   {
+    "district": "Jangaon",
+    "season": "MAM",
+    "tmax_offset": -2.8201079580518935,
+    "tmin_offset": -0.6188438235849574
+   },
+   {
+    "district": "Jangaon",
+    "season": "ON",
+    "tmax_offset": -2.460433231763718,
+    "tmin_offset": 0.017021781976974307
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "DJF",
+    "tmax_offset": -0.6097311766864043,
+    "tmin_offset": 1.6412285821191197
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "JJAS",
+    "tmax_offset": -0.79964331329846,
+    "tmin_offset": 1.4451754616909342
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "MAM",
+    "tmax_offset": -0.8090416544301499,
+    "tmin_offset": 1.5309351170120609
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "season": "ON",
+    "tmax_offset": -0.8584646777377101,
+    "tmin_offset": 1.2239868664350666
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "DJF",
+    "tmax_offset": -0.5147361966776731,
+    "tmin_offset": 1.7619877220961846
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "JJAS",
+    "tmax_offset": -1.0472831270950955,
+    "tmin_offset": 1.3590292067258518
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "MAM",
+    "tmax_offset": -0.8837144003974067,
+    "tmin_offset": 1.5579034399871088
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "season": "ON",
+    "tmax_offset": -0.5589156333214599,
+    "tmin_offset": 1.4403940492640428
+   },
+   {
+    "district": "Kakinada",
+    "season": "DJF",
+    "tmax_offset": -2.3516255886096675,
+    "tmin_offset": 1.2027439923122012
+   },
+   {
+    "district": "Kakinada",
+    "season": "JJAS",
+    "tmax_offset": -1.730596337031797,
+    "tmin_offset": 0.6357916826758881
+   },
+   {
+    "district": "Kakinada",
+    "season": "MAM",
+    "tmax_offset": -0.46418109562086013,
+    "tmin_offset": 0.6461747510421679
+   },
+   {
+    "district": "Kakinada",
+    "season": "ON",
+    "tmax_offset": -2.3427302890353734,
+    "tmin_offset": 1.0167556915561142
+   },
+   {
+    "district": "Kamareddy",
+    "season": "DJF",
+    "tmax_offset": -2.5464786877185834,
+    "tmin_offset": 1.2783776031926346
+   },
+   {
+    "district": "Kamareddy",
+    "season": "JJAS",
+    "tmax_offset": -2.400786783048147,
+    "tmin_offset": 0.17763885435510857
+   },
+   {
+    "district": "Kamareddy",
+    "season": "MAM",
+    "tmax_offset": -3.0925074452939243,
+    "tmin_offset": 0.32845270875571425
+   },
+   {
+    "district": "Kamareddy",
+    "season": "ON",
+    "tmax_offset": -2.4218299483558083,
+    "tmin_offset": 0.8271142348131413
+   },
+   {
+    "district": "Karimnagar",
+    "season": "DJF",
+    "tmax_offset": -1.7956589252490716,
+    "tmin_offset": 1.3293810064569482
+   },
+   {
+    "district": "Karimnagar",
+    "season": "JJAS",
+    "tmax_offset": -1.3624867402790677,
+    "tmin_offset": 1.2551943895378181
+   },
+   {
+    "district": "Karimnagar",
+    "season": "MAM",
+    "tmax_offset": -1.9384237796212163,
+    "tmin_offset": 0.9541742896112267
+   },
+   {
+    "district": "Karimnagar",
+    "season": "ON",
+    "tmax_offset": -1.8417514578675096,
+    "tmin_offset": 1.290384521206437
+   },
+   {
+    "district": "Khammam",
+    "season": "DJF",
+    "tmax_offset": -0.07070756310899856,
+    "tmin_offset": 0.7532811698067952
+   },
+   {
+    "district": "Khammam",
+    "season": "JJAS",
+    "tmax_offset": -0.6261190970304451,
+    "tmin_offset": 1.0187682511376552
+   },
+   {
+    "district": "Khammam",
+    "season": "MAM",
+    "tmax_offset": 0.26644952838547564,
+    "tmin_offset": 0.9557987291455844
+   },
+   {
+    "district": "Khammam",
+    "season": "ON",
+    "tmax_offset": -0.6946684540295209,
+    "tmin_offset": 0.5182752786438322
+   },
+   {
+    "district": "Krishna",
+    "season": "DJF",
+    "tmax_offset": -0.029740902003396286,
+    "tmin_offset": 0.6840964044843402
+   },
+   {
+    "district": "Krishna",
+    "season": "JJAS",
+    "tmax_offset": -1.128680309788994,
+    "tmin_offset": 0.6692219617805412
+   },
+   {
+    "district": "Krishna",
+    "season": "MAM",
+    "tmax_offset": 0.7265511130365196,
+    "tmin_offset": 0.8488347334562293
+   },
+   {
+    "district": "Krishna",
+    "season": "ON",
+    "tmax_offset": -1.1431699054488718,
+    "tmin_offset": 0.36703002735130996
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "DJF",
+    "tmax_offset": -0.7931887870938907,
+    "tmin_offset": 1.7309087626452517
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "JJAS",
+    "tmax_offset": -1.0417870637931892,
+    "tmin_offset": 1.164050123774072
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "MAM",
+    "tmax_offset": -1.2277040191318676,
+    "tmin_offset": 1.078394205213169
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "season": "ON",
+    "tmax_offset": -1.3201100979997813,
+    "tmin_offset": 1.2205250891179986
+   },
+   {
+    "district": "Kurnool",
+    "season": "DJF",
+    "tmax_offset": -0.4370764953162282,
+    "tmin_offset": 0.4831793040477584
+   },
+   {
+    "district": "Kurnool",
+    "season": "JJAS",
+    "tmax_offset": -2.2343231545119986,
+    "tmin_offset": -0.4301205188633097
+   },
+   {
+    "district": "Kurnool",
+    "season": "MAM",
+    "tmax_offset": -0.33549306565436765,
+    "tmin_offset": 0.8719843878262286
+   },
+   {
+    "district": "Kurnool",
+    "season": "ON",
+    "tmax_offset": -0.9746572004641341,
+    "tmin_offset": -0.1775672349773469
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "DJF",
+    "tmax_offset": -1.4105667842432783,
+    "tmin_offset": 1.1933013897224012
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "JJAS",
+    "tmax_offset": -1.2724380844060623,
+    "tmin_offset": 0.7873849163507068
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "MAM",
+    "tmax_offset": -1.8402770401774975,
+    "tmin_offset": 0.42366825370972855
+   },
+   {
+    "district": "Mahabubabad",
+    "season": "ON",
+    "tmax_offset": -1.2429468929659038,
+    "tmin_offset": 0.9855099422684134
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "DJF",
+    "tmax_offset": -1.721016984855013,
+    "tmin_offset": 0.8126034856429829
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "JJAS",
+    "tmax_offset": -2.594641961339176,
+    "tmin_offset": 0.27423867849270067
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "MAM",
+    "tmax_offset": -2.362458361750064,
+    "tmin_offset": 0.05065706317551472
+   },
+   {
+    "district": "Mahabubnagar",
+    "season": "ON",
+    "tmax_offset": -1.8148354876019699,
+    "tmin_offset": 0.7285543407030227
+   },
+   {
+    "district": "Mancherial",
+    "season": "DJF",
+    "tmax_offset": -1.1947968562835543,
+    "tmin_offset": 1.070390858673697
+   },
+   {
+    "district": "Mancherial",
+    "season": "JJAS",
+    "tmax_offset": -0.8328874688765173,
+    "tmin_offset": 1.6575623312500223
+   },
+   {
+    "district": "Mancherial",
+    "season": "MAM",
+    "tmax_offset": -0.9523126685101054,
+    "tmin_offset": 1.3158892654566374
+   },
+   {
+    "district": "Mancherial",
+    "season": "ON",
+    "tmax_offset": -0.8927532793611342,
+    "tmin_offset": 1.2914774173813006
+   },
+   {
+    "district": "Medak",
+    "season": "DJF",
+    "tmax_offset": -2.043030411856515,
+    "tmin_offset": 1.0243135637837677
+   },
+   {
+    "district": "Medak",
+    "season": "JJAS",
+    "tmax_offset": -2.0812057265818447,
+    "tmin_offset": 0.4264548834990066
+   },
+   {
+    "district": "Medak",
+    "season": "MAM",
+    "tmax_offset": -2.7799470588204938,
+    "tmin_offset": 0.0969309696252795
+   },
+   {
+    "district": "Medak",
+    "season": "ON",
+    "tmax_offset": -1.9338518062793062,
+    "tmin_offset": 0.6629976592211558
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "DJF",
+    "tmax_offset": -2.58680853162493,
+    "tmin_offset": -0.09787578841148337
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "JJAS",
+    "tmax_offset": -3.0025909448147687,
+    "tmin_offset": -0.47827058524599064
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "MAM",
+    "tmax_offset": -3.1849652456200643,
+    "tmin_offset": -0.8691093684394579
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "season": "ON",
+    "tmax_offset": -2.725034663021456,
+    "tmin_offset": -0.14503139051149017
+   },
+   {
+    "district": "Mulugu",
+    "season": "DJF",
+    "tmax_offset": -0.8666277284105423,
+    "tmin_offset": 1.4987408973900556
+   },
+   {
+    "district": "Mulugu",
+    "season": "JJAS",
+    "tmax_offset": -0.9460003260489152,
+    "tmin_offset": 1.3005488678840122
+   },
+   {
+    "district": "Mulugu",
+    "season": "MAM",
+    "tmax_offset": -0.9545730553963336,
+    "tmin_offset": 1.3757418802970849
+   },
+   {
+    "district": "Mulugu",
+    "season": "ON",
+    "tmax_offset": -1.0207597597049234,
+    "tmin_offset": 1.0613274857428991
+   },
+   {
+    "district": "NTR",
+    "season": "DJF",
+    "tmax_offset": -0.80671134535315,
+    "tmin_offset": -0.030681920638812595
+   },
+   {
+    "district": "NTR",
+    "season": "JJAS",
+    "tmax_offset": -1.9203925137962798,
+    "tmin_offset": -0.05901118940342976
+   },
+   {
+    "district": "NTR",
+    "season": "MAM",
+    "tmax_offset": -0.05038125411323884,
+    "tmin_offset": 0.12154004746589102
+   },
+   {
+    "district": "NTR",
+    "season": "ON",
+    "tmax_offset": -1.9107473189279245,
+    "tmin_offset": -0.343170336947415
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "DJF",
+    "tmax_offset": -1.532910616174707,
+    "tmin_offset": 0.192802613591913
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "JJAS",
+    "tmax_offset": -2.5286289475654646,
+    "tmin_offset": 0.13696907196322855
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "MAM",
+    "tmax_offset": -2.085195745016642,
+    "tmin_offset": 0.018723370372385237
+   },
+   {
+    "district": "Nagarkurnool",
+    "season": "ON",
+    "tmax_offset": -1.9155076240581241,
+    "tmin_offset": 0.050191153854620245
+   },
+   {
+    "district": "Nalgonda",
+    "season": "DJF",
+    "tmax_offset": -1.029655454194017,
+    "tmin_offset": 1.0655920301164898
+   },
+   {
+    "district": "Nalgonda",
+    "season": "JJAS",
+    "tmax_offset": -0.8038588494333848,
+    "tmin_offset": 0.8969477578807615
+   },
+   {
+    "district": "Nalgonda",
+    "season": "MAM",
+    "tmax_offset": -1.1528374266509271,
+    "tmin_offset": 0.539368736801516
+   },
+   {
+    "district": "Nalgonda",
+    "season": "ON",
+    "tmax_offset": -1.210706455807434,
+    "tmin_offset": 0.8727594868950072
+   },
+   {
+    "district": "Nandyal",
+    "season": "DJF",
+    "tmax_offset": 0.21366242093992946,
+    "tmin_offset": 0.606085707988645
+   },
+   {
+    "district": "Nandyal",
+    "season": "JJAS",
+    "tmax_offset": -1.4939770707232922,
+    "tmin_offset": 0.038367641428129255
+   },
+   {
+    "district": "Nandyal",
+    "season": "MAM",
+    "tmax_offset": 0.38854075077075306,
+    "tmin_offset": 0.7681196535267115
+   },
+   {
+    "district": "Nandyal",
+    "season": "ON",
+    "tmax_offset": -0.2952400784240612,
+    "tmin_offset": 0.30494642622483886
+   },
+   {
+    "district": "Narayanpet",
+    "season": "DJF",
+    "tmax_offset": -1.753775605544668,
+    "tmin_offset": 1.0241798403227858
+   },
+   {
+    "district": "Narayanpet",
+    "season": "JJAS",
+    "tmax_offset": -2.3828022527781556,
+    "tmin_offset": 0.38198002639798295
+   },
+   {
+    "district": "Narayanpet",
+    "season": "MAM",
+    "tmax_offset": -2.302313434213832,
+    "tmin_offset": 0.4533140680064326
+   },
+   {
+    "district": "Narayanpet",
+    "season": "ON",
+    "tmax_offset": -1.6853272908806585,
+    "tmin_offset": 0.8740916813223305
+   },
+   {
+    "district": "Nirmal",
+    "season": "DJF",
+    "tmax_offset": -1.9429361723913938,
+    "tmin_offset": 2.8364243368797113
+   },
+   {
+    "district": "Nirmal",
+    "season": "JJAS",
+    "tmax_offset": -2.2814175927139586,
+    "tmin_offset": 0.871299135663253
+   },
+   {
+    "district": "Nirmal",
+    "season": "MAM",
+    "tmax_offset": -2.9337771871815557,
+    "tmin_offset": 1.3346169879471046
+   },
+   {
+    "district": "Nirmal",
+    "season": "ON",
+    "tmax_offset": -2.2619409147724645,
+    "tmin_offset": 2.057753200218326
+   },
+   {
+    "district": "Nizamabad",
+    "season": "DJF",
+    "tmax_offset": -1.1744343527432146,
+    "tmin_offset": 2.1536239086113538
+   },
+   {
+    "district": "Nizamabad",
+    "season": "JJAS",
+    "tmax_offset": -1.3611692967093492,
+    "tmin_offset": 1.0486771057212287
+   },
+   {
+    "district": "Nizamabad",
+    "season": "MAM",
+    "tmax_offset": -1.262434981525808,
+    "tmin_offset": 1.6970517425721394
+   },
+   {
+    "district": "Nizamabad",
+    "season": "ON",
+    "tmax_offset": -1.3633600030006172,
+    "tmin_offset": 1.445147021698387
+   },
+   {
+    "district": "Palnadu",
+    "season": "DJF",
+    "tmax_offset": -0.05671134535315005,
+    "tmin_offset": 0.2126678330557688
+   },
+   {
+    "district": "Palnadu",
+    "season": "JJAS",
+    "tmax_offset": -0.5912486157999229,
+    "tmin_offset": 0.453374967245022
+   },
+   {
+    "district": "Palnadu",
+    "season": "MAM",
+    "tmax_offset": 0.8432177797031861,
+    "tmin_offset": 0.5070472938427026
+   },
+   {
+    "district": "Palnadu",
+    "season": "ON",
+    "tmax_offset": -1.0357017815873053,
+    "tmin_offset": -0.038252304160529826
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "season": "DJF",
+    "tmax_offset": 1.22242112934883,
+    "tmin_offset": 1.0687006128245387
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "season": "JJAS",
+    "tmax_offset": 0.3447297466257231,
+    "tmin_offset": 0.9187765187470204
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "season": "MAM",
+    "tmax_offset": 2.1269174902911345,
+    "tmin_offset": 0.771452079533379
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "season": "ON",
+    "tmax_offset": -0.11960031061224607,
+    "tmin_offset": 0.48734182937983406
+   },
+   {
+    "district": "Peddapalli",
+    "season": "DJF",
+    "tmax_offset": -1.488023457268776,
+    "tmin_offset": 1.436893321727884
+   },
+   {
+    "district": "Peddapalli",
+    "season": "JJAS",
+    "tmax_offset": -1.2097544998419092,
+    "tmin_offset": 1.3522799997381827
+   },
+   {
+    "district": "Peddapalli",
+    "season": "MAM",
+    "tmax_offset": -1.2533996250318442,
+    "tmin_offset": 1.6035704248769274
+   },
+   {
+    "district": "Peddapalli",
+    "season": "ON",
+    "tmax_offset": -1.486378051674431,
+    "tmin_offset": 1.265065759822102
+   },
+   {
+    "district": "Prakasam",
+    "season": "DJF",
+    "tmax_offset": -1.6738754925469461,
+    "tmin_offset": 0.6952879363092883
+   },
+   {
+    "district": "Prakasam",
+    "season": "JJAS",
+    "tmax_offset": -0.10219370524088539,
+    "tmin_offset": 0.8459118803125045
+   },
+   {
+    "district": "Prakasam",
+    "season": "MAM",
+    "tmax_offset": -1.2412259382902135,
+    "tmin_offset": 0.7045260784130741
+   },
+   {
+    "district": "Prakasam",
+    "season": "ON",
+    "tmax_offset": -1.2014971387408033,
+    "tmin_offset": 0.4215724305811258
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "DJF",
+    "tmax_offset": -1.3611338601323772,
+    "tmin_offset": 1.0861362238822898
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "JJAS",
+    "tmax_offset": -0.8631729396965987,
+    "tmin_offset": 1.5333765592731414
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "MAM",
+    "tmax_offset": -1.3929905370813636,
+    "tmin_offset": 1.0469309696252795
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "season": "ON",
+    "tmax_offset": -1.4398627352410545,
+    "tmin_offset": 1.002524070878715
+   },
+   {
+    "district": "Rangareddy",
+    "season": "DJF",
+    "tmax_offset": -2.2306508961569502,
+    "tmin_offset": 0.030941945578664396
+   },
+   {
+    "district": "Rangareddy",
+    "season": "JJAS",
+    "tmax_offset": -2.781188394723694,
+    "tmin_offset": -0.27235073096548057
+   },
+   {
+    "district": "Rangareddy",
+    "season": "MAM",
+    "tmax_offset": -2.90187345818045,
+    "tmin_offset": -0.6391576776182019
+   },
+   {
+    "district": "Rangareddy",
+    "season": "ON",
+    "tmax_offset": -2.406819726773733,
+    "tmin_offset": -0.05869259269728259
+   },
+   {
+    "district": "Sangareddy",
+    "season": "DJF",
+    "tmax_offset": -1.6349612409845362,
+    "tmin_offset": 0.16419317710575798
+   },
+   {
+    "district": "Sangareddy",
+    "season": "JJAS",
+    "tmax_offset": -2.5181647153065723,
+    "tmin_offset": -0.16825237030974283
+   },
+   {
+    "district": "Sangareddy",
+    "season": "MAM",
+    "tmax_offset": -2.216607757697359,
+    "tmin_offset": 0.05927227407261948
+   },
+   {
+    "district": "Sangareddy",
+    "season": "ON",
+    "tmax_offset": -2.0346885792327494,
+    "tmin_offset": -0.25577820289764686
+   },
+   {
+    "district": "Siddipet",
+    "season": "DJF",
+    "tmax_offset": -2.4703703133343473,
+    "tmin_offset": 1.206456420926625
+   },
+   {
+    "district": "Siddipet",
+    "season": "JJAS",
+    "tmax_offset": -2.065996254814996,
+    "tmin_offset": 0.5801889454297897
+   },
+   {
+    "district": "Siddipet",
+    "season": "MAM",
+    "tmax_offset": -2.8636427109944074,
+    "tmin_offset": 0.42724497928711525
+   },
+   {
+    "district": "Siddipet",
+    "season": "ON",
+    "tmax_offset": -2.5741068153867737,
+    "tmin_offset": 0.8216497539388243
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "season": "DJF",
+    "tmax_offset": -1.789229310792068,
+    "tmin_offset": 0.2127242905753
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "season": "JJAS",
+    "tmax_offset": 0.033801472425895186,
+    "tmin_offset": 1.1175625907050237
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "season": "MAM",
+    "tmax_offset": -1.1227587096357114,
+    "tmin_offset": 0.2702875680969533
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "season": "ON",
+    "tmax_offset": -0.9700479031477687,
+    "tmin_offset": 0.5408554910962048
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "DJF",
+    "tmax_offset": 0.28326032948611407,
+    "tmin_offset": 1.2096690565494481
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "JJAS",
+    "tmax_offset": 0.8086523472937078,
+    "tmin_offset": 1.3083559526120376
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "MAM",
+    "tmax_offset": 1.0772253437318662,
+    "tmin_offset": 1.8329013059680588
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "season": "ON",
+    "tmax_offset": 0.23150763867765603,
+    "tmin_offset": 0.9157802679065363
+   },
+   {
+    "district": "Srikakulam",
+    "season": "DJF",
+    "tmax_offset": -0.8442044864147169,
+    "tmin_offset": 2.2371735192284796
+   },
+   {
+    "district": "Srikakulam",
+    "season": "JJAS",
+    "tmax_offset": -0.5481664282376649,
+    "tmin_offset": 2.215771054266146
+   },
+   {
+    "district": "Srikakulam",
+    "season": "MAM",
+    "tmax_offset": -2.3785172923175613,
+    "tmin_offset": 1.7067177800164706
+   },
+   {
+    "district": "Srikakulam",
+    "season": "ON",
+    "tmax_offset": -0.6817132432169819,
+    "tmin_offset": 2.3221323576129853
+   },
+   {
+    "district": "Suryapet",
+    "season": "DJF",
+    "tmax_offset": -0.8714042226669236,
+    "tmin_offset": 1.5431782370130418
+   },
+   {
+    "district": "Suryapet",
+    "season": "JJAS",
+    "tmax_offset": -0.6491229660089767,
+    "tmin_offset": 1.1889331859317633
+   },
+   {
+    "district": "Suryapet",
+    "season": "MAM",
+    "tmax_offset": -1.1052528855881252,
+    "tmin_offset": 0.8274122150623855
+   },
+   {
+    "district": "Suryapet",
+    "season": "ON",
+    "tmax_offset": -1.0622547253884904,
+    "tmin_offset": 1.3201183211390874
+   },
+   {
+    "district": "Tirupati",
+    "season": "DJF",
+    "tmax_offset": -1.2467881747654506,
+    "tmin_offset": -0.8105797253218778
+   },
+   {
+    "district": "Tirupati",
+    "season": "JJAS",
+    "tmax_offset": -0.5793675886477277,
+    "tmin_offset": 0.33313342617292
+   },
+   {
+    "district": "Tirupati",
+    "season": "MAM",
+    "tmax_offset": 0.05339633232153551,
+    "tmin_offset": -0.3219611932690017
+   },
+   {
+    "district": "Tirupati",
+    "season": "ON",
+    "tmax_offset": -1.18798489249252,
+    "tmin_offset": -0.410785557620078
+   },
+   {
+    "district": "Vikarabad",
+    "season": "DJF",
+    "tmax_offset": -2.201295743669782,
+    "tmin_offset": 0.7705672548322254
+   },
+   {
+    "district": "Vikarabad",
+    "season": "JJAS",
+    "tmax_offset": -3.1285325774729578,
+    "tmin_offset": -0.4413020611677882
+   },
+   {
+    "district": "Vikarabad",
+    "season": "MAM",
+    "tmax_offset": -2.974730748254896,
+    "tmin_offset": -0.2882850444259275
+   },
+   {
+    "district": "Vikarabad",
+    "season": "ON",
+    "tmax_offset": -2.6925796307284107,
+    "tmin_offset": 0.1336173069715934
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "DJF",
+    "tmax_offset": -0.9720953213170244,
+    "tmin_offset": 1.7865914636057585
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "JJAS",
+    "tmax_offset": -0.4861161775710586,
+    "tmin_offset": 1.4926842472375197
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "MAM",
+    "tmax_offset": -1.1434103767653019,
+    "tmin_offset": 1.0848355316309537
+   },
+   {
+    "district": "Visakhapatnam",
+    "season": "ON",
+    "tmax_offset": -1.0586555640771307,
+    "tmin_offset": 1.7462867462352758
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "DJF",
+    "tmax_offset": -0.022529609567426116,
+    "tmin_offset": 1.9118040611004008
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "JJAS",
+    "tmax_offset": 0.4459137174818251,
+    "tmin_offset": 1.5745142236650531
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "MAM",
+    "tmax_offset": 0.20856000236842945,
+    "tmin_offset": 1.2596163307411081
+   },
+   {
+    "district": "Vizianagaram",
+    "season": "ON",
+    "tmax_offset": -0.35111215032080706,
+    "tmin_offset": 1.6654839058825661
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "DJF",
+    "tmax_offset": -1.0368515028742145,
+    "tmin_offset": 1.1542558155623563
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "JJAS",
+    "tmax_offset": -2.235823847383315,
+    "tmin_offset": 0.40017490074282785
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "MAM",
+    "tmax_offset": -1.8364034744852409,
+    "tmin_offset": 0.5500035636091002
+   },
+   {
+    "district": "Wanaparthy",
+    "season": "ON",
+    "tmax_offset": -1.411318188721148,
+    "tmin_offset": 0.8388978933810318
+   },
+   {
+    "district": "Warangal",
+    "season": "DJF",
+    "tmax_offset": -1.991601267001899,
+    "tmin_offset": 0.5011831631214162
+   },
+   {
+    "district": "Warangal",
+    "season": "JJAS",
+    "tmax_offset": -1.6789043867740039,
+    "tmin_offset": 0.6132501258224737
+   },
+   {
+    "district": "Warangal",
+    "season": "MAM",
+    "tmax_offset": -1.9609292140905408,
+    "tmin_offset": 0.3920257416324338
+   },
+   {
+    "district": "Warangal",
+    "season": "ON",
+    "tmax_offset": -1.9566080951516964,
+    "tmin_offset": 0.27603817541959735
+   },
+   {
+    "district": "West Godavari",
+    "season": "DJF",
+    "tmax_offset": -0.28163324318495875,
+    "tmin_offset": 0.680792890746018
+   },
+   {
+    "district": "West Godavari",
+    "season": "JJAS",
+    "tmax_offset": -1.602867035092769,
+    "tmin_offset": 0.6886120016240466
+   },
+   {
+    "district": "West Godavari",
+    "season": "MAM",
+    "tmax_offset": -1.2760642378802463,
+    "tmin_offset": 0.833408912713977
+   },
+   {
+    "district": "West Godavari",
+    "season": "ON",
+    "tmax_offset": -1.1834019589728129,
+    "tmin_offset": 0.36058520610649514
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "DJF",
+    "tmax_offset": 0.503060879730826,
+    "tmin_offset": 1.0587367987985095
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "JJAS",
+    "tmax_offset": 0.6226965072159342,
+    "tmin_offset": 1.4443269851212075
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "MAM",
+    "tmax_offset": 1.6703556867037415,
+    "tmin_offset": 1.5786135549130647
+   },
+   {
+    "district": "YSR Kadapa",
+    "season": "ON",
+    "tmax_offset": 0.47360565519072323,
+    "tmin_offset": 1.0906320478095384
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "DJF",
+    "tmax_offset": -1.9908725710337973,
+    "tmin_offset": 0.5457202707018172
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "JJAS",
+    "tmax_offset": -1.711334114213676,
+    "tmin_offset": 0.6224580122039183
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "MAM",
+    "tmax_offset": -2.2920908494847985,
+    "tmin_offset": -0.2205586438017767
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "season": "ON",
+    "tmax_offset": -1.9725756466280133,
+    "tmin_offset": 0.757518700563191
+   }
+  ],
+  "corrected_variant": "et0_hs_om_bc (diagnostic lane; primary et0_pm_api PINNED, unchanged)"
+ },
+ "wb_r2": {
+  "named": [
+   "Alluri Sitharama Raju",
+   "Parvathipuram Manyam",
+   "Mulugu",
+   "Bhadradri Kothagudem"
+  ],
+  "empirical": [
+   "Alluri Sitharama Raju",
+   "Dr B R Ambedkar Konaseema",
+   "Hyderabad",
+   "Jangaon",
+   "Kamareddy",
+   "Mahabubnagar",
+   "Medak",
+   "Medchal Malikajgiri",
+   "Nagarkurnool",
+   "Narayanpet",
+   "Nirmal",
+   "Rangareddy",
+   "Sangareddy",
+   "Siddipet",
+   "Vikarabad"
+  ],
+  "tagged": [
+   "Alluri Sitharama Raju",
+   "Bhadradri Kothagudem",
+   "Dr B R Ambedkar Konaseema",
+   "Hyderabad",
+   "Jangaon",
+   "Kamareddy",
+   "Mahabubnagar",
+   "Medak",
+   "Medchal Malikajgiri",
+   "Mulugu",
+   "Nagarkurnool",
+   "Narayanpet",
+   "Nirmal",
+   "Parvathipuram Manyam",
+   "Rangareddy",
+   "Sangareddy",
+   "Siddipet",
+   "Vikarabad"
+  ],
+  "n_tagged": 18,
+  "low_relief": [
+   "Adilabad",
+   "Anakapalli",
+   "Anantapur",
+   "Annamayya",
+   "Bapatla",
+   "Chittoor",
+   "East Godavari",
+   "Eluru",
+   "Guntur",
+   "Hanumakonda",
+   "Jagtial",
+   "Jayashankar Bhupalpally",
+   "Jogulamba Gadwal",
+   "Kakinada",
+   "Karimnagar",
+   "Khammam",
+   "Krishna",
+   "Kumuram Bheem Asifabad",
+   "Kurnool",
+   "Mahabubabad",
+   "Mancherial",
+   "NTR",
+   "Nalgonda",
+   "Nandyal",
+   "Nizamabad",
+   "Palnadu",
+   "Peddapalli",
+   "Prakasam",
+   "Rajanna Sircilla",
+   "Sri Potti Sriramulu Nellore",
+   "Sri Sathya Sai",
+   "Srikakulam",
+   "Suryapet",
+   "Tirupati",
+   "Visakhapatnam",
+   "Vizianagaram",
+   "Wanaparthy",
+   "Warangal",
+   "West Godavari",
+   "YSR Kadapa",
+   "Yadadri Bhuvanagiri"
+  ],
+  "n_low_relief": 41,
+  "checks": {
+   "full::tmax_overall": {
+    "n": 193933,
+    "bias": -1.29,
+    "rmse": 2.059,
+    "r": 0.9132
+   },
+   "full::tmin_overall": {
+    "n": 193933,
+    "bias": 0.689,
+    "rmse": 1.487,
+    "r": 0.9344
+   },
+   "full::tmax_monsoon": {
+    "n": 64782,
+    "bias": -1.378,
+    "rmse": 2.172,
+    "r": 0.8529
+   },
+   "full::tmax_dry": {
+    "n": 129151,
+    "bias": -1.246,
+    "rmse": 2.0,
+    "r": 0.9288
+   },
+   "full::et0_method": {
+    "n": 193933,
+    "bias": 0.25,
+    "rmse": 0.759,
+    "r": 0.8819
+   },
+   "full::et0_source": {
+    "n": 193933,
+    "bias": -0.516,
+    "rmse": 0.716,
+    "r": 0.9064
+   },
+   "full::et0_worst": {
+    "n": 193933,
+    "bias": -0.267,
+    "rmse": 0.872,
+    "r": 0.8319
+   },
+   "lowrelief::tmax_overall": {
+    "n": 134767,
+    "bias": -0.921,
+    "rmse": 1.702,
+    "r": 0.9283
+   },
+   "lowrelief::tmin_overall": {
+    "n": 134767,
+    "bias": 0.883,
+    "rmse": 1.499,
+    "r": 0.9422
+   },
+   "lowrelief::tmax_monsoon": {
+    "n": 45018,
+    "bias": -0.97,
+    "rmse": 1.794,
+    "r": 0.8709
+   },
+   "lowrelief::tmax_dry": {
+    "n": 89749,
+    "bias": -0.896,
+    "rmse": 1.654,
+    "r": 0.9431
+   },
+   "lowrelief::et0_method": {
+    "n": 134767,
+    "bias": 0.252,
+    "rmse": 0.758,
+    "r": 0.8832
+   },
+   "lowrelief::et0_source": {
+    "n": 134767,
+    "bias": -0.45,
+    "rmse": 0.661,
+    "r": 0.9103
+   },
+   "lowrelief::et0_worst": {
+    "n": 134767,
+    "bias": -0.198,
+    "rmse": 0.848,
+    "r": 0.8366
+   }
+  },
+  "verdict_flips": []
+ },
+ "wb_r3": {
+  "n_districtmonths": 6372,
+  "n_flagged_total": 858,
+  "flagged_districts": [
+   {
+    "district": "Adilabad",
+    "n_months": 108,
+    "n_flagged": 7,
+    "mean_mad_pct": 8.221391670769757,
+    "max_mad_pct": 22.979062527690004
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "n_months": 108,
+    "n_flagged": 12,
+    "mean_mad_pct": 8.425466655125833,
+    "max_mad_pct": 25.154166598377124
+   },
+   {
+    "district": "Anakapalli",
+    "n_months": 108,
+    "n_flagged": 31,
+    "mean_mad_pct": 11.730261434249698,
+    "max_mad_pct": 24.88875727255776
+   },
+   {
+    "district": "Anantapur",
+    "n_months": 108,
+    "n_flagged": 40,
+    "mean_mad_pct": 12.00344396221054,
+    "max_mad_pct": 22.195816552011788
+   },
+   {
+    "district": "Annamayya",
+    "n_months": 108,
+    "n_flagged": 12,
+    "mean_mad_pct": 8.466197758293701,
+    "max_mad_pct": 19.69941107278328
+   },
+   {
+    "district": "Bapatla",
+    "n_months": 108,
+    "n_flagged": 24,
+    "mean_mad_pct": 9.366647926691652,
+    "max_mad_pct": 24.655815003542088
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "n_months": 108,
+    "n_flagged": 8,
+    "mean_mad_pct": 5.952391585418623,
+    "max_mad_pct": 31.720418867782023
+   },
+   {
+    "district": "Chittoor",
+    "n_months": 108,
+    "n_flagged": 6,
+    "mean_mad_pct": 5.0489597958154135,
+    "max_mad_pct": 22.233058212421387
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "n_months": 108,
+    "n_flagged": 27,
+    "mean_mad_pct": 9.93674573331523,
+    "max_mad_pct": 30.93253521278439
+   },
+   {
+    "district": "East Godavari",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 5.4476185426773025,
+    "max_mad_pct": 21.292275413782576
+   },
+   {
+    "district": "Eluru",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 4.87343504358774,
+    "max_mad_pct": 20.741997048584043
+   },
+   {
+    "district": "Guntur",
+    "n_months": 108,
+    "n_flagged": 2,
+    "mean_mad_pct": 4.311268963610944,
+    "max_mad_pct": 17.68790815616265
+   },
+   {
+    "district": "Hanumakonda",
+    "n_months": 108,
+    "n_flagged": 9,
+    "mean_mad_pct": 7.393277470360186,
+    "max_mad_pct": 20.27842711842614
+   },
+   {
+    "district": "Hyderabad",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 7.747822695528662,
+    "max_mad_pct": 18.12839383625482
+   },
+   {
+    "district": "Jagtial",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 8.272805588427742,
+    "max_mad_pct": 21.58123756747371
+   },
+   {
+    "district": "Jangaon",
+    "n_months": 108,
+    "n_flagged": 8,
+    "mean_mad_pct": 7.555547141204995,
+    "max_mad_pct": 19.97005673745143
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "n_months": 108,
+    "n_flagged": 5,
+    "mean_mad_pct": 5.891872253492937,
+    "max_mad_pct": 24.26205852118478
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 7.812789534016077,
+    "max_mad_pct": 16.73777849051494
+   },
+   {
+    "district": "Kakinada",
+    "n_months": 108,
+    "n_flagged": 44,
+    "mean_mad_pct": 13.407715081718127,
+    "max_mad_pct": 33.0687002076268
+   },
+   {
+    "district": "Kamareddy",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.821562419334665,
+    "max_mad_pct": 22.67737388446699
+   },
+   {
+    "district": "Karimnagar",
+    "n_months": 108,
+    "n_flagged": 9,
+    "mean_mad_pct": 7.384020583917437,
+    "max_mad_pct": 22.164983455797177
+   },
+   {
+    "district": "Khammam",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 4.7200967786338985,
+    "max_mad_pct": 22.482010973657555
+   },
+   {
+    "district": "Krishna",
+    "n_months": 108,
+    "n_flagged": 1,
+    "mean_mad_pct": 3.9368567318874166,
+    "max_mad_pct": 17.785437107156515
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "n_months": 108,
+    "n_flagged": 8,
+    "mean_mad_pct": 6.747104904744174,
+    "max_mad_pct": 27.884490053440107
+   },
+   {
+    "district": "Kurnool",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 8.4062815634243,
+    "max_mad_pct": 18.867047205481928
+   },
+   {
+    "district": "Mahabubabad",
+    "n_months": 108,
+    "n_flagged": 7,
+    "mean_mad_pct": 6.528253394988762,
+    "max_mad_pct": 23.95713148475255
+   },
+   {
+    "district": "Mahabubnagar",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.704305255780199,
+    "max_mad_pct": 22.88790915532082
+   },
+   {
+    "district": "Mancherial",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 6.338707432992812,
+    "max_mad_pct": 22.837657776440654
+   },
+   {
+    "district": "Medak",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 8.16233051136712,
+    "max_mad_pct": 21.928598462657824
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.491544752525726,
+    "max_mad_pct": 19.78462246167482
+   },
+   {
+    "district": "Mulugu",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 6.357148840554769,
+    "max_mad_pct": 23.682811106201584
+   },
+   {
+    "district": "NTR",
+    "n_months": 108,
+    "n_flagged": 2,
+    "mean_mad_pct": 4.015812036704623,
+    "max_mad_pct": 18.642573252655076
+   },
+   {
+    "district": "Nagarkurnool",
+    "n_months": 108,
+    "n_flagged": 9,
+    "mean_mad_pct": 7.940922825551841,
+    "max_mad_pct": 17.13818887345189
+   },
+   {
+    "district": "Nalgonda",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 5.724376507093809,
+    "max_mad_pct": 18.850304981225086
+   },
+   {
+    "district": "Nandyal",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 5.5923099786861155,
+    "max_mad_pct": 22.120949993085386
+   },
+   {
+    "district": "Narayanpet",
+    "n_months": 108,
+    "n_flagged": 28,
+    "mean_mad_pct": 10.639490789201183,
+    "max_mad_pct": 21.368378003530953
+   },
+   {
+    "district": "Nirmal",
+    "n_months": 108,
+    "n_flagged": 19,
+    "mean_mad_pct": 9.14553901227313,
+    "max_mad_pct": 18.959687050753224
+   },
+   {
+    "district": "Nizamabad",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.987402841821567,
+    "max_mad_pct": 20.851368349044122
+   },
+   {
+    "district": "Palnadu",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 4.387177134434438,
+    "max_mad_pct": 19.234477908270208
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "n_months": 108,
+    "n_flagged": 47,
+    "mean_mad_pct": 13.769911205977246,
+    "max_mad_pct": 41.31421806214854
+   },
+   {
+    "district": "Peddapalli",
+    "n_months": 108,
+    "n_flagged": 13,
+    "mean_mad_pct": 8.891064299411832,
+    "max_mad_pct": 21.175010444527224
+   },
+   {
+    "district": "Prakasam",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 8.058409728224305,
+    "max_mad_pct": 23.778264697107094
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 7.005409839651119,
+    "max_mad_pct": 21.17319299681057
+   },
+   {
+    "district": "Rangareddy",
+    "n_months": 108,
+    "n_flagged": 13,
+    "mean_mad_pct": 7.517190517429653,
+    "max_mad_pct": 18.152057204106146
+   },
+   {
+    "district": "Sangareddy",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 8.62318515011657,
+    "max_mad_pct": 18.348687562340597
+   },
+   {
+    "district": "Siddipet",
+    "n_months": 108,
+    "n_flagged": 39,
+    "mean_mad_pct": 11.485464223654887,
+    "max_mad_pct": 22.714500559921476
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 6.8865880712350815,
+    "max_mad_pct": 25.05068031844942
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "n_months": 108,
+    "n_flagged": 11,
+    "mean_mad_pct": 9.454312329674561,
+    "max_mad_pct": 19.41939768788061
+   },
+   {
+    "district": "Srikakulam",
+    "n_months": 108,
+    "n_flagged": 31,
+    "mean_mad_pct": 10.395339814436504,
+    "max_mad_pct": 26.698020374556634
+   },
+   {
+    "district": "Suryapet",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 5.933678800827686,
+    "max_mad_pct": 18.890474654194684
+   },
+   {
+    "district": "Tirupati",
+    "n_months": 108,
+    "n_flagged": 2,
+    "mean_mad_pct": 4.004268686912487,
+    "max_mad_pct": 22.017783117846008
+   },
+   {
+    "district": "Vikarabad",
+    "n_months": 108,
+    "n_flagged": 38,
+    "mean_mad_pct": 12.017654105521698,
+    "max_mad_pct": 25.793970141937084
+   },
+   {
+    "district": "Visakhapatnam",
+    "n_months": 108,
+    "n_flagged": 45,
+    "mean_mad_pct": 13.728638601748742,
+    "max_mad_pct": 28.3624443482904
+   },
+   {
+    "district": "Vizianagaram",
+    "n_months": 108,
+    "n_flagged": 11,
+    "mean_mad_pct": 7.092843843740396,
+    "max_mad_pct": 21.909865862132655
+   },
+   {
+    "district": "Wanaparthy",
+    "n_months": 108,
+    "n_flagged": 16,
+    "mean_mad_pct": 9.2514327240956,
+    "max_mad_pct": 21.189646349224947
+   },
+   {
+    "district": "Warangal",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 7.483121318840757,
+    "max_mad_pct": 20.024818553891947
+   },
+   {
+    "district": "West Godavari",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 6.5451063284648905,
+    "max_mad_pct": 18.541519423350834
+   },
+   {
+    "district": "YSR Kadapa",
+    "n_months": 108,
+    "n_flagged": 12,
+    "mean_mad_pct": 8.149267884004123,
+    "max_mad_pct": 21.473850793709097
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "n_months": 108,
+    "n_flagged": 11,
+    "mean_mad_pct": 8.136684046648144,
+    "max_mad_pct": 19.596180388860702
+   }
+  ],
+  "rollup": [
+   {
+    "district": "Adilabad",
+    "n_months": 108,
+    "n_flagged": 7,
+    "mean_mad_pct": 8.221391670769757,
+    "max_mad_pct": 22.979062527690004
+   },
+   {
+    "district": "Alluri Sitharama Raju",
+    "n_months": 108,
+    "n_flagged": 12,
+    "mean_mad_pct": 8.425466655125833,
+    "max_mad_pct": 25.154166598377124
+   },
+   {
+    "district": "Anakapalli",
+    "n_months": 108,
+    "n_flagged": 31,
+    "mean_mad_pct": 11.730261434249698,
+    "max_mad_pct": 24.88875727255776
+   },
+   {
+    "district": "Anantapur",
+    "n_months": 108,
+    "n_flagged": 40,
+    "mean_mad_pct": 12.00344396221054,
+    "max_mad_pct": 22.195816552011788
+   },
+   {
+    "district": "Annamayya",
+    "n_months": 108,
+    "n_flagged": 12,
+    "mean_mad_pct": 8.466197758293701,
+    "max_mad_pct": 19.69941107278328
+   },
+   {
+    "district": "Bapatla",
+    "n_months": 108,
+    "n_flagged": 24,
+    "mean_mad_pct": 9.366647926691652,
+    "max_mad_pct": 24.655815003542088
+   },
+   {
+    "district": "Bhadradri Kothagudem",
+    "n_months": 108,
+    "n_flagged": 8,
+    "mean_mad_pct": 5.952391585418623,
+    "max_mad_pct": 31.720418867782023
+   },
+   {
+    "district": "Chittoor",
+    "n_months": 108,
+    "n_flagged": 6,
+    "mean_mad_pct": 5.0489597958154135,
+    "max_mad_pct": 22.233058212421387
+   },
+   {
+    "district": "Dr B R Ambedkar Konaseema",
+    "n_months": 108,
+    "n_flagged": 27,
+    "mean_mad_pct": 9.93674573331523,
+    "max_mad_pct": 30.93253521278439
+   },
+   {
+    "district": "East Godavari",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 5.4476185426773025,
+    "max_mad_pct": 21.292275413782576
+   },
+   {
+    "district": "Eluru",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 4.87343504358774,
+    "max_mad_pct": 20.741997048584043
+   },
+   {
+    "district": "Guntur",
+    "n_months": 108,
+    "n_flagged": 2,
+    "mean_mad_pct": 4.311268963610944,
+    "max_mad_pct": 17.68790815616265
+   },
+   {
+    "district": "Hanumakonda",
+    "n_months": 108,
+    "n_flagged": 9,
+    "mean_mad_pct": 7.393277470360186,
+    "max_mad_pct": 20.27842711842614
+   },
+   {
+    "district": "Hyderabad",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 7.747822695528662,
+    "max_mad_pct": 18.12839383625482
+   },
+   {
+    "district": "Jagtial",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 8.272805588427742,
+    "max_mad_pct": 21.58123756747371
+   },
+   {
+    "district": "Jangaon",
+    "n_months": 108,
+    "n_flagged": 8,
+    "mean_mad_pct": 7.555547141204995,
+    "max_mad_pct": 19.97005673745143
+   },
+   {
+    "district": "Jayashankar Bhupalpally",
+    "n_months": 108,
+    "n_flagged": 5,
+    "mean_mad_pct": 5.891872253492937,
+    "max_mad_pct": 24.26205852118478
+   },
+   {
+    "district": "Jogulamba Gadwal",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 7.812789534016077,
+    "max_mad_pct": 16.73777849051494
+   },
+   {
+    "district": "Kakinada",
+    "n_months": 108,
+    "n_flagged": 44,
+    "mean_mad_pct": 13.407715081718127,
+    "max_mad_pct": 33.0687002076268
+   },
+   {
+    "district": "Kamareddy",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.821562419334665,
+    "max_mad_pct": 22.67737388446699
+   },
+   {
+    "district": "Karimnagar",
+    "n_months": 108,
+    "n_flagged": 9,
+    "mean_mad_pct": 7.384020583917437,
+    "max_mad_pct": 22.164983455797177
+   },
+   {
+    "district": "Khammam",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 4.7200967786338985,
+    "max_mad_pct": 22.482010973657555
+   },
+   {
+    "district": "Krishna",
+    "n_months": 108,
+    "n_flagged": 1,
+    "mean_mad_pct": 3.9368567318874166,
+    "max_mad_pct": 17.785437107156515
+   },
+   {
+    "district": "Kumuram Bheem Asifabad",
+    "n_months": 108,
+    "n_flagged": 8,
+    "mean_mad_pct": 6.747104904744174,
+    "max_mad_pct": 27.884490053440107
+   },
+   {
+    "district": "Kurnool",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 8.4062815634243,
+    "max_mad_pct": 18.867047205481928
+   },
+   {
+    "district": "Mahabubabad",
+    "n_months": 108,
+    "n_flagged": 7,
+    "mean_mad_pct": 6.528253394988762,
+    "max_mad_pct": 23.95713148475255
+   },
+   {
+    "district": "Mahabubnagar",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.704305255780199,
+    "max_mad_pct": 22.88790915532082
+   },
+   {
+    "district": "Mancherial",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 6.338707432992812,
+    "max_mad_pct": 22.837657776440654
+   },
+   {
+    "district": "Medak",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 8.16233051136712,
+    "max_mad_pct": 21.928598462657824
+   },
+   {
+    "district": "Medchal Malikajgiri",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.491544752525726,
+    "max_mad_pct": 19.78462246167482
+   },
+   {
+    "district": "Mulugu",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 6.357148840554769,
+    "max_mad_pct": 23.682811106201584
+   },
+   {
+    "district": "NTR",
+    "n_months": 108,
+    "n_flagged": 2,
+    "mean_mad_pct": 4.015812036704623,
+    "max_mad_pct": 18.642573252655076
+   },
+   {
+    "district": "Nagarkurnool",
+    "n_months": 108,
+    "n_flagged": 9,
+    "mean_mad_pct": 7.940922825551841,
+    "max_mad_pct": 17.13818887345189
+   },
+   {
+    "district": "Nalgonda",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 5.724376507093809,
+    "max_mad_pct": 18.850304981225086
+   },
+   {
+    "district": "Nandyal",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 5.5923099786861155,
+    "max_mad_pct": 22.120949993085386
+   },
+   {
+    "district": "Narayanpet",
+    "n_months": 108,
+    "n_flagged": 28,
+    "mean_mad_pct": 10.639490789201183,
+    "max_mad_pct": 21.368378003530953
+   },
+   {
+    "district": "Nirmal",
+    "n_months": 108,
+    "n_flagged": 19,
+    "mean_mad_pct": 9.14553901227313,
+    "max_mad_pct": 18.959687050753224
+   },
+   {
+    "district": "Nizamabad",
+    "n_months": 108,
+    "n_flagged": 25,
+    "mean_mad_pct": 9.987402841821567,
+    "max_mad_pct": 20.851368349044122
+   },
+   {
+    "district": "Palnadu",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 4.387177134434438,
+    "max_mad_pct": 19.234477908270208
+   },
+   {
+    "district": "Parvathipuram Manyam",
+    "n_months": 108,
+    "n_flagged": 47,
+    "mean_mad_pct": 13.769911205977246,
+    "max_mad_pct": 41.31421806214854
+   },
+   {
+    "district": "Peddapalli",
+    "n_months": 108,
+    "n_flagged": 13,
+    "mean_mad_pct": 8.891064299411832,
+    "max_mad_pct": 21.175010444527224
+   },
+   {
+    "district": "Prakasam",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 8.058409728224305,
+    "max_mad_pct": 23.778264697107094
+   },
+   {
+    "district": "Rajanna Sircilla",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 7.005409839651119,
+    "max_mad_pct": 21.17319299681057
+   },
+   {
+    "district": "Rangareddy",
+    "n_months": 108,
+    "n_flagged": 13,
+    "mean_mad_pct": 7.517190517429653,
+    "max_mad_pct": 18.152057204106146
+   },
+   {
+    "district": "Sangareddy",
+    "n_months": 108,
+    "n_flagged": 14,
+    "mean_mad_pct": 8.62318515011657,
+    "max_mad_pct": 18.348687562340597
+   },
+   {
+    "district": "Siddipet",
+    "n_months": 108,
+    "n_flagged": 39,
+    "mean_mad_pct": 11.485464223654887,
+    "max_mad_pct": 22.714500559921476
+   },
+   {
+    "district": "Sri Potti Sriramulu Nellore",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 6.8865880712350815,
+    "max_mad_pct": 25.05068031844942
+   },
+   {
+    "district": "Sri Sathya Sai",
+    "n_months": 108,
+    "n_flagged": 11,
+    "mean_mad_pct": 9.454312329674561,
+    "max_mad_pct": 19.41939768788061
+   },
+   {
+    "district": "Srikakulam",
+    "n_months": 108,
+    "n_flagged": 31,
+    "mean_mad_pct": 10.395339814436504,
+    "max_mad_pct": 26.698020374556634
+   },
+   {
+    "district": "Suryapet",
+    "n_months": 108,
+    "n_flagged": 4,
+    "mean_mad_pct": 5.933678800827686,
+    "max_mad_pct": 18.890474654194684
+   },
+   {
+    "district": "Tirupati",
+    "n_months": 108,
+    "n_flagged": 2,
+    "mean_mad_pct": 4.004268686912487,
+    "max_mad_pct": 22.017783117846008
+   },
+   {
+    "district": "Vikarabad",
+    "n_months": 108,
+    "n_flagged": 38,
+    "mean_mad_pct": 12.017654105521698,
+    "max_mad_pct": 25.793970141937084
+   },
+   {
+    "district": "Visakhapatnam",
+    "n_months": 108,
+    "n_flagged": 45,
+    "mean_mad_pct": 13.728638601748742,
+    "max_mad_pct": 28.3624443482904
+   },
+   {
+    "district": "Vizianagaram",
+    "n_months": 108,
+    "n_flagged": 11,
+    "mean_mad_pct": 7.092843843740396,
+    "max_mad_pct": 21.909865862132655
+   },
+   {
+    "district": "Wanaparthy",
+    "n_months": 108,
+    "n_flagged": 16,
+    "mean_mad_pct": 9.2514327240956,
+    "max_mad_pct": 21.189646349224947
+   },
+   {
+    "district": "Warangal",
+    "n_months": 108,
+    "n_flagged": 10,
+    "mean_mad_pct": 7.483121318840757,
+    "max_mad_pct": 20.024818553891947
+   },
+   {
+    "district": "West Godavari",
+    "n_months": 108,
+    "n_flagged": 3,
+    "mean_mad_pct": 6.5451063284648905,
+    "max_mad_pct": 18.541519423350834
+   },
+   {
+    "district": "YSR Kadapa",
+    "n_months": 108,
+    "n_flagged": 12,
+    "mean_mad_pct": 8.149267884004123,
+    "max_mad_pct": 21.473850793709097
+   },
+   {
+    "district": "Yadadri Bhuvanagiri",
+    "n_months": 108,
+    "n_flagged": 11,
+    "mean_mad_pct": 8.136684046648144,
+    "max_mad_pct": 19.596180388860702
+   }
+  ]
+ },
+ "riders_panel_sha256": "f4688525d6e672e07881bc5b9356239f7b725c74b9b8ac5d49a67a063ee69436"
+}

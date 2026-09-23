@@ -297,3 +297,26 @@ Stage Summary:
 - Weather Backbone DELIVERED: ET0 panel (3 variants: PM-API, HS-OM, HS-IMD) + IMD 1-deg consistency all green. Foundation ready for backbone build under Task-54 conditions.
 - Founder-side gates unchanged: LGD polygons (now also the D#20 promotion trigger), pilot-12 selection, Task-55 WRIS provenance spot-check (incl. gwl_value unit/datum question).
 - Next registered: backbone build (Task-54 conditions) on 59-execution + this weather panel.
+
+---
+Task ID: 65-QWEN-WB-RIDERS
+Agent: Super Z (main agent)
+Task: Founder couriered Qwen review of the Weather Backbone: ACCEPT with 3 riders + amendment H-1 — file it, implement riders + H-1, proceed toward backbone build on 59-execution
+
+Work Log:
+- 16TH RESET detected on session open (scaffold .git only, b7a92c8 seed). Recovered via playbook #4 (clone --no-checkout + .git swap + reset --hard): zero loss at b52efc8. Seed .git backup removed after verification.
+- State reconstruction: remote was AHEAD of the archive summary — round already closed (Addendum 8, c4a066f) + Weather Backbone already DELIVERED (Task 64, 508dce0: ET0 panel + IMD consistency all green) + hygiene commit b52efc8 (LGD cookie untrack). The Qwen review arrived against THAT delivered backbone.
+- Environment rebuilt post-reset: python3 -m pip --break-system-packages pyet==1.5 + imdlib + pyarrow 25.0.1 (pip vs python3 interpreter mismatch diagnosed: plain pip installs to a different env).
+- ADDENDUM 9 written + committed + pushed FIRST (fa2592e): Qwen verdict verbatim; riders WB-R1/R2/R3 adopted; R1/R2 consequences + definitions PRE-STATED before computation (seasons DJF/MAM/JJAS/ON; regimes 2014-2018 vs 2019-2022; trip 1.0C; named terrain list ASR/Parvathipuram Manyam/Mulugu/Bhadradri Kothagudem; empirical tag 2.0C; MAD flag 15%; primary et0_pm_api PINNED, swap = AM-5).
+- H-1 IMPLEMENTED in fa2592e: credential globs in .gitignore (exposed 4 tracked credential-shaped files — root .env + 3 LGD cookie captures — all untracked, local copies kept); program/scripts/secret_scan.py (named-service patterns + generic credential-like file scan; fail-loud) + .git/hooks/pre-commit installed; full-tree scan CLEAN over 1,972 tracked files; agri_tws_ind/REPO_SWEEP_CHECKLIST.md created (S1 secret scan first, S2 hook reinstall post-reset, S3 sync, S4 sealed custody, S5 visibility, S6 regenerable integrity, S7 logs pushed).
+- DATA REGENERATION: build_weather_backbone.py --run re-downloaded IMD 1-deg (22 .GRD). First two attempts hit the Bash timeout mid-download + 2 transient IMD server failures (2022 tmax ConnectionReset, 2024 tmin ConnectTimeout) — caught by n-delta vs the reviewed report (exactly -365x59 district-days) BEFORE any commit; retry completed 22/22; regenerated report+manifest match the Qwen-reviewed version EXACTLY except build timestamp (deterministic reproduction proven).
+- RIDERS COMPUTED (program/scripts/weather_backbone_riders.py, selftest PASS): R1 = 6/16 aggregate trips + 252/472 district-season trips; bias concentrates in 2014-2018 (all-season trips) vs cleaner 2019-2022; consequence executed (flags + 236-cell offset table + et0_hs_om_bc diagnostic lane; primary pinned). R2 = 18/59 tagged (4 named + 14 empirical interior-Telangana/ERA5-cool-bias class); low-relief 41 districts: no verdict flips (tmax -1.29->-0.92, r .913->.928). R3 = 858/6,372 monthly MAD>15% flags across all 59 districts (PM-vs-HS method gap, monsoon-concentrated); logged, primary pinned, no AM-5 event.
+- Bugs fixed en route: riders HS engine list-input TypeError; missing et0_hs_om/et0_hs_imd columns in the daily frame (recomputed via identical pyet calls); operator-precedence bug ((mask & col) == val) zeroing the R1 aggregate table — caught by the impossible 0/16-trips-vs-pooled-bias check.
+- Results appended to Addendum 9 + this worklog; artifacts: weather_qa_riders.json + WEATHER_BACKBONE_RIDERS.md + weather_riders_monthly.parquet (gitignored, hash in manifest).
+
+Stage Summary:
+- Qwen review fully processed: ACCEPT filed, 3 riders implemented as QA layer on the delivered backbone (foundation untouched, primary pinned), H-1 implemented (scan CLEAN, checklist standing).
+- Backbone QA status HOLDS on the low-relief subset; two real findings logged honestly: (1) OM-vs-IMD bias is regime-structured (2014-2018 worse), (2) PM-vs-HS monthly divergence >15% in 13.5% of district-months.
+- No decision numbers consumed; AM-6 untouched (QA/covariate engineering only); D#22 intact; sealed lock discipline held (sealed extract absent post-reset — re-supply from founder original logged as next-need before any 2023+ work).
+- Repo visibility STILL public (private:false at API check 2026-09-23) vs private-by-rule — founder click-path outstanding, standing record Addendum 6.
+- Next registered: backbone build under Task-54 conditions on 59-execution; smoke test needs its own DECISION_LOG entry BEFORE it runs (Day-2 guardrail).

@@ -1265,3 +1265,50 @@ directive: backbone build under Task-54 conditions on 59-execution;
 the pseudo-target smoke test gets its OWN DECISION_LOG entry BEFORE
 it runs (Day-2 guardrail). Rider RESULTS appended below after the
 run, in a separate commit.
+
+RIDER RESULTS (appended after the run; pre-state provable at
+commit fa2592e; script weather_backbone_riders.py, selftest PASS):
+- WB-R1: aggregate trips 6/16 (tmax: DJF -1.36 / MAM -1.42 / JJAS
+  -1.74 / ON -1.71 in the 2014-2018 regime, ON -1.10 in 2019-2022;
+  tmin: DJF 2014-2018 +1.08). District-season trips 252/472; worst
+  cells ASR ON tmax -5.79, ASR JJAS -5.29, ASR MAM -4.33. STRUCTURE
+  FOUND (the reason the rider asked for regimes): the OM-vs-IMD
+  temperature bias concentrates in 2014-2018 — every season trips
+  there — while 2019-2022 is materially cleaner (tmax cells -0.91
+  to -1.10 vs -1.36 to -1.74). Pre-stated consequence EXECUTED:
+  SEASONAL_TEMP_BIAS flags at both granularities + OM-to-IMD offset
+  table (236 district-season cells, open window only, hashed) +
+  et0_hs_om_bc diagnostic lane carried in
+  weather_riders_monthly.parquet. Primary et0_pm_api PINNED,
+  unchanged; no AM-5 event.
+- WB-R2: REPRESENTATIVENESS_LIMITED = 18 of 59 = 4 named terrain
+  (ASR, Parvathipuram Manyam, Mulugu, Bhadradri Kothagudem) + 14
+  empirical (|tmax bias| >= 2.0C: interior Telangana plateau +
+  Dr B R Ambedkar Konaseema — the ERA5 daytime-cool-bias class,
+  not Ghats terrain; per-district reason recorded in the manifest).
+  Low-relief subset (41 districts): tmax bias -1.29 -> -0.92, r
+  .913 -> .928; tmin +0.69 -> +0.88, r .934 -> .942; ET0 checks
+  essentially unchanged. VERDICT FLIPS: NONE — backbone QA status
+  holds on the low-relief subset (pre-stated re-open condition not
+  triggered).
+- WB-R3: divergence log over 6,372 open-window district-months:
+  858 monthly-MAD>15% QA flags (13.5%), occurring in ALL 59
+  districts (worst mean MAD: Parvathipuram Manyam 13.8%,
+  Visakhapatnam 13.7%, Kakinada 13.4%; worst single month 41.3%).
+  Pattern = the known PM-vs-HS method gap (PM consumes
+  radiation/wind/RH; HS is temperature-only), largest in monsoon
+  months. Flags logged per the pre-stated rule in
+  weather_qa_riders.json + the riders panel; primary stays pinned;
+  a swap would be the AM-5 event — not triggered.
+- ARTIFACTS: program/data/manifests/weather_qa_riders.json (tables
+  + rules + input SHA256s) | agri_tws_ind/WEATHER_BACKBONE_RIDERS.md
+  (human-readable) | program/data/parquet/
+  weather_riders_monthly.parquet (gitignored, hash in manifest) |
+  program/scripts/weather_backbone_riders.py.
+- REGENERATION NOTE: post-reset IMD re-download hit 2 transient
+  failures (2022 tmax ConnectionReset, 2024 tmin ConnectTimeout),
+  caught by the n-delta vs the Qwen-reviewed report (exactly
+  -365 x 59 district-days) BEFORE any commit; retry completed all
+  22 files; the regenerated report matches the reviewed one
+  EXACTLY except the build timestamp (deterministic reproduction
+  confirmed; intermediate bad state never committed or pushed).
