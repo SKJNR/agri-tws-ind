@@ -52,3 +52,6 @@ id_rsa*
 id_ed25519*
 .vscode/
 .idea/
+# exception: the H-1 scanner itself must stay tracked
+# (was silently self-excluded by *secret* in fa2592e; founder audit caught it)
+!program/scripts/secret_scan.py

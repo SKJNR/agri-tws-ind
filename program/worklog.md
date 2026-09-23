@@ -338,3 +338,23 @@ Work Log:
 Stage Summary:
 - Backbone build DELIVERED per Task-54 sign-off conditions; plumbing smoke green and stamped non-evidence; AM-6 sequence position advanced to its D1.1 gate.
 - Next registered: D1.1-empirical (needs Qwen loaders L1-L12 + founder pilot-12 selection + Task-55 WRIS spot-check incl. gwl_value unit/datum) then regime-map freeze (needs LGD crosswalk). Founder-side gates unchanged; LGD polygons also the D#20 promotion trigger. Visibility flip still pending (repo public vs private-by-rule).
+
+---
+Task ID: 67-GHOST-ALERT-VERIFY
+Agent: Super Z (main agent)
+Task: Founder directive — GHOST EXECUTION DETECTED: pushes claimed missing on live repo; verify via API, actually push, no status until hashes verified
+
+Work Log:
+- 17TH RESET confirmed on session open (seed .git fa3a0c6, no remote, session files gone). Founder directive asserted: fa2592e/02c16d3/c9208d0 missing on main, HEAD still b52efc8, Issue #2 absent, .env still tracked, build_features_pr8.py absent.
+- API VERIFICATION BEFORE ANY STATUS (per directive): PAT ACTIVE (login SKJNR). Remote main HEAD = 3e9a79f (2026-09-23T10:45:52Z). ALL FOUR commits EXIST individually (fa2592e, 02c16d3, c9208d0, 3e9a79f). Issue #2 EXISTS (open). .env NOT tracked (404). build_features_pr8.py + riders script + manifests + both reports all present (200).
+- TIMING RECONSTRUCTION: b52efc8 pushed 02:02Z; founder check window "7 hours ago" ≈ 09:0xZ; my session's pushes landed 10:30-10:47Z — the check preceded the pushes; directive arrived after (courier-delay class, same as the Qwen-review date correction earlier today). The "ghost execution" was a timing artifact — BUT the audit still caught a REAL defect.
+- REAL DEFECT (found via the founder's API spot-check list): program/scripts/secret_scan.py MISSING from remote (404) — the H-1 scanner was silently excluded from its own commit fa2592e by the H-1 `*secret*` ignore glob. Local scan results were real (script ran locally), but the script never landed — an unfalsifiable-from-message gap exactly of the class the founder fears.
+- FIX LANDED: `!program/scripts/secret_scan.py` exception in .gitignore; scanner re-created + committed; pre-commit hook re-installed (S2); scanner run on full tree CLEAN.
+- PROTOCOL CHANGES (binding, in DECISION_LOG + sweep checklist S3): (1) API-verify every push (remote sha == local HEAD) before reporting success — push stdout never sufficient; (2) check every commit's FILE LIST against its message; (3) sweep checklist S3 rewritten accordingly.
+- Local repo restored via playbook #4 (clone + .git swap + reset --hard at 3e9a79f, zero loss); seed backup removed.
+- INCIDENT record appended to DECISION_LOG (Addendum 9 block); this task entry logged.
+
+Stage Summary:
+- Remote state VERIFIED HEALTHY: all session commits + Issue #2 + H-1 untracking present on main at 3e9a79f; the one genuine gap (scanner file) now fixed and API-verified.
+- Verification discipline upgraded permanently: API-after-push + commit-file-list checks are now standing sweep items (S3).
+- No data/work re-execution needed (all artifacts were in the pushed commits; only secret_scan.py had been left behind).

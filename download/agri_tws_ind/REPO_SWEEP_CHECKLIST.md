@@ -25,13 +25,24 @@ any reset / recovery (playbook #4):
 printf '#!/bin/sh\nexec python3 "$(git rev-parse --show-toplevel)/program/scripts/secret_scan.py" --staged\n' > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
 ```
 
-## S3 — Remote sync + branch state
+## S3 — Remote sync + branch state + PUSH VERIFICATION
 
 - `git fetch origin`; `git status -sb` — main must be in sync with
   origin/main (ahead/behind = investigate before working).
+- **PROTOCOL (2026-09-23 ghost-execution incident): push stdout is
+  NEVER sufficient evidence. After EVERY push, verify the remote
+  HEAD via the GitHub API before reporting success:**
+  `curl -s -H "Authorization: Bearer $PAT" https://api.github.com/repos/SKJNR/agri-tws-ind/commits/main` — the returned sha must equal
+  the local `git rev-parse HEAD`. Sandbox resets + courier delays
+  can otherwise produce an unfalsifiable success narrative.
 - No untracked anomalies beyond KNOWN regenerables
   (`program/data/{raw,split,parquet,imd}/`, `my-project/` scaffold,
   `.git_seed_backup/` leftovers).
+- Commit-file-list check: `git show --stat --name-only HEAD` must
+  contain every file the commit message claims (the fa2592e incident:
+  secret_scan.py was silently excluded from its own commit by the
+  `*secret*` glob — the message said implemented, the tree said
+  otherwise).
 
 ## S4 — Sealed custody (D#21)
 

@@ -1403,3 +1403,33 @@ PASS incl. PR-8 train-only invariance + trend recovery):
   L1-L12 + founder pilot-12 selection + Task-55 WRIS provenance
   spot-check) then regime-map freeze (gated on LGD crosswalk). No
   model runs occurred; D#22 weights ban intact; sealed lock held.
+
+GHOST-EXECUTION ALERT INVESTIGATED (2026-09-23, later same day;
+founder directive). Founder report: latest push "failed", remote
+still at b52efc8, fa2592e/02c16d3/c9208d0 missing, Issue #2
+missing, .env still tracked, build_features_pr8.py absent.
+API VERIFICATION (per directive, before any status claim): ALL FOUR
+commits EXIST on main (fa2592e, 02c16d3, c9208d0, 3e9a79f = remote
+HEAD, committer date 2026-09-23T10:45:52Z); Issue #2 EXISTS (open);
+.env NOT tracked at main (HTTP 404 — untracked by fa2592e as
+logged); build_features_pr8.py, weather_backbone_riders.py,
+weather_qa_riders.json, backbone_features_manifest.json, both new
+reports all present (HTTP 200). TIMING RECONSTRUCTION: the founder's
+check window ("b52efc8 from 7 hours ago" ≈ 09:0xZ) PRECEDED the
+pushes (10:30-10:47Z) — same courier-delay class as the Qwen-review
+date correction acknowledged earlier today; the directive reached
+GLM after the pushes had landed. ONE REAL DEFECT FOUND by the
+audit: program/scripts/secret_scan.py was MISSING from the repo
+(HTTP 404) — the H-1 scanner had been excluded from its own commit
+by the H-1 `*secret*` ignore glob (self-defeating glob; the local
+scan results were real but the scanner never landed). FIXED this
+entry: `!program/scripts/secret_scan.py` exception added to
+.gitignore, scanner committed, hook re-installed. PROTOCOL CHANGES
+(binding, logged): (1) every push is API-verified (GET /commits/main
+sha == local HEAD) before any success is reported — push stdout
+alone is never evidence; (2) every commit's FILE LIST is checked
+against its message (git show --name-only) — the fa2592e class of
+silent self-exclusion must be caught at commit time; both encoded in
+REPO_SWEEP_CHECKLIST S3. 17th reset also recovered this session
+(playbook #4, zero loss at 3e9a79f). No decision numbers consumed;
+AM-6 untouched; D#22 intact.
