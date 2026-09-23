@@ -19,3 +19,10 @@ program/data/split/
 program/data/parquet/
 my-project/
 program/data/imd/
+# hygiene: session-token files never tracked; build caches stay local
+scripts/q57a_results/lgd_cookies.txt
+__pycache__/
+*.pyc
+scripts/a14a_cache_*.npy
+scripts/tb_acf.npy
+scripts/bv2_coefs.npy
