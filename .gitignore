@@ -26,3 +26,29 @@ __pycache__/
 scripts/a14a_cache_*.npy
 scripts/tb_acf.npy
 scripts/bv2_coefs.npy
+
+# H-1 credential hygiene (Qwen amendment, Addendum 9, 2026-09-23):
+# credential-shaped files are NEVER tracked, regardless of location.
+.env
+.env.*
+*.env
+.envrc
+*token*
+*Token*
+*secret*
+*Secret*
+*credential*
+*Credential*
+*_pat.txt
+*.pat
+*.pem
+*.key
+*.keystore
+*.jks
+*.p12
+*cookies*.txt
+*JSESSIONID*
+id_rsa*
+id_ed25519*
+.vscode/
+.idea/

@@ -1154,3 +1154,114 @@ No decision numbers consumed beyond the D#20 amendment itself;
 AM-6 untouched (no model runs — ET0/backbone is covariate
 engineering, explicitly the registered next step); sealed lock
 held; D#22 weights ban intact.
+
+## ADDENDUM 9 — 2026-09-23 (GLM; Qwen external review of the Weather Backbone: ACCEPT + 3 riders + hygiene amendment H-1; rider consequences PRE-STATED before computation)
+
+EXTERNAL VERDICT (courier, founder-relayed, true receipt 2026-09-23
+— date correction acknowledged): QWEN REVIEW — WEATHER BACKBONE:
+ACCEPT WITH 3 RIDERS + 1 AMENDMENT.
+- Rider 1: season × regime bias-decomposition table for IMD-vs-OM
+  temperature, consequence pre-stated at >1.0°C seasonal deviation.
+- Rider 2: REPRESENTATIVENESS_LIMITED tag for terrain districts in
+  the QA manifest (ASR et al.), consistency verdicts computed on
+  low-relief subset.
+- Rider 3: primary ET0 pinned = Open-Meteo (hash-frozen foundation),
+  pyet FAO-56 = consistency artifact, per-district divergence
+  logged, >15% monthly MAD ⇒ QA flag; swap = AM-5 amendment.
+- Amendment H-1: secret-scan on commit + credential globs in
+  .gitignore + sweep-review checklist item.
+- Sealed custody double-verification noted and approved. Proceed to
+  backbone build on 59-execution basis; riders land as DECISION_LOG
+  entries, not blockers.
+
+GLM PROCESSING — ACCEPTANCE RECORDED. Riders adopted as binding
+entries WB-R1/R2/R3 (QA layer on the delivered backbone; foundation
+untouched, nothing rebuilds); H-1 adopted AND IMPLEMENTED in this
+addendum's commit. Both R1 and R2 consequences are PRE-REGISTERED
+BELOW before any rider computation runs (log-before-run; results
+appended in a follow-up commit with the pre-state provable in
+history).
+
+WB-R1 — SEASON × REGIME BIAS-DECOMPOSITION (definitions + trip rule
++ consequence, all pre-stated):
+- season = IMD convention {DJF, MAM, JJAS (monsoon), ON
+  (post-monsoon)}; regime = {2014-2018, 2019-2022} (ERA5
+  final-release vs ERA5T-adjacent publication halves of the open
+  window; boundary pre-registered at the open-window midpoint
+  BEFORE looking at any season×regime cell).
+- Table: OM−IMD mean bias for tmax and tmin at BOTH granularities —
+  aggregate (4 seasons × 2 regimes × 2 variables = 16 cells) and
+  per-district×season (59 × 4 × 2). Open window only (D#21).
+- TRIP RULE: aggregate cell |bias| > 1.0°C, or district×season cell
+  |bias| > 1.0°C.
+- CONSEQUENCE IF TRIPPED (pre-stated, mechanical): (a) QA-manifest
+  flags SEASONAL_TEMP_BIAS at tripped granularity; (b) per-district-
+  season OM→IMD offset table computed (open window only) and hashed
+  into the manifest; (c) a bias-corrected ET0 VARIANT (Hargreaves on
+  offset-corrected OM temps) is produced as a DIAGNOSTIC lane
+  carried alongside the panel — the pinned primary (OM PM-API,
+  hash-frozen) does NOT change; promotion of any variant = AM-5-class
+  amendment with founder/Qwen review, never silent; (d) trip count +
+  worst cells reported in the next courier.
+
+WB-R2 — REPRESENTATIVENESS_LIMITED TAGS + LOW-RELIEF VERDICTS
+(rule pre-stated before this session's per-district computation):
+- Tag rule = NAMED TERRAIN LIST ∪ EMPIRICAL TRIP. Named (high-
+  confidence Eastern Ghats agency / upper-Godavari gorge geography,
+  declared upfront): Alluri Sitharama Raju, Parvathipuram Manyam,
+  Mulugu, Bhadradri Kothagudem. Empirical: |OM−IMD tmax bias| ≥
+  2.0°C (open window) — the observed ASR class (-4.89°C, Task 64);
+  any additional district it catches gets the tag with the empirical
+  reason recorded.
+- Low-relief subset = the complement (neither criterion). The seven
+  delivered headline consistency checks recomputed on the low-relief
+  subset; BOTH full-set and low-relief numbers reported.
+- CONSEQUENCE (pre-stated): if any check flips CONSISTENT→FLAG on
+  the low-relief subset, the backbone QA status re-opens for courier
+  review — no silent pass.
+
+WB-R3 — PRIMARY ET0 PINNED + DIVERGENCE LOG:
+- PRIMARY = et0_pm_api (Open-Meteo API FAO-56 Penman-Monteith
+  column on the hash-frozen Day-1 foundation). PINNED: any swap
+  (IMD-HS, bias-corrected variant, anything else) = AM-5-class
+  amendment (feature-freeze procedure) — never silent, never
+  routine.
+- CONSISTENCY ARTIFACT = pyet ET0 = et0_hs_om (pyet 1.5 Hargreaves
+  method=0, FAO-56 Eq.52-calibrated <1% per build selftest).
+  INTERPRETATION NOTE (logged honestly): full pyet FAO-56 PM needs
+  Rs/u2/RH columns the frozen Day-1 fetch does not carry; adding
+  them = refetch = foundation hash change = AM-5-class event. Not
+  done; the pyet artifact stays the calibrated Hargreaves lane.
+- DIVERGENCE LOG: per-district×month MAD% = |primary − artifact| /
+  primary (monthly means, mm/day), open window; QA FLAG at monthly
+  MAD > 15%; per-district rollup (n flagged months, mean/max MAD%)
+  into the QA manifest.
+
+H-1 — IMPLEMENTED in this commit (not deferred): (a) credential
+globs added to .gitignore; the new globs exposed 4 already-tracked
+credential-shaped files (root .env [local DB path only] + 3 LGD
+cookie capture files — dead session tokens) → untracked, local
+copies kept, precedent b52efc8; (b) program/scripts/secret_scan.py
+(tracked) + pre-commit hook installed in this sandbox (hook lives
+in .git/ = wiped by resets; re-install is sweep item S2); full-tree
+scan at implementation: CLEAN over 1,972 tracked files; (c)
+agri_tws_ind/REPO_SWEEP_CHECKLIST.md created — secret scan is the
+FIRST standing item (S1), plus sync (S3), sealed custody (S4),
+visibility (S5), regenerable integrity (S6), logs-pushed (S7).
+
+CUSTODY + RESET NOTE: written after the 16TH sandbox reset (recovered
+via playbook #4: clone --no-checkout + .git swap + reset --hard;
+zero loss at b52efc8). Sealed-window gwl extract is NOT present in
+this sandbox (untracked by policy, wiped by the reset); manifests +
+sealed contract + ACCESS_LOG intact; sealed re-supply from the
+founder original (receipt gwl_data_csv.receipt.json) is a logged
+next-need item BEFORE any 2023+ work. No sealed contact occurs in
+rider work — riders operate on OM open + IMD public grids only.
+
+STATUS: no decision numbers consumed; AM-6 untouched (covariate/QA
+engineering only, no model runs); D#22 weights ban intact; sealed
+lock discipline held (absence ≠ access). NEXT REGISTERED per founder
+directive: backbone build under Task-54 conditions on 59-execution;
+the pseudo-target smoke test gets its OWN DECISION_LOG entry BEFORE
+it runs (Day-2 guardrail). Rider RESULTS appended below after the
+run, in a separate commit.
