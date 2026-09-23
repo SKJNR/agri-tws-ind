@@ -1312,3 +1312,61 @@ commit fa2592e; script weather_backbone_riders.py, selftest PASS):
   22 files; the regenerated report matches the reviewed one
   EXACTLY except the build timestamp (deterministic reproduction
   confirmed; intermediate bad state never committed or pushed).
+
+## ADDENDUM 10 — 2026-09-23 (GLM; backbone build REGISTERED + smoke test PRE-REGISTERED before running — Task-54 conditions on 59-execution)
+
+TRIGGER: founder directive carried in the Qwen review courier
+("Proceed to backbone build on 59-execution basis"), Addendum 9
+riders landed. This addendum registers the build spec and
+pre-registers the smoke test BEFORE either runs (log-before-run,
+Day-2 guardrail extension per Task 53/54).
+
+BUILD SPEC (pre-registered, implements the Task-54 approved
+16-feature backbone = 14 core + 2 regime-gated):
+- Layer (i) COVARIATES (built now, 59-execution, from the
+  hash-frozen OM foundation + delivered weather panel): wb_lag1/2/3
+  (P−ET0 point lags; monthly SUMS mm/month; ET0 = PRIMARY
+  et0_pm_api per the WB-R3 pin), soil_lag1 (monthly mean), tmax_lag1
+  (monthly mean of daily max), precip_roll3/6/12 (rolling SUMS),
+  wb_roll3 + wb_roll12 (rolling SUMS of P−ET0), max1day_lag1
+  (primary extreme, threshold-free), heavy20_lag1 (count ≥20 mm/day,
+  frozen), dryspell_lag1 (max in-month run of days <1.0 mm, frozen),
+  month_of_year (categorical, known at issue time). Extremes labeled
+  ERA5-Land covariates (convective tails smoothed, extremes biased
+  low). heavy25/heavy64.5 carried as manifest DIAGNOSTICS only.
+- Layer (i) REGIME-GATED (15/16): wb_roll3 × regime, soil_lag1 ×
+  regime — implemented but materialized ONLY when regime_map.csv
+  (T11 frozen map) is present; the MVP_HEURISTIC_REGIME flag path
+  fails LOUD without a defined heuristic source (Minor Irrigation
+  Census vintages are T2-deferred, not in sandbox); heuristic
+  stratification never citable as evidence (T11).
+- Layer (ii) PR-8 TARGET TRANSFORM (generic, separated): per-district
+  linear detrend, TRAIN-years-only fits, district-mean level removal,
+  tercile boundaries from the TRAINING detrended distribution, 0.15σ
+  stationarity flag, frozen single method, trend carried as product
+  content. Applied to the TARGET layer only.
+- Layer (iii) TARGET INGESTION: STUB, not built (D1.1 pending;
+  Qwen loaders + founder pilot-12 + Task-55 WRIS spot-check gates
+  unchanged). LGD crosswalk NOT needed for layer (i) (weather points
+  immune); required before D1.1 loader / regime freeze (unchanged).
+- SPLIT CONSTANTS FROZEN IN CODE: train ≤2019 / val 2020-22 /
+  test 2023-25 (test untouched until D1.1 → regime freeze → ladder).
+
+SMOKE TEST PRE-REGISTRATION (runs AFTER this addendum is committed):
+- Pseudo-target = NEXT-MONTH soil-moisture tercile (explicitly
+  labeled PSEUDO_TARGET / NON-EVIDENCE), PR-8 transformed with
+  train-only fits.
+- Split: train ≤2019 + val 2020-22 ONLY; test 2023-25 EXCLUDED
+  entirely.
+- Scope = PLUMBING ONLY: panel integrity (59 districts, expected
+  rows, as-of discipline — features at month t predict t+1, no
+  future columns, no NaN leakage into val), PR-8 machinery exercise,
+  trivial climatology/majority baseline machinery run. NO skill
+  claims, NO model comparisons; the LGBM Day-2 smoke stays gated
+  behind the baseline ladder (AM-6). All smoke outputs stamped
+  NON-EVIDENCE.
+
+AM-6: this IS the registered backbone-build step; still no model
+runs in the evidence sense (plumbing ≠ evidence). D#22 weights ban
+intact. Sealed lock discipline held (no sealed data involved).
+Results appended after the run in a separate commit.
