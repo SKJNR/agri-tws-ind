@@ -627,6 +627,10 @@ for ANY arm; only jointly-honest window = 2026-01-01+.
 DECISIONS (binding):
 
 D#20 — DISTRICT BASIS + CHANGE LEDGER (label-defining, pre-D1.1):
+**AMENDED 2026-09-18 — see Addendum 8 (founder directive, closes
+the Issue #1 skeptic round): TARGET basis = 61 districts (2026
+ground truth); EXECUTION basis = 59 as-built until 61-grade
+polygons are ingested (auto-promotion rule in Addendum 7/8).**
 Constant target basis = current 2026-vintage 59 districts (AP 26 +
 TG 33); wells assigned by point-in-polygon (wells are points).
 Dated ledger mandatory: TG 10->31 on 2016-10-11, TG 31->33 on
@@ -1105,3 +1109,48 @@ Housekeeping: unpushed platform auto-commit (bare gitlink to the
 stale seed repo, no content) dropped before push; my-project/
 added to .gitignore. No decision numbers consumed this addendum;
 AM-6 untouched; no model runs; D#22 weights ban intact.
+
+## ADDENDUM 8 — 2026-09-18 (GLM; D#20 AMENDMENT RULED + EXECUTED — founder directive closes the Issue #1 skeptic round)
+
+FOUNDER DIRECTIVE (courier 2026-09-17, received 2026-09-18):
+CLOSE THE ROUND. R1 (Gemini 3.1 Pro) and R2 (Qwen Skeptic)
+converged; decoupled strategy correct; provisional map already
+executing; do not wait for R3 absent a novel blocking edge case;
+proceed immediately to Weather Backbone on 59-execution; sealed
+lock + AM-6 order maintained.
+
+D#20 AMENDMENT EXECUTED per the Addendum-7 pre-staging (this
+addendum is the operative ruling; R3 waived by founder):
+- TARGET BASIS (logical, product truth): 61 districts = the
+  2026-vintage 59 + Markapuram (LGD 790, carved from Prakasam,
+  effective 2025-12-29) + Polavaram (LGD 791, carved from
+  Eluru/NTR/W.Godavari, effective 2025-12-29).
+- EXECUTION BASIS (physical, as-built): 59 districts, provisional
+  label map (Addendum 4), UNCHANGED. Every panel, manifest, and
+  downstream artifact remains valid without rebuild.
+- PROMOTION RULE (event-driven, runs once): 61-grade polygons
+  (LGD > Bhuvan precedence per D#20) acquired + hashed + ingested
+  -> T-D20-2 point-in-polygon re-runs -> execution basis promotes
+  to 61 -> basis ledger +2 entries; Markapuram/Polavaram wells
+  enter ONLY via polygon binding (expected 0 reassignments at
+  promotion; verify on execution). Open sub-case (flagged, not
+  blocking): if polygons disagree with the provisional
+  parent-label map on specific wells, POLYGONS WIN (geometry over
+  string labels) and disagreements are quarantined + logged, not
+  auto-dropped — the falsification surface R3 never got to attack.
+- EFFECT NOW: none on any artifact. Weather Backbone and all
+  downstream work proceed on 59-execution; nothing rebuilds until
+  the promotion event.
+
+ISSUE #1 CLOSED on this ruling: Ask 1 ruled (this addendum),
+Ask 2 countersigned (R1, Addendum 6), Ask 3 concurred (R1,
+Addendum 6), Ask 4 PRP v1.1 approved (R1, Addendum 6). Full
+transcript preserved at
+https://github.com/SKJNR/agri-tws-ind/issues/1 (5 comments:
+R1 Gemini, GLM ack, R2 Qwen, GLM R2 processing, GLM ruling).
+Next courier asks open as Issue #2+ when they arise.
+
+No decision numbers consumed beyond the D#20 amendment itself;
+AM-6 untouched (no model runs — ET0/backbone is covariate
+engineering, explicitly the registered next step); sealed lock
+held; D#22 weights ban intact.
