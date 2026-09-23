@@ -1,0 +1,258 @@
+{
+ "built_at_utc": "2026-09-23T01:58:15.573666+00:00",
+ "om_csv_sha256": "d6c6d42db7b9e6b5085f01874224b6f3090ee7760e6e26dd8aaac773e43d9f6b",
+ "panel_sha256": "b9f927172de61ad967ce007d0201e10d9a1fa821c33e99aa37388977d385ac08",
+ "imd_parquet_sha256": "6213359bffdad62120d78133d2deddab1b9e8d90bc345e330fd3c5a1070703f3",
+ "districts": 59,
+ "om_rows": 273524,
+ "om_date_range": [
+  "2014-01-01",
+  "2026-09-10"
+ ],
+ "imd_years": "2014-2024",
+ "imd_coverage": {
+  "2014_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2014_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2015_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2015_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2016_tmax": {
+   "shape": [
+    366,
+    31,
+    31
+   ],
+   "n_days": 366
+  },
+  "2016_tmin": {
+   "shape": [
+    366,
+    31,
+    31
+   ],
+   "n_days": 366
+  },
+  "2017_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2017_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2018_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2018_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2019_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2019_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2020_tmax": {
+   "shape": [
+    366,
+    31,
+    31
+   ],
+   "n_days": 366
+  },
+  "2020_tmin": {
+   "shape": [
+    366,
+    31,
+    31
+   ],
+   "n_days": 366
+  },
+  "2021_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2021_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2022_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2022_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2023_tmax": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2023_tmin": {
+   "shape": [
+    365,
+    31,
+    31
+   ],
+   "n_days": 365
+  },
+  "2024_tmax": {
+   "shape": [
+    366,
+    31,
+    31
+   ],
+   "n_days": 366
+  },
+  "2024_tmin": {
+   "shape": [
+    366,
+    31,
+    31
+   ],
+   "n_days": 366
+  }
+ },
+ "open_window_end": "2022-12-31",
+ "consistency": {
+  "tmax_overall": {
+   "label": "OM tmax vs IMD tmax (daily, open window)",
+   "n": 193933,
+   "bias": -1.2900902740962714,
+   "rmse": 2.059072279696756,
+   "r": 0.9132131523559021
+  },
+  "tmin_overall": {
+   "label": "OM tmin vs IMD tmin (daily, open window)",
+   "n": 193933,
+   "bias": 0.6890901634564589,
+   "rmse": 1.486850730389463,
+   "r": 0.9344374874319005
+  },
+  "tmax_monsoon": {
+   "label": "OM vs IMD tmax MONSOON",
+   "n": 64782,
+   "bias": -1.3777604176606477,
+   "rmse": 2.1719080720145545,
+   "r": 0.8528985394341736
+  },
+  "tmax_dry": {
+   "label": "OM vs IMD tmax DRY",
+   "n": 129151,
+   "bias": -1.246115026205141,
+   "rmse": 2.000078077644387,
+   "r": 0.9288041975515213
+  },
+  "et0_method": {
+   "label": "OM-PM vs OM-HS (method check)",
+   "n": 193933,
+   "bias": 0.24960439701667972,
+   "rmse": 0.7589944662828131,
+   "r": 0.8818841321363892
+  },
+  "et0_source": {
+   "label": "OM-HS vs IMD-HS (source check)",
+   "n": 193933,
+   "bias": -0.5164454143049564,
+   "rmse": 0.7161230023884259,
+   "r": 0.9063640034278572
+  },
+  "et0_worst": {
+   "label": "OM-PM vs IMD-HS (worst case)",
+   "n": 193933,
+   "bias": -0.2668410172882766,
+   "rmse": 0.8716214634770885,
+   "r": 0.8318566043549093
+  }
+ },
+ "per_district_worst_tmax_bias": {
+  "district": "Alluri Sitharama Raju",
+  "tmax_bias": -4.892862946986427,
+  "tmin_bias": -3.2018065516695557,
+  "tmax_rmse": 5.0776297143583555,
+  "tmin_rmse": 3.45244360740755,
+  "n": 3287
+ },
+ "et0_engine": "pyet 1.5 hargreaves method=0 k=0.0135 (FAO-56 Eq.52 equivalent, selftest cross-checked <1%)",
+ "notes": [
+  "IMD 1-deg grid representativeness: nearest cell to district centroid; coastal/Ghats districts inherit grid-cell bias.",
+  "Open-Meteo = ERA5/ERA5-Land reanalysis (CC-BY-4.0); IMD gridded = station-based 1-deg official product (IMD Pune, free download, academic use; raw .GRD not committed).",
+  "Statistics on open window (<=2022) only per D#21; monthly panel carries full exogenous range with in_open_window flag.",
+  "AM-6 untouched: covariate engineering only, no model runs; D#22 weights ban intact."
+ ]
+}

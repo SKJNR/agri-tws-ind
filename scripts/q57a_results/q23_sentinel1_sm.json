@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://www.sciencedirect.com",
+    "name": "Soil moisture retrieval from Sentinel-1: Lessons learned",
+    "snippet": "by M Rahmati · 2026 · Cited by 31 — The number of studies using Sentinel - 1 for near-surface soil moisture retrieval is growing rapidly, and most studies focus on short-term experiments, local case ... Read more",
+    "host_name": "www.sciencedirect.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://hess.copernicus.org",
+    "name": "Soil moisture estimates at 1 km resolution making a  - HESS",
+    "snippet": "by R Madelon · 2023 · Cited by 26 — The Sentinel - 1 mission is the first satellite constellation mission of the Copernicus program and was conducted by ESA.",
+    "host_name": "hess.copernicus.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://orbit.dtu.dk",
+    "name": "Short-term SAR change detection for soil moisture retrieval",
+    "snippet": "by MN Dou · 2026 · Cited by 1 — Radar-based sensors, such as those on board the Copernicus Sentinel - 1 satellites, provide frequent and weather-independent observations, 16 pages",
+    "host_name": "orbit.dtu.dk",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://elib.dlr.de",
+    "name": "Soil moisture retrieval from Sentinel-1",
+    "snippet": "by M Rahmati · 2025 · Cited by 32 — In perspective on the future of operational SAR -based soil moisture monitoring, the benefits are from the Copernicus SAR strategy, which. Read more 25 pages",
+    "host_name": "elib.dlr.de",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.mdpi.com",
+    "name": "Retrieving Soil Moisture from Sentinel-1: Limitations over",
+    "snippet": "by H Bazzi · 2023 · Cited by 28 — Sentinel - 1 data from Copernicus arises primarily due to their status as the only freely accessible SAR data available at present.",
+    "host_name": "www.mdpi.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://land.copernicus.eu",
+    "name": "Integration of Sentinel-1C data in Surface Soil Moisture",
+    "snippet": "Jan 23, 2026 — From 01.02.2026 onwards, synthetic aperture radar ( SAR ) data from Sentinel -1C will be ingested into the processing chain for the Surface ... Read more",
+    "host_name": "land.copernicus.eu",
+    "rank": 5,
+    "date": "Jan 23, 2026",
+    "favicon": ""
+  }
+]

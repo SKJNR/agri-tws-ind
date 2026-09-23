@@ -627,7 +627,7 @@ for ANY arm; only jointly-honest window = 2026-01-01+.
 DECISIONS (binding):
 
 D#20 — DISTRICT BASIS + CHANGE LEDGER (label-defining, pre-D1.1):
-**AMENDED 2026-09-18 — see Addendum 8 (founder directive, closes
+**AMENDED 2026-09-23 — see Addendum 8 (founder directive, closes
 the Issue #1 skeptic round): TARGET basis = 61 districts (2026
 ground truth); EXECUTION basis = 59 as-built until 61-grade
 polygons are ingested (auto-promotion rule in Addendum 7/8).**
@@ -1110,9 +1110,9 @@ stale seed repo, no content) dropped before push; my-project/
 added to .gitignore. No decision numbers consumed this addendum;
 AM-6 untouched; no model runs; D#22 weights ban intact.
 
-## ADDENDUM 8 — 2026-09-18 (GLM; D#20 AMENDMENT RULED + EXECUTED — founder directive closes the Issue #1 skeptic round)
+## ADDENDUM 8 — 2026-09-23 (GLM; D#20 AMENDMENT RULED + EXECUTED — founder directive closes the Issue #1 skeptic round)
 
-FOUNDER DIRECTIVE (courier 2026-09-17, received 2026-09-18):
+FOUNDER DIRECTIVE (courier 2026-09-17, received 2026-09-23):
 CLOSE THE ROUND. R1 (Gemini 3.1 Pro) and R2 (Qwen Skeptic)
 converged; decoupled strategy correct; provisional map already
 executing; do not wait for R3 absent a novel blocking edge case;

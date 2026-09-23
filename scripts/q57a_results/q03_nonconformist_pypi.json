@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://github.com",
+    "name": "donlnz/nonconformist: Python implementation of the",
+    "snippet": "Python implementation of the conformal prediction framework [1]. Primarily to be used as an extension to the scikit-learn library. Read more",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://pypi.org",
+    "name": "puncc",
+    "snippet": "Conformal prediction enables to transform point predictions into interval predictions with high probability of coverage. The figure below shows the result of ... Read more",
+    "host_name": "pypi.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org",
+    "name": "TorchCP: A Python Library for Conformal Prediction",
+    "snippet": "Jul 15, 2025 — Conformal prediction (CP ) is a powerful statistical framework generating prediction intervals or sets that contain true labels with a specified ... Read more",
+    "host_name": "arxiv.org",
+    "rank": 2,
+    "date": "Jul 15, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "http://www.jmlr.org",
+    "name": "TorchCP: A Python Library for Conformal Prediction",
+    "snippet": "by J Huang · 2025 · Cited by 13 — Abstract. Conformal prediction (CP) is a powerful statistical framework that generates predic- tion intervals or sets with guaranteed coverage probability. Read more 25 pages",
+    "host_name": "www.jmlr.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.kaggle.com",
+    "name": "ConformalPrediction-MLClassification",
+    "snippet": "In conformal prediction, the non-conformity score, often denoted as s_i , is a measure of how much a new instance deviates from the existing instances in the ... Read more",
+    "host_name": "www.kaggle.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

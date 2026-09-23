@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://github.com",
+    "name": "How do i test these APIs for ONDC, Where are they hosted?",
+    "snippet": "I tried searching everywhere but could not find any, How can I as a software engineer test these APIs? Do i have to write my own server where I subscribe to ... Read more",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://dev.to",
+    "name": "Understanding Beckn Protocol: Revolutionizing Open",
+    "snippet": "Oct 4, 2024 — The Beckn Protocol is an open and decentralized digital commerce protocol that enables the creation of open, peer-to-peer decentralized ... Read more",
+    "host_name": "dev.to",
+    "rank": 1,
+    "date": "Oct 4, 2024",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.sciencedirect.com",
+    "name": "Beyond platforms — Growing distributed transaction",
+    "snippet": "by Y Dittrich · 2026 · Cited by 1 — The Beckn Protocol is a free and open - source universal resource discovery and transaction protocol designed to create open, decentralized, and interoperable ... Read more",
+    "host_name": "www.sciencedirect.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://community.nasscom.in",
+    "name": "What is the Beckn protocol - the backbone of ONDC?",
+    "snippet": "May 31, 2023 — It's an open protocol (a set of well documented specifications ) that allows fair and transparent rules of play for market participants. It ... Read more",
+    "host_name": "community.nasscom.in",
+    "rank": 3,
+    "date": "May 31, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://becknprotocol.io",
+    "name": "beckn made simple - Beckn Protocol",
+    "snippet": "the beckn protocol , built as a digital public good by a philanthropic organisation, enables creating a similar open and inclusive network of sellers and buyers ... Read more",
+    "host_name": "becknprotocol.io",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://floydee.com",
+    "name": "ONDC: Technical Architecture behind a Decentralized",
+    "snippet": "Beckn protocol specification consists of the Core APIs, the Core schema, the Domain taxonomy, the Communication protocol, and the Authentication and Smart ... Read more",
+    "host_name": "floydee.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

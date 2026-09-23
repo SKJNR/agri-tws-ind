@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://apps.ecmwf.int",
+    "name": "Use of data accessed via this service - Forecasts - ECMWF",
+    "snippet": "Access to this dataset is governed by the following Terms of Use in addition to the Creative Commons CC - 4.0 -BY licence : ECMWF retains all Intellectual Property ... Read more",
+    "host_name": "apps.ecmwf.int",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://gmd.copernicus.org",
+    "name": "SEAS5: the new ECMWF seasonal forecast system",
+    "snippet": "by SJ Johnson · 2019 · Cited by 723 — Creative Commons Attribution 4.0 License. SEAS5, ECMWF's fifth generation seasonal forecast system , licensed under the Creative Commons Attribution 4.0 License.",
+    "host_name": "gmd.copernicus.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://forum.ecmwf.int",
+    "name": "CC-BY licence to replace Licence to use Copernicus",
+    "snippet": "Jun 13, 2025 — Please be informed that on Wednesday 2nd July 2025, the License to use Copernicus Products in the Climate Data Store ( CDS ), Atmosphere Data ...",
+    "host_name": "forum.ecmwf.int",
+    "rank": 2,
+    "date": "Jun 13, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://cds.climate.copernicus.eu",
+    "name": "Seasonal forecast daily and subdaily data on single levels",
+    "snippet": "Jun 14, 2018 — CDS offers hydrological seasonal forecasts of monthly mean river discharge across Europe. forecasts from the ECMWF seasonal forecast system 5 ( ...",
+    "host_name": "cds.climate.copernicus.eu",
+    "rank": 3,
+    "date": "Jun 14, 2018",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.mdpi.com",
+    "name": "Verification and Bias Adjustment of ECMWF SEAS5",
+    "snippet": "by A Crespi · 2021 · Cited by 39 — This work discusses the ability of a bias-adjustment method using empirical quantile mapping to improve the skills of seasonal forecasts over Europe",
+    "host_name": "www.mdpi.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.ecmwf.int",
+    "name": "Service agreements and use cases",
+    "snippet": "Licence : CC BY 4.0 . purchased at €1,000 per year. Suitable for national modelling, verification, and early-warning research.",
+    "host_name": "www.ecmwf.int",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

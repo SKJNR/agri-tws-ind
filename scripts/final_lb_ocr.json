@@ -1,0 +1,28 @@
+{
+  "choices": [
+    {
+      "finish_reason": "stop",
+      "index": 0,
+      "message": {
+        "content": "☐ hMQo2VQ1 14 days ago Jisoo 0.631662555 0.689129487 submission_v20c.csv\n☐ 6Rvv1HMa 14 days ago Jisoo 0.633113636 0.694554086 submission_v20a.csv",
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1789344511,
+  "id": "20260914080828560511a05ad440c7",
+  "model": "glm-5v-turbo",
+  "object": "chat.completion",
+  "request_id": "20260914080828560511a05ad440c7",
+  "usage": {
+    "completion_tokens": 78,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "prompt_tokens": 525,
+    "prompt_tokens_details": {
+      "cached_tokens": 2
+    },
+    "total_tokens": 603
+  }
+}

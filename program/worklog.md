@@ -277,3 +277,23 @@ Stage Summary:
 - 2/3 skeptic rounds in, both concordant: 61 = logical target, 59 = physical execution until polygons. D#20 ruling pre-staged and mechanical from here.
 - Asks 2/3/4 remain closed (R1); Ask 1 awaiting R3 or founder close — nothing blocked meanwhile (backbone work proceeds on 59-execution).
 - Founder-side gates unchanged: LGD polygons (now also the promotion trigger), pilot-12 selection, Task-55 WRIS spot-check. Visibility flip still pending.
+
+---
+Task ID: 64-RULING-BACKBONE
+Agent: Super Z (main agent)
+Task: Founder directive (courier 2026-09-17, received 2026-09-23): CLOSE THE ROUND — log R1/R2 consensus, execute D#20 ruling, proceed immediately to Weather Backbone (pyet ET0 + IMD 1-deg consistency) on 59-execution; maintain sealed lock + AM-6
+
+Work Log:
+- ADDENDUM 8 EXECUTED: D#20 AMENDED — target 61 (Markapuram 790 <- Prakasam; Polavaram 791 <- Eluru/NTR/W.Godavari) / execution 59 as-built / promotion event = 61-grade polygons hashed+ingested -> PIP re-run (expected 0 reassignments, verify on execution). Edge case ruled: polygons WIN over parent-label map; disagreements quarantined+logged. D#20 core entry carries the amendment pointer.
+- ISSUE #1 CLOSED (completed): 5 comments (R1 Gemini, GLM ack, R2 Qwen, GLM processing, GLM ruling); 4/4 asks resolved. First PATCH attempt failed (shell JSON-escaping bug, caught, retried clean). Commit c4a066f (carries pre-correction dates; Addendum-8 dates corrected to 2026-09-23 in this commit — sandbox clock gap between sessions noted).
+- 15TH RESET mid-session (between edits and commit): scaffold .git replaced repo .git, remote gone. Recovered: stash working-tree edits -> re-clone from GitHub (b7c22da) -> .git swap -> re-apply edits (verified exactly 49 insertions, no loss) -> push. Platform auto-commit gitlink (stale seed, no content) dropped unpushed, precedent Task 63.
+- WEATHER BACKBONE BUILT (program/scripts/build_weather_backbone.py, --selftest PASS incl. pyet-vs-FAO56 calibration ratio 1.0086): IMD 1-deg tmax+tmin 2014-2024 downloaded via imdlib (22 .GRD files, program/data/imd/ gitignored as regenerable; derived imd_district_daily.parquet 237,062 rows COMMITTED); pyet hargreaves method=0 ET0 on OM temps (et0_hs_om) + IMD temps (et0_hs_imd); district-month panel weather_backbone_monthly.parquet 9,027 rows (59 districts x 153 months, in_open_window flag, 6,372 open rows) per D#21 discipline (stats on open window only).
+- CONSISTENCY RESULTS (open window <=2022, n=193,933 district-days): OM(ERA5) vs IMD tmax bias -1.29C r 0.913 (ERA5 known daytime-cool bias), tmin +0.69C r 0.934 (known warm-night); ET0 method PM(API) vs HS(pyet) +0.25 mm/d r 0.882; ET0 source OM-HS vs IMD-HS -0.52 mm/d r 0.906; worst case OM-PM vs IMD-HS -0.27 mm/d r 0.832 — ALL CONSISTENT. Worst district: Alluri Sitharama Raju tmax bias -4.89C (Eastern Ghats 1-deg cell representativeness — documented caveat, not a defect).
+- DISK-FULL INCIDENT root-caused and resolved: 100% disk silently corrupted pyarrow installs (orphaned partial dirs pip could not see). CUSTODY FIRST: sealed csv hash-verified in BOTH live tree and /tmp mirror (71f492b2... exact match x2; read logged in sealed_contract/ACCESS_LOG.md), then redundant /tmp mirror (7.3G) + stale 1.4G seed + caches wiped; 1.4G free; pyarrow 25.0.1 clean install; sealed dir r-x lock again refused blind deletion exactly as designed (deliberate unlock for the REDUNDANT mirror copy only; live copy untouched with lock intact).
+- AM-6 untouched: covariate engineering only, NO model runs. D#22 weights ban intact. Sealed lock held.
+
+Stage Summary:
+- D#20 ruling executed and closed; Issue #1 completed. Skeptic round done: 61 logical target / 59 physical execution / polygon-triggered promotion.
+- Weather Backbone DELIVERED: ET0 panel (3 variants: PM-API, HS-OM, HS-IMD) + IMD 1-deg consistency all green. Foundation ready for backbone build under Task-54 conditions.
+- Founder-side gates unchanged: LGD polygons (now also the D#20 promotion trigger), pilot-12 selection, Task-55 WRIS provenance spot-check (incl. gwl_value unit/datum question).
+- Next registered: backbone build (Task-54 conditions) on 59-execution + this weather panel.

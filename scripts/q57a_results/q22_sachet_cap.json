@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://docs.oasis-open.org",
+    "name": "CAP-v1.2-os.html - Common Alerting Protocol - OASIS Open",
+    "snippet": "The Common Alerting Protocol (CAP) is a simple but general format for exchanging all-hazard emergency alerts and public warnings over all kinds of networks.",
+    "host_name": "docs.oasis-open.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://wmo.int",
+    "name": "Leveraging the Common Alerting Protocol and Cell",
+    "snippet": "Oct 15, 2025 — NDMA has also launched a national disaster alert portal ( sachet . ndma .gov.in) and the SACHET mobile app, expanding alert delivery to web ...",
+    "host_name": "wmo.int",
+    "rank": 1,
+    "date": "Oct 15, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://thejeshgn.com",
+    "name": "Common Alerting Protocol (CAP) in the Indian Context",
+    "snippet": "May 28, 2025 — SACHET , a portal by the National Disaster Management Authority ( NDMA ), utilizes the Common Alerting Protocol ( CAP ) to send disaster alerts to ...",
+    "host_name": "thejeshgn.com",
+    "rank": 2,
+    "date": "May 28, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.cdot.in",
+    "name": "CAP-Integrated Alert System",
+    "snippet": "CAP-Integrated Alert System is a. Common Alerting Protocol (CAP) Standard. The system is operational at pan-India in 36 states & UTs and is being used to send ...",
+    "host_name": "www.cdot.in",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.researchgate.net",
+    "name": "role of common alert protocol-based warning",
+    "snippet": "The NDMA CAP SACHET platform's mobile application and public website display alerts from IMD and other Alert citizens as per Fig. 4 has increased,",
+    "host_name": "www.researchgate.net",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.undrr.org",
+    "name": "The Common Alerting Protocol (CAP)",
+    "snippet": "The Common Alerting Protocol ( CAP ) is the international standard format for emergency alerting and public warning. It has been developed by the Organization ...",
+    "host_name": "www.undrr.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

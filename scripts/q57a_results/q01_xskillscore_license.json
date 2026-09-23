@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://github.com",
+    "name": "weighted for xr.corr · Issue #4768 · pydata/xarray",
+    "snippet": "Jan 5, 2021 — We started xskillscore https:// github .com/ xarray - contrib / xskillscore some time ago, before xr.corr was implemented and have keywords ... Read more",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "Jan 5, 2021",
+    "favicon": ""
+  },
+  {
+    "url": "https://pypi.org",
+    "name": "xskillscore",
+    "snippet": "xskillscore is an open source project and Python package that provides verification metrics of deterministic (and probabilistic from properscoring ) forecasts ... Read more",
+    "host_name": "pypi.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://anaconda.org",
+    "name": "xskillscore - conda-forge",
+    "snippet": "Feb 18, 2026 — xskillscore is an open source project and Python package that provides verification metrics of deterministic (and probabilistic from ... Read more",
+    "host_name": "anaconda.org",
+    "rank": 2,
+    "date": "Feb 18, 2026",
+    "favicon": ""
+  }
+]

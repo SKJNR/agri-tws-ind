@@ -1,0 +1,47 @@
+[
+  {
+    "url": "https://github.com",
+    "name": "scikit-learn-contrib/MAPIE",
+    "snippet": "A scikit-learn-compatible library for estimating prediction intervals and controlling risks , based on conformal predictions. - scikit-learn-contrib/MAPIE.",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://mapie.readthedocs.io",
+    "name": "MAPIE - Model Agnostic Prediction Interval Estimator",
+    "snippet": "MAPIE allows you to easily estimate prediction intervals (or prediction sets) using your favourite scikit-learn-compatible model for single-output regression or ... Read more",
+    "host_name": "mapie.readthedocs.io",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://arxiv.org",
+    "name": "[2207.12274] MAPIE: an open-source library for distribution",
+    "snippet": "by V Taquet · 2022 · Cited by 104 — MAPIE is hosted on scikit-learn-contrib and is fully \"scikit-learn-compatible\". As such, it accepts any type of regressor or classifier coming ... Read more",
+    "host_name": "arxiv.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://pypilb.vercel.app",
+    "name": "scikit-learn-contrib/MAPIE - GitHub Repository",
+    "snippet": "scikit-learn-contrib/MAPIE. A scikit-learn-compatible library for estimating prediction intervals and controlling risks , based on conformal predictions. Read more",
+    "host_name": "pypilb.vercel.app",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://hal.science",
+    "name": "MAPIE: an open-source library for distribution-free",
+    "snippet": "by V Taquet · 2022 · Cited by 105 — MAPIE implements conformal prediction methods , allowing the user to easily compute uncertainties with strong theoretical guarantees on the ... Read more",
+    "host_name": "hal.science",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  }
+]

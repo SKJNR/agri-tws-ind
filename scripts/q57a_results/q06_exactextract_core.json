@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://github.com/isciences/exactextract",
+    "name": "isciences/exactextract: Fast and accurate raster zonal statistics",
+    "snippet": "exactextract provides a fast and accurate algorithm for summarizing values. Implemented in C++, it is available through a command line interface as well as ...",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://isciences.github.io/exactextract",
+    "name": "exactextract documentation - GitHub Pages",
+    "snippet": "exactextract is a library for extracting and summarizing the values in the portion of a raster dataset. The library is developed in C++, with bindings for ...",
+    "host_name": "isciences.github.io",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://pypi.org/project/exactextract",
+    "name": "exactextract - PyPI",
+    "snippet": "exactextract provides a fast and accurate algorithm for summarizing values. Implemented in C++, it is available through a command line interface as well as ...",
+    "host_name": "pypi.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://anaconda.org/conda-forge/exactextract",
+    "name": "exactextract - conda-forge - Anaconda.org",
+    "snippet": "Install exactextract with Anaconda.org. Fast and accurate raster zonal statistics. research study on Python environments & performance! License Apache-2.0 ...",
+    "host_name": "anaconda.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://isciences.gitlab.io/exactextractr",
+    "name": "Fast Extraction from Raster Datasets using Polygons • exactextractr",
+    "snippet": "exactextractr is an R package that quickly and accurately summarizes raster values over polygonal areas, Calculations are performed using the C++ exactextract ...",
+    "host_name": "isciences.gitlab.io",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://cran.r-project.org/package=exactextractr",
+    "name": "Package exactextractr - CRAN",
+    "snippet": "Dec 1, 2025 · Fast Extraction from Raster Datasets using Polygons Quickly and accurately summarizes raster values over polygonal areas (\"zonal statistics\").  ...",
+    "host_name": "cran.r-project.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

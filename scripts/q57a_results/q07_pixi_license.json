@@ -1,0 +1,29 @@
+[
+  {
+    "url": "https://github.com",
+    "name": "prefix-dev/pixi: Powerful system-level package manager",
+    "snippet": "GitHub - prefix-dev/pixi: Powerful system-level package manager for Linux ... BSD-3-Clause license ; Security. More items. banner · License Project Chat Pixi ... Read more",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://prefix.dev",
+    "name": "Using Pixi as a System Package Manager with Shortcuts",
+    "snippet": "Sep 18, 2025 — Pixi is a cross-platform, cross-language package manager , for both project development (in \"workspaces\"), and system (\"global\") package ... Read more",
+    "host_name": "prefix.dev",
+    "rank": 1,
+    "date": "Sep 18, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://prefix-dev-pixi.mintlify.app",
+    "name": "Introduction to Pixi",
+    "snippet": "Pixi is a cross-platform, multi-language package manager and workflow tool built on the foundation of the conda ecosystem. It provides developers with an ... Read more",
+    "host_name": "prefix-dev-pixi.mintlify.app",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  }
+]

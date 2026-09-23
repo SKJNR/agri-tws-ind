@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://github.com/ai4bharat/IndicTrans2",
+    "name": "AI4Bharat/IndicTrans2: Translation models for 22  - GitHub",
+    "snippet": "IndicTrans2 is the first open-source transformer-based multilingual NMT model that supports high-quality translations across all the 22 scheduled Indic ...",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://ai4bharat.iitm.ac.in/areas/model/NMT/IndicTrans2",
+    "name": "IndicTrans2 - AI4Bharat",
+    "snippet": "IndicTrans2 is the first open-source transformer-based multilingual NMT model that supports high-quality translations across all the 22 scheduled Indic ...",
+    "host_name": "ai4bharat.iitm.ac.in",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://huggingface.co/ai4bharat/indictrans2-indic-en-1B",
+    "name": "ai4bharat/indictrans2-indic-en-1B - Hugging Face",
+    "snippet": "May 25, 2023 · Usage Instructions. Please refer to the github repository for a detail description on how to use HF compatible IndicTrans2 models for inference.",
+    "host_name": "huggingface.co",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://aikosh.indiaai.gov.in/home/model-tryout/details/indic_trans2.html",
+    "name": "Indic Trans2 - AIKosh",
+    "snippet": "AI4Bharat's Indic-Trans-v2 is a multilingual Transformer (~1.1BM) NMT model trained on Samanantar v2 dataset which is the largest publicly available parallel ...",
+    "host_name": "aikosh.indiaai.gov.in",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.researchgate.net/publication/383739050_IndicTrans2_Towards_High-Quality_and_Accessible_Machine_Translation_Models_for_all_22_Scheduled_Indian_Languages",
+    "name": "(PDF) IndicTrans2: Towards High-Quality and Accessible Machine",
+    "snippet": "Available via license: CC BY 4.0. Content may be subject to copyright. Published in Transactions on Machine Learning Research (12/2023). IndicTrans2: Towards ...",
+    "host_name": "www.researchgate.net",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.endorlabs.com/ai-model/ai4bharat-indictrans2-indic-en-1b",
+    "name": "ai4bharat/indictrans2-indic-en-1B | Endor Labs",
+    "snippet": "ai4bharat/indictrans2-indic-en-1B AI model with 11960 downloads. ... license:mit, region:us. Secure your AI-native apps. Map your AI attack surface.",
+    "host_name": "www.endorlabs.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

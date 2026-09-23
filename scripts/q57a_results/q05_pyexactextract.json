@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://pypi.org/project/rasterstats/0.9.0",
+    "name": "rasterstats - PyPI",
+    "snippet": "The rasterstats python module provides a fast and flexible tool to summarize geospatial raster datasets based on vector geometries (i.e. zonal statistics).",
+    "host_name": "pypi.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=bPHHblgjm40",
+    "name": "Zonal Statistics with Python - Part 1: Load Data - YouTube",
+    "snippet": "Sep 15, 2020 · Zonal statistics algorithm in python from scratch. We use gdal and ogr to build a zonal statistics algorithm that summarizes data from a ...",
+    "host_name": "www.youtube.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://pro.arcgis.com/en/pro-app/3.6/tool-reference/spatial-analyst/zonal-statistics.htm",
+    "name": "Zonal Statistics (Spatial Analyst)—ArcGIS Pro | Documentation",
+    "snippet": "ArcGIS geoprocessing tool that calculates statistics on values of a raster within the zones of another dataset. Licensing information Available with Spatial ...",
+    "host_name": "pro.arcgis.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://community.esri.com/t5/python-questions/zonal-statistics-takes-1-5-hours-in-agpro-in/td-p/1149503",
+    "name": "Zonal Statistics takes 1.5 hours in AGPro, in Python the same code",
+    "snippet": "Mar 2, 2022 · Hi, I've been pulling out my hair trying to find a solution to this enigma. Zonal Statistics as Table takes less than two hours if I run it ...",
+    "host_name": "community.esri.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://pythonhosted.org/rasterstats",
+    "name": "rasterstats 0.10.3 documentation - Pythonhosted.org",
+    "snippet": "It includes functions for zonal statistics and interpolated point queries. The command-line interface allows for easy interoperability with other GeoJSON tools.",
+    "host_name": "pythonhosted.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://gis.stackexchange.com/questions/45284/using-qgis-zonal-stats-plugin-from-python-console",
+    "name": "Using QGIS Zonal Stats Plugin from Python Console?",
+    "snippet": "Jan 5, 2013 · I am using the Zonal Stats plugin in QGIS to extract raster statistics from overlaying polygons (I have shapefiles of species distribution and I ...",
+    "host_name": "gis.stackexchange.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://dvc.org",
+    "name": "DVC: Home",
+    "snippet": "Open-source version control system for Data Science and Machine Learning projects. Git-like experience to organize your data, models, and experiments.",
+    "host_name": "dvc.org",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/treeverse/dvc",
+    "name": "GitHub - treeverse/dvc: Data Versioning and ML Experiments",
+    "snippet": "This project is distributed under the Apache license version 2.0 (see the LICENSE file in the project root). ... Iterative, DVC: Data Version Control - Git for ...",
+    "host_name": "github.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Data_Version_Control_(software)",
+    "name": "Data Version Control (software) - Wikipedia",
+    "snippet": "DVC is a free and open-source, platform-agnostic version system for data, machine learning models, and experiments. License Apache License 2.0 Website. DVC 1.0 ...",
+    "host_name": "en.wikipedia.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://doc.dvc.org/start",
+    "name": "Get Started with DVC | Data Version Control",
+    "snippet": "DVC is designed for Git-based data and model versioning in local data science and ML projects. DVC is technically not a version control system by itself! It ...",
+    "host_name": "doc.dvc.org",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/MachineLearning/comments/mrb096/discussion_should_i_be_using_dvc_data_version",
+    "name": "\"[Discussion]\" Should I be using DVC (Data Version Control) in my",
+    "snippet": "Apr 15, 2021 · DVC: Full versioning of the data. Data is code in ML, and should be versioned as such. versioning and iteration speed, in DVC you can chose ...",
+    "host_name": "www.reddit.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://dvc.org/blog/dvc-joins-lakefs-your-questions-answered",
+    "name": "DVC Joins lakeFS: Your Questions Answered!",
+    "snippet": "Nov 18, 2025 · lakeFS has acquired the DVC open-source project from Iterative.ai. DVC helps individual data scientists and small teams manage data, model, and ...",
+    "host_name": "dvc.org",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

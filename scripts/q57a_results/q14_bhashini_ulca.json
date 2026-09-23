@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://bhashini.gov.in",
+    "name": "Sanchalak | Operation Management",
+    "snippet": "ULCA is a standard API and open scalable data platform supporting various types of datasets for Indian languages datasets and models. Explore ULCA Platform. Read more",
+    "host_name": "bhashini.gov.in",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.bhashini.ai",
+    "name": "Bhashini AI Solutions - Pricing",
+    "snippet": "Flexible pay-as-you-go pricing with discounted commitment plans for production and enterprise workloads. API Pricing Compare plans, usage rates, and support ...",
+    "host_name": "www.bhashini.ai",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com",
+    "name": "bhashini-dibd/ulca: Universal Language Contribution APIs",
+    "snippet": "ULCA Universal Language Contribution APIs ( ULCA ) is an open-sourced scalable data platform, supporting various types of dataset for Indic languages,",
+    "host_name": "github.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://bhashini.gitbook.io",
+    "name": "Overall Understanding of the API Calls - Bhashini APIs - GitBook",
+    "snippet": "Aug 31, 2023 — Our ULCA Platform exposes these AI/ML models (each ... Bhashini team for the paid version of the APIs and exploring Pricing Plans. Read more",
+    "host_name": "bhashini.gitbook.io",
+    "rank": 3,
+    "date": "Aug 31, 2023",
+    "favicon": ""
+  },
+  {
+    "url": "https://codeprismtechnologies.com",
+    "name": "Bhashini API: real-time STT, translation, TTS - CodePrism",
+    "snippet": "Per-minute pricing from commercial providers made large-scale deployment financially unviable. No unified pipeline existed that could handle speech ... Read more",
+    "host_name": "codeprismtechnologies.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.anuvad.ai",
+    "name": "Inside Bhashini and ULCA: How India Built an Open-Source",
+    "snippet": "Apr 1, 2026 — Cost Optimization Different providers charge different rates. commercial APIs handle the long tail. ULCA's routing architecture makes this a ...",
+    "host_name": "www.anuvad.ai",
+    "rank": 5,
+    "date": "Apr 1, 2026",
+    "favicon": ""
+  }
+]

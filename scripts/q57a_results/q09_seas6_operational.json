@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://forum.ecmwf.int",
+    "name": "Systems in seasonal forecasts - C3S - Datasets and Usage",
+    "snippet": "Feb 26, 2025 — Once SEAS6 is the operational seasonal forecast system , it will bring changes in the setup of forecasts lengths with a set of 6 -month, 13-month ...",
+    "host_name": "forum.ecmwf.int",
+    "rank": 0,
+    "date": "Feb 26, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://gmd.copernicus.org",
+    "name": "SEAS5: the new ECMWF seasonal forecast system",
+    "snippet": "by SJ Johnson · 2019 · Cited by 723 — In this paper we describe SEAS5 , ECMWF's fifth generation seasonal forecast system , which became operational in November 2017. It includes upgraded versions of ...",
+    "host_name": "gmd.copernicus.org",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://cds.climate.copernicus.eu",
+    "name": "Seasonal forecast daily and subdaily data on single levels",
+    "snippet": "Jun 14, 2018 — CDS offers hydrological seasonal forecasts of monthly mean river discharge across Europe. It integrates daily gridded meteorological ...",
+    "host_name": "cds.climate.copernicus.eu",
+    "rank": 2,
+    "date": "Jun 14, 2018",
+    "favicon": ""
+  },
+  {
+    "url": "https://confluence.ecmwf.int",
+    "name": "Seasonal forecasts and the Copernicus Climate Change",
+    "snippet": "For instance, in November 2017 ECMWF changed its operational seasonal forecast system from system 4 to SEAS5 , but both systems were kept running in parallel at ... Read more",
+    "host_name": "confluence.ecmwf.int",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://events.ecmwf.int",
+    "name": "Seasonal forecasting: models, reanalyses, forcings",
+    "snippet": "Apr 11, 2025 — Introducing SEAS6 • al multi-model seasonal forecasting . SEAS6 enhancement: 101 member ensembles • Reduced noise and improved accuracy in  ...",
+    "host_name": "events.ecmwf.int",
+    "rank": 4,
+    "date": "Apr 11, 2025",
+    "favicon": ""
+  },
+  {
+    "url": "https://ecmwf-projects.github.io",
+    "name": "Seasonal Forecast Verification — C3S Training",
+    "snippet": "This notebook will use data from the CDS dataset seasonal forecast monthly statistics on single levels (as opposed to multiple levels in the atmosphere).",
+    "host_name": "ecmwf-projects.github.io",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]

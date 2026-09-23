@@ -1,0 +1,56 @@
+[
+  {
+    "url": "https://github.com/deel-ai/puncc",
+    "name": "Puncc is a python library for predictive uncertainty  - GitHub",
+    "snippet": "Puncc is a python library for predictive uncertainty quantification using conformal prediction. - deel-ai/puncc. ... License. The package is released under ...",
+    "host_name": "github.com",
+    "rank": 0,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://deel-ai.github.io/puncc/getting_started.html",
+    "name": "Quickstart — PUNCC 0.9.1 documentation",
+    "snippet": "⚙️ Conformal prediction  . For this example, the prediction intervals are obtained throught the split conformal prediction method provided by the class deel.",
+    "host_name": "deel-ai.github.io",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://hal.science/hal-04560192/file/mendil23a.pdf",
+    "name": "[PDF] PUNCC: a Python Library for Predictive Uncertainty Calibration and",
+    "snippet": "Apr 26, 2024 · In this paper, we present the design of our library and demonstrate its use with various. CP procedures, Machine Learning (ML) problems and ...",
+    "host_name": "hal.science",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://proceedings.mlr.press/v204/mendil23a.html",
+    "name": "PUNCC: a Python Library for Predictive Uncertainty Calibration and",
+    "snippet": "This package aims to make conformal procedures accessible to non-experts using a simple and intuitive implementation. It is compatible with scikit-learn, ...",
+    "host_name": "proceedings.mlr.press",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.marktechpost.com/2024/01/18/meet-puncc-an-open-source-python-library-for-predictive-uncertainty-quantification-using-conformal-prediction",
+    "name": "Meet Puncc: An Open-Source Python Library for Predictive",
+    "snippet": "Jan 18, 2024 · The library employs conformal prediction methods, ensuring that generated prediction sets cover the accurate outputs within a user-defined error ...",
+    "host_name": "www.marktechpost.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com/orgs/deel-ai/repositories",
+    "name": "deel-ai repositories - GitHub",
+    "snippet": "Puncc is a python library for predictive uncertainty quantification using conformal prediction. ... Apache License 2.0. • 22 forks• 22 stars• 00 issues ...",
+    "host_name": "github.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  }
+]
