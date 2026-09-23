@@ -1,0 +1,62 @@
+{
+ "built_at_utc": "2026-09-23T10:45:11.382718+00:00",
+ "spec": "DECISION_LOG Addendum 10 (pre-registered at c9208d0)",
+ "layer_separation": {
+  "i_covariates": "built (weather; 59-execution)",
+  "ii_pr8_transform": "generic module, frozen params, train-only fits",
+  "iii_target_ingestion": "STUB \u2014 D1.1 pending"
+ },
+ "conventions": {
+  "water_balance": "monthly SUMS mm/month (BS3 ruling)",
+  "et0_primary": "et0_pm_api (WB-R3 PIN, Open-Meteo hash-frozen foundation)",
+  "lags": "feature row keyed by target month t; lag1 = t-1 (issue-time); rolls = SUMS ending t-1",
+  "heavy_rain_mm": 20.0,
+  "dry_day_mm": 1.0,
+  "split_frozen": {
+   "train_end": "2019-12",
+   "val": "2020-01..2022-12",
+   "test_from": "2023-01"
+  }
+ },
+ "features_core": [
+  "wb_lag1",
+  "wb_lag2",
+  "wb_lag3",
+  "soil_lag1",
+  "tmax_lag1",
+  "precip_roll3",
+  "precip_roll6",
+  "precip_roll12",
+  "wb_roll3",
+  "wb_roll12",
+  "max1day_lag1",
+  "heavy20_lag1",
+  "dryspell_lag1",
+  "month_of_year"
+ ],
+ "features_regime_gated": [
+  "wb_roll3_x_regime",
+  "soil_lag1_x_regime"
+ ],
+ "regime_note": "regime features NOT materialized: regime_map.csv absent (T11 map not frozen); interactions gated OFF",
+ "diagnostics_only": [
+  "heavy25",
+  "heavy645"
+ ],
+ "smoke": {
+  "smoke_rows": 6372,
+  "train_rows": 4248,
+  "val_rows": 2124,
+  "test_rows_excluded": 2655,
+  "nan_train_features": 2773,
+  "nan_val_features": 0,
+  "val_baseline_majority_acc": 0.3079,
+  "pr8_stationarity_flagged_districts": 41,
+  "stamp": "NON-EVIDENCE \u2014 plumbing only (Addendum 10)"
+ },
+ "inputs_sha256": {
+  "om_csv": "d6c6d42db7b9e6b5085f01874224b6f3090ee7760e6e26dd8aaac773e43d9f6b",
+  "weather_panel": "b9f927172de61ad967ce007d0201e10d9a1fa821c33e99aa37388977d385ac08"
+ },
+ "output_sha256": "9327ae61a9f662cb14cac5085868e65f0007e24e2c40b898d5835f6a864d5a79"
+}

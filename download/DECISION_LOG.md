@@ -1370,3 +1370,36 @@ AM-6: this IS the registered backbone-build step; still no model
 runs in the evidence sense (plumbing ≠ evidence). D#22 weights ban
 intact. Sealed lock discipline held (no sealed data involved).
 Results appended after the run in a separate commit.
+
+BACKBONE BUILD RESULTS (appended after the run; spec + smoke
+pre-registered at c9208d0; script build_features_pr8.py, selftest
+PASS incl. PR-8 train-only invariance + trend recovery):
+- LAYER (i) BUILT: 14 core features on 59-execution, monthly-SUM
+  conventions, ET0 primary = et0_pm_api (WB-R3 pin), thresholds
+  frozen (heavy ≥20 mm, dry <1.0 mm), heavy25/64.5 as manifest
+  diagnostics only. LAYER (ii) BUILT: PR-8Transform module —
+  per-district linear detrend, train-only fits, calendar-continuous
+  x-index (val continues the train index — never restarts at 0;
+  unit-tested), district-mean level, train-distribution tercile
+  edges, 0.15σ flag. LAYER (iii) STUB as registered (D1.1 pending).
+- REGIME-GATED 15/16: NOT materialized — regime_map.csv absent (T11
+  map not frozen); --mvp-heuristic-regime fails LOUD without a
+  defined heuristic source (refuses to invent one). Interactions
+  land when the map freezes.
+- SMOKE (PLUMBING, NON-EVIDENCE, stamped): rows 6,372 = 59 x 108
+  target months (train 4,248 = 59 x 72; val 2,124 = 59 x 36; exact);
+  test rows EXCLUDED 2,655 = 59 x 45 (2023-01..2026-09 targets
+  untouched); NaN features in val = 0 (warmup NaNs confined to train:
+  2,773 cells, first 12 months/district); majority-class baseline
+  val acc 0.3079 ≈ chance (3-class) — exactly what plumbing with no
+  skill claim should read; PR-8 0.15σ stationarity flags on the
+  pseudo-target: 41/59 districts (soil-moisture trend content —
+  product content per PR-8, not a defect).
+- ARTIFACTS: backbone_features_monthly.parquet (gitignored, SHA256
+  in manifest) | backbone_features_manifest.json |
+  agri_tws_ind/BACKBONE_FEATURES_REPORT.md.
+- AM-6 POSITION: backbone build COMPLETE as the registered step; the
+  next registered steps are D1.1-empirical (gated on Qwen loaders
+  L1-L12 + founder pilot-12 selection + Task-55 WRIS provenance
+  spot-check) then regime-map freeze (gated on LGD crosswalk). No
+  model runs occurred; D#22 weights ban intact; sealed lock held.

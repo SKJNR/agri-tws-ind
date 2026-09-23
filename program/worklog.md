@@ -320,3 +320,21 @@ Stage Summary:
 - No decision numbers consumed; AM-6 untouched (QA/covariate engineering only); D#22 intact; sealed lock discipline held (sealed extract absent post-reset — re-supply from founder original logged as next-need before any 2023+ work).
 - Repo visibility STILL public (private:false at API check 2026-09-23) vs private-by-rule — founder click-path outstanding, standing record Addendum 6.
 - Next registered: backbone build under Task-54 conditions on 59-execution; smoke test needs its own DECISION_LOG entry BEFORE it runs (Day-2 guardrail).
+
+---
+Task ID: 66-BACKBONE-BUILD
+Agent: Super Z (main agent)
+Task: Founder directive — proceed to backbone build (Task-54 conditions) on 59-execution after riders landed
+
+Work Log:
+- ADDENDUM 10 written + pushed FIRST (c9208d0): build spec + smoke test PRE-REGISTERED before any code ran (16-feature set = 14 core + 2 regime-gated; monthly-SUM conventions; ET0 primary pinned; split constants frozen; pseudo-target smoke = plumbing only, non-evidence; LGBM Day-2 smoke still gated behind ladder).
+- build_features_pr8.py written with three-layer separation: (i) covariates (14 core features from frozen OM foundation + delivered weather panel; extremes from daily data), (ii) PR8Transform generic module (train-only fits; calendar-continuous x index so val continues the train month index), (iii) target ingestion STUB (D1.1 gates unchanged).
+- Selftest: PR-8 trend recovery + train-only invariance (changing test values cannot alter fit params), lag/roll arithmetic on synthetic panel, split boundaries, dryspell/heavy20 units — PASS.
+- Bugs fixed en route: selftest ym length mismatch (120 vs 60 labels); split NaN handling for last month per district; pseudo-target off-by-one (row keyed by target month carries the value AT that month — features already shift to m-1); missing state column; target_ym vs ym column naming; CRITICAL: PR-8 anomaly x-index restarted at 0 for val slices — now calendar-derived from each district's train origin (unit-tested).
+- Smoke results (NON-EVIDENCE): 6,372 rows = 59x108 exactly (train 4,248 / val 2,124 / test excluded 2,655 = 59x45); NaN val features = 0; majority baseline acc 0.3079 ≈ 3-class chance (plumbing, no skill claim); PR-8 0.15σ flags 41/59 districts on the pseudo-target.
+- Regime-gated features 15/16: gated OFF (no frozen regime_map.csv); flag path fails loud rather than inventing a heuristic (T11 discipline).
+- Results appended to Addendum 10; artifacts: backbone_features_monthly.parquet (hash in manifest) + backbone_features_manifest.json + BACKBONE_FEATURES_REPORT.md.
+
+Stage Summary:
+- Backbone build DELIVERED per Task-54 sign-off conditions; plumbing smoke green and stamped non-evidence; AM-6 sequence position advanced to its D1.1 gate.
+- Next registered: D1.1-empirical (needs Qwen loaders L1-L12 + founder pilot-12 selection + Task-55 WRIS spot-check incl. gwl_value unit/datum) then regime-map freeze (needs LGD crosswalk). Founder-side gates unchanged; LGD polygons also the D#20 promotion trigger. Visibility flip still pending (repo public vs private-by-rule).
