@@ -1433,3 +1433,72 @@ silent self-exclusion must be caught at commit time; both encoded in
 REPO_SWEEP_CHECKLIST S3. 17th reset also recovered this session
 (playbook #4, zero loss at 3e9a79f). No decision numbers consumed;
 AM-6 untouched; D#22 intact.
+
+## ADDENDUM 11 — 2026-09-24 (GLM; Task-55 spot-check route BLOCKED from sandbox; method AMENDED to file-internal datum-signature analysis + optional founder-side WRIS confirmation; decision rules PRE-REGISTERED before run)
+
+CONTEXT: 18th reset recovered zero-loss at dac49a0 (playbook #4; sweep S1
+CLEAN 1,980 files; S2 hook reinstalled; S3 in-sync with origin/main).
+S5 FLAGGED AGAIN: repo still PUBLIC vs private-by-rule — standing since
+Addendum 6, re-surfaced to founder in FOUNDER_UNBLOCK_CARD (this commit).
+
+ROUTE CHECK (2026-09-24, sandbox, logged):
+- HF founder dataset han-jisso/ground-water-level-all: STILL PUBLIC; zip
+  resolve HTTP 200 → re-supplying per the S4 route (receipt + split-manifest
+  hashes re-verified before use; see SCOPE GUARDRAILS). Founder advisory from
+  Addendum 3 (flip both HF datasets private) NOT yet executed — re-surfaced.
+- India-WRIS (indiawris.gov.in and /wris/rest/api/gwl search endpoint):
+  UNREACHABLE from sandbox (connect timeout 2 x 20s attempts) → the
+  registered raw spot-check route CANNOT execute sandbox-side. Logged, not
+  silently substituted.
+
+METHOD AMENDMENT (logged per the D#20-execution-amendment precedent;
+report-only; AM-3 nothing dropped/imputed): the Task-55 datum question
+(gwl_value unit/datum — mbgl vs masl vs QC failures; Addendum 4 finding:
+114,062/365,742 negatives (31%), range -1147.7..+971.3 m in AP+TG open
+rows) is addressed in two tracks:
+- TRACK A (sandbox; PRE-REGISTERED HERE, runs only after this addendum is
+  committed+pushed): file-internal datum-signature analysis on AP+TG OPEN
+  rows only (date <= 2022-12-31; D#24 sealed discipline intact), per-well
+  aggregation by station_code (wells with >= 5 open readings): median
+  gwl_value vs the file's OWN elevation column; depth-column consistency;
+  negative-value magnitude/geography classes. Elevation-column credibility
+  cross-check vs Copernicus DEM GLO-90 via the public Open-Meteo elevation
+  API (Task-51 precedent) on a 100-well random sample (seed 42).
+- TRACK B (founder-side, OPTIONAL confirmation — resolves what Track A
+  cannot: raw-value provenance vs WRIS live records): 3 manual India-WRIS
+  lookups; exact click-steps in FOUNDER_UNBLOCK_CARD.
+
+PRE-REGISTERED DECISION RULE (frozen before run):
+- VERDICT masl-frame IF Spearman rho(per-well median gwl_value, elevation)
+  >= 0.80 AND median |gwl_value - elevation| <= 25 m.
+- VERDICT mbgl-frame IF Spearman rho <= 0.30 AND >= 85% of depth-bearing
+  wells satisfy 0 <= median gwl_value <= depth AND overall median gwl_value
+  in [0, 300] m.
+- ELSE VERDICT mixed/QC-contaminated: per-class breakdown reported
+  (small-negative low-elevation class vs large-magnitude QC-failure class);
+  report-only, nothing dropped.
+- ELEVATION-COLUMN CREDIBILITY GATE: if median |file elevation - DEM
+  elevation| > 50 m on the 100-well sample, elevation-based tests are
+  down-weighted and the verdict rests on depth-consistency + negatives
+  analysis only (and the elevation column itself is flagged as suspect).
+- NEGATIVES CLASS RULE (frozen): negatives in (-50, 0) m at wells with
+  elevation < 50 m = plausibly-masl-QC-noise class; negatives <= -50 m =
+  QC-failure class regardless of frame (masl impossible at that magnitude
+  in India; mbgl negative by definition) — counted and reported, NOT
+  dropped (AM-3).
+
+SCOPE GUARDRAILS: report-only; no feature/artifact changes; no D1.1
+conclusion rests on gwl_value until Track A verdict (+ optional Track B
+confirmation); no model runs (AM-6 position unchanged; D#22 weights ban
+intact); sealed rows untouched (source csv sha256 must equal receipt
+c1a2e1b3... before filtering; filtered open row-count must equal 992,053
+exactly — fail-loud on mismatch). No decision numbers consumed by this
+addendum.
+
+FOUNDER_UNBLOCK_CARD (program/FOUNDER_UNBLOCK_CARD.md, this commit):
+consolidated founder-side click-path list — (1) repo visibility flip (S5,
+oldest standing item), (2) HF datasets private advisory, (3) pilot-12
+selection (D1.1 gate, founder decision 5a-P0), (4) LGD/Bhuvan polygons
+(regime-map freeze + D#20 promotion trigger), (5) Track-B WRIS steps
+(optional), (6) sealed-extract custody note (S4 re-supply route exercised
+via HF re-download this session, hashes re-verified).
