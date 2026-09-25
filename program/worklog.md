@@ -358,3 +358,41 @@ Stage Summary:
 - Remote state VERIFIED HEALTHY: all session commits + Issue #2 + H-1 untracking present on main at 3e9a79f; the one genuine gap (scanner file) now fixed and API-verified.
 - Verification discipline upgraded permanently: API-after-push + commit-file-list checks are now standing sweep items (S3).
 - No data/work re-execution needed (all artifacts were in the pushed commits; only secret_scan.py had been left behind).
+
+---
+Task ID: 68-GHOST-ALERT-VERIFY-R2
+Agent: Super Z (main agent)
+Task: Founder directive (via external AI advisor text) — SECOND ghost-execution alert: claims HEAD still b52efc8, commits fa2592e/02c16d3/c9208d0/dac49a0/3e9a79f missing, Issue #2 absent, .env still tracked, build_features_pr8.py absent; plus full security & hygiene audit requested
+
+Work Log:
+- Fresh sandbox (reset between sessions). Raw API verification with HTTP codes (all 200): remote HEAD = dac49a0 (2026-09-23T20:27:58Z); all 5 disputed commits EXIST with full file manifests; Issue #2 OPEN (created 10:37:38Z); .env NOT in current tree (removed in fa2592e); build_features_pr8.py EXISTS at program/scripts/ (+512 lines in 3e9a79f) — advisor checked root scripts/ (362 files, wrong directory).
+- Timing reconstruction: every reported data point matches repo state ~09:00-10:03Z Sep 23 ("b52efc8 from 7 hours ago" pins the snapshot: b52efc8 was 7h old only at ~09:00Z); pushes landed 10:03-10:47Z + 20:27Z — the advisor's "fresh live check" was ~18h stale (same courier-delay class as round 1, already documented in dac49a0).
+- Tie-breaker handed to founder: incognito api.github.com/repos/SKJNR/agri-tws-ind/commits permalink (their own IP, zero trust in sandbox).
+- Security audit (read-only, founder-sanctioned): PAT leak scan across 13 highest-risk files = 0 hits; historical .env = single DATABASE_URL, 36-char RELATIVE PATH (no scheme/host/credentials — local dev path, not a live key); .initial_snapshot.json = path manifest, 0 secret patterns; lgd_cookies.txt absent from tree (history only, week-old JSESSIONID, expired); zindi token NOT in any log (only a benign 401 log line); 0 JWT / db-uri / api-key patterns anywhere.
+- NO pushes (moratorium pending founder verification).
+
+Stage Summary:
+- All 4 round-2 claims DISPROVEN by live API evidence; advisor data source was stale, not the repo.
+- Real security posture: history purge (filter-repo) remains open but audit shows no live credentials in history; PAT still active at 03:04Z Sep 24 (founder revocation not yet executed); visibility still public.
+
+---
+Task ID: 69-TASK55-TRACKA-DATUM
+Agent: Super Z (main agent)
+Task: Founder directive — resume professional work from where left off; Task-55 WRIS spot-check was the one executable registered gate
+
+Work Log:
+- 18th reset recovered via playbook #4 (clone --no-checkout + .git swap + reset --hard at dac49a0, zero loss); sweep: S1 secret scan CLEAN (1,980 files), S2 hook reinstalled, S3 in-sync, S5 FLAGGED (repo still public — surfaced in unblock card), S4 note (sealed extract absent; re-supply route exercised below).
+- Route check: HF dataset han-jisso/ground-water-level-all STILL PUBLIC (zip resolve 200) — advisory from Addendum 3 not yet executed, re-surfaced; India-WRIS UNREACHABLE from sandbox (connect timeouts 2x20s) → registered raw spot-check route cannot run sandbox-side.
+- ADDENDUM 11 written + pushed FIRST (07c76f7, API-verified): route block logged; method amended per D#20-amendment precedent — Track A file-internal datum-signature analysis (decision rules FROZEN before run) + Track B optional founder WRIS lookups; FOUNDER_UNBLOCK_CARD.md added (6 founder-side items with click-paths).
+- Data re-supply per S4 route: HF zip downloaded (265,308,904 B exact; first background attempt died silently at 59MB — foreground resume with --retry completed), zip sha256 1e9d0cf6... == manifest, csv sha256 c1a2e1b3... == receipt. Env rebuilt (python3 -m pip duckdb 1.5.5; pip-vs-python3 mismatch per Task-65 playbook).
+- TRACK A RUN (task55_datum_signature.py + task55_trackA_supplement.py): ALL pre-registered guardrails PASSED exactly (open rows 992,053; AP+TG 365,742; wells 3,223; negatives 114,062; range -1147.66..+971.29). Two script bugs fixed en route (AP label matcher typo; latitude column name) — guardrails caught the label bug loud (254,368 != 365,742).
+- VERDICT: MBGL-FRAME per frozen rules. masl physically excluded (DEM cross-check n=20 after 429 retries: median terrain 226.5m vs 44.8% TG rows negative). PRIMARY FINDING: negatives = TELANGANA VINTAGE ARTIFACT — AP 0.04% negative (clean); TG ~0% through 2019, onset 2020-08/09, fully flipped 2021-08+ (93-100%/month, medians -0.3..-7.3m depth-scale). Sign mixing between vintages (289 mixed / 18 all-neg / 1,574 all-pos wells). SECOND ANOMALY: TG 2021-02..07 block median +29.6m (~2x clean era). elevation column = constant-5.0 placeholder with -9999 sentinel (VOID; nothing consumes it); depth all-NULL.
+- D1.1 implications logged report-only: TG 2020-08+ rows quarantined-from-use pending sign-reconciliation ruling (Qwen/founder, pre-staged, AM-3 — not executed); sealed 2023+ presumed to continue flipped convention (added to unseal checklist); AP usable as mbgl depth once D1.1 gates land.
+- Track-B founder sample: TSGWD_1590 (RANGA REDDY, 2022-12-31, -7.11 — resolves pure-flip vs different-quantity), TSGWD_1469 (NALGONDA, 2020-01-22, +6.86 — clean control), TSGWD_1714 (SIDDIPET, 2022-12-31, +0.20 — post-flip residual).
+- Artifacts: TASK55_DATUM_REPORT.md + task55_datum_report.json + both scripts; Addendum 11 results appended; this entry logged. Push + API-verify per S3 follows this entry.
+
+Stage Summary:
+- Task-55 datum question ANSWERED from the file side: mbgl-frame; negatives = structured TG vintage sign-flip (not noise, not masl); report-only per AM-3.
+- D1.1 target-data risk surfaced BEFORE any D1.1 work rests on it — exactly the gate's purpose. TG sign-reconciliation ruling now pre-staged with evidence for Qwen/founder.
+- Founder-facing outputs: TASK55_DATUM_REPORT.md (3-station WRIS lookup table) + FOUNDER_UNBLOCK_CARD.md (6 items).
+- No decision numbers consumed; AM-6 position unchanged; D#22 intact; sealed lock held (open rows only).

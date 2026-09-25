@@ -1502,3 +1502,49 @@ selection (D1.1 gate, founder decision 5a-P0), (4) LGD/Bhuvan polygons
 (regime-map freeze + D#20 promotion trigger), (5) Track-B WRIS steps
 (optional), (6) sealed-extract custody note (S4 re-supply route exercised
 via HF re-download this session, hashes re-verified).
+
+ADDENDUM 11 RESULTS (appended after the run; spec pre-registered at 07c76f7;
+scripts task55_datum_signature.py + task55_trackA_supplement.py; artifact
+task55_datum_report.json; report TASK55_DATUM_REPORT.md):
+- CUSTODY: HF re-supply bit-perfect (zip 1e9d0cf6..., csv c1a2e1b3... vs
+  receipt + split manifest). ALL GUARDRAILS PASSED EXACTLY: open rows
+  992,053; AP+TG 365,742; wells 3,223; row negatives 114,062; range
+  -1147.66..+971.29 (Addendum-4 finding reproduced to the row).
+- VERDICT per frozen rules: MBGL-FRAME. masl physically EXCLUDED: DEM
+  cross-check (20 wells, Copernicus GLO-90 via Open-Meteo; one 429 retry
+  succeeded) median terrain 226.5 m (174-708) vs 44.8% TG rows negative —
+  below-sea-level on plateau terrain impossible. QC-failure-dominant also
+  excluded: negatives highly structured; only 93 rows <= -50 m fit the
+  frozen QC-failure class.
+- PRIMARY STRUCTURAL FINDING: the negatives are a TELANGANA VINTAGE
+  ARTIFACT. AP neg share 0.04% (clean mbgl, median +7.53 m). TG monthly
+  table: ~0% through 2019; onset 2020-08/09 (transitional); mixed through
+  2021-07; FULLY FLIPPED 2021-08 onward (93-100% negative every month to
+  2022-12; medians -0.25..-7.34 m, depth-scale magnitudes). Sign mixing is
+  between vintages: 289/1,881 TG wells mixed-sign (span the boundary), 18
+  all-negative, 1,574 all-positive.
+- SECOND ANOMALY (flagged, report-only): TG 2021-02..07 block at median
+  +29.5..29.7 m (~2x clean-era median) — distinct campaign or convention.
+- FILE COLUMN AUDIT: `elevation` is a placeholder (10 distinct values,
+  constant 5.0 at q10-q90, sentinel -9999; DEM median abs diff 221 m) —
+  VOID for datum/terrain use; verified nothing in the current pipeline
+  consumes it. `depth` NULL for all AP+TG open rows (depth-consistency
+  test contributed nothing; verdict rests on terrain-impossibility +
+  magnitude-scale evidence).
+- FLIPPED-ERA MAGNITUDES SHALLOWER (-2..-7) than clean-era (+12..+14):
+  genuine 2021-22 TG water-table rise under pure sign flip vs different
+  quantity — NOT resolvable internally; Track-B founder WRIS lookups
+  (TSGWD_1590 2022-12-31 -7.11; TSGWD_1469 2020-01-22 +6.86; TSGWD_1714
+  2022-12-31 +0.20) resolve it.
+- D1.1 IMPLICATIONS (report-only; no decision numbers consumed): TG rows
+  from 2020-08 onward must not be used as-is (target/feature/tercile)
+  until a sign-reconciliation ruling lands (Qwen/founder; pre-staged with
+  evidence, NOT executed — AM-3); 2021-02..07 block same review class;
+  sealed 2023+ partition PRESUMABLY CONTINUES the flipped convention —
+  added to the sealed-unseal checklist. AP rows usable as depth (mbgl)
+  once D1.1 gates (Qwen loaders L1-L12, pilot-12) land.
+- Run-env notes: 18th reset env rebuilt (python3 -m pip duckdb 1.5.5;
+  pandas 2.2.3, numpy 2.1.3 preinstalled); Open-Meteo elevation endpoint
+  rate-limited (429) from sandbox egress — one retry succeeded for n=20,
+  full n=100 blocked (documented; moot given the constant-placeholder
+  finding).
